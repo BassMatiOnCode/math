@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2022-02-09" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2022-07-06" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2022-07-06" />
+<meta name="version" content="1" />
+<meta name="categories" content="Math > Calculus > Matrix" />
+<meta name="tags" content="math, calculus, algebra, matrix" />
+<meta name="description" content="" />
+
+<!--
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_HTMLorMML" id=""></script>
+-->
+
+<script>
+MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' }};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js">
+</script>
+
+<link rel="stylesheet" href="/inc/page.css" />
+<style>
+mjx-container  { 
+	text-align : left !important ; 
+	font-size : 100% !important ; 
+	margin-left : 20px !important 
+	}
+math { font-family : 'Latin Modern Math', 'Stix Two Math', 'Cambria Math' ; }
+table { margin-top : 20px ; margin-bottom : 20px }
+table.matrix-multiplication table { margin : 0px }
+#table-01 td, #table-02 td { min-width : 30px }
+</style>
+<title>Math > Matrix</title>
+
+</head><body><header id="page-header"></header><div id="main-toolbar"></div><main id="page-content">
+
+<h1>Matrix</h1>
+
+<p id="page-abstract"></p>
+
+<h2 cbc>Introduction</h2><div>
+
+<p>An m &times; n <em>matrix</em> Mat( m, n ) is a rectangular array of entries, m rows high and n columns wide.</p>
+
+<math display="block" style="margin-left:20px" >
+<mi>A</mi><mo> = </mo><mo>[</mo>
+<mtable>
+<mtr>
+	<mtd><msub><mi>a</mi><mn>1,1</mn></msub></mtd>
+	<mtd><msub><mi>a</mi><mn>1,2</mn></msub></mtd>
+	<mtd><msub><mi>a</mi><mn>1,3</mn></msub></mtd>
+</mtr><mtr>
+	<mtd><msub><mi>a</mi><mn>2,1</mn></msub></mtd>
+	<mtd><msub><mi>a</mi><mn>2,2</mn></msub></mtd>
+	<mtd><msub><mi>a</mi><mn>2,3</mn></msub></mtd>
+</mtr>
+</mtable>
+<mo>]</mo>
+</math>
+
+A matrix is denoted with an uppercase letter.
+
+<!--h2--></div>
+
+<h2 cbc>Addition</h2><div>
+
+<p>Matrices are added component-wise:</p>
+
+<math display="block" indentAlign="left" style="margin-left:20px">
+<mtable rowspacing="1" columnalign="left">
+<mtr><mtd>
+	<mi>A</mi><mo>+</mo><mi>B</mi>
+</mtd></mtr><mtr><mtd>
+	<mo>=</mo><mo>[</mo>
+	<mtable><mtr>
+		<mtd><msub><mi>a</mi><mn>1,1</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>1,2</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>1,3</mn></msub></mtd>
+	</mtr><mtr>
+		<mtd><msub><mi>a</mi><mn>2,1</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>2,2</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>2,3</mn></msub></mtd>
+	</mtr></mtable>
+	<mo>]</mo>
+	<mo>+</mo>
+	<mo>[</mo><mtable>
+	<mtr>
+		<mtd><msub><mi>b</mi><mn>1,1</mn></msub></mtd>
+		<mtd><msub><mi>b</mi><mn>1,2</mn></msub></mtd>
+		<mtd><msub><mi>b</mi><mn>1,3</mn></msub></mtd>
+	</mtr><mtr>
+		<mtd><msub><mi>b</mi><mn>2,1</mn></msub></mtd>
+		<mtd><msub><mi>b</mi><mn>2,2</mn></msub></mtd>
+		<mtd><msub><mi>b</mi><mn>2,3</mn></msub></mtd>
+	</mtr>
+	</mtable><mo>]</mo>
+</mtd></mtr><mtr><mtd>
+	<mo>=</mo>
+	<mo>[</mo>
+	<mtable><mtr>
+		<mtd><msub><mi>a</mi><mn>1,1</mn></msub><mo>+</mo><msub><mi>b</mi><mn>1,1</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>1,2</mn></msub><mo>+</mo><msub><mi>b</mi><mn>1,2</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>1,3</mn></msub><mo>+</mo><msub><mi>b</mi><mn>1,3</mn></msub></mtd>
+	</mtr><mtr>
+		<mtd><msub><mi>a</mi><mn>2,1</mn></msub><mo>+</mo><msub><mi>b</mi><mn>2,1</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>2,2</mn></msub><mo>+</mo><msub><mi>b</mi><mn>2,2</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>2,3</mn></msub><mo>+</mo><msub><mi>b</mi><mn>2,3</mn></msub></mtd>
+	</mtr></mtable>
+	<mo>]</mo>
+</mtd></mtr></mtable>
+</math>
+
+<!--h2--></div>
+
+<h2 cbc>Scaling</h2><div>
+
+<p>Similar to the addition, a matrix is multiplied (scaled) component-wise with a value:</p>
+
+<math style="margin-left:20px">
+<mtable columnalign="left" rowspacing="1"><mtr><mtd>
+	<mn>n</mn><mo>&sdot;</mo><mi>A</mi>
+</mtd></mtr><mtr><mtd>
+	<mo>=</mo><mn>n</mn><mo>&sdot;</mo>
+	<mo>[</mo>
+	<mtable><mtr>
+		<mtd><msub><mi>a</mi><mn>1,1</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>1,2</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>1,3</mn></msub></mtd>
+	</mtr><mtr>
+		<mtd><msub><mi>a</mi><mn>2,1</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>2,2</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>2,3</mn></msub></mtd>
+	</mtr></mtable><mo>]</mo>	
+</mtd></mtr><mtr><mtd>
+	<mo>=</mo><mo>[</mo><mtable>
+	<mtr>
+		<mtd><mn>n</mn><msub><mi>a</mi><mn>1,1</mn></msub></mtd>
+		<mtd><mn>n</mn><msub><mi>a</mi><mn>1,2</mn></msub></mtd>
+		<mtd><mn>n</mn><msub><mi>a</mi><mn>1,2</mn></msub></mtd>
+	</mtr><mtr>
+		<mtd><mn>n</mn><msub><mi>a</mi><mn>2,1</mn></msub></mtd>
+		<mtd><mn>n</mn><msub><mi>a</mi><mn>2,2</mn></msub></mtd>
+		<mtd><mn>n</mn><msub><mi>a</mi><mn>2,2</mn></msub></mtd>
+	</mtr></mtable>
+	<mo>]</mo>
+</mtd></mtr></mtable>
+</math>
+
+<!--h2--></div>
+
+<h2 cbc>Matrix Multiplication</h2><div>
+
+<p>The multiplication of two matrices A &times; B = C is more complicated. Row elements of matrix A are multiplied with column elements of matrix B and then summed up to form the result element in matrix C.</p>
+
+<p>Not all matrices can be multiplied with each other; the width of A must be equal to the height of B. The dimensions of the result C is defined by the height of A and the width of B.</p>
+
+<p>For manual calculations, it helps to arrange the matrices in the following way:</p>
+
+<math style="margin-left:20px">
+<mtable><mtr>
+	<mtd></mtd>
+	<mtd><mo>[</mo><mi>B</mi><mo>]</mo></mtd>
+</mtr><mtr>
+	<mtd><mo>[</mo><mi>A</mi><mo>]</mo></mtd>
+	<mtd><mo>[</mo><mi>C</mi><mo>]</mo></mtd>
+</mtr></mtable>
+</math>
+
+<p id="multiplication-layout">An example. The result matrix C is at the bottom right. To the left is matrix A, above is matrix B:</p>
+
+<style>table#matrix-multiplication-1 td { min-width:21px }</style>
+
+<table class="matrix-multiplication" style="text-align:center"><tbody><tr>
+	<td>&nbsp;</td>
+	<td><table id="matrix-multiplication-2" class="flat-borders">
+		<colgroup>
+		<col style="width: 30px;">
+		<col style="width: 30px;">
+		<col style="width: 30px;">
+		</colgroup>
+		<tbody><tr>
+			<td tabindex="0">1</td>
+			<td tabindex="0">4</td>
+			<td tabindex="0">-2</td>
+		</tr><tr>
+			<td tabindex="0">3</td>
+			<td tabindex="0">0</td>
+			<td tabindex="0">2</td>
+		</tr></tbody></table></td>
+</tr><tr>
+	<td><table id="matrix-multiplication-1" class="flat-borders">
+		<tbody><tr>
+			<td tabindex="0">2</td>
+			<td tabindex="0">-1</td>
+		</tr><tr>
+			<td tabindex="0">3</td>
+			<td tabindex="0">2</td>
+	</tr></tbody></table></td>
+	<td><table id="matrix-multiplication-3" class="flat-borders">
+		<colgroup>
+		<col style="width: 30px;">
+		<col style="width: 30px;">
+		<col style="width: 30px;">
+		</colgroup><tbody><tr>
+			<td tabindex="0">-1</td>
+			<td tabindex="0">8</td>
+			<td tabindex="0">-6</td>
+		</tr><tr>
+			<td tabindex="0">9</td>
+			<td tabindex="0">12</td>
+			<td tabindex="0">2</td>
+		</tr></tbody></table></td>
+</tr></tbody></table>
+
+<script>
+( function ( ) { 
+	// A click event on a matrix C cell highlights row and column
+	let matrix1 = document.getElementById( "matrix-multiplication-1" );
+	let matrix2 = document.getElementById( "matrix-multiplication-2" );
+	let matrix3 = document.getElementById( "matrix-multiplication-3" );
+	let row = null, column = null;
+	function setBgColors ( color1, color2 ) {
+		// Highlight matrix 1 row
+		let cells = matrix1.rows[ row ].cells;
+		for ( let i = 0 ; i < cells.length ; i ++ ) cells[ i ].style.backgroundColor = color1 ;
+		// Highlight matrix 2 column
+		let columns = matrix2.rows[ 0 ].length;
+		for ( let i = 0 ; i < matrix2.rows.length ; i ++ ) matrix2.rows[ i ].cells[ column ].style.backgroundColor = color1 ;
+		// Highlight matrix 3 cell
+		matrix3.rows[ row ].cells[ column ].style.backgroundColor = color2 ;
+		}
+	matrix3.addEventListener( "click", function ( ) {
+		let cell = window.event.target;
+		if ( cell.tagName !== "TD" ) return;
+		if ( row !== null && column !== null ) setBgColors( "white", "white" );
+		if ( row === cell.parentNode.rowIndex && column === cell.cellIndex ) {
+			row = null; column = null; return; }
+		row = cell.parentNode.rowIndex;
+		column = cell.cellIndex;
+		setBgColors( "#DDDDDD", "#BBBBBB" );
+	} ) ;	} ) ( ) ;  // IFEE
+</script>
+
+<p>Click on a matrix C cell. The result cell determines which row of A is multiplied with which column of B, the cell sits at the intersection of the row and colulum If A is a matrix of size <i>m</i>&times;<i>n</i> and B of <i>n</i>&times;<i>p</i>, a result cell value can be calculated after the following formula:</p>
+
+<math display="block">
+<msub><mi>c</mi><mn>i,j</mn></msub><mo>=</mo>
+<munderover align="center"><mo>&#8721;</mo><mn>k=1</mn><mn>n</mn></munderover><msub><mi>a</mi><mn>i,k</mn></msub><mo>&sdot;</mo><msub><mi>b</mi><mn>k,j</mn></msub>
+</math>
+
+<p>with 1 &ge; <i>i</i> &ge; <i>m</i> and 1 &ge; <i>j</i> &ge; <i>p</i> </p>
+
+<p>For example, c<sub>1,1</sub> is &ensp; 2 &sdot; 1 &minus; 1 &sdot; 3 = &minus;1.</p>
+
+<p>Using the suggested notation layout has another advantage when you have to calculate a chained matrix multiplication expression, such as A &sdot; B &sdot; C. The result of becomes the left operand of (A &sdot; B) &sdot; C, so you can write C to right side of B:</p>
+
+<table id="table-01" class="flat-borders" style="text-align:center"><tr>
+	<td>&nbsp;</td>
+	<td>B</td>
+	<td>C</td>
+</tr><tr>
+	<td>A</td>
+	<td>A&sdot;B</td>
+	<td>(A&sdot;B)&sdot;C</td>
+</tr></table>
+
+<p>If the product becomes the left operand of the next chained multiplication, you can apply the scheme <em>downwards</em>. For example, A&sdot;(B&sdot;C) can be arranged as</p>
+
+<table id="table-02" class="flat-borders" style="text-align:center"><tr>
+	<td>&nbsp;</td>
+	<td>C</td>
+</tr><tr>
+	<td>B</td>
+	<td>B&sdot;C</td>
+</tr><tr>
+	<td>A</td>
+	<td>A&sdot;(B&sdot;C)</td>
+</tr></table>
+
+<p>I have created an interactive <a href="matrix-calculator.htm">matrix calculator</a> that implements matrix multiplication.</p>
+
+<h3>Non-Commutativiy</h3><div>
+
+<p>Matrix multiplication is not commutative:</p>
+
+<math display="block">
+<mi>A</mi><mo>&sdot;</mo><mi>B</mi><mo>&ne;</mo><mi>B</mi><mo>&sdot;</mo><mi>A</mi>
+</math>
+
+<!--h3--></div>
+
+<h3>Associativity</h3><div>
+
+<p>Matrix multiplication is associative:</p>
+
+<math display="block">
+<mo>(</mo><mi>A</mi><mo>&sdot;</mo><mi>B</mi><mo>)</mo> <mo>&sdot;</mo><mi>C</mi><mo>=</mo><mi>A</mi><mo>&sdot;</mo><mo>(</mo><mi>B</mi><mo>&sdot;</mo><mi>C</mi><mo>)</mo>
+</math>
+
+<!--h3--></div>
+
+<h3>Column Selection Vector</h3><div>
+
+<p>A column selection vector (aka standard basis vector) is a single column matrix with one cell containing a one, all others are zero:</p>
+
+<table class="matrix-multiplication" style="text-align:center"><tbody><tr>
+	<td>&nbsp;</td>
+	<td><table class="flat-borders"><colgroup><col style="width: 27px;"></colgroup><tbody><tr><td>0</td></tr><tr><td>1</td></tr><tr><td>0</td></tr></tbody></table></td>
+</tr><tr>
+	<td><table class="flat-borders"><colgroup><col width="30"><col width="30"><col width="30"></colgroup><tbody><tr><td>1</td><td>-2</td><td>4</td></tr><tr><td>3</td><td>5</td><td>-2</td></tr><tr><td>1</td><td>0</td><td>6</td></tr></tbody></table></td>
+	<td><table class="flat-borders"><colgroup><col style="width: 27px;"></colgroup><tbody><tr><td>-2</td></tr><tr><td>5</td></tr><tr><td>0</td></tr></tbody></table></td>
+</tr></tbody></table>
+
+<p>A value other than one can be considered an additional scaling factor.</p>
+
+<!--h3--></div>
+
+<h3>Row Selection Matrix</h3><div>
+
+<p>A single-row matrix A with a single cell of one and zero in the others selects a specific row from the matrix B:</p>
+
+<table class="matrix-multiplication" style="text-align:center"><tbody><tr>
+	<td>&nbsp;</td>
+	<td><table class="flat-borders"><colgroup><col style="width:30px"/><col style="width:30px"/><col style="width:30px"/></colgroup><tbody><tr><td>1</td><td>0</td><td>3</td></tr><tr><td>-2</td><td>2</td><td>0</td></tr><tr><td>1</td><td>-1</td><td>5</td></tr></tbody></table></td>
+</tr><tr>
+	<td><table class="flat-borders"><colgroup><col style="width:30px"/><col style="width:30px"/><col style="width:30px"/></colgroup><tbody><tr><td>0</td><td>1</td><td>0</td></tr></tbody></table></td>
+	<td><table class="flat-borders"><colgroup><col style="width:30px"/><col style="width:30px"/><col style="width:30px"/></colgroup><tbody><tr><td>-2</td><td>2</td><td>0</td></tr></tbody></table></td>
+</tr></tbody></table>
+
+<p>Note that A is not a vector; vectors are always written vertically. A horizontal vector is a <em>tranpose</em>!</p>
+
+<!--h3--></div>
+
+<h3>Neutral Matrix of Multiplication</h3><div>
+
+<p>A conclusion of the two sections above: The neutral element of matrix multiplication has ones at the principal diagonal, and zeroes at all other positions. Such a matrix is called <em>identity matrix</em>:</p>
+
+<math display="block">
+<mo>[</mo><mtable>
+	<mtr>
+		<mtd><msub><mi>a</mi><mn>1,1</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>1,2</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>1,3</mn></msub></mtd>
+	</mtr><mtr>
+		<mtd><msub><mi>a</mi><mn>2,1</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>2,2</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>2,3</mn></msub></mtd>
+	</mtr><mtr>
+		<mtd><msub><mi>a</mi><mn>3,1</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>3,2</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>3,3</mn></msub></mtd>
+	</mtr>
+	</mtable><mo>]</mo>
+<mo>&sdot;</mo>
+<mo>[</mo><mtable>
+	<mtr>
+		<mtd><mn>1</mn></mtd>
+		<mtd><mn>0</mn></mtd>
+		<mtd><mn>0</mn></mtd>
+	</mtr><mtr>
+		<mtd><mn>0</mn></mtd>
+		<mtd><mn>1</mn></mtd>
+		<mtd><mn>0</mn></mtd>
+	</mtr><mtr>
+		<mtd><mn>0</mn></mtd>
+		<mtd><mn>0</mn></mtd>
+		<mtd><mn>1</mn></mtd>
+	</mtr>
+	</mtable><mo>]</mo>
+<mo>=</mo>
+<mo>[</mo><mtable>
+		<mtr>
+		<mtd><msub><mi>a</mi><mn>1,1</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>1,2</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>1,3</mn></msub></mtd>
+	</mtr><mtr>
+		<mtd><msub><mi>a</mi><mn>2,1</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>2,2</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>2,3</mn></msub></mtd>
+	</mtr><mtr>
+		<mtd><msub><mi>a</mi><mn>3,1</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>3,2</mn></msub></mtd>
+		<mtd><msub><mi>a</mi><mn>3,3</mn></msub></mtd>
+	</mtr>
+	</mtable><mo>]</mo>
+</math>
+
+<p>Note that the size of the identity matrix must match the other matrix operand.</p>
+
+<!--h3--></div>
+
+<h3>Inverse Matrix</h3><div>
+
+<p>A matrix A multiplied with its inverse matrix evaluates to the identity matrix:</p>
+
+<math>
+<mtable><mtr><mtd>
+	<mrow><mi>A</mi><mo>&sdot;</mo><msup><mi>A</mi><mn>-1</mn></msup><mo>=</mo><mi>I</mi></mrow>
+</mtd></mtr><mtr><mtd>
+	<mrow><msup><mi>A</mi><mn>-1</mn></msup><mo>&sdot;</mo><mi>A</mi><mo>=</mo><mi>I</mi></mrow>
+</mtd></mtr></mtable>
+</math>
+
+<p>An <em>invertible</em> matrix has both a left and a right inverse, and they are identical.</p>
+
+<p>Note that not all matrices have an inverse!</p>
+
+<!--h3--></div>
+
+<h3>Inverse of Product of Matrices</h3><div>
+
+<math>
+<msup><mrow><mo>(</mo><mi>A</mi><mo>&sdot;</mo><mi>B</mi><mo>)</mo></mrow><mn>-1</mn></msup>
+<mo>=</mo>
+<msup><mi>B</mi><mn>-1</mn></msup><mo>&sdot;</mo><msup><mi>A</mi><mn>-1</mn></msup>
+</math>
+
+<!--h3--></div>
+
+<h3>Transpose</h3><div>
+
+<p>The transpose A<sup>T</sup> of the matrix A is obtained by interchanging rows and columns:</p>
+
+<math>
+<msup><mrow><mo>[</mo><mtable><mtr>
+	<mtd><msub><mi>a</mi><mn>1,1</mn></msub></mtd>
+	<mtd><msub><mi>a</mi><mn>1,2</mn></msub></mtd>
+	<mtd><msub><mi>a</mi><mn>1,3</mn></msub></mtd>
+</mtr><mtr>
+	<mtd><msub><mi>a</mi><mn>2,1</mn></msub></mtd>
+	<mtd><msub><mi>a</mi><mn>2,2</mn></msub></mtd>
+	<mtd><msub><mi>a</mi><mn>2,3</mn></msub></mtd>
+</mtr><mtr>
+	<mtd><msub><mi>a</mi><mn>2,1</mn></msub></mtd>
+	<mtd><msub><mi>a</mi><mn>2,2</mn></msub></mtd>
+	<mtd><msub><mi>a</mi><mn>2,3</mn></msub></mtd>
+</mtr></mtable><mo>]</mo></mrow><mn>T</mn></msup>
+<mo>=</mo>
+<mo>[</mo><mtable><mtr>
+	<mtd><msub><mi>a</mi><mn>1,1</mn></msub></mtd>
+	<mtd><msub><mi>a</mi><mn>2,1</mn></msub></mtd>
+	<mtd><msub><mi>a</mi><mn>3,1</mn></msub></mtd>
+</mtr><mtr>
+	<mtd><msub><mi>a</mi><mn>1,2</mn></msub></mtd>
+	<mtd><msub><mi>a</mi><mn>2,2</mn></msub></mtd>
+	<mtd><msub><mi>a</mi><mn>3,2</mn></msub></mtd>
+</mtr><mtr>
+	<mtd><msub><mi>a</mi><mn>1,3</mn></msub></mtd>
+	<mtd><msub><mi>a</mi><mn>2,3</mn></msub></mtd>
+	<mtd><msub><mi>a</mi><mn>2,3</mn></msub></mtd>
+</mtr></mtable><mo>]</mo>
+</math>
+
+<p>The transpose of a single-row matrix is a vector.</p>
+
+<!--h3--></div>
+
+<h3>Transpose of Product</h3><div>
+
+<math>
+<msup><mrow><mo>(</mo><mi>A</mi><mo>&sdot;</mo><mi>B</mi><mo>)</mo></mrow><mn>T</mn></msup>
+<mo>=</mo>
+<msup><mi>B</mi><mn>T</mn></msup><mo>&sdot;</mo><msup><mi>A</mi><mn>T</mn></msup>
+</math>
+
+<!--h3--></div>
+
+<!--h2--></div>
+
+<h2 cbc>Diagonal</h2><div>
+
+<p>The main diagonal of a square matrix is the line of cells from the top left to the bottom right corner.</p>
+
+<p>A <em>diagonal</em> matrix has non-zero values on the main diagonal, all other entries above and below are zero.</p>
+
+
+<!--h2--></div>
+
+<h2>Symmetric</h2><div>
+
+<p>A symmetric matrix is equal to its transpose:</p>
+
+<math>
+<mi>A</mi><mo>=</mo><msup><mi>A</mi><mn>T</mn></msup>
+</math>
+
+<!--h3--></div>
+
+<h2>Antisymmetric</h2><div>
+
+<p>An antisymmetric matrix is equal to the negative transpose:</p>
+
+<math>
+<mi>A</mi><mo>=</mo><msup><mrow><mo>&minus;</mo><mi>A</mi></mrow><mn>T</mn></msup>
+</math>
+
+<p>Both symmetric and anti-symmetric matrices are <em>square</em>.</p>
+
+<!--h3--></div>
+
+<h2>Triangular Matrix</h2><div>
+
+<p>An <em>upper triangular matrix</em> has zeroes below the main diagonal. Similarly, a <em>lower triangular matrix</em> has zeroes above the main diagonal.</p>
+
+<p>If A and B are upper triangular matrices, then the product of A and B is also an upper triangular matrix.</p>
+
+<!--h3--></div>
+
+</main><footer id="page-footer"></footer><script type="module" src="/inc/page.js" ></script></body></html>

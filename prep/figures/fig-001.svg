@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- fig-001.svg   2024-03-10   usp    Concept of proofs -->
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="180"  viewBox="-150 -20 300 180" style="border:1px none silver">
+
+<script href="/inc/svg/svg-2.js"></script>
+
+<defs>
+	<marker id="arrow-black" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="15" markerHeight="5" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="black" stroke="none"/>
+		</marker>
+	</defs>
+
+<g text-anchor="middle" marker-end="url(#arrow-black)">
+	<text>Axioms</text>
+	<line x1="-20" y1="10" x2="-50" y2="40" stroke="black"/>
+	<line y1="10" x2="40" y2="110" stroke="black"/>
+	<line x1="20" y1="10" x2="50" y2="40" stroke="black"/>
+	<text x="-70" y="60">Theorem</text>
+	<text x="70" y="60">Theorem</text>
+	<line x1="-70" y1="70" x2="-70" y2="110" stroke="black"/>
+	<line x1="40" y1="70" x2="-30" y2="120" stroke="black"/>
+	<line x1="70" y1="70" x2="70" y2="110" stroke="black"/>
+	<text x="-70" y="140">Theorem</text>
+	<text x="70" y="140">Theorem</text>
+	</g>
+
+</svg>

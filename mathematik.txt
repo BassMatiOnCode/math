@@ -1,0 +1,62 @@
+# Vektoren
+
+A a scalar value in physics is combination of a plain number (value) with a unit. Examples: 123 m, 234 kg, 345 km/h. A vector is a combination of a scalar value with a /direction/. 
+
+## Im 2D Raum
+
+Komponentendarstellung mit Einheitsvektoren
+¬a = ax·¬ex+ay·¬ey
+
+Equality
+Vectors are identical if their components are idenical:
+¬a=¬b <=> ax=bx,ay=by
+
+Betrag, Länge
+Pythagoras:
+|¬a|=sqrt(ax^2+ay^2)
+
+Addition zweier Vektoren
+Grafisch durch Parallelverschiebung und Verkettung
+¬a+¬b=(ax+bx,ay+by)·(¬ex,¬ey)
+
+Multiplikation mit einem Skalar
+r·¬a=(r·ax,r·ay)·(¬ex,¬ey)
+This is effectively a stretching or compression.
+
+# Dot Produkt
+
+Other names: Inner product, scalar product, dot product. 
+
+The dot product is a multiplication of two vectors and produces a scalar (non-vector) value.
+ 
+¬a·¬b=|¬a|·|¬b|·cos(arc(a,b))
+¬a·¬b=(ax·¬ex+ay·¬ey)·(bx·¬ex+by·¬ey)
+=ax·¬ex·bx·¬ex + ax·¬ex·by·¬ey + ay·¬ey·bx·¬ex  + ay·¬ey·by·¬ey
+Wegen cos 90° = 0 ist ¬ex·¬ey=0
+Wegen cos 0° = 1 ist ¬ex·¬ex=¬ey·¬ey=1
+=ax·bx·1+ax·by·0+ay·bx·0+ay·by·1
+=ax·bx+ay·by
+
+In one line:
+¬a·¬b=|¬a|·|¬b|·cos(arc(a,b))=ax·bx+ay·by
+
+Some observations
+1. If two vectors are colinear, their dot product is equal to their sum of products of components, as cos phi is 1 at a 0 degree angle. The dot product of a vector with itself produces the sum of square of the vector components. In a cartesian coordinate system, the dot product of a unit vector with itself produces the scalar value 1.
+
+2. If two vectors are perpendicular to each other, their dot product is zero, because cos 90 degree is zero. Specifically, the dot product between unit vectors in a cartesian coordinate system is zero.
+
+## Vectors in 3D Space
+
+Length of a vector
+Geometric mean or geometric average
+|¬a|=sqrt(ax^2+ay^2+az^2)
+
+
+
+
+
+
+
+
+x
+

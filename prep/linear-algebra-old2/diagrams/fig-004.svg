@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xxml-stylesheet href="\svg.css" type="text/css"?>
+<!-- fig-003.svg   2024-02-06   usp    Verifies the line length correction for lines with arrows in svg-2.js -->
+<svg xmlns="http://www.w3.org/2000/svg" width="330" height="330"  viewBox="-70 -180 330 330" style="border:1px solid silver;margin:0px">
+
+<script type="text/javascript" href="/inc/svg/svg-2.js"></script>
+<script type="text/javascript" href="/inc/svg/svg-coordinate-systems-1.js"></script>
+
+<style type="text/css">
+	circle.point {
+		fill : white ;
+		stroke : black ;
+		stroke-width : 1 ;
+		}
+	g.coordinate-system {
+		stroke : black ;
+		fill : none ;
+		stroke-width : 0.9px ;
+		}
+	g.coordinate-system line {
+		marker-end : url( #arrow-black );
+		}
+	g.textbox rect { 
+		stroke : none ; 
+		fill : white ;
+		}
+	line.vector { 
+		stroke-width : 2px ;
+		}
+	marker path {
+		stroke : "none" ;
+		}
+	text {
+		stroke : none ;
+		fill : black ;
+		text-anchor : middle ;
+		dominant-baseline : middle ;
+		}
+	text.math {
+		font-family : math, "Times New Roman", times ;
+		font-size : 14pt;
+		fill : #888 ;
+		}
+	tspan {
+		text-anchor : middle ;
+		dominant-baseline : middle ;
+		}
+	tspan.subscript {
+		font-size : 0.8em;
+		}
+	</style>
+
+<defs>
+<circle id="point" r="5" fill="white" stroke="black" stroke-width="1.5" />
+<marker id="point-black" viewBox="-6 -6 12 12" refX="0" refY="0" markerWidth="6" markerHeight="6" markerUnits="strokeWidth">
+		<circle r="5" fill="white" stroke="black" stroke-width="2" />
+		</marker>
+<marker id="arrow-black" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="18" markerHeight="6" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="black" />
+		</marker>
+<marker id="arrow-red" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="12" markerHeight="4" markerUnits="strokeWidth" orient="auto-start-reverse">
+	<path d="M 15 0 l -30 5 0 -10 z" fill="red" />
+</marker>
+<marker id="arrow-navy" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="12" markerHeight="4" markerUnits="strokeWidth" orient="auto-start-reverse">
+	<path d="M 15 0 l -30 5 0 -10 z" fill="navy" />
+</marker>
+<marker id="arrow-forestgreen" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="12" markerHeight="4" markerUnits="strokeWidth" orient="auto-start-reverse">
+	<path d="M 15 0 l -30 5 0 -10 z" fill="forestgreen" />
+	</marker>
+<g class="textbox">
+	<rect x="-10" y="-10" width="20" height="20"></rect>
+	<text></text>
+	</g>
+</defs>
+
+<g class="coordinate-system">
+	<line class="axis" id="xaxis" x1="-40" x2="230" axis-label="Re" tick-distance="40" tick-length="0 20" tick-range="0 5 3" label-distance="20" />
+	<line class="axis" id="yaxis" y1="140" y2="-160" axis-label="Im" tick-distance="40" tick-length="0 -20" tick-range="-3 3 0" label-distance="-20" />
+	<script type="text/javascript">
+		Synesis.Svg.Coords.createAxisTickmarks( "xaxis" );
+		Synesis.Svg.Coords.createAxisTickmarks( "yaxis" );
+	</script>
+	</g>
+
+<g class="graphs">
+	<circle cx="160" cy="-120" r="5" stroke="black" fill="white" />
+	<line class="vector" x2="160" y2="-120" stroke="red" stroke-width="2" marker-end="url(#arrow-red)"/>
+
+	<circle cx="160" cy="120" r="5" stroke="black" fill="white" />
+
+	<path d="M 120 0 A 120 120 35 0 0 101 -65" fill="none" stroke="black" stroke-dasharray="5 5" marker-end="url(#arrow-black)"/>
+	<g class="textbox" transform="translate(115,-30)">
+		<rect x="-10" y="-7" width="20" height="14"></rect>
+		<text>+Θ</text>
+		</g>
+	<text x="170" y="-140">(a,b)</text>
+	<line class="vector" x2="160" y2="120" stroke="navy" stroke-width="2" marker-end="url(#arrow-navy)"/>
+	<line x1="160" y1="-120" x2="160" y2="120" stroke="black" stroke-dasharray="6 6" />
+	<path d="M 120 0 A 120 120 35 0 1 101 65" fill="none" stroke="black" stroke-dasharray="5 5" marker-end="url(#arrow-black)"/>
+	<g class="textbox" transform="translate(110,35)">
+		<rect x="-10" y="-7" width="20" height="14"></rect>
+		<text>−Θ</text>
+		</g>
+	<text x="195" y="120">(−a,b)</text>
+</g>
+<g class="graphs" display="none">
+	<line class="vector" y2="-120" stroke="forestgreen" stroke-width="2" marker-end="url(#arrow-forestgreen)"/>
+	<path d="M 60 0 A 60 58 90 0 0 6 -60" fill="none" stroke="black" stroke-dasharray="5 5" marker-end="url(#arrow-black)"/>
+	<g class="textbox" transform="translate(40,-40)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>90°</text>
+	</g>
+	<path d="M 0 -60 A 60 60 90 0 0 -58 -7" fill="none" stroke="black" stroke-dasharray="5 5" marker-end="url(#arrow-black)"/>
+	<g class="textbox" transform="translate(-45,-40)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>90°</text>
+		</g>
+</g>
+
+<g class="coordinate-system">
+	<script type="text/javascript">
+		Synesis.Svg.Coords.createAxisLabels ( "xaxis" );
+		Synesis.Svg.Coords.createAxisLabels ( "yaxis" );
+	</script>
+	<use href="#point" />
+	</g>
+
+<script type="text/javascript" href="../scripts/init-diagram.js"></script>
+
+</svg>

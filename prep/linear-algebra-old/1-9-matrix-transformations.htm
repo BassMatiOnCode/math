@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2022-02-09" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-02-17" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-02-17" />
+<meta name="version" content="1" />
+<meta name="categories" content="Math > Linear Algebra" />
+<meta name="tags" content="math, algebra, matrix, vector, tranformation" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="/inc/page.css" />
+<link rel="stylesheet" href="/inc/css/math.css" />
+<link rel="stylesheet" href="/inc/css/scientific-1.css" />
+<style>
+div.theorem > figcaption:before { content : "" }
+div.definition > figcaption:before { content : "" }
+div.corollary > figcaption:before { content : "" }
+</style>
+
+<title>Math >  Linear Algebra - 1.9 Matrix of a Linear Transformation</title>
+
+</head><body><header id="page-header"></header><div id="main-toolbar"></div><main id="page-content">
+
+<h1>1.9 Matrix of a Linear Transformation</h1>
+
+<p id="page-abstract"></p>
+
+<h2 cbc>Example 1</h2><div>
+
+
+
+<!--h2--Example 1--></div>
+
+<h2 cbc>Standard Transformations</h2><div>
+
+<table class="flat-borders" style="border-top:1px solid silver"><tr>
+	<td><math display="block"><mo>[</mo><mtable><mtr>
+		<mtd><mn>1</mn></mtd>
+		<mtd><mn>0</mn></mtd>
+	</mtr><mtr>
+		<mtd><mn>0</mn></mtd>
+		<mtd><mn>1</mn></mtd>
+	</mtr></mtable><mo>]</mo></math></td>
+	<td>Identity matrix, does not change original.</td>
+</tr><tr>
+	<td><math display="block"><mo>[</mo><mtable><mtr>
+		<mtd><mn>1</mn></mtd>
+		<mtd><mn>0</mn></mtd>
+	</mtr><mtr>
+		<mtd><mn>0</mn></mtd>
+		<mtd><mn>&minus;1</mn></mtd>
+	</mtr></mtable><mo>]</mo></math></td>
+	<td>Reflection through <math><msub><mi>x</mi><mn>1</mn></msub></math> axis.</td>
+</tr><tr>
+	<td><math display="block"><mo>[</mo><mtable><mtr>
+		<mtd><mn>&minus;1</mn></mtd>
+		<mtd><mn>0</mn></mtd>
+	</mtr><mtr>
+		<mtd><mn>0</mn></mtd>
+		<mtd><mn>1</mn></mtd>
+	</mtr></mtable><mo>]</mo></math></td>
+	<td>Reflection through <math><msub><mi>x</mi><mn>2</mn></msub></math> axis.</td>
+</tr><tr>
+	<td><math display="block"><mo>[</mo><mtable><mtr>
+		<mtd><mn>0</mn></mtd>
+		<mtd><mn>1</mn></mtd>
+	</mtr><mtr>
+		<mtd><mn>1</mn></mtd>
+		<mtd><mn>0</mn></mtd>
+	</mtr></mtable><mo>]</mo></math></td>
+	<td>Reflection through <math><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><msub><mi>x</mi><mn>1</mn></msub></math>.</td>
+</tr><tr>
+	<td><math display="block"><mo>[</mo><mtable class="matrix"><mtr>
+		<mtd><mn>0</mn></mtd>
+		<mtd><mn>&minus;1</mn></mtd>
+	</mtr><mtr>
+		<mtd><mn>&minus;1</mn></mtd>
+		<mtd><mn>0</mn></mtd>
+	</mtr></mtable><mo>]</mo></math></td>
+	<td>Reflection through <math><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mo>&minus;</mo><msub><mi>x</mi><mn>1</mn></msub></math>.</td>
+</tr><tr>
+	<td><math display="block"><mo>[</mo><mtable class="matrix"><mtr>
+		<mtd><mn>&minus;1</mn></mtd>
+		<mtd><mn>0</mn></mtd>
+	</mtr><mtr>
+		<mtd><mn>0</mn></mtd>
+		<mtd><mn>&minus;1</mn></mtd>
+	</mtr></mtable><mo>]</mo></math></td>
+	<td>Reflection through the origin (0,0).</td>
+</tr><tr>
+	<td><math display="block"><mo>[</mo><mtable class="matrix"><mtr>
+		<mtd><mn>k</mn></mtd>
+		<mtd><mn>0</mn></mtd>
+	</mtr><mtr>
+		<mtd><mn>0</mn></mtd>
+		<mtd><mn>1</mn></mtd>
+	</mtr></mtable><mo>]</mo></math></td>
+	<td>Horizontal scaling.</td>
+</tr><tr>
+	<td><math display="block"><mo>[</mo><mtable class="matrix"><mtr>
+		<mtd><mn>1</mn></mtd>
+		<mtd><mn>0</mn></mtd>
+	</mtr><mtr>
+		<mtd><mn>0</mn></mtd>
+		<mtd><mn>k</mn></mtd>
+	</mtr></mtable><mo>]</mo></math></td>
+	<td>Vertictal scaling.</td>
+</tr><tr>
+	<td><math display="block"><mo>[</mo><mtable class="matrix"><mtr>
+		<mtd><mn>1</mn></mtd>
+		<mtd><mn>k</mn></mtd>
+	</mtr><mtr>
+		<mtd><mn>0</mn></mtd>
+		<mtd><mn>1</mn></mtd>
+	</mtr></mtable><mo>]</mo></math></td>
+	<td>Horizontal shear.</td>
+</tr><tr>
+	<td><math display="block"><mo>[</mo><mtable class="matrix"><mtr>
+		<mtd><mn>1</mn></mtd>
+		<mtd><mn>0</mn></mtd>
+	</mtr><mtr>
+		<mtd><mn>k</mn></mtd>
+		<mtd><mn>1</mn></mtd>
+	</mtr></mtable><mo>]</mo></math></td>
+	<td>Vertical shear.</td>
+</tr><tr>
+	<td><math display="block"><mo>[</mo><mtable class="matrix"><mtr>
+		<mtd><mn>1</mn></mtd>
+		<mtd><mn>0</mn></mtd>
+	</mtr><mtr>
+		<mtd><mn>0</mn></mtd>
+		<mtd><mn>0</mn></mtd>
+	</mtr></mtable><mo>]</mo></math></td>
+	<td>Projection onto the <math><msub><mi>x</mi><mn>1</mn></msub></math> axis.</td>
+</tr><tr>
+	<td><math display="block"><mo>[</mo><mtable class="matrix"><mtr>
+		<mtd><mn>0</mn></mtd>
+		<mtd><mn>0</mn></mtd>
+	</mtr><mtr>
+		<mtd><mn>0</mn></mtd>
+		<mtd><mn>1</mn></mtd>
+	</mtr></mtable><mo>]</mo></math></td>
+	<td>Projection onto the <math><msub><mi>x</mi><mn>2</mn></msub></math> axis.</td>
+</tr></table>
+
+
+
+<!--h2--Standard Transformations--></div>
+
+<script type="module">
+
+const t = document.createElement( "template" );
+for ( const o of document.querySelectorAll( "div[data-load-uri]" )) {
+	t.innerHTML = await (await fetch( o.getAttribute( "data-load-uri" ))).text(); 
+	o.replaceWith( t.content );
+	}
+</script>
+
+</main><footer id="page-footer"></footer><script type="module" src="/inc/page.js" ></script></body></html>

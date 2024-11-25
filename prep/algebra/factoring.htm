@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2023-12-17" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-03-10" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-03-10" />
+<meta name="version" content="1" />
+<meta name="categories" content="" />
+<meta name="tags" content="math, algebra" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/page-2.css" />
+<link rel="stylesheet" href="/inc/css/math.css" />
+<link rel="stylesheet" href="/inc/css/scientific-1.css" />
+
+<style>
+math mtable[row-height="33"] > mtr { height : 33px }
+</style>
+
+<meta name="description" content="Factoring techniques are used to simplify expressions. The core idea is to write number or an expression as a sequence of factors." />
+
+<title>Math > Algebra > Factoring</title>
+
+</head><body><header id="page-header"><object data="title.svg" type="image/svg+xml"></object></header><div id="main-toolbar"></div><main id="page-content">
+
+<h1>Factrorizing</h1>
+
+<p id="page-abstract"></p>
+
+<p>Some examples:</p>
+
+<div class="math"><math>
+<mn>30</mn><mo>=</mo><mn>3</mn><mo>&sdot;</mo><mn>10</mn><mo>=</mo><mn>3</mn><mo>&sdot;</mo><mn>5</mn><mo>&sdot;</mo><mn>2</mn>
+</math></div>
+
+<div class="math continued"><math>
+<msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>6</mn><mo>=</mo><mo>(</mo><mi>x</mi><mo>+</mo><mn>2</mn><mo>)</mo><mo>(</mo><mi>x</mi><mo>+</mo><mn>3</mn><mo>)</mo>
+</math></div>
+
+<h2 cbc>Method 1: Greatest Common Factor</h2><div>
+
+<p>The first method is called "pulling out the greatest common factor". An example:</p>
+
+<div class="math"><math>
+<mn>15</mn><mo>+</mo><mn>25</mn><mi>x</mi>
+</math></div>
+
+<p>15 can be factored into 3 &sdot; 5, and 25 can be factored into 5 &sdot; 5, so the greatest common factor GCF is 5.</p>
+
+<p>So we can pull out the GCF and write the term as</p>
+
+<div class="math"><math>
+<mn>5</mn><mo>(</mo><mn>3</mn><mo>+</mo><mn>5</mn><mi>x</mi><mo>)</mo>
+</math></div>
+
+<p>Another example:</p>
+
+<div class="math"><math>
+<msup><mi>x</mi><mn>2</mn></msup><mi>y</mi><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><msup><mi>x</mi><mn>3</mn></msup>
+</math></div>
+
+<p>We are looking for factors that are common to all terms, and take the factro with the smalles exponent. So the GCFs are <math><msup><mi>x</mi><mn>2</mn></msup></math> and <math><mi>y</mi></math>. So we will pull them out of the term:</p>
+
+<div class="math"><math>
+<mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>(</mo><mi>y</mi><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mi>x</mi><mo>)</mo>
+</math></div>
+
+<div class="math continued"><math>
+<mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mi>y</mi><mo>(</mo><mn>1</mn><mo>+</mo><mi>y</mi><mi>x</mi><mo>)</mo>
+</math></div>
+
+<p>The could have been done in one step if we had chosen to use a single GCF <math><msup><mi>x</mi><mn>2</mn></msup><mi>y</mi></math> instead of two individual GCFs.</p>
+
+<!--h2--Method 1: Greatest Common Factor--></div>
+
+<h2 cbc>Method 2: Grouping</h2><div>
+
+<p>An example:</p>
+
+<div class="math"><math>
+<msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>12</mn>
+</math></div>
+
+<p>Note that we have four terms. We will divide them in groups of two. The common factor of the first group is x and its smallest exponent is two, so the GCF is <math><msup><mi>x</mi><mn>2</mn></msup></math>. To find the GCF in the second group, we factorize the numbers: <math><mn>4</mn><mo>=</mo><mn>2</mn><mo>&sdot;</mo><mn>2</mn></math> and <math><mn>12</mn><mo>=</mo><mn>2</mn><mo>&sdot;</mo><mn>2</mn><mo>&sdot;</mo><mn>3</mn></math>, so the GCF is <math><mn>2</mn><mo>&sdot;</mo><mn>2</mn><mo>=</mo><mn>4</mn></math>.</p>
+
+<div class="math"><math>
+<mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>(</mo><mi>x</mi><mo>+</mo><mn>3</mn><mo>)</mo><mo>+</mo><mn>4</mn><mo>(</mo><mi>x</mi><mo>+</mo><mn>3</mn><mo>)</mo>
+</math></div>
+
+<p>Note that the terms in the parentheses are identical, so we can factor them out, too:</p>
+
+<div class="math"><math>
+<mo>=</mo><mo>(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>4</mn><mo>)</mo><mo>(</mo><mi>x</mi><mo>+</mo><mn>3</mn><mo>)</mo>
+</math></div>
+
+<p>These terms cannot be factored further.</p>
+
+<!--h2--Method 2: Grouping--></div>
+
+<h2 cbc>Method 3: Quadratic Expressions</h2><div>
+
+<p>A quadratic expression has the following form:</p>
+
+<div class="math"><math>
+<mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>&plus;</mo><mi>b</mi><mi>x</mi><mo>&plus;</mo><mi>c</mi>
+</math></div>
+
+<p>When we extract the roots, we might a product of two terms like this:</p>
+
+<div class="math"><math>
+<mo>(</mo><mi>x</mi><mo>&minus;</mo><mi>d</mi><mo>)</mo>
+<mo>(</mo><mi>x</mi><mo>&minus;</mo><mi>e</mi><mo>)</mo>
+</math></div>
+
+<p>Here, <math><mi>d</mi></math> and <math><mi>e</mi></math> are the so-called <em>roots</em>. In the follwoing sections, we will show how to factorize the quadratic expression.</p> 
+
+<h3 cbc>Example 1</h3><div>
+
+<p>Consider the following quadratic expression:</p>
+
+<div class="math"><math>
+<mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>&plus;</mo><mi>b</mi><mi>x</mi><mo>&plus;</mo><mi>c</mi>
+</math></div>
+
+<div class="math continued"><math>
+<mo>=</mo>
+<mn>10</mn><msup><mi>x</mi><mn>2</mn></msup><mo>&plus;</mo><mn>11</mn><mi>x</mi><mo>&minus;</mo><mn>6</mn>
+</math></div>
+
+<p>The first step is to rewrite <math><mi>b</mi><mi>x</mi><mo>=</mo><msub><mi>b</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mn>2</mn></msub><mi>x</mi></math></p>
+
+<div class="math"><math>
+<mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>&plus;</mo><msub><mi>b</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mn>2</mn></msub><mi>x</mi><mo>&plus;</mo><mi>c</mi>
+</math></div>
+
+<p>Then we get four terms that can be group and factorized as seen in the previous section.</p>
+
+<p>Without going into the details, the conditions for <math><msub><mi>b</mi><mn>1</mn></msub></math> and <math><msub><mi>b</mi><mn>2</mn></msub></math> are</p>
+
+<div class="math"><math>
+<msub><mi>b</mi><mn>1</mn></msub><mo>&sdot;</mo><msub><mi>b</mi><mn>1</mn></msub><mo>=</mo><mi>a</mi><mo>&sdot;</mo><mi>c</mi><mo>=</mo><mn>&minus;60</mn>
+</math></div>
+
+<div class="math continued"><math>
+<msub><mi>b</mi><mn>1</mn></msub><mo>&plus;</mo><msub><mi>b</mi><mn>1</mn></msub><mo>=</mo><mi>b</mi><mo>=</mo><mn>11</mn>
+</math></div>
+
+<p>So we are looking for a product that evaluates to minus 60, and a sum that evaluates to 11. We cannot apply the elimination methods for systems of linear equations, because this is not a linear system.</p>
+
+<p>The method of choice is to factorize <math><msup><mi>b</mi><mn>1</mn></msup><mo>&sdot;</mo><msub><mi>b</mi><mn>2</mn></msub><mo>=</mo><mn>&minus;60</mn></math> step by step and hope that the sum equals 11. We expect a negative product, so one of the factors must be negative. The attempts are documented in the following table:</p>
+
+<table class="flat-borders" style="border-top:1px solid silver"><thead class="centered"><tr>
+	<td><i>b</i><sub>1</sub></td>
+	<td><i>b</i><sub>1</sub></td>
+	<td>&Pi;</td>
+	<td>&Sigma;</td>
+</tr></thead><tbody class="centered"><tr>
+	<td>&minus;1</td>
+	<td>60</td>
+	<td>&minus;60</td>
+	<td>59</td>
+</tr><tr>
+	<td>&minus;2</td>
+	<td>30</td>
+	<td>&minus;60</td>
+	<td>28</td>
+</tr><tr>
+	<td>&minus;3</td>
+	<td>20</td>
+	<td>&minus;60</td>
+	<td>17</td>
+</tr><tr style="background-color:#c9e8c9">
+	<td>&minus;4</td>
+	<td>15</td>
+	<td>&minus;60</td>
+	<td>11</td>
+</tr></tbody></table>
+
+<p>So we have a solution for our replacement:</p>
+
+<div class="math continued"><math>
+<mi>b</mi><mi>x</mi><mo>=</mo><mo>&minus;</mo><mi>4</mi><mi>x</mi><mo>&plus;</mo><mi>15</mi><mi>x</mi>
+</math></div>
+
+<p>This expression replaces the term <math><mn>11</mn><mi>x</mi></math> in the original equation:</p>
+
+<div class="math"><math>
+<mn>10</mn><msup><mi>x</mi><mn>2</mn></msup><mo>&plus;</mo><mn>11</mn><mi>x</mi><mo>&minus;</mo><mn>6</mn>
+</math></div>
+
+<div class="math continued"><math>
+<mo>=</mo>
+<mn>10</mn><msup><mi>x</mi><mn>2</mn></msup><mo>&minus;</mo><mi>4</mi><mi>x</mi><mo>&plus;</mo><mi>15</mi><mi>x</mi><mo>&minus;</mo><mn>6</mn>
+</math></div>
+
+<p>Now we have four terms that can be grouped and have the GCF extracted:</p>
+
+<div class="math continued"><math>
+<mo>=</mo>
+<mn>2</mn><mi>x</mi><mo>(</mo><mn>5</mn><mi>x</mi><mo>&minus;</mo><mi>2</mi><mo>)</mo>
+<mo>&plus;</mo>
+<mn>3</mn><mo>(</mo><mi>5</mi><mi>x</mi><mo>&minus;</mo><mn>2</mn><mo>)</mo>
+</math></div>
+
+<p>Then we can extract the common factor and get the desired factorization:</p>
+
+<div class="math continued"><math>
+<mo>=</mo>
+<mo>(</mo><mn>2</mn><mi>x</mi>
+<mo>&plus;</mo>
+<mn>3</mn><mo>)</mo><mo>(</mo><mi>5</mi><mi>x</mi><mo>&minus;</mo><mn>2</mn><mo>)</mo>
+</math></div>
+
+<p>To verify the result, we distribute and should get the original expression:</p>
+
+<div class="math"><math>
+<mo>=</mo>
+<mn>10</mn><msup><mi>x</mi><mn>2</mn></msup><mo>&minus;</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>15</mn><mi>x</mi><mo>&minus;</mo><mn>6</mn>
+</math></div>
+<div class="math continued"><math>
+<mo>=</mo>
+<mn>10</mn><msup><mi>x</mi><mn>2</mn></msup><mo>&minus;</mo><mn>11</mn><mi>x</mi><mo>&minus;</mo><mn>6</mn>
+</math></div>
+
+<p>This is the original expression, the solution is correct.</p>
+
+<!--h3--Example 1--></div>
+
+<h3 cbc>Example 2</h3><div>
+
+<p>Let's factorize the following expression:</p>
+
+<div class="math continued"><math>
+<msup><mi>x</mi><mn>2</mn></msup><mo>&minus;</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>8</mn>
+</math></div>
+
+<p>The goal is to rewrite the term <math><mi>b</mi><mi>x</mi></math>:</p>
+
+<div class="math"><math>
+<msup><mi>x</mi><mn>2</mn></msup><mo>&minus;</mo><msub><mi>b</mi><mn>1</mn></msub><mi>x</mi><mo>+</mo><msub><mi>b</mi><mn>2</mn></msub><mi>x</mi><mo>+</mo><mn>8</mn>
+</math></div>
+
+<p><math><msub><mi>b</mi><mn>1</mn></msub></math> and <math><msub><mi>b</mi><mn>2</mn></msub></math> must fulfill the following equations:</p>
+
+<div class="math"><math>
+<msub><mi>b</mi><mn>1</mn></msub><mo>&sdot;</mo><msub><mi>b</mi><mn>1</mn></msub><mo>=</mo><mi>a</mi><mo>&sdot;</mo><mi>c</mi><mo>=</mo><mn>8</mn>
+</math></div>
+
+<div class="math continued"><math>
+<msub><mi>b</mi><mn>1</mn></msub><mo>&plus;</mo><msub><mi>b</mi><mn>1</mn></msub><mo>=</mo><mi>b</mi><mo>=</mo><mn>&minus;6</mn>
+</math></div>
+
+<p>This is not a system of linear equations, so we cannot use the Gauss' elimination method here. The appropriate method is to factorize the eight and see if the factors add up to minus 6:</p>
+
+<table class="flat-borders" style="border-top:1px solid silver"><thead class="centered"><tr>
+	<td><i>b</i><sub>1</sub></td>
+	<td><i>b</i><sub>2</sub></td>
+	<td>&Pi;</td>
+	<td>&Sigma;</td>
+</tr></thead><tbody class="centered"><tr>
+	<td>1</td>
+	<td>8</td>
+	<td>8</td>
+	<td>9</td>
+</tr><tr>
+	<td>2</td>
+	<td>4</td>
+	<td>8</td>
+	<td>6</td>
+</tr><tr>
+	<td>&minus;1</td>
+	<td>&minus;8</td>
+	<td>8</td>
+	<td>&minus;9</td>
+</tr><tr style="background-color:#c9e8c9">
+	<td>&minus;2</td>
+	<td>&minus;4</td>
+	<td>8</td>
+	<td>&minus;6</td>
+</tr></tbody></table>
+
+<p>The last combination fulfills the requirements. So our expression can be rewritten:</p>
+
+<div class="math"><math>
+<msup><mi>x</mi><mn>2</mn></msup><mo>&minus;</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>8</mn>
+</math></div>
+
+<div class="math continued"><math>
+<mo>=</mo>
+<msup><mi>x</mi><mn>2</mn></msup><mo>&minus;</mo><mn>2</mn><mi>x</mi><mo>&minus;</mo><mn>4</mn><mi>x</mi><mo>&plus;</mo><mn>8</mn>
+</math></div>
+
+
+<p>We now have four terms that can be grouped and the GCFs extracted</p>
+
+<div class="math continued"><math>
+<mo>=</mo>
+<mi>x</mi><mo>(</mo><mi>x</mi><mo>&minus;</mo><mn>2</mn><mo>)</mo><mo>&minus;</mo><mn>4</mn><mo>(</mo><mi>x</mi><mo>&minus;</mo><mn>2</mn><mo>)</mo>
+</math></div>
+
+<p>and the common factor extracted, which gives us the desired factorization:</p>
+
+<div class="math continued"><math>
+<mo>=</mo>
+<mo>(</mo><mi>x</mi><mo>&minus;</mo><mn>4</mn><mo>)</mo>
+<mo>(</mo><mi>x</mi><mo>&minus;</mo><mn>2</mn><mo>)</mo>
+</math></div>
+
+<p>Proof: Distribution obtains us</p>
+
+<div class="math"><math>
+<mo>=</mo>
+<msup><mi>x</mi><mn>2</mn></msup><mo>&minus;</mo><mn>2</mn><mi>x</mi><mo>&minus;</mo><mn>4</mn><mi>x</mi><mo>&plus;</mo><mn>8</mn>
+</math></div>
+
+<div class="math continued"><math>
+<mo>=</mo>
+<msup><mi>x</mi><mn>2</mn></msup><mo>&minus;</mo><mn>6</mn><mi>x</mi><mo>&plus;</mo><mn>8</mn>
+</math></div>
+
+<p>Which is the original equation. So the solution is correct.</p>
+
+<!--h3--Example 2--></div>
+
+<h3 cbc>Normalized Quadradic Expressions</h3><div>
+
+<p>If we compare the results for <math><msub><mi>b</mi><mn>1</mn></msub><mo>=</mo><mn>&minus;2</mn></math> and <math><msub><mi>b</mi><mn>2</mn></msub><mo>=</mo><mn>&minus;4</mn></math> with the result above, we can find that we <em>don't have to go through grouping and extraction of GCFs</em>, because <math><msub><mi>b</mi><mn>1</mn></msub></math> and <math><msub><mi>b</mi><mn>2</mn></msub></math> <em>are already the roots</em>:</p>
+
+<div class="math continued"><math>
+<mo>(</mo><mi>x</mi><mo>&minus;</mo><mn>2</mn><mo>)</mo>
+<mo>(</mo><mi>x</mi><mo>&minus;</mo><mn>4</mn><mo>)</mo>
+</math></div>
+
+<p>This shortcut can always be used if the quatratic expression is <em>normalized</em>, i. e. the factor before <math><msub><mi>x</mi><mn>2</mn></msub></math> is 1.</p>
+
+<!--h3--Normalized Quadradic Expressions--></div>
+
+<!--h2--Quadratic Expressions--></div>
+
+<h2 cbc>Method 4: Difference of Squares</h2><div>
+
+<p>A difference of squares can be factorized, a sum on squares cannot:</p>
+
+<div class="math"><math>
+<msup><mi>a</mi><mn>2</mn></msup><mo>&minus;</mo><msup><mi>b</mi><mn>2</mn></msup><mo>=</mo><mo>(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo>)</mo><mo>(</mo><mi>a</mi><mo>&minus;</mo><mi>b</mi><mo>)</mo>
+</math></div>
+
+<p>Example 1:</p>
+
+<div class="math"><math>
+<msup><mi>x</mi><mn>2</mn></msup><mo>&minus;</mo><mn>16</mn>
+</math></div>
+
+<div class="math continued"><math>
+<mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>&minus;</mo><msup><mn>4</mn><mn>2</mn></msup>
+</math></div>
+
+<div class="math continued"><math>
+<mo>=</mo><mo>(</mo><mi>x</mi><mo>+</mo><mi>4</mi><mo>)</mo><mo>(</mo><mi>x</mi><mo>&minus;</mo><mi>4</mi><mo>)</mo>
+</math></div>
+
+<p>Example 2:</p>
+
+<div class="math"><math>
+<mn>9</mn><msup><mi>x</mi><mn>2</mn></msup><mo>&minus;</mo><mn>1</mn>
+</math></div>
+
+<div class="math continued"><math>
+<mo>=</mo><msup><mrow><mo>(</mo><mn>3</mn><mi>x</mi><mo>)</mo></mrow><mn>2</mn></msup><mo>&minus;</mo><msup><mn>1</mn><mn>2</mn></msup>
+</math></div>
+
+<div class="math continued"><math>
+<mo>=</mo>
+<mo>(</mo><mn>3</mn><mi>x</mi><mo>&minus;</mo><mn>1</mn><mo>)</mo>
+<mo>(</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>1</mn><mo>)</mo>
+</math></div>
+
+<!--h2--Method 4: Difference of Squares--></div>
+
+<h2 cbc>Method 5: Sum or Difference of Cubes</h2><div>
+
+<p>In contrast to a sum of squares, a sum of cubes <em>can</em> be factorized:</p>
+
+<div class="math"><math>
+<msup><mi>a</mi><mn>3</mn></msup><mo>&minus;</mo><msup><mi>b</mi><mn>3</mn></msup>
+</math></div>
+
+<div class="math continued"><math>
+<mo>=</mo><mo>(</mo><mi>a</mi><mo>&minus;</mo><mi>b</mi><mo>)</mo><mo>(</mo><msup><mi>a</mi><mn>2</mn></msup><mo>+</mo><mi>a</mi><mi>b</mi><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><mo>)</mo>
+</math></div>
+
+<p>The formula for a sum of is quite similar, the first two signs are different:</p>
+
+
+<div class="math"><math>
+<msup><mi>a</mi><mn>3</mn></msup><mo>+</mo><msup><mi>b</mi><mn>3</mn></msup>
+</math></div>
+
+<div class="math continued"><math>
+<mo>=</mo><mo>(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo>)</mo><mo>(</mo><msup><mi>a</mi><mn>2</mn></msup><mo>&minus;</mo><mi>a</mi><mi>b</mi><mo>+</mo><msup><mi>b</mi><mn>2</mn></msup><mo>)</mo>
+</math></div>
+
+<p>Example:</p>
+
+<div class="math"><math>
+<msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>27</mn>
+</math></div>
+
+<div class="math continued"><math>
+<mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mn>3</mn><mn>3</mn></msup>
+</math></div>
+
+<div class="math continued"><math>
+<mo>=</mo><mo>(</mo><mi>x</mi><mo>+</mo><mn>3</mn><mo>)</mo><mo>(</mo>
+<msup><mi>x</mi><mn>2</mn></msup><mo>&minus;</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>9</mn><mo>)</mo></>
+</math></div>
+
+<!--h2--Difference of Cubes--></div>
+
+<h2 cbc>Application Hints</h2><div>
+
+<p>Pull out GCFs first. That should simplify the next steps.</p>
+<p>Then try the other methods. Reqeat as necessary.</p>
+
+<!--h2--Application Hints--></div>
+
+<h2 cbc>Examples</h2><div>
+
+<h3 cbc>Example 1</h3><div>
+
+<div class="math"><math>
+<mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn><mi>x</mi><mo>&minus;</mo><mn>14</mn>
+</math></div>
+
+<p>There is no common factor that can be pulled out, so we split the middle term and apply the method of grouping. The product of a and c is &minus;28, so we are going to fatorize that value and see wheter a combination adds up to 3.</p>
+
+<table class="flat-borders all centered"><tr>
+	<th><i>b</i><sub>1</sub></th>
+	<th><i>b</i><sub>2</sub></th>
+	<th>Sum</th>
+</tr><tr>
+	<td>28</td>
+	<td>&minus;1</td>
+	<td>27</td>
+</tr><tr>
+	<td>14</td>
+	<td>&minus;2</td>
+	<td>12</td>
+</tr><tr style="color:white;background-color:darkseagreen">
+	<td>7</td>
+	<td>&minus;4</td>
+	<td>3</td>
+</tr></table>
+
+<p>We have a result, and so we can rewrite the exression to have four terms, build groups and pull out common factors:</p>
+
+<div class="math"><math>
+<mo>=</mo>
+<mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>7</mn><mi>x</mi><mo>&minus;</mo><mn>4</mn><mi>x</mi><mo>&minus;</mo><mn>14</mn>
+</math></div>
+
+<div class="math continued"><math>
+<mo>=</mo>
+<mn>2</mn><msup><mi>x</mi><mn>2</mn></msup>
+<mo>&minus;</mo><mn>4</mn><mi>x</mi>
+<mo>+</mo><mn>7</mn><mi>x</mi>
+<mo>&minus;</mo><mn>14</mn>
+</math></div>
+
+<div class="math continued"><math>
+<mo>=</mo>
+<mn>2</mn><mi>x</mi><mo>(</mo>
+<mi>x</mi><mo>&minus;</mo><mn>2</mn><mo>)</mo>
+<mo>+</mo>
+<mn>7</mn><mo>(</mo><mi>x</mi><mo>&minus;</mo><mn>2</mn><mo>)</mo>
+</math></div>
+
+<div class="math continued"><math>
+<mo>=</mo>
+<mo>(</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>7</mn><mo>)</mo>
+<mo>(</mo><mi>x</mi><mo>&minus;</mo><mn>2</mn><mo>)</mo>
+</math></div>
+
+<!--h3--Example 1--></div>
+
+<h3 cbc>Example 2</h3><div>
+
+<div class="math"><math>
+<mo>&minus;</mo><mn>5</mn><msup><mi>x</mi><mn>2</mn></msup>
+<mo>&minus;</mo><mn>45</mn><mi>x</mi>
+<mo>&plus;</mo><mn>50</mn>
+</math></div>
+
+<div class="math continued"><math>
+<mo>=</mo>
+<mo>&minus;</mo><mn>5</mn><mo>(</mo>
+<msup><mi>x</mi><mn>2</mn></msup>
+<mo>&plus;</mo><mn>9</mn><mi>x</mi>
+<mo>&minus;</mo><mn>10</mn>
+<mo>)</mo>
+</math></div>
+
+<p>Looking for the factors of &minus;10 that sum up to &plus;9:</p>
+
+<table class="flat-borders all centered"><tr>
+	<th><i>b</i><sub>1</sub></th>
+	<th><i>b</i><sub>1</sub></th>
+	<th>&Sigma;</th>
+</tr><tr style="color:white;background-color:darkseagreen">
+	<td>&minus;1</td>
+	<td>10</td>
+	<td>9</td>
+</tr></table>
+
+<p>Notice that we have a normalized quadratic term, so the factors are already the roots, and we can write the solution:</p>
+
+<div class="math continued"><math>
+<mo>=</mo>
+<mo>&minus;</mo><mn>5</mn>
+<mo>(</mo><mi>x</mi><mo>&minus;</mo><mn>1</mn><mo>)</mo>
+<mo>(</mo><mi>x</mi><mo>&plus;</mo><mn>10</mn><mo>)</mo>
+</math></div>
+
+
+<!--h3--Example 2--></div>
+
+<!--h2--Examples--></div>
+
+<div class="math"><math>
+
+</math></div>
+
+
+</main><footer id="page-footer"></footer>
+<script type="module" src="/inc/page.js" ></script>
+<script type="module" src="/inc/fragment-loader/simple-fragment-loader-2.js"></script>
+</body></html>

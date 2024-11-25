@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2023-12-17" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-02-21" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-02-21" />
+<meta name="version" content="1" />
+<meta name="categories" content="" />
+<meta name="tags" content="math, linear agebra" />
+<meta name="description" content="" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/page.css" />
+<link rel="stylesheet" href="/inc/css/math.css" />
+<link rel="stylesheet" href="/inc/css/scientific-1.css" />
+
+<title>Math > Complex Numbers > Euler's Formula</title>
+
+</head><body><header id="page-header"><object data="title.svg" type="image/svg+xml"></object></header><div id="main-toolbar"></div><main id="page-content">
+
+<h1>Euler's Formula</h1>
+
+<p id="page-abstract"></p>
+
+<p>We know that the functions <math><mo>sin</mo><mi>x</mi></math>, <math><mo>cos</mo><mi>x</mi></math> and <math><msup><mn>e</mn><mi>x</mi></msup></math> can be developed into <em>Taylor series</em>:</p>
+
+<div class="math"><math>
+<mrow><mo>cos</mo><mi>x</mi></mrow>
+<mo>=</mo>
+<munderover>
+	<mo>∑</mo>
+	<mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow>
+	<mrow><mn>&infin;</mn></mrow>
+	</munderover>
+<mfrac>
+	<msup><mrow><mo>&minus;</mo><mn>1</mn></mrow><mn>n</mn></msup>
+	<mrow><mo>(</mo><mn>2</mn><mi>n</mi><mo>)</mo><mo>!</mo></mrow>
+	</mfrac>
+<mo> </mo>
+<msup><mi>x</mi>
+	<mrow><mn>2</mn><mn>n</mn></mrow>
+	</msup>
+<mo>=</mo>
+<mn>1</mn>
+<mo>&minus;</mo><mfrac>
+	<msup><mi>x</mi><mn>2</mn></msup>
+	<mrow><mn>2</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>+</mo><mfrac>
+	<msup><mi>x</mi><mn>4</mn></msup>
+	<mrow><mn>4</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>&minus;</mo><mfrac>
+	<msup><mi>x</mi><mn>6</mn></msup>
+	<mrow><mn>6</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>&ctdot;</mo>
+</math></div>
+
+<div class="math"><math>
+<mrow><mo>sin</mo><mi>x</mi></mrow>
+<mo>=</mo>
+<munderover>
+	<mo>∑</mo>
+	<mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow>
+	<mrow><mn>&infin;</mn></mrow>
+	</munderover>
+<mfrac>
+	<msup><mrow><mo>&minus;</mo><mn>1</mn></mrow><mn>n</mn></msup>
+	<mrow><mo>(</mo><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo>!</mo></mrow>
+	</mfrac>
+<mo> </mo>
+<msup><mi>x</mi>
+	<mrow><mn>2</mn><mn>n</mn><mo>+</mo><mn>1</mn></mrow>
+	</msup>
+<mo>=</mo>
+<mi>x</mi>
+<mo>&minus;</mo><mfrac>
+	<msup><mi>x</mi><mn>3</mn></msup>
+	<mrow><mn>3</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>+</mo><mfrac>
+	<msup><mi>x</mi><mn>5</mn></msup>
+	<mrow><mn>5</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>&minus;</mo><mfrac>
+	<msup><mi>x</mi><mn>7</mn></msup>
+	<mrow><mn>7</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>&ctdot;</mo>
+</math></div>
+
+<div class="math"><math>
+<msup><mi>e</mi><mi>x</mi></msup>
+<mo>=</mo>
+<munderover><mo>&sum;</mo><mrow><mi>n</mi><mo>+</mo><mn>0</mn></mrow><mn>&infin;</mn></munderover>
+<mfrac>
+	<msup><mi>x</mi><mi>n</mi></msup>
+	<mrow><mo></mo><mi>n</mi><mo>!</mo><mo></mo></mrow>
+	</mfrac>
+<mo>=</mo><mn>1</mn>
+<mo>+</mo><mi>x</mi>
+<mo>+</mo><mfrac>
+	<msup><mi>x</mi><mn>2</mn></msup>
+	<mrow><mn>2</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>+</mo><mfrac>
+	<msup><mi>x</mi><mn>3</mn></msup>
+	<mrow><mn>3</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>+</mo><mfrac>
+	<msup><mi>x</mi><mn>4</mn></msup>
+	<mrow><mn>4</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>&ctdot;</mo>
+</math></div>
+
+<p>If we compare these three series, it seems that the series of <math><mi>e</mi><mi>x</mi></math> is the sum of the <math><mo>sin</mo><mi>x</mi></math> and <math><mo>cos</mo><mi>x</mi></math> series &ndash; but not quite. There are no alternating plus and minus operators.</p>
+
+<p>But see what happens if <math><mi>x</mi></math> is changed to an imaginary number <math><mi>z</mi><mo>=</mo><mi>i</mi><mi>x</mi></math>:</p>
+
+<div class="math"><math>
+<msup><mi>e</mi><mrow><mi>i</mi><mi>x</mi></mrow></msup>
+<mo>=</mo>
+<munderover><mo>&sum;</mo><mrow><mi>n</mi><mo>+</mo><mn>0</mn></mrow><mn>&infin;</mn></munderover>
+<mfrac>
+	<msup><mrow><mo>(</mo><mi>i</mi><mi>x</mi><mo>)</mo></mrow><mi>n</mi></msup>
+	<mrow><mo></mo><mi>n</mi><mo>!</mo><mo></mo></mrow>
+	</mfrac>
+<mo>=</mo><mn>1</mn>
+<mo>+</mo>
+	<mi>i</mi><mi>x</mi>
+<mo>&minus;</mo><mfrac>
+	<msup><mi>x</mi><mn>2</mn></msup>
+	<mrow><mn>2</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>&minus;</mo><mi>i</mi><mtext> </mtext><mfrac>
+	<msup><mi>x</mi><mn>3</mn></msup>
+	<mrow><mn>3</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>+</mo><mfrac>
+	<msup><mi>x</mi><mn>4</mn></msup>
+	<mrow><mn>4</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>+</mo><mi>i</mi><mtext> </mtext><mfrac>
+	<msup><mi>x</mi><mn>5</mn></msup>
+	<mrow><mn>5</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>&minus;</mo><mfrac>
+	<msup><mi>x</mi><mn>6</mn></msup>
+	<mrow><mn>6</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>&ctdot;</mo>
+</math></div>
+
+<p>The fact that even powers of <math><mi>i</mi></math> are minus one introduces a minus sign every fourth term. That looks promising.</p>
+
+<p>So let us separate the real from the imaginary terms:</p>
+
+<div class="math"><math>
+<msup><mi>e</mi><mrow><mi>i</mi><mi>x</mi></mrow></msup>
+<mo>=</mo>
+<mn>1</mn>
+<mo>&minus;</mo><mfrac>
+	<msup><mi>x</mi><mn>2</mn></msup>
+	<mrow><mn>2</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>+</mo><mfrac>
+	<msup><mi>x</mi><mn>4</mn></msup>
+	<mrow><mn>4</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>&minus;</mo><mfrac>
+	<msup><mi>x</mi><mn>6</mn></msup>
+	<mrow><mn>6</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>+</mo>
+<mo>&ctdot;</mo>
+<mo>+</mo>
+	<mi>i</mi><mi>x</mi>
+<mo>&minus;</mo><mi>i</mi><mtext> </mtext><mfrac>
+	<msup><mi>x</mi><mn>3</mn></msup>
+	<mrow><mn>3</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>+</mo><mi>i</mi><mtext> </mtext><mfrac>
+	<msup><mi>x</mi><mn>5</mn></msup>
+	<mrow><mn>5</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>&minus;</mo><mi>i</mi><mtext> </mtext><mfrac>
+	<msup><mi>x</mi><mn>5</mn></msup>
+	<mrow><mn>5</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>&ctdot;</mo>
+</math></div>
+
+<p>Then extract the imaginary unit from terms on the right side:</p>
+
+<div class="math"><math>
+<msup><mi>e</mi><mrow><mi>i</mi><mi>x</mi></mrow></msup>
+<mo>=</mo>
+<mn>1</mn>
+<mo>&minus;</mo><mfrac>
+	<msup><mi>x</mi><mn>2</mn></msup>
+	<mrow><mn>2</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>+</mo><mfrac>
+	<msup><mi>x</mi><mn>4</mn></msup>
+	<mrow><mn>4</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>&minus;</mo><mfrac>
+	<msup><mi>x</mi><mn>6</mn></msup>
+	<mrow><mn>6</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>+</mo>
+<mo>&ctdot;</mo>
+<mo>+</mo>
+	<mi>i</mi><mtext> </mtext><mo>(</mo><mrow>
+	
+<mi>x</mi>
+<mo>&minus;</mo><mtext> </mtext><mfrac>
+	<msup><mi>x</mi><mn>3</mn></msup>
+	<mrow><mn>3</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>+</mo><mtext> </mtext><mfrac>
+	<msup><mi>x</mi><mn>5</mn></msup>
+	<mrow><mn>5</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>&minus;</mo><mtext> </mtext><mfrac>
+	<msup><mi>x</mi><mn>5</mn></msup>
+	<mrow><mn>5</mn><mo>!</mo></mrow>
+	</mfrac>
+<mo>&ctdot;</mo>
+</mrow><mo>)</mo>
+</math></div>
+
+<p>Now it is obvious:</p>
+
+<div class="math"><math>
+<msup><mi>e</mi><mrow><mi>i</mi><mi>x</mi></mrow></msup>
+<mo>=</mo>
+<munderover>
+	<mo>∑</mo>
+	<mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow>
+	<mrow><mn>&infin;</mn></mrow>
+	</munderover>
+<mfrac>
+	<msup><mrow><mo>&minus;</mo><mn>1</mn></mrow><mn>n</mn></msup>
+	<mrow><mo>(</mo><mn>2</mn><mi>n</mi><mo>)</mo><mo>!</mo></mrow>
+	</mfrac>
+<mo>+</mo><mi>i</mi>
+<munderover>
+	<mo>∑</mo>
+	<mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow>
+	<mrow><mn>&infin;</mn></mrow>
+	</munderover>
+<mfrac>
+	<msup><mrow><mo>&minus;</mo><mn>1</mn></mrow><mn>n</mn></msup>
+	<mrow><mo>(</mo><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo>!</mo></mrow>
+	</mfrac>
+<mo>=</mo>
+	<mo>cos</mo><mi>x</mi>
+	<mo>+</mo>
+	<mi>i</mi><mo>sin</mo><mi>x</mi>
+</math></div>
+
+<p>This is the famous</p>
+
+<div data-load-uri="def-007.htm"></div>
+
+<p>The result is extraordinarly interesting, because the imarinary unit <math><mi>i</mi></math> relates continously increasing exponential functions to repetitive sine functions.</p>
+
+</main><footer id="page-footer"></footer>
+<script type="module" src="/inc/page.js" ></script>
+<script type="module">
+const t = document.createElement( "template" );
+for ( const e of document.querySelectorAll( "[data-load-uri]" )) {
+	const response = await fetch( e.getAttribute( "data-load-uri" ));
+	const text = await response.text();
+	t.innerHTML = text ;
+	// t.innerHTML = await ( await fetch( e.getAttribute( "data-load-uri" ))).text( );
+	e.replaceWith( t.content );
+	debugger;
+	}
+</script>
+</body></html>

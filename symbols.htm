@@ -1,0 +1,240 @@
+﻿<!DOCTYPE html>
+<html><head>
+<style>
+.indent { margin-left : 20px }
+.border { border : 1px solid silver }
+.line { text-decoration : overline ; font-family : 'Latin Modern Math' }
+body { margin-left : 20px ; margin-right : 20px ; line-height : 150% }
+vector { font-style: italic; font-family : 'Latin Modern Math' }
+vector > above { vertical-align : 5px ; font-size : smaller }
+svg text { stroke : none ; font-family : 'Latin Modern Math', 'Stix Two Math' } 
+svg text[vector] { font-style : italic }
+svg tspan[sub] { baseline-shift : sub ; font-size : 80% ; font-weight : normal }
+svg tspan[sup] { baseline-shift : super ; font-size : 80% ; font-weight : normal }
+svg tspan { font-size : 100% }
+math {
+	font-family : 'Latin Modern Math', 'Stix Two Math' ;
+	margin-left : 20px ;
+	}
+math[display="inline"] { margin-left: 0px }
+math .narrow { font-size : 60% }  /* alternative to attribute mathsize="50%" */
+/* Definition */
+div.definition :first-child > span { font-style : normal ; color : grey }
+div.definition :first-child > span::before { content : "("  }
+div.definition :first-child > span::after { content : ")"  }
+
+table.min-width td+td { padding-left : 20px }
+table.align-top td { vertical-align : top }
+
+</style>
+
+<!-- &#8407; Combining Right Arrow Above -->
+
+</head><body>
+
+<h1>Symbols</h1>
+
+<h2 cbc>Greek Alphabet</h2><div>
+
+<table id="greek-alphabet" class="no-borders indent min-width"><tbody><tr>
+	<td>&alpha;</td>
+	<td>&Alpha;</td>
+	<td>alpha</td>
+</tr><tr>
+	<td>&beta;</td>
+	<td>&Beta;</td>
+	<td>beta</td>
+</tr><tr>
+	<td>&gamma;</td>
+	<td>&Gamma;</td>
+	<td>gamma</td>
+</tr><tr>
+	<td>&delta;</td>
+	<td>&Delta;</td>
+	<td>delta</td>
+</tr><tr>
+	<td>&epsilon;</td>
+	<td>&Epsilon;</td>
+	<td>epsilon</td>
+</tr><tr>
+	<td>&zeta;</td>
+	<td>&Zeta;</td>
+	<td>zeta</td>
+</tr><tr>
+	<td>&eta;</td>
+	<td>&Eta;</td>
+	<td>eta</td>
+</tr><tr>
+	<td>&theta;</td>
+	<td>&Theta;</td>
+	<td>theta</td>
+</tr><tr>
+	<td>&iota;</td>
+	<td>&Iota;</td>
+	<td>iota</td>
+</tr><tr>
+	<td>&kappa;</td>
+	<td>&Kappa;</td>
+	<td>kappa</td>
+</tr><tr>
+	<td>&lambda;</td>
+	<td>&Lambda;</td>
+	<td>lambda</td>
+</tr><tr>
+	<td>&mu;</td>
+	<td>&Mu;</td>
+	<td>mu</td>
+</tr><tr>
+	<td>&nu;</td>
+	<td>&Nu;</td>
+	<td>nu</td>
+</tr><tr>
+	<td>&xi;</td>
+	<td>&Xi;</td>
+	<td>xi</td>
+</tr><tr>
+	<td>&omicron;</td>
+	<td>&Omicron;</td>
+	<td>omicron</td>
+</tr><tr>
+	<td>&pi;</td>
+	<td>&Pi;</td>
+	<td>pi</td>
+</tr><tr>
+	<td>&rho;</td>
+	<td>&Rho;</td>
+	<td>rho</td>
+</tr><tr>
+	<td>&sigma;</td>
+	<td>&Sigma;</td>
+	<td>sigma</td>
+</tr><tr>
+	<td>&tau;</td>
+	<td>&Tau;</td>
+	<td>tau</td>
+</tr><tr>
+	<td>&upsilon;</td>
+	<td>&Upsilon;</td>
+	<td>uspsilon</td>
+</tr><tr>
+	<td>&phi;</td>
+	<td>&Phi;</td>
+	<td>phi</td>
+</tr><tr>
+	<td>&chi;</td>
+	<td>&Chi;</td>
+	<td>chi</td>
+</tr><tr>
+	<td>&psi;</td>
+	<td>&Psi;</td>
+	<td>psi</td>
+</tr><tr>
+	<td>&omega;</td>
+	<td>&Omega;</td>
+	<td>omega</td>
+</tr></tbody></table>
+
+<!--h2--></div>
+
+<h2 cbc>Quantifiers</h2><div>
+
+<table id="quantifiers" class="indent no-borders min-width"><tbody><tr>
+	<td>&exist;</td>
+	<td>there exists</td>
+	<td>universal quantifier</td>
+</tr><tr>
+	<td>&forall;</td>
+	<td>for all</td>
+	<td>existential quantifier</td>
+</tr></tbody></table>
+
+<!--h2--></div>
+
+<h2 cbc>Operators</h2><div>
+
+<table class="no-borders indent min-width align-top"><tbody><tr>
+	<td>&sdot;</td>
+	<td>Dot operator, used for multiplication, with wide space around.<br/>&amp;sdot;</td>
+</tr><tr>
+	<td>&middot;</td>
+	<td>Multiplication operator, with narrow space around.<br />&amp;middot;</td>
+</tr><tr>
+	<td>&times;</td>
+	<td>Multiplication operator, cross product, vector product.<br />&amp;times;</td>
+</tr><tr>
+	<td>&ne;</td>
+	<td>Not equal to.<br />&amp;ne;</td>
+</tr></tbody></table>
+
+<!--h2--></div>
+
+<h2 cbc>Set Theory</h2><div>
+
+<table class="no-borders indent min-width"><tbody><tr>
+	<td>|</td>
+	<td>such that</td>
+</tr><tr>
+	<td>&isin;</td>
+	<td>is in, is element of</td>
+</tr><tr>
+	<td>&NotElement;</td>
+	<td>is not element of</td>
+</tr><tr>
+	<td>=</td>
+	<td>Equality; A=B means if A and B have the same elements</td>
+</tr><tr>
+	<td>{a|p(a)}</td>
+	<td>the set of a such that p(a) is true</td>
+</tr><tr>
+	<td>&sub;</td>
+	<td>subset of</td>
+</tr><tr>
+	<td>&nsub;</td>
+	<td>not a subset of</td>
+</tr><tr>
+	<td>&cap;</td>
+	<td>Intersection, elements which are both in A and B</td>
+</tr><tr>
+	<td>&cup;</td>
+	<td>Union, elements are either in A, or B</td>
+</tr><tr>
+	<td>&Cross;</td>
+	<td>a set of ordered pairs (a,b) with a &isin; A and b &isin; B</td>
+</tr><tr>
+	<td>&minus;</td>
+	<td>Complement, A &minus; B is the set of elements in A that are not in B</td>
+</tr><tr>
+	<td>&complement;</td>
+	<td>alternative complement operator</td>
+</tr><tr>
+	<td>&varnothing;</td>
+	<td>empty set</td>
+</tr>
+</tbody></table>
+
+<!--h2--></div>
+
+<h2 cbc>Standard Number Sets</h2><div>
+
+<table class="no-borders indent min-width"><tbody>
+<tr>
+	<td>&Nopf;</td>
+	<td>Natural numbers, positive integer numbers, including zero.</td>
+</tr><tr>
+	<td>&Zopf;</td>
+	<td>integer numbers, signed whole numbers, including zero.</td>
+</tr><tr>
+	<td>&Qopf;</td>
+	<td>rational numbers p/q, with p, q &isin; &Zopf; , q &ne; 0</td>
+</tr><tr>
+	<td>&Ropf;</td>
+	<td>real numbers, infinite decimals</td>
+</tr><tr>
+	<td>&Copf;</td>
+	<td>complex numbers {a &plus; ib | a, b &isin; &Ropf; }</td>
+</tr></tbody></table>
+
+<!--h2--></div>
+
+</body>
+</html>

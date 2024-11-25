@@ -1,0 +1,1120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2022-02-09" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-01-20" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-03-08" />
+<meta name="version" content="1" />
+<meta name="categories" content="Math > Calculus > Matrix" />
+<meta name="tags" content="math, calculus, algebra, matrix" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="/inc/page.css" />
+<link rel="stylesheet" href="/inc/css/math.css" />
+<link rel="stylesheet" href="/inc/css/scientific-1.css" />
+<style>
+div.theorem > figcaption:before { content : "" }
+div.definition > figcaption:before { content : "" }
+</style>
+
+<title>Math >  Linear Algebra - 1.7 Linear Independence</title>
+
+</head><body><header id="page-header"></header><div id="main-toolbar"></div><main id="page-content">
+
+<h1>1.7 Linear Independence</h1>
+
+<p id="page-abstract"></p>
+
+<p>In the previous section, we focused on the solutions of a matrix equation <math><mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>=</mo><mover><mn>0</mn><mo>&rarr;</mo></mover></math>. In this section, we will study them from the perspective of <em>vector equations</em>.</p>
+
+<h2 cbc>Linear Independence of Vectors</h2><div>
+
+<p>Consider the following homogeneous vector equation:</p>
+
+<div class="math" id="equation-1"><math><mtable class="numbered equation"><mtr>
+<mtd>
+	<msub><mi>x</mi><mn>1</mn></msub>
+	<mo>[</mo><mtable>
+		<mtr><mtd><mn>1</mn></mtd></mtr>
+		<mtr><mtd><mn>2</mn></mtd></mtr>
+		<mtr><mtd><mn>3</mn></mtd></mtr>
+	</mtable><mo>]</mo>
+	<mo>+</mo>
+	<msub><mi>x</mi><mn>2</mn></msub>
+	<mo>[</mo><mtable>
+		<mtr><mtd><mn>4</mn></mtd></mtr>
+		<mtr><mtd><mn>5</mn></mtd></mtr>
+		<mtr><mtd><mn>6</mn></mtd></mtr>
+	</mtable><mo>]</mo>
+	<mo>+</mo>
+	<msub><mi>x</mi><mn>3</mn></msub>
+	<mo>[</mo><mtable>
+		<mtr><mtd><mn>2</mn></mtd></mtr>
+		<mtr><mtd><mn>1</mn></mtd></mtr>
+		<mtr><mtd><mn>0</mn></mtd></mtr>
+	</mtable><mo>]</mo>
+	<mo>=</mo>
+	<mo>[</mo><mtable>
+		<mtr><mtd><mn>0</mn></mtd></mtr>
+		<mtr><mtd><mn>0</mn></mtd></mtr>
+		<mtr><mtd><mn>0</mn></mtd></mtr>
+	</mtable><mo>]</mo>
+</mtd><mtd>
+	(1)
+</mtd></mtr></mtable>
+</math></div>
+
+<p>It is immediately visible that this equation has a trivial solution, where <math><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><msub><mi>x</mi><mn>3</mn></msub><mo>=</mo><mn>0</mn></math>. As in the previous section, the question is whether the trivial solution is the only one.</p>
+
+<div class="definition" id="definition-1-7-1">
+<figcaption>Definition 1.7.1 &ensp; Linearly Independent Set of Vectors</figcaption>
+<p>An indexed set of vectors <math><mo>{</mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>, &ctdot; ,</mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>m</mn></msub><mo>}</mo><mtext> in </mtext><msup><mi>ℝ</mi><mn>n</mn></msup></math> is <em>linearly independent</em> if the vector equation</p>
+
+<div class="math"><math>
+<mtable class="numbered equation"><mtr><mtd>
+	<msub><mi>x</mi><mn>1</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>+</mo><mo>&ctdot;</mo><mo>+</mo><msub><mi>x</mi><mn>m</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>m</mn></msub><mo>=</mo><mover><mn>0</mn><mo>&rarr;</mo></mover>
+</mtd><mtd>
+	(2)
+</mtd></mtr></mtable>
+</math></div>
+
+<p>has only one trivial solution. If there are one or more non-trivial solutions, the set of vectors is <em>linearly dependent</em>.</p>
+</div>
+
+<p>Example</p>
+
+<div class="math"><math>
+<mtext>Let </mtext>
+<msub><mi>x</mi><mn>1</mn></msub>
+<mo>=</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><mn>1</mn></mtd></mtr>
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+	<mtr><mtd><mn>3</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo> , </mo>
+<msub><mi>x</mi><mn>2</mn></msub>
+<mo>=</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><mn>4</mn></mtd></mtr>
+	<mtr><mtd><mn>5</mn></mtd></mtr>
+	<mtr><mtd><mn>6</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo> , </mo>
+<msub><mi>x</mi><mn>3</mn></msub>
+<mo>=</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+	<mtr><mtd><mn>1</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo> . </mo>
+</math></div>
+
+<ol>
+<li>Determine if that set of vectors is linearly dependent.</li>
+<li>Find a linear dependence relation among those vectors.</li>
+</ol>
+
+<p>Solution</p>
+
+<p>To answer question 1, we create a reduced augmented matrix for the equation:</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>5</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>6</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>&minus;3</mn></mtd>
+	<mtd><mn>&minus;3</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>&minus;6</mn></mtd>
+	<mtd><mn>&minus;6</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>&minus;2</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<p>The second step already reveals that row 3 is a multiple of row 2, and can therefore replaced by all zeroes. Now the third column has no pivot element, so <math><msub><mi>x</mi><mn>3</mn></msub></math> is a free variable. Each non-zero value of <math><msub><mi>x</mi><mn>3</mn></msub></math> determines a non-trivial solution of <a href="#equation-1">equation (1)</a>. Hence, the set of vectors is linearly dependent.</p>
+
+<p>To answer the second question, we use the fully reduced matrix and express the fixed variables in terms of <math><msub><mi>x</mi><mn>3</mn></msub></math>:</p>
+
+<div class="math"><math>
+<mover><mi>x</mi><mo>&rarr;</mo></mover>
+<mo>=</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><msub><mi>x</mi><mn>1</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>x</mi><mn>2</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>x</mi><mn>3</mn></msub></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<mo>[</mo><mtable class="matrix">
+	<mtr><mtd><mn>2</mn><msub><mi>x</mi><mn>3</mn></msub></mtd></mtr>
+	<mtr><mtd><mn>&minus;</mn><msub><mi>x</mi><mn>3</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>x</mi><mn>3</mn></msub></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<msub><mi>x</mi><mn>3</mn></msub>
+<mo>[</mo><mtable class="matrix">
+	<mtr><mtd><mn>2</mn><msub></mtd></mtr>
+	<mtr><mtd><mn>&minus;1</mn></mtd></mtr>
+	<mtr><mtd><mn>1</mn></mtd></mtr>
+</mtable><mo>]</mo>
+</math></div>
+
+<p>If we choose <math><msub><mi>x</mi><mn>3</mn></msub><mo>=</mo><mn>5</mn></math>, we get the solution vector</p>
+
+<div class="math"><math>
+<mover><mi>x</mi><mo>&rarr;</mo></mover>
+<mo>=</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><msub><mi>x</mi><mn>1</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>x</mi><mn>2</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>x</mi><mn>3</mn></msub></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<mn>5</mn>
+<mo lspace="5px">[</mo><mtable class="matrix">
+	<mtr><mtd><mn>2</mn><msub></mtd></mtr>
+	<mtr><mtd><mn>&minus;1</mn></mtd></mtr>
+	<mtr><mtd><mn>1</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<mo>[</mo><mtable class="matrix">
+	<mtr><mtd><mn>10</mn><msub></mtd></mtr>
+	<mtr><mtd><mn>&minus;5</mn></mtd></mtr>
+	<mtr><mtd><mn>5</mn></mtd></mtr>
+</mtable><mo>]</mo>
+</math></div>
+
+<p>Which solves equation (1)</p>
+
+<div class="math" id="equation-1"><math>
+<mn>10</mn>
+<mo lspace="5px">[</mo><mtable>
+	<mtr><mtd><mn>1</mn></mtd></mtr>
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+	<mtr><mtd><mn>3</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>&minus;</mo>
+<mn>5</mn>
+<mo lspace="5px">[</mo><mtable>
+	<mtr><mtd><mn>4</mn></mtd></mtr>
+	<mtr><mtd><mn>5</mn></mtd></mtr>
+	<mtr><mtd><mn>6</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>+</mo>
+<mn>5</mn>
+<mo lspace="5px">[</mo><mtable>
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+	<mtr><mtd><mn>1</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+</mtable><mo>]</mo>
+</math></div>
+
+<!--h2--Linear Independence of Vectors--></div>
+
+<h2 cbc>Linear Independence of Matrix Columns</h2><div>
+
+<p>Suppose we begin with a matrix</p>
+
+<div class="math"><math>
+<mi>A</mi><mo>=</mo><mo>[</mo><msum><mover><mi>a</mi><mo>&rarr;</mo></mover><mn>1</mn></msum><mo>+</mo><msum><mover><mi>a</mi><mo>&rarr;</mo></mover><mn>2</mn></msum><mo>+ &ctdot; +</mo><msum><mover><mi>a</mi><mo>&rarr;</mo></mover><mn>n</mn></msum><mo>]</mo>
+</math></div>
+
+<p>instead of vectors. The matrix equation </p>
+
+<div class="math"><math>
+<mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>=</mo><mover><mn>0</mn><mo>&rarr;</mo></mover>
+</math></div>
+
+<p>can be written as</p>
+
+<div class="math"><math>
+<msub><mi>x</mi><mn>1</mn></msub><msub><mover><mi>a</mi><mo>&rarr;</mo></mover><mn>1</mn></msub>
+<mo>+</mo>
+<msub><mi>x</mi><mn>2</mn></msub><msub><mover><mi>a</mi><mo>&rarr;</mo></mover><mn>2</mn></msub>
+<mo>+ &ctdot; +</mo>
+<msub><mi>x</mi><mn>n</mn></msub><msub><mover><mi>a</mi><mo>&rarr;</mo></mover><mn>n</mn></msub>
+<mo>=</mo>
+<mover><mn>0</mn><mo>&rarr;</mo></mover>
+</math></div>
+
+<p>Each linear dependence relation among the columns of A corresponds to a nontrivial solution of <math><mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>=</mo><mover><mn>0</mn><mo>&rarr;</mo></mover></math>. This we have the following important fact:</p>
+
+<div class="fact" id="fact-1-7-1"><figcaption>Fact 1.7.1 &ensp; Linear Independence of Matrix Columns</figcaption>
+<p>The columns of a matrix A are linearly independent if and only if the equation
+ <math><mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>=</mo><mover><mn>0</mn><mo>&rarr;</mo></mover></math> has only the trivial solution x<sub>i</sub>=0.</p>
+</div>
+
+<p>Example 2: Determine if the columns of the matrix </p>
+
+<div class="math"><math>
+<mi>A</mi><mo>=</mo>
+<mo>[</mo><mtable><mrow>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+</mrow><mrow>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>&minus;1</mn></mtd>
+</mrow><mrow>
+	<mtd><mn>5</mn></mtd>
+	<mtd><mn>8</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mrow></mtable><mo>]</mo>
+</math></div>
+
+<p>are linearly independent.</p>
+
+<p>Solution</p>
+
+<p>We look for the solution of <math><mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>=</mo><mover><mn>0</mn><mo>&rarr;</mo></mover></math>, and create, then reduce the augmented matrix:</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable><mtr>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>4</mtd>
+	<mtd>0</mtd>
+</mtr><mtr>
+	<mtd>1</mtd>
+	<mtd>2</mtd>
+	<mtd>&minus;1</mtd>
+	<mtd>0</mtd>
+</mtr><mtr>
+	<mtd>5</mtd>
+	<mtd>8</mtd>
+	<mtd>0</mtd>
+	<mtd>0</mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable><mtr>
+	<mtd>1</mtd>
+	<mtd>2</mtd>
+	<mtd>&minus;1</mtd>
+	<mtd>0</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>4</mtd>
+	<mtd>0</mtd>
+</mtr><mtr>
+	<mtd>5</mtd>
+	<mtd>8</mtd>
+	<mtd>0</mtd>
+	<mtd>0</mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable><mtr>
+	<mtd>1</mtd>
+	<mtd>2</mtd>
+	<mtd>&minus;1</mtd>
+	<mtd>0</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>4</mtd>
+	<mtd>0</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>-2</mtd>
+	<mtd>5</mtd>
+	<mtd>0</mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable><mtr>
+	<mtd>1</mtd>
+	<mtd>0</mtd>
+	<mtd>&minus;9</mtd>
+	<mtd>0</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>4</mtd>
+	<mtd>0</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>0</mtd>
+	<mtd>13</mtd>
+	<mtd>0</mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<p>At this point it is clear that there are no free variables. So the matrix equation has only one trivial solution, and therefore the columns of A are linearly independent.</p>
+
+<p>As an exercise, we reduce further to verify that the solution is correct:</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable><mtr>
+	<mtd>1</mtd>
+	<mtd>0</mtd>
+	<mtd>&minus;9</mtd>
+	<mtd>0</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>4</mtd>
+	<mtd>0</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>0</mtd>
+	<mtd>13</mtd>
+	<mtd>0</mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable><mtr>
+	<mtd>1</mtd>
+	<mtd>0</mtd>
+	<mtd>&minus;9</mtd>
+	<mtd>0</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>4</mtd>
+	<mtd>0</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>0</mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable><mtr>
+	<mtd>1</mtd>
+	<mtd>0</mtd>
+	<mtd>&minus;9</mtd>
+	<mtd>0</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>0</mtd>
+	<mtd>0</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>0</mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable><mtr>
+	<mtd>1</mtd>
+	<mtd>0</mtd>
+	<mtd>0</mtd>
+	<mtd>0</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>0</mtd>
+	<mtd>0</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>0</mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<p>Now we can extract the solution:</p>
+
+<div class="math"><math>
+<mover><mi>x</mi><mo>&rarr;</mo></mover>
+<mo>=</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><msub><mi>x</mi><mn>1</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>x</mi><mn>2</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>x</mi><mn>3</mn></msub></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+</mtable><mo>]</mo>
+</math></div>
+
+<p>The solution is indeed the null vector. To verify the solution, we inject <math><mover><mi>x</mi><mo>&rarr;</mo></mover></math> into the matrix equation:</p>
+
+<div class="math"><math>
+<mi>A</mi>
+<mover><mi>x</mi><mo>&rarr;</mo></mover>
+<mo>=</mo>
+<mo>[</mo><mtable class="matrix"><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>&minus;1</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>5</mn></mtd>
+	<mtd><mn>8</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<mo>[</mo><mtable><mtr><mtd>
+	<mn>0</mn><mo>&sdot;</mo><mn>0</mn>
+	<mo>+</mo>
+	<mn>1</mn><mo>&sdot;</mo><mn>0</mn>
+	<mo>+</mo>
+	<mn>4</mn><mo>&sdot;</mo><mn>0</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>1</mn><mo>&sdot;</mo><mn>0</mn>
+	<mo>+</mo>
+	<mn>2</mn><mo>&sdot;</mo><mn>0</mn>
+	<mo>&minus;</mo>
+	<mn>1</mn><mo>&sdot;</mo><mn>0</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>5</mn><mo>&sdot;</mo><mn>0</mn>
+	<mo>+</mo>
+	<mn>8</mn><mo>&sdot;</mo><mn>0</mn>
+	<mo>+</mo>
+	<mn>0</mn><mo>&sdot;</mo><mn>0</mn>
+</mtd></mtr></mtable><mo>]</mo>
+<mo>=</mo>
+<mo>[</mo><mtable><mtr><mtd>
+	<mn>0</mn>
+	<mo>+</mo>
+	<mn>0</mn>
+	<mo>+</mo>
+	<mn>0</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>0</mn>
+	<mo>+</mo>
+	<mn>0</mn>
+	<mo>&minus;</mo>
+	<mn>0</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>0</mn>
+	<mo>+</mo>
+	<mn>0</mn>
+	<mo>+</mo>
+	<mn>0</mn>
+</mtd></mtr></mtable><mo>]</mo>
+<mo>=</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<mover><mn>0</mn><mo>&rarr;</mo></mover>
+</math></div>
+
+<p>This indeed shows that the trivial solution is correct, it is the zero vector.</p>
+
+<!--h2--Linear Independence of Matrix Columns--></div>
+
+<h2 cbc>Sets of One or Two Vectors</h2><div>
+
+<div class="fact" id="fact-1-7-2"><figcaption>Fact 1.7.2 &ensp; Linear independence of a single vector</figcaption>
+<p>A set of one vector is linearly independent if and only if the vector is not the zero vector.</p>
+</div>
+
+<p>What about a set of two vectors?</p>
+
+<p>Example 3a: Determine if the vectors are linearly independent:</p>
+
+<div class="math"><math>
+<msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>=</mo><mo>[</mo><mtable>
+	<mtr><mtd><mn>3</mn></mtd></mtr>
+	<mtr><mtd><mn>1</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo> , </mo>
+<msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>2</mn></msub><mo>=</mo><mo>[</mo><mtable>
+	<mtr><mtd><mn>6</mn></mtd></mtr>
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+</mtable><mo>]</mo>
+</math></div>
+
+<p>We can immediately see that <math><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>2</mn></msub></math> is a multiple of <math><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub></math>:</p>
+
+<div class="math"><math>
+<msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>2</mn></msub>
+<mo>=</mo>
+<mn>2</mn><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub>
+</math></div>
+
+<p>Hence </p>
+
+<div class="math"><math>
+<mn>&minus;2</mn><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub>
+<mo>+</mo>
+<msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>2</mn></msub>
+<mo>=</mo>
+<mover><mn>0</mn><mo>&rarr;</mo></mover>
+</math></div>
+
+<p>which shows that these vectors are linearly dependent.</p>
+
+<p>Example 3b: Determine if the vectors are linearly independent:</p>
+
+<div class="math"><math>
+<msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>=</mo><mo>[</mo><mtable>
+	<mtr><mtd><mn>3</mn></mtd></mtr>
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo> , </mo>
+<msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>2</mn></msub><mo>=</mo><mo>[</mo><mtable>
+	<mtr><mtd><mn>6</mn></mtd></mtr>
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+</mtable><mo>]</mo>
+</math></div>
+
+<p>Solution: These vectors are certainly <em>not</em> multiples of each other, because 6 = 2 &times; 3 and 2 = 1 &times; 2.</p>
+
+<p>Let's assume <math><mi>a</mi><mo>&ne;</mo><mn>0</mn></math> and <math><mi>b</mi></math> satisfy the equation</p>
+
+<div class="math"><math>
+<mi>a</mi><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub>
+<mo>+</mo>
+<mi>b</mi><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>2</mn></msub>
+<mo>=</mo>
+<mover><mn>0</mn><mo>&rarr;</mo></mover>
+</math></div>
+
+<p>Then we can solve for <math><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub></math>:</p>
+<div class="math"><math>
+<msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub>
+<mo>=</mo>
+<mo>(</mo><mo>&minus;</mo><mfrac><mi>b</mi><mi>a</mi></mfrac><mo rspace="5px">)</mo>
+<msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>2</mn></msub>
+<mo>=</mo>
+<mi>c</mi>
+<mtext> </mtext>
+<msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>2</mn></msub>
+</math></div>
+
+<p>According to this equation, there should be a scalar <math><mi>c</mi></math> that relates <math><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub></math> to <math><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>2</mn></msub></math>. But there isn't, as we have found at the beginning. So the conclusion is that <math><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub></math> and <math><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>2</mn></msub></math> are linearly independent.</p>
+
+<p>The previous example shows that can decide by <em>inspection</em> whether a set of two vectors is linearly dependent, or not. There is no need for calculating a reduced matrix, searching for a common factor between vector components is sufficient. So we can conclude the following fact:</p>
+
+<div class="fact" id="fact-1-7-3"><figcaption>Fact 1.7.3 &ensp; Linear Dependence Between Two Vectors</figcaption>
+<p>A set of two vectors <math><mo>{</mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo> , </mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>2</mn></msub><mo>}</mo></math> is linearly dependent if one vector is a multiple of the other.</p>
+<p>The set is linearly independent if and only if neither of the vectors is a multiple of the other.</p>
+</div>
+
+<!--h2--Sets of One or Two Vectors--></div>
+
+<h2 cbc>Sets of Two or More Vectors</h2><p>
+
+<p>That leads to a generalization:</p>
+
+<div class="theorem" id="theorem-1-7-1"><figcaption>Theorem 1.7.1 &ensp; Linearly Dependent Set</figcaption>
+<p>An indexed set <math><mo>{</mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>, &ctdot; ,</mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>n</mn></msub><mo>}</mo></math> of non-zero vectors with <math><mi>n</mi><mo>&ge;</mo><mn>2</mn></math> is linearly dependend if and only if at least one of the vectors is a linear combination of the others.</p>
+<p>In particular, if <math><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>&ne;</mo><mover><mn>0</mn><mo>&rarr;</mo></mover></math> and <em>some</em> <math><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>i</mn></msub></math> with i &gt; 1 is a linear combination of the preceding vectors <math><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>, &ctdot; </mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>i&minus;1</mn></msub></math>.</p>
+</div>
+
+<p>Note that <em>not every</em> vector is a linear combination of the preceding vectors. The theorem states that there  <em>exists</em> a vector that is a linear combination of the preceding vectors.</p>
+
+<p>Also note that a specific vector may <em>not</em> be a linear combination of the others.</p>
+
+<p>Proof</p>
+
+<p>(Note: This proof might be a little hard to follow at first, but you can always return later.)</p>
+
+<p>If some <math><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mi>i</mi></msub><mtext> in </mtext><mi>S</mi></math> equals a linear combination of the other vectors, for instance</p>
+
+<div class="math"><math>
+<msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mi>1</mi></msub>
+<mo>=</mo>
+<msub><mi>c</mi><mn>2</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mi>2</mi></msub>
+<mo>+</mo>
+<msub><mi>c</mi><mn>3</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mi>3</mi></msub>
+</math></div>
+
+<p>Then <math><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mi>1</mi></msub></math> can be subtracted from both sides of this equation, and we can add the other elements of the set with a scalar zero:</p>
+
+<div class="math"><math>
+<mover><mn>0</mn><mo>&rarr;</mo></mover>
+<mo>=</mo>
+<mo>(</mo><mn>&minus;1</mn><mo>)</mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mi>1</mi></msub>
+<mo>+</mo>
+<msub><mi>c</mi><mn>2</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mi>2</mi></msub>
+<mo>+</mo>
+<msub><mi>c</mi><mn>3</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mi>3</mi></msub>
+<mo>+</mo>
+<mn>0</mn><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mi>4</mi></msub>
+<mo>+ &ctdot; +</mo>
+<mn>0</mn><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mi>n</mi></msub>
+
+</math></div>
+
+<p>It follows that S is linear dependent.</p>
+<p>Conversly, suppors that S is linear dependent. If <math><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>=</mo><mover><mn>0</mn><mo>&rarr;</mo></mover></math>, then it is a trivial linear combination of the other vectors in S. Otherwise, <math><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>&ne;</mo><mover><mn>0</mn><mo>&rarr;</mo></mover></math>, and there exist weights <math><msub><mi>c</mi><mn>1</mn></msub><mo>, &ctdot; ,</mo><msub><mi>c</mi><mn>n</mn></msub></math>, not all zero, such that</p>
+
+<div class="math"><math>
+<msub><mi>c</mi><mn>1</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub>
+<mo>+</mo>
+<msub><mi>c</mi><mn>2</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>2</mn></msub>
+<mo>+ &ctdot; +</mo>
+<msub><mi>c</mi><mn>n</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>n</mn></msub>
+<mo>=</mo>
+<mover><mn>0</mn><mo>&rarr;</mo></mover>
+</math></div>
+
+<p>Let i be the largest subscript for which <math><msub><mi>c</mi><mn>i</mn></msub><mo>&ne;</mo><mn>0</mn></math>. If i=1, then <math><msub><mi>c</mi><mn>1</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>=</mo><mover><mn>0</mn><mo>&rarr;</mo></mover></math>, which is impossible because <math><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>&ne;</mo><mover><mn>0</mn><mo>&rarr;</mo></mover></math>.</p>
+
+<p>So <math><mi>i</mi><mo>&gt;</mo><mn>1</mn></math>, and</p>
+
+<div class="math"><math>
+<msub><mi>c</mi><mn>1</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub>
+<mo>+ &ctdot; +</mo>
+<msub><mi>c</mi><mn>i</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>i</mn></msub>
+<mo>+</mo>
+<mn>0</mn><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>i+1</mn></msub>
+<mo>+ &ctdot; +</mo>
+<mn>0</mn><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>n</mn></msub>
+<mo>=</mo>
+<mover><mn>0</mn><mo>&rarr;</mo></mover>
+</math></div>
+
+<p>We can now isolate <math><msub><mi>c</mi><mn>i</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>i</mn></msub></math> by bringing the other terms to the other side:</p>
+
+<div class="math"><math>
+<msub><mi>c</mi><mn>i</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>i</mn></msub>
+<mo>=</mo>
+<mo>&minus;</mo><msub><mi>c</mi><mn>1</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub>
+<mo>&minus; &ctdot; &minus;</mo>
+<msub><mi>c</mi><mn>i&minus;1</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>i&minus;1</mn></msub>
+</math></div>
+
+<p>The rest can be dropped because of their scalar zero. To isolate <math><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>i</mn></msub></math>, we only need to divide:</p>
+
+<div class="math"><math>
+<msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>i</mn></msub>
+<mo>=</mo>
+<mo>(</mo><mo>&minus;</mo><mfrac>
+	<msub><mi>c</mi><mn>1</mn></msub>
+	<msub><mi>c</mi><mn>i</mn></msub>
+	</mfrac><mo rspace="3px">)</mo>
+	<msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub>
+<mo>&minus; &ctdot; &minus;</mo>
+<mo>(</mo><mo>&minus;</mo><mfrac>
+	<msub><mi>c</mi><mn>i&minus;1</mn></msub>
+	<msub><mi>c</mi><mn>i</mn></msub>
+	</mfrac><mo rspace="3px">)</mo>
+	<msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>i&minus;1</mn></msub>
+</math></div>
+
+<p>q. e. d.</p>
+
+
+<p>Example 4: Let <math><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>=</mo><mo>[</mo><mtable><mtr><mtd><mn>3</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>]</mo></math> and <math><mover><mi>v</mi><mo>&rarr;</mo></mover><mo>=</mo><mo>[</mo><mtable><mtr><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>6</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>]</mo></math>. Describe the set spanned by <math><mover><mi>u</mi><mo>&rarr;</mo></mover></math> and <math><mover><mi>v</mi><mo>&rarr;</mo></mover></math> and explain, why a vector <math><mover><mi>w</mi><mo>&rarr;</mo></mover></math> is in <math><mi>Span</mi><mo>{</mo><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>,</mo><mover><mi>v</mi><mo>&rarr;</mo></mover><mo>}</mo></math> if and only if <math><mi>Span</mi><mo>{</mo><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>,</mo><mover><mi>v</mi><mo>&rarr;</mo></mover><mo>,</mo><mover><mi>w</mi><mo>&rarr;</mo></mover><mo>}</mo></math> is linearly dependent.</p>
+
+<p>Solution</p>
+
+<p>The vectors <math><mover><mi>u</mi><mo>&rarr;</mo></mover></math> and <math><mover><mi>v</mi><mo>&rarr;</mo></mover></math> are linearly independent because neither is a multiple of the other. So they span a plane in <math><msup><mi>&#x211D;</mi><mn>3</mn></msup></math>. In fact, because <math><msub><mi>x</mi><mn>3</mn></msub></math> is zero, it is the <math><msub><mi>x</mi><mn>1</mn></msub><msub><mi>x</mi><mn>2</mn></msub></math> plane.</p>
+
+<p>If <math><mover><mi>w</mi><mo>&rarr;</mo></mover></math> is a linear combination of <math><mover><mi>u</mi><mo>&rarr;</mo></mover></math> and <math><mover><mi>v</mi><mo>&rarr;</mo></mover></math>, then by theorem 7 <math><mi>Span</mi><mo>{</mo><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>,</mo><mover><mi>v</mi><mo>&rarr;</mo></mover><mo>,</mo><mover><mi>w</mi><mo>&rarr;</mo></mover><mo>}</mo></math> is linearly dependent.</p>
+
+<p>Conversly, suppose that <math><mi>Span</mi><mo>{</mo><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>,</mo><mover><mi>v</mi><mo>&rarr;</mo></mover><mo>,</mo><mover><mi>w</mi><mo>&rarr;</mo></mover><mo>}</mo></math> is linearly dependent. By theorem 7, some vector in <math><mi>Span</mi><mo>{</mo><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>,</mo><mover><mi>v</mi><mo>&rarr;</mo></mover><mo>,</mo><mover><mi>w</mi><mo>&rarr;</mo></mover><mo>}</mo></math> is a linear combination of the preceding vectors, because <math><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>&ne;</mo><mover><mn>0</mn><mo>&rarr;</mo></mover></math>. That vector must be <math><mover><mi>w</mi><mo>&rarr;</mo></mover></math>, since <math><mover><mi>u</mi><mo>&rarr;</mo></mover></math> is not a multiple of <math><mover><mi>v</mi><mo>&rarr;</mo></mover></math>. So <math><mover><mi>w</mi><mo>&rarr;</mo></mover></math> is in <math><mi>Span</mi><mo>{</mo><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>,</mo><mover><mi>v</mi><mo>&rarr;</mo></mover><mo>}</mo></math>.</p>
+
+<p>Example 4 can be generalized to any set <math><mo>{</mo><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>,</mo><mover><mi>v</mi><mo>&rarr;</mo></mover><mo>,</mo><mover><mi>w</mi><mo>&rarr;</mo></mover><mo>}</mo></math> in <math><msup><mi>&#x211D;</mi><mn>3</mn></msup></math> with <math><mover><mi>u</mi><mo>&rarr;</mo></mover></math> and <math><mover><mi>v</mi><mo>&rarr;</mo></mover></math> being linearly independent. The set <math><mo>{</mo><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>,</mo><mover><mi>v</mi><mo>&rarr;</mo></mover><mo>,</mo><mover><mi>w</mi><mo>&rarr;</mo></mover><mo>}</mo></math> will be linearly dependent if and only if <math><mover><mi>w</mi><mo>&rarr;</mo></mover></math> is in the plane spanned by <math><mover><mi>u</mi><mo>&rarr;</mo></mover></math> and <math><mover><mi>v</mi><mo>&rarr;</mo></mover></math>.</p>
+
+<div class="theorem" id="theorem-1-7-2"><figcaption>Theorem 1.7.2 &ensp; </figcaption>
+<p>Any set <math><mo>{</mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>, &ctdot; ,</mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>n</mn></msub><mo>}</mo></math> in <math><msup><mi>&#x211D;</mi><mn>m</mn></msup></math> is linearly dependent if <math><mi>n</mi><mo>&gt;</mo><mi>m</mi></math>.</p>
+</div>
+
+<p>If a set contains more vectors than there are components in each vector, the the set is linearly dependent.</p>
+
+<p>Proof</p>
+
+<p>Let <math><mi>A</mi><mo>=</mo><mo>[</mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo> &ctdot; </mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>n</mn></msub><mo>]</mo></math> is a matrix of size m &times; n, and the equation <math><mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>=</mo><mover><mn>0</mn><mo>&rarr;</mo></mover></math>corresponds to a system of m equations in n unknowns. If n &gt; m, there are more variables than equations, so there must be a free variable. Therefore <math><mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>=</mo><mover><mn>0</mn><mo>&rarr;</mo></mover></math> has a nontrivial solution, and the columns of A are linearly dependent.</p>
+
+<div class="theorem" id="theorem-1-7-3"><figcaption>Theorem 1.7.3 &ensp; Set with <math><mover><mn>0</mn><mo>&rarr;</mo></mover></math> is Linearly Dependent</figcaption>
+
+<p>If a set <math><mi>S</mi><mo>=</mo><mo>{</mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>, &ctdot; ,</mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>n</mn></msub><mo>}</mo><mtext> in </mtext><msup><mi>&#x211D</mi><mo>m</mo></msup></math> contains the zero vector <math><mover><mn>0</mn><mo>&rarr;</mo></mover></math>, then the set is linearly dependent.</p>
+</div>
+
+<p>Proof</p>
+
+<p>By renumbering we suppose <math><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>=</mo><mover><mn>0</mn><mo>&rarr;</mo></mover></math>. Then the equation <math><mn>1</mn><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>+</mo><mn>0</mn><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>2</mn></msub><mo>+ &ctdot; +</mo><mn>0</mn><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>n</mn></msub><mo>=</mo><mover><mn>0</mn><mo>&rarr;</mo></mover></math> shows that S is linearly dependent.</p>
+
+<p>Example</p>
+
+<p>Consider the following vectors:</p>
+<p><math>
+<mover><mi>u</mi><mo>&rarr;</mo></mover><mo>=</mo><mo>[</mo><mtable class="matrix">
+<mtr><mtd><mn>3</mn></mtd></mtr>
+<mtr><mtd><mn>2</mn></mtd></mtr>
+<mtr><mtd><mn>&minus;4</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>&emsp;</mo>
+<mover><mi>v</mi><mo>&rarr;</mo></mover><mo>=</mo><mo>[</mo><mtable class="matrix">
+<mtr><mtd><mn>&minus;1</mn></mtd></mtr>
+<mtr><mtd><mn>6</mn></mtd></mtr>
+<mtr><mtd><mn>7</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>&emsp;</mo>
+<mover><mi>w</mi><mo>&rarr;</mo></mover><mo>=</mo><mo>[</mo><mtable class="matrix">
+<mtr><mtd><mn>0</mn></mtd></mtr>
+<mtr><mtd><mn>&minus;5</mn></mtd></mtr>
+<mtr><mtd><mn>2</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>&emsp;</mo>
+<mover><mi>x</mi><mo>&rarr;</mo></mover><mo>=</mo><mo>[</mo><mtable class="matrix">
+<mtr><mtd><mn>3</mn></mtd></mtr>
+<mtr><mtd><mn>7</mn></mtd></mtr>
+<mtr><mtd><mn>&minus;5</mn></mtd></mtr>
+</mtable><mo>]</mo>
+</math></p>
+
+<p>Q: Are the sets 
+<math><mo>{</mo><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>,
+	</mo><mover><mi>v</mi><mo>&rarr;</mo></mover><mo>}</mo></math>, 
+<math><mo>{</mo><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>,
+	</mo><mover><mi>w</mi><mo>&rarr;</mo></mover><mo>}</mo></math>, 
+<math><mo>{</mo><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>,
+	</mo><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>}</mo></math>, 
+<math><mo>{</mo><mover><mi>v</mi><mo>&rarr;</mo></mover><mo>,
+	</mo><mover><mi>w</mi><mo>&rarr;</mo></mover><mo>}</mo></math>, 
+<math><mo>{</mo><mover><mi>v</mi><mo>&rarr;</mo></mover><mo>,
+	</mo><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>}</mo></math>, 
+<math><mo>{</mo><mover><mi>w</mi><mo>&rarr;</mo></mover><mo>,
+	</mo><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>}</mo></math> 
+each linearly independent, and why?</p>
+
+<p>A: Each set of vectors is linearly independent, because the components are not multiples of each other.</p>
+
+<p>Q: Does this answer imply that the set <math><mo>{</mo><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>,
+	</mo><mover><mi>v</mi><mo>&rarr;</mo></mover><mo>
+	</mo><mover><mi>w</mi><mo>&rarr;</mo></mover><mo>
+	</mo><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>}</mo></math>
+	is linearly dependent?</p>
+
+<p>A: No, because one vector can still be a linear combination of two or more others.</p>
+
+<p>Q: Is it wise to check for linear independence if <math><mover><mi>w</mi><mo>&rarr;</mo></mover></math> is a multiple of the others?</p>
+
+<p>A: No, because a linear combination of 3 or more vectors is not easily guessed.</p>
+
+<p>Q: Is the set of vectors linearly dependent?</p>
+
+<p>A: Yes. Theorem 8 says if we have more vectors than variables, the set of vectors is linear dependent.</p>
+
+<p>Just for practice, we will solve the matrix equation <math><mi>A</mi><mover><mi>r</mi><mo>&rarr;</mo></mover><mo>=</mo><mover><mi>x</mi><mo>&rarr;</mo></mover></math>.</p>
+
+<p>So we create an augmented matrix for the system of vectors and reduce:</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable num="1" class="augmented matrix"><mtr>
+	<mtd>3</mtd>
+	<mtd>&minus;1</mtd>
+	<mtd>0</mtd>
+	<mtd>3</mtd>
+</mtr><mtr>
+	<mtd>2</mtd>
+	<mtd>6</mtd>
+	<mtd>&minus;5</mtd>
+	<mtd>7</mtd>
+</mtr><mtr>
+	<mtd>&minus;4</mtd>
+	<mtd>7</mtd>
+	<mtd>2</mtd>
+	<mtd>&minus;5</mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable num="2" class="augmented matrix"><mtr>
+	<mtd>1</mtd>
+	<mtd>&minus;1/3</mtd>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+</mtr><mtr>
+	<mtd>2</mtd>
+	<mtd>6</mtd>
+	<mtd>&minus;5</mtd>
+	<mtd>7</mtd>
+</mtr><mtr>
+	<mtd>&minus;4</mtd>
+	<mtd>7</mtd>
+	<mtd>2</mtd>
+	<mtd>&minus;5</mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable num="3" class="augmented matrix"><mtr>
+	<mtd>1</mtd>
+	<mtd>&minus;1/3</mtd>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>20/3</mtd>
+	<mtd>&minus;5</mtd>
+	<mtd>5</mtd>
+</mtr><mtr>
+	<mtd>&minus;4</mtd>
+	<mtd>7</mtd>
+	<mtd>2</mtd>
+	<mtd>&minus;5</mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable num="4" class="augmented matrix"><mtr>
+	<mtd>1</mtd>
+	<mtd>&minus;1/3</mtd>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>20/3</mtd>
+	<mtd>&minus;5</mtd>
+	<mtd>5</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>17/3</mtd>
+	<mtd>2</mtd>
+	<mtd>&minus;1</mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable num="5" class="augmented matrix"><mtr>
+	<mtd>1</mtd>
+	<mtd>&minus;1/3</mtd>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>&minus;3/4</mtd>
+	<mtd>3/4</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>17/3</mtd>
+	<mtd>2</mtd>
+	<mtd>&minus;1</mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable num="6" class="augmented matrix"><mtr>
+	<mtd>1</mtd>
+	<mtd>&minus;1/3</mtd>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>&minus;3/4</mtd>
+	<mtd>3/4</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>0</mtd>
+	<mtd>25/4</mtd>
+	<mtd>&minus;21/4</mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable num="7" class="augmented matrix"><mtr>
+	<mtd>1</mtd>
+	<mtd>&minus;1/3</mtd>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>&minus;3/4</mtd>
+	<mtd>3/4</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>&minus;21/25</mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable num="8" class="augmented matrix"><mtr>
+	<mtd>1</mtd>
+	<mtd>&minus;1/3</mtd>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>0</mtd>
+	<mtd>3/25</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>&minus;21/25</mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable num="8" class="augmented matrix"><mtr>
+	<mtd>1</mtd>
+	<mtd>0</mtd>
+	<mtd>0</mtd>
+	<mtd>26/25</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>0</mtd>
+	<mtd>3/25</mtd>
+</mtr><mtr>
+	<mtd>0</mtd>
+	<mtd>0</mtd>
+	<mtd>1</mtd>
+	<mtd>&minus;21/25</mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>	
+
+<p>Now we have the coefficients for the equation:</p>
+
+<div class="math"><math>
+<mi>A</mi><mover><mi>r</mi><mo>&rarr;</mo></mover>
+<mo>=</mo>
+<mi>A</mi><mo lspace="5px">[</mo><mtable>
+	<mtr><mtd><msub><mi>r</mi><mn>1</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>r</mi><mn>2</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>r</mi><mn>3</mn></msub></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<mi>A</mi><mo lspace="5px">[</mo><mtable>
+	<mtr><mtd><mn>26/25</mn></mtd></mtr>
+	<mtr><mtd><mn>3/25</mn></mtd></mtr>
+	<mtr><mtd><mn>&minus;21/25</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<mo>[</mo><mtable num="1" class="matrix"><mtr>
+	<mtd>3</mtd>
+	<mtd>&minus;1</mtd>
+	<mtd>0</mtd>
+</mtr><mtr>
+	<mtd>2</mtd>
+	<mtd>6</mtd>
+	<mtd>&minus;5</mtd>
+</mtr><mtr>
+	<mtd>&minus;4</mtd>
+	<mtd>7</mtd>
+	<mtd>2</mtd>
+</mtr></mtable><mo>]</mo>
+<mo lspace="5px">[</mo><mtable>
+	<mtr><mtd><mn>26/25</mn></mtd></mtr>
+	<mtr><mtd><mn>3/25</mn></mtd></mtr>
+	<mtr><mtd><mn>&minus;21/25</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<mo>[</mo><mtable num="1">
+	<mtr><mtd>3*26/25&minus;3/25</mtd></mtr>
+	<mtr><mtd>2*26/25+6*3/25+5*21/25</mtd></mtr>
+	<mtr><mtd>&minus;4*26/25+7*3/25+2*&minus;21/25</mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<mo>[</mo><mtable num="1" class="matrix">
+	<mtr><mtd>3</mtd></mtr>
+	<mtr><mtd>7</mtd></mtr>
+	<mtr><mtd>&minus;5</mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<mover><mi>x</mi><mo>&rarr;</mo></mover>
+</math></div>
+
+<p>And indeed, the result of the equation is the vector <math><mover><mi>x</mi><mo</mover></math>, as specified in the exercise.</p>
+
+<h3 cbc>Exercise</h3><div>
+
+<p>Suppose that <math><mo>{</mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>,</mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>2</mn></msub><mo>,</mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>3</mn></msub><mo>}</mo></math> is a linearly independent set of vectors in &#x211D;<sup>n</sup>, and <math><msub><mover><mi>v</mi><mo>&rarr;</mo><mn>4</mn></mover></msub> is a vector in &#x211D;<sup>n</sup>. Show that <math><mo>{</mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>,</mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>2</mn></msub><mo>,</mo><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>3</mn></msub><mo>,</mo><msub><mover><mi>v</mi><mo>&rarr;</mo><mn>4</mn></mover></msub><mo>}</mo></math> is also a linearly dependent set.</p>
+
+<p>Solution</p>
+
+<p>Theorem 1.7.1 states that  a linearly dependent set suffices the following equation:</p>
+
+<div class="math"><math>
+<msub><mi>x</mi><mn>1</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>+</mo><mo>&ctdot;</mo><mo>+</mo><msub><mi>x</mi><mn>m</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>m</mn></msub><mo>=</mo><mover><mn>0</mn><mo>&rarr;</mo></mover>
+</math></div>
+
+<p>where not all coefficients <math><msub><mover><mi>x</mi><mo>&rarr;</mo></mover><mi>i</mi></msub></math> are zero. If we add <math><mn>0</mn><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>m+1</mn></msub><mo>=</mo><mover><mn>0</mn><mo>&rarr;</mo></mover></math> to the equation, we get</p>
+
+<div class="math"><math>
+<msub><mi>x</mi><mn>1</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>+</mo><mo>&ctdot;</mo><mo>+</mo><msub><mi>x</mi><mn>m</mn></msub><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>m</mn></msub><mo>+</mo><mn>0</mn><msub><mover><mi>v</mi><mo>&rarr;</mo></mover><mn>m+1</mn></msub><mo>=</mo><mover><mn>0</mn><mo>&rarr;</mo></mover><mo>+</mo><mover><mn>0</mn><mo>&rarr;</mo></mover>
+</math></div>
+
+<p>Since not all scalar coefficients on the left side are zero, the equation satisfies the requirements for a linearly dependent set of vectors.</p>
+
+<!--h3--></div>
+
+<!--h2--Sets of Two or More Vectors--></div>
+
+</main><footer id="page-footer"></footer><script type="module" src="/inc/page.js" ></script></body></html>

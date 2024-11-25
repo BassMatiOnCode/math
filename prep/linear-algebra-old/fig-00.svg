@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xxml-stylesheet href="\svg.css" type="text/css"?>
+<!-- fig-003.svg   2024-02-06   usp    Verifies the line length correction for lines with arrows in svg-2.js -->
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200"  viewBox="-2 -6 12 8" style="border:1px solid silver ; margin:20px">
+
+<script href="/inc/svg/svg-2.js"></script>
+
+<style>
+	text {
+		font-size : 0.8px ;
+		fill : black ;
+		stroke : none ;
+		text-anchor : middle ;
+		dominant-baseline : middle ;
+		}
+	tspan {
+		text-anchor : middle ;
+		}
+	g#coordinate-system {
+		stroke : #888 ;
+		stroke-width : 0.05px ;
+		}
+	g#coordinate-system text {
+		font-size : 0.6px ;
+		}
+	g#drawing {
+		stroke : black ;
+		fill : none ;
+		stroke-width : 0.05px ;
+		}
+	line.vector-line { stroke-width : 1px ; stroke : blue ; marker-start: url(#arrow-black) ; marker-end : url(#arrow-black) }
+	</style>
+
+<defs>
+	<marker id="dot-black" viewBox="-3 -3 6 6" refX="0" refY="0" markerWidth="6" markerHeight="6" markerUnits="strokeWidth">
+		<circle r="3" fill="black" stroke="none"/>
+		</marker>
+	<marker id="arrow-black" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="18" markerHeight="6" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="#666" stroke="none"/>
+		</marker>
+	</defs>
+
+<g id="coordinate-system">
+	<line x1="-1" y1="0" x2="8" y2="0" marker-end="url(#arrow-black)" />
+	<line x1="0" y1="1" x2="0" y2="-4" marker-end="url(#arrow-black)" />
+	<path d="M 1 0.3 v -0.6 m 1 0.6 v -0.6 m 1 0.6 v -0.6 m 1 0.6 v -0.6 m 1 0.6 v -0.6 m 1 0.6 v -0.6 m" />
+	<path d="M -0.3 -1 h 0.6 m -0.6 -1 h 0.6" />
+	<text x="0" y="0.7"><tspan x="2">2</tspan><tspan x="4">4</tspan><tspan x="6">6</tspan><tspan x="8">x</tspan><tspan>1</tspan></text>
+	<text x="-0.8"><tspan y="-2">2</tspan></text>
+	</g>
+
+<g id="drawing">
+	<path d="M 0 0 v -2 h 2 v 2 h -2" />
+	</g>
+
+</svg>

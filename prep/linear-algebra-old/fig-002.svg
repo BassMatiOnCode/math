@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xxml-stylesheet href="\svg.css" type="text/css"?>
+<!-- fig-003.svg   2024-02-06   usp    Verifies the line length correction for lines with arrows in svg-2.js -->
+<svg xmlns="http://www.w3.org/2000/svg" width="362" height="232"  viewBox="-61 -201 362 232" style="border:1px none silver">
+
+<script href="/inc/svg/svg-2.js"></script>
+
+<style>
+	circle.point { stroke : black ; fill : white ; stroke-width : 2px }
+	line.u.line { stroke-width : 1px ; stroke : seagreen }
+	line.vector { stroke-width : 2px }
+	line.u.vector { stroke : seagreen ; marker-end : url(#arrow-seagreen) }
+	line.v.vector { stroke : steelblue ; marker-end : url(#arrow-steelblue) }
+	text { font-family : "Times New Roman" ; font-size : 20px }
+	tspan.vector.letter + tspan { font-size : 14px }
+	</style>
+<defs>
+	<marker id="point-black" viewBox="-6 -6 12 12" refX="0" refY="0" markerWidth="6" markerHeight="6" markerUnits="strokeWidth">
+		<circle r="5" fill="white" stroke="black" stroke-width="2" />
+		</marker>
+	<marker id="arrow-steelblue" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="12" markerHeight="4" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="steelblue" stroke="none"/>
+		</marker>
+	<marker id="arrow-seagreen" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="12" markerHeight="4" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="seagreen" stroke="none"/>
+		</marker>
+	</defs>
+
+<g id="u-vectors">
+	<script id="DocumentDeclarationSpace">
+		"use strict" ;
+		class VectorProps {
+			constructor ( dx, dy ) {
+					//	length of u vector components
+				this.dx = dx ;
+				this.dy = dy ;
+					//	slope and length
+				this.slope = dy / dx ;
+				this.length = Math.sqrt( dx ** 2 + dy ** 2 );
+					//	component scaling factors
+				this.sx = dx / this.length ;
+				this.sy = dy / this.length ;
+				}
+			}
+		</script>
+	<script>
+		"use strict" ;
+			// Define basic vector properties
+		const u = new VectorProps( 100, -30 );
+		const v = new VectorProps( 60, -100 );
+			//	create the u vector result lines
+		const target = document.currentScript.parentElement ;
+		target.append( Synesis.Svg.line2( -50, -50 / u.sx * u.sy, 350, u.slope, { attributes : { id: "baseResultLine", class: "u line" } } ) );
+		target.append( Synesis.Svg.line2( -50, -50 / u.sx * u.sy + v.dy - u.slope * v.dx, 350, u.slope, { attributes : { class: "u line" } } ) );
+			//	create the v vectors
+		target.append( Synesis.Svg.circle( v.dx, v.dy, 5, { attributes : { class : "point" } } ) ) ;
+		target.append( Synesis.Svg.line2( 0, 0, v.length, v.slope, { attributes : { class: "v vector" } } ) );
+		target.append( Synesis.Svg.circle( v.dx+u.dx, v.dy+u.dy, 5, { attributes : { class : "point" } } ) ) ;
+		target.append( Synesis.Svg.line2( u.length * u.sx, u.length * u.sy, v.length, v.slope, { attributes : { class: "v vector" } } ) );
+		target.append( Synesis.Svg.circle( v.dx+2 * u.dx, v.dy+ 2 * u.dy, 5, { attributes : { class : "point" } } ) ) ;
+		target.append( Synesis.Svg.line2( 2 * u.length * u.sx, 2 * u.length * u.sy, v.length, v.slope, { attributes : { class: "v vector" } } ) );
+			//	create the u vectors
+		target.append( Synesis.Svg.circle( 2 * u.dx, 2 * u.dy, 5, { attributes : { class : "point" } } ) ) ;
+		target.append( Synesis.Svg.line2( u.dx, u.dy, u.length, u.slope, { attributes : { class: "u vector" } } ) );
+		target.append( Synesis.Svg.circle( u.dx, u.dy, 5, { attributes : { class : "point" } } ) ) ;
+		target.append( Synesis.Svg.line2( 0, 0, u.length, u.slope, { attributes : { class: "u vector" } } ) );
+		</script>
+	<circle r="5" stroke-width="2" stroke="black" fill="white" />
+	<text x="10" y="20"><tspan class="vector letter" >0</tspan></text>
+	<text x="100" y="0"><tspan class="vector letter" >u</tspan></text>
+	<text x="200" y="-30"><tspan>2</tspan><tspan class="vector letter" >u</tspan></text>
+	<text x="50" y="-115"><tspan class="vector letter" >v</tspan></text>
+	<text x="120" y="-145"><tspan class="vector letter" >u</tspan><tspan>+</tspan><tspan class="vector letter">v</tspan></text>
+	<text x="220" y="-175"><tspan>2</tspan><tspan class="vector letter" >u</tspan><tspan>+</tspan><tspan class="vector letter">v</tspan></text>
+	<script>
+		Synesis.Svg.createVectorArrows( );
+		</script>
+	</g>
+</svg>

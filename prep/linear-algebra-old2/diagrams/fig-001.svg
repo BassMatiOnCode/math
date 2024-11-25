@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xxml-stylesheet href="\svg.css" type="text/css"?>
+<!-- fig-003.svg   2024-02-06   usp    Verifies the line length correction for lines with arrows in svg-2.js -->
+<svg xmlns="http://www.w3.org/2000/svg" width="330" height="330"  viewBox="-50 -290 330 330" style="border:1px none silver;margin:0px">
+
+<script type="text/javascript" href="/inc/svg/svg-2.js"></script>
+<script type="text/javascript" href="/inc/svg/svg-coordinate-systems-1.js"></script>
+
+<style type="text/css">
+	circle.point {
+		fill : white ;
+		stroke : black ;
+		stroke-width : 1 ;
+		}
+	g.coordinate-system {
+		stroke : black ;
+		fill : none ;
+		stroke-width : 0.9px ;
+		}
+	g.coordinate-system line {
+		marker-end : url( #arrow-black );
+		}
+	g.textbox rect { 
+		stroke : none ; 
+		fill : white ;
+		}
+	line.vector { 
+		stroke-width : 2px ;
+		}
+	marker path {
+		stroke : "none" ;
+		}
+	text {
+		stroke : none ;
+		fill : black ;
+		text-anchor : middle ;
+		dominant-baseline : middle ;
+		}
+	text.math {
+		font-family : math, "Times New Roman", times ;
+		font-size : 14pt;
+		fill : #888 ;
+		}
+	tspan {
+		text-anchor : middle ;
+		dominant-baseline : middle ;
+		}
+	tspan.subscript {
+		font-size : 0.8em;
+		}
+	</style>
+
+<defs>
+	<circle id="point" r="5" fill="white" stroke="black" stroke-width="1.5" />
+	<marker id="point-black" viewBox="-6 -6 12 12" refX="0" refY="0" markerWidth="6" markerHeight="6" markerUnits="strokeWidth">
+		<circle r="5" fill="white" stroke="black" stroke-width="2" />
+		</marker>
+	<marker id="arrow-black" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="18" markerHeight="6" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="black" />
+		</marker>
+	
+	<g class="textbox">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text></text>
+		</g>
+	</defs>
+
+<g class="coordinate-system">
+	<line class="axis" id="xaxis" x1="-20" x2="270" axis-label="x" tick-parallel="yAxis" tick-distance="40" tick-length="0 20" tick-range="1 6" tick-flip="0" label-distance="20" />
+	<line class="axis" id="yaxis"  y1="20" y2="-270" axis-label="y" tick-parallel="xAxis" tick-distance="40" tick-length="-20 0" tick-range="1 6" tick-flip="0" label-distance="-20" />
+	<script type="text/javascript">
+	Synesis.Svg.Coords.createAxisTickmarks( "xaxis" );
+	Synesis.Svg.Coords.createAxisTickmarks( "yaxis" );
+	</script>
+	</g>
+
+<g class="graphs">
+	<line y1="-240" x2="60" stroke="red" stroke-width="2" extend-by="-20 20"/>
+	<line y1="-100" x2="200" stroke="darkblue" stroke-width="2" extend-by="-20 20"/>
+	<use href="#point" x="40" y="-80" />
+	<text class="math" x="80" y="-160">4x + y = 6</text>
+	<text class="math" x="160" y="-60">x + 2y = 5</text>
+	<text class="math" x="70" y="-90">(1, 2)</text>
+</g>
+
+<g class="coordinate-system">
+	<script type="text/javascript">
+	Synesis.Svg.Coords.createAxisLabels ( "xaxis" );
+	Synesis.Svg.Coords.createAxisLabels ( "yaxis" );
+	</script>
+	</g>
+
+<script type="text/javascript" href="../scripts/init-diagram.js"></script>
+
+</svg>

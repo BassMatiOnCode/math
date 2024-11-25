@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2023-12-17" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-03-05" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-03-05" />
+<meta name="version" content="1" />
+<meta name="categories" content="" />
+<meta name="tags" content="math, linear agebra, introduction" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/page.css" />
+<link rel="stylesheet" href="/inc/css/math.css" />
+<link rel="stylesheet" href="/inc/css/scientific-1.css" />
+
+<title>Programming > MathML > Tests > Dynamic Creation of Elements</title>
+
+</head><body>
+<h1>Dynamic Creation of Elements</h1>
+
+<math>
+<mi>a</mi><mo>=</mo><mi>b</mi><mo>+</mo><mi>c</mi>
+</math>
+
+
+<script type="module">
+const target = document.querySelector( "math" );
+const container = document.createElementNS( "http://www.w3.org/1998/Math/MathML", "mrow" );
+container.innerHTML = "<mo>+</mo><mi>c</mi>" ;
+target.append( ...container.childNodes );
+</script>
+
+</body></html>

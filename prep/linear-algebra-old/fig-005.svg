@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xxml-stylesheet href="\svg.css" type="text/css"?>
+<!-- fig-003.svg   2024-02-06   usp    Verifies the line length correction for lines with arrows in svg-2.js -->
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="340"  viewBox="-150 -190 340 340" style="border:1px none silver;margin:0px">
+
+<script type="text/javascript" href="/inc/svg/svg-2.js"></script>
+<script type="text/javascript" href="/inc/svg/svg-coordinate-systems-1.js"></script>
+
+<style type="text/css">
+	g.coordinate-system {
+		stroke : black ;
+		fill : none ;
+		stroke-width : 0.9px ;
+		}
+	g.coordinate-system line {
+		marker-end : url( #arrow-black );
+		}
+	g.coordinate-system circle {
+		fill : white;
+		}
+	g.coordinate-system text {
+		}
+	g.textbox rect { 
+		stroke : none ; 
+		fill : white ;
+		}
+	line.vector { 
+		stroke-width : 2px ;
+		}
+	line.vector[stroke="black"] { 
+		marker-end : url(#small-arrow-black) ;
+		}
+	line.vector[stroke="seagreen"] { 
+		marker-end : url(#arrow-seagreen) ;
+		}
+	line.vector[stroke="steelblue"] { 
+		marker-end : url(#arrow-steelblue) ;
+		}
+	marker path {
+		stroke : "none" ;
+		}
+	text {
+		stroke : none ;
+		fill : black ;
+		text-anchor : middle ;
+		dominant-baseline : middle ;
+		}
+	tspan {
+		text-anchor : middle ;
+		dominant-baseline : middle ;
+		}
+	tspan.subscript {
+		font-size : 0.8em;
+		}
+	</style>
+
+<defs>
+	<marker id="point-black" viewBox="-6 -6 12 12" refX="0" refY="0" markerWidth="6" markerHeight="6" markerUnits="strokeWidth">
+		<circle r="5" fill="white" stroke="black" stroke-width="2" />
+		</marker>
+	<marker id="arrow-black" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="18" markerHeight="6" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="black" />
+		</marker>
+	<marker id="small-arrow-black" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="12" markerHeight="4" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="black" />
+		</marker>
+	<marker id="arrow-steelblue" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="12" markerHeight="4" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="steelblue" />
+		</marker>
+	<marker id="arrow-seagreen" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="12" markerHeight="4" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="seagreen" />
+		</marker>
+	<g class="textbox">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>HERE</text>
+		</g>
+	</defs>
+
+<g class="coordinate-system">
+	<line class="axis" id="xAxis" x1="-140" x2="170" tick-parallel="yAxis" tick-distance="40" tick-length="0 20" tick-range="-3 +3 0" tick-flip="0" label-multiplier="10" label-distance="20"/>
+	<line class="axis" id="yAxis"  y1="140" y2="-170" tick-parallel="xAxis" tick-distance="40" tick-length="-20 0" tick-range="-3 +3 0" tick-flip="0" label-multiplier="1" label-distance="-20" />
+	<script type="text/javascript">( ( ) => {
+	const script = document.currentScript;
+	Synesis.Svg.Coords.createAxisTickmarks( "xAxis" );
+	Synesis.Svg.Coords.createAxisTickmarks( "yAxis" );
+	} ) ( ) ;
+	</script>
+	<script type="text/javascript">
+	// Synesis.Svg.Coords.createGrid( [document.get] );
+	</script>
+	</g>
+
+<g class="coordinate-system">
+	<script type="text/javascript">
+	Synesis.Svg.Coords.createAxisLabels ( "xAxis" );
+	Synesis.Svg.Coords.createAxisLabels ( "yAxis" );
+//	Synesis.Svg.createAxisLabels( document.getElementById( "xAxis" ), -3, 3, { labelOffset : -20, flip : true } );
+//	Synesis.Svg.createAxisLabels( document.getElementById( "yAxis" ), -3, 3, { flip : true } );
+	</script>
+	</g>
+
+<script type="text/javascript">
+Synesis.Svg.adjustLineLength( document.querySelectorAll( ".vector" ));
+Synesis.Svg.setVerticalOffset( "tspan.subscript", 5 );
+</script>
+
+</svg>

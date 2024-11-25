@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2023-12-17" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-02-19" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-02-19" />
+<meta name="version" content="1" />
+<meta name="categories" content="" />
+<meta name="tags" content="math, linear agebra" />
+<meta name="description" content="" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/page.css" />
+<link rel="stylesheet" href="/inc/css/math.css" />
+<link rel="stylesheet" href="/inc/css/scientific-1.css" />
+
+<title>Math > Linear Algebra > Complex Numbers</title>
+
+</head><body><header id="page-header"><object data="title.svg" type="image/svg+xml"></object></header><div id="main-toolbar"></div><main id="page-content">
+
+<h1>Complex Numbers</h1>
+
+<p id="page-abstract"></p>
+
+<p>Complex numbers start with a seemingly simple equation:</p>
+
+<div class="math"><math>
+<msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo>=</mo><mn>0</mn>
+</math></div>
+
+<p id="equation-1">With some rearragements, the question is</p>
+
+<div class="math"><math>
+<mtable class="numbered equation"><mtr><mtd>
+	<msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>&minus;1</mn>
+</mtd><mtd>
+	<mtext>(1)</mtext>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>In words: Which number, multiplied with itself, resolves to minus one? First answer is: None. Positive one times positive one is positive one, and negative one times negative one also is positive one.</p>
+
+<p>That's correct for numbers in &#8477;. </p>
+
+<p>Let's look at the problem from a geometrical point of view:</p>
+
+<figure><figcaption class="figure">Vectors on the number line</figcaption>
+<object data="./fig-005.svg" type="text/svg+xml"></object>
+</figure>
+
+<p>If we go from zero to the right, we get to the positive numbers. If we go to the left, we get to the negative numbers. Addition of positive numbers brings us further to the right. Subtracting numbers brings us to the left. Which is the same as adding negative numbers. This essentially the natur of <em>addition</em>.</p>
+
+<p>Then we have the multiplication. Multiplying a number by minus one is effectively a reflection on the origin (0), so we get to the same distance as the number, but at the opposite site of the origin.</p>
+
+<p>But there is another interpretation: Multiplication by minus one is a <em>rotation</em> by 180° around the origin:</p>
+
+<figure><figcaption class="figure">Multiplication with &minus;1</figcaption>
+<object data="./fig-006.svg" type="text/svg+xml"></object>
+</figure>
+
+<p>With that in mind let's go back to equation <a href="#equation-1">equation 1</a>. If multiplication with minus one is a rotation by 180 degree,</p>
+
+<div class="math"><math>
+	<mo>(</mo><mn>1</mn><mo>)</mo><mo>(</mo><mn>&minus;1</mn><mo>)</mo><mo>=</mo><mn>&minus;1</mn>
+</math></div>
+
+<p>then multiplying two times with this mysterious number is also a rotation by 180 degree:</p>
+
+<div class="math"><math>
+	<msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mo>(</mo><mn>1</mn><mo>)</mo><mo>(</mo><mi>x</mi><mo>)</mo><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mn>&minus;1</mn>
+</math></div>
+
+<p>And it follows that <em>one</em> multiplication with that x then must be a rotation by 90 degree:</p>
+
+<figure><figcaption class="figure">Two times rotating by 90 degree</figcaption>
+<object data="./fig-007.svg" type="text/svg+xml"></object>
+</figure>
+
+<p>Let's call our mysterious "x" the <em>imarinary unit number</em> "i". <i>i</i> is not an element of &#8477;. This notion suggests that we have to extend the number line to a <em>plane</em> and add an axis that carries the imaginary numbers: </p>
+
+<figure><figcaption class="figure">The Argand Plane</figcaption>
+<object data="./fig-008.svg" type="text/svg+xml"></object>
+</figure>
+
+<p>To make the square root of negative numbers <math><mi>i</mi><mo>=</mo><msqrt><mn>&minus;1</mn></msqrt></math> possible, we will have to extend the real numbers in &#8477; to the <em>complex numbers in </em> &#8450;:</p>
+
+<div data-load-uri="./def-001.htm"></div>
+
+<p>Real numbers are a subset of complex numbers, with the imaginary part being zero:</p>
+
+<div class="math"><math>
+<mi>z</mi><mo>=</mo><mi>a</mi><mo>+</mo><mi>0</mi><mi>i</mi><mi>b</mi><mo>=</mo><mi>a</mi>
+</math></div>
+
+<p>We also write</p>
+
+<div class="math"><math>
+<mtable><mtr><mtd>
+	<mi>a</mi><mo>=</mo><mi>Re</mi><mo>(</mo><mi>z</mi><mo>)</mo>
+</mtd></mtr><mtr><mtd>
+	<mi>b</mi><mo>=</mo><mi>Im</mi><mo>(</mo><mi>z</mi><mo>)</mo>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>to obtain the real and imaginary parts of a complex number.</p>
+
+<p>Powers of <i>i</i> have interesting properties:</p>
+
+<div class="math"><math>
+<mtable class="equation"><mtr>
+	<mtd><msup><mi>i</mi><mn>1</mn></msup></mtd>
+	<mtd><mo>=</mo></mtd>
+	<mtd><mi>i</mi></mtd>
+</mtr><mtr>
+	<mtd><msup><mi>i</mi><mn>2</mn></msup></mtd>
+	<mtd><mo>=</mo></mtd>
+	<mtd><mn>&minus;1</mn></mtd>
+</mtr><mtr>
+	<mtd><msup><mi>i</mi><mn>3</mn></msup></mtd>
+	<mtd><mo>=</mo></mtd>
+	<mtd><mo>&minus;</mo><mi>i</mi></mtd>
+</mtr><mtr>
+	<mtd><msup><mi>i</mi><mn>4</mn></msup></mtd>
+	<mtd><mo>=</mo></mtd>
+	<mtd><mn>1</mn></mtd>	
+</mtr></mtable>
+</math></div>
+
+<p>If we look at multiplication by <math><mi>i</mi></math> as a rotation, it requires <em>four</em> rotations to complete a full circle. In contrast, multiplying by the real number <math><mn>&minus;1</mn></math> takes only <em>two</em> rotations to complete a circle.</p>
+
+<figure><figcaption class="figure">Four rotations make a full circle</figcaption>
+<object data="./fig-009.svg" type="text/svg+xml"></object>
+</figure>
+
+<h2 cbc>Arithmetic Operations</h2><div>
+
+<p>Complex numbers are very similar to vectors, so the same arithmetic rules apply:</p>
+
+<p>Addition:</p>
+
+<div data-load-uri="./def-002.htm"></div>
+
+<p>Multiplication:</p>
+
+<div data-load-uri="./def-003.htm"></div>
+
+<p>Note that the term <math><mi>i</mi><msub><mi>b</mi><mn>1</mn></msub><mi>i</mi><msub><mi>b</mi><mn>2</mn></msub><mo>=</mo><msup><mi>i</mi><mn>2</mn></msup><msub><mi>b</mi><mn>1</mn></msub><msub><mi>b</mi><mn>1</mn></msub></math> contains the factor <math><msup><mi>i</mi><mn>2</mn></msup></math>, which evaluates to <math><mn>&minus;1</mn></math>. This is the second real term in the sum.</p>
+
+<p>Complex Conjugate:</p>
+
+<div data-load-uri="./def-004.htm"></div>
+
+<p>Geometrically, this in a reflection on the real axis. The sign of the imaginary part is flipped. </p>
+
+<h3 cbc>Multiplication Inverse</h3><div>
+
+<p>The multiplication inverse operand allows to perform the inverse operation to the multiplication, i. e. <em>division</em>:</p>
+
+<div data-load-uri="./def-005.htm"></div>
+
+<p>We can find a very useful form if we extend the fraction with the complex conjucate of the denominator, and then order the terms:</p>
+
+<div class="math"><math>
+<mtable class="tall-rows" style="font-size:24px"><mtr><mtd>
+	<msup scriptlevel="+1"><mi>z</mi><mn>&minus;1</mn></msup>
+	<mo>=</mo>
+	<mfrac><mn>1</mn><mrow><mi>a</mi><mo>+</mo><mi>i</mi><mi>b</mi></mrow></mfrac>
+	<mo> </mo>
+	<mfrac><mrow><mi>a</mi><mo>&minus;</mo><mi>i</mi><mi>b</mi></mrow><mrow><mi>a</mi><mo>&minus;</mo><mi>i</mi><mi>b</mi></mrow></mfrac>
+</mtd></mtr><mtr><mtd>
+	<mo>=</mo>
+	<mfrac>
+		<mrow><mi>a</mi><mo>&minus;</mo><mi>i</mi><mi>b</mi></mrow>
+		<mrow>
+			<mo>(</mo>
+			<mi>a</mi><mo>+</mo><mi>i</mi><mi>b</mi>
+			<mo>)</mo><mo>(</mo>
+			<mi>a</mi><mo>&minus;</mo><mi>i</mi><mi>b</mi>
+			<mo>)</mo>
+		</mrow>
+	</mfrac>
+</mtd></mtr><mtr><mtd>
+	<mo>=</mo>
+	<mfrac>
+		<mrow><mi>a</mi><mo>&minus;</mo><mi>i</mi><mi>b</mi></mrow>
+		<mrow>
+		<msup><mi>a</mi><mn>2</mn></msup>
+		<mo>&minus;</mo>
+		<mi>a</mi><mi>i</mi><mi>b</mi>
+		<mo>+</mo>
+		<mi>i</mi><mi>b</mi><mi>a</mi>
+		<mo>&minus;</mo>
+		<mi>i</mi><mi>b</mi><mi>i</mi><mi>b</mi>
+		</mrow>
+	</mfrac>
+</mtd></mtr><mtr><mtd>
+	<mo>=</mo>
+	<mfrac>
+		<mrow><mi>a</mi><mo>&minus;</mo><mi>i</mi><mi>b</mi></mrow>
+		<mrow>
+		<msup><mi>a</mi><mn>2</mn></msup>
+		<mo>&minus;</mo>
+		<mi>a</mi><mi>i</mi><mi>b</mi>
+		<mo>+</mo>
+		<mi>a</mi><mi>i</mi><mi>b</mi>
+		<mo>&minus;</mo>
+		<mi>i</mi><mi>b</mi><mi>i</mi><mi>b</mi>
+		</mrow>
+	</mfrac>
+</mtd></mtr><mtr><mtd>
+	<mo>=</mo>
+	<mfrac>
+		<mrow><mi>a</mi><mo>&minus;</mo><mi>i</mi><mi>b</mi></mrow>
+		<mrow>
+		<msup><mi>a</mi><mn>2</mn></msup>
+		<mo>&minus;</mo>
+		<mi>a</mi><mi>i</mi><mi>b</mi>
+		<mo>+</mo>
+		<mi>a</mi><mi>i</mi><mi>b</mi>
+		<mo>&minus;</mo>
+		<msup><mi>i</mi><mn>2</mn></msup><msup><mi>b</mi><mn>2</mn></msup>
+		</mrow>
+	</mfrac>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>We can see that the mid terms cancel each other out. And with <math><msup><mi></mi><mn>2</mn></msup><mo>=</mo><mn>&minus;1</mn></math> we finally get</p>
+
+<div class="math"><math>
+<mtable class="tall-rows" style="font-size:24px"><mtr><mtd>
+	<msup scriptlevel="+1"><mi>z</mi><mn>&minus;1</mn></msup>
+	<mo>=</mo>
+	<mfrac>
+		<mrow><mi>a</mi><mo>&minus;</mo><mi>i</mi><mi>b</mi></mrow>
+		<mrow>
+		<msup><mi>a</mi><mn>2</mn></msup>
+		<mo>+</mo>
+		<msup><mi>b</mi><mn>2</mn></msup>
+		</mrow>
+	</mfrac>
+</mtd></mtr></mtable>
+</math></div>
+
+<!--h3--Multiplication Inverse--></div>
+
+<h3 cbc>Division</h3><div>
+
+<p>Division is the inverse operation to multiplication, so we can make use of the multiplication inverse operator:</p>
+
+<div data-load-uri="./def-006.htm"></div>
+
+<p>To get that solved, we expand the fraction with the complex conjugate of the denominator.</p>
+
+<div class="math"><math style="font-size: 18pt">
+<mtable class="tall-rows"><mtr><mtd>
+	<mfrac><msub><mi>z</mi><mn>1</mn></msub><msub><mi>z</mi><mn>2</mn></msub></mfrac>
+<mo>=</mo>
+	<msub scriptlevel="+1"><mi>z</mi><mn>1</mn></msub>
+	<msup scriptlevel="+1"><msub><mi>z</mi><mn>2</mn></msub><mn>&minus;1</mn></msup>
+<mo>=</mo><mfrac>
+	<mrow>
+		<msub><mi>a</mi><mn>1</mn></msub>
+		<mo>+</mo>
+		<mi>i</mi><msub><mi>b</mi><mn>1</mn></msub>
+	</mrow><mrow>
+		<msub><mi>a</mi><mn>2</mn></msub>
+		<mo>+</mo>
+		<mi>i</mi><msub><mi>b</mi><mn>2</mn></msub>
+	</mrow>
+	</mfrac>
+</mtd></mtr><mtr><mtd>
+<mo>=</mo><mfrac>
+	<mrow><mo>(</mo>
+		<msub><mi>a</mi><mn>1</mn></msub>
+		<mo>+</mo>
+		<mi>i</mi><msub><mi>b</mi><mn>1</mn></msub>
+	<mo>)</mo><mo>(</mo>
+		<msub><mi>a</mi><mn>2</mn></msub>
+		<mo>&minus;</mo>
+		<mi>i</mi><msub><mi>b</mi><mn>2</mn></msub>
+	<mo>)</mo></mrow><mrow>
+			<msup><msub><mi>a</mi><mn>2</mn></msub><mn>2</mn></msup>
+			<mo>+</mo>
+			<msup><msub><mi>b</mi><mn>2</mn></msub><mn>2</mn></msup>
+	</mrow>
+	</mfrac>
+</mtd></mtr><mtr><mtd>
+<mo>=</mo><mfrac>
+	<mrow>
+		<msub><mi>a</mi><mn>1</mn></msub>
+		<msub><mi>a</mi><mn>2</mn></msub>
+		<mo>&minus;</mo>
+		<msub><mi>a</mi><mn>1</mn></msub>
+		<mi>i</mi><msub><mi>b</mi><mn>2</mn></msub>
+		<mo>+</mo>
+		<mi>i</mi><msub><mi>b</mi><mn>1</mn></msub>
+		<msub><mi>a</mi><mn>2</mn></msub>
+		<mo>&minus;</mo>
+		<mi>i</mi><msub><mi>b</mi><mn>1</mn></msub>
+		<mi>i</mi><msub><mi>b</mi><mn>2</mn></msub>
+	</mrow><mrow>
+		<msup><msub><mi>a</mi><mn>2</mn></msub><mn>2</mn></msup>
+		<mo>+</mo>
+		<msup><msub><mi>b</mi><mn>2</mn></msub><mn>2</mn></msup>
+	</mrow>
+	</mfrac>
+</mtd></mtr><mtr><mtd>
+<mo>=</mo><mfrac>
+	<mrow><mo>(</mo>
+		<msub><mi>a</mi><mn>1</mn></msub>
+		<msub><mi>a</mi><mn>2</mn></msub>
+		<mo>+</mo>
+		<msub><mi>b</mi><mn>1</mn></msub>
+		<msub><mi>b</mi><mn>2</mn></msub>
+		<mo>)</mo>
+		<mo>+</mo><mi>i</mi><mo>(</mo>
+		<msub><mi>b</mi><mn>1</mn></msub>
+		<msub><mi>a</mi><mn>2</mn></msub>
+		<mo>&minus;</mo>
+		<msub><mi>a</mi><mn>1</mn></msub>
+		<msub><mi>b</mi><mn>2</mn></msub>
+		<mo>)</mo>
+	</mrow><mrow>
+		<msup><msub><mi>a</mi><mn>2</mn></msub><mn>2</mn></msup>
+		<mo>+</mo>
+		<msup><msub><mi>b</mi><mn>2</mn></msub><mn>2</mn></msup>
+	</mrow>
+	</mfrac>
+</mtd></mtr></mtable>
+</math></div>
+
+<!--h3--Division--></div>
+
+<!--h2--Arithmetic Operations--></div>
+
+</main><footer id="page-footer"></footer>
+<script type="module" src="/inc/page.js" ></script>
+<script type="module" id="fragment-loader">
+const t = document.createElement( "template" );
+for ( const e of document.querySelectorAll( "[data-load-uri]" )) {
+	const response = await fetch( e.getAttribute( "data-load-uri" ));
+	const text = await response.text();
+	t.innerHTML = text ;
+	// t.innerHTML = await ( await fetch( e.getAttribute( "data-load-uri" ))).text( );
+	e.replaceWith( t.content );
+	debugger;
+	}
+</script>
+</body></html>

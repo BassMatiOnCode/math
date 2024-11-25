@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2023-12-17" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-03-05" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-03-05" />
+<meta name="version" content="1" />
+<meta name="categories" content="" />
+<meta name="tags" content="math, linear agebra, introduction" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/page.css" />
+<link rel="stylesheet" href="/inc/css/math.css" />
+<link rel="stylesheet" href="/inc/css/scientific-1.css" />
+
+<style>
+math mtable[row-height="33"] > mtr { height : 33px }
+</style>
+
+<meta name="description" content="Complex numbers are an extension of real numbers to solve the problem of finding the root of x in x<sup>2</sup> + 1 = 0." />
+
+<title>Math > Linear Algebra >Review: Complex Numbers</title>
+
+</head><body><header id="page-header"><object data="title.svg" type="image/svg+xml"></object></header><div id="main-toolbar"></div><main id="page-content">
+
+<h1>Review: Complex Numbers</h1>
+
+<p id="page-abstract"></p>
+
+<h2 cbc>Motivation</h2><div>
+
+<p>The equation <math><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo>=</mo><mn>0</mn></math> cannot be solved with <math><mi>x</mi><mo>&isin;</mo><mi>&Ropf;</mi></math>. So once again we have to extend our set of numbers.</p>
+
+<p>For that purpose we define a number <i>i</i> that squares to minus one:</p>
+
+<div data-load-fragment="definitions/defn-016.htm">Imaginary Unit i</div>
+
+<!--h2--Motivation--></div>
+
+<h2 cbc>Defintion of a Complex Number</h2><div>
+
+<p>With the definition of <i>i</i> at hand, we can define the <em>complex numbers</em>:</p>
+
+<div data-load-fragment="definitions/defn-017.htm">Complex Numbers</div>
+
+<p>So a complex number is the sum of a real number <math><mi>a</mi></math> and a product of a real number <math><mi>b</mi></math> and the imaginary unit <i>i</i>. This leads us to the</p>
+
+<div data-load-fragment="definitions/defn-018.htm">Standard Form of Complex Numbers</div>
+
+<p>We often need to address the real and imaginary parts of a complex number:</p>
+
+<div data-load-fragment="definitions/defn-019.htm">Standard Form of Complex Numbers</div>
+
+<p>Note that both <math><mo rspace="0px">Re</mo><mo>(</mo><mi>z</mi><mo>)</mo></math> and <math><mo rspace="0px">Im</mo><mo>(</mo><mi>z</mi><mo>)</mo></math> are real numbers.</p>
+
+<p>If we define a complex number as an <em>ordered pair</em> of numbers, we can identify each complex number as a point in a plane.</p>
+
+<p>Suppose a number line in a two-dimensional plane. Multiplying a real number <math><mi>a</mi></math> with <math><mn>&minus;1</mn></math> on the number line can be interpreted as a <em>rotation</em> of a vector <math><mover><mi>a</mi><mo>&rarr;</mo></mover></math> with the magnitue <math><mo>||</mo><mover><mi>a</mi><mo>&rarr;</mo></mover><mo>||</mo><mo>=</mo><mi>a</mi></math> by 180 degree around the origin (0, 0):</p>
+
+<figure><figcaption class="figure">Multiplication as a Rotation</figcaption>
+<object data="diagrams/fig-002.svg"></object>
+</figure>
+
+<p>Now let's apply this concept of rotation to the multiplication of a real number <math><mi>a</mi></math> and the imaginary unit <i>i</i>. We know that <math><mi>a</mi><mo>&sdot;</mo><mi>i</mi><mo>&sdot;</mo><mi>i</mi><mo>=</mo><mi>&minus;a</mi></math>, because <math></mo><mi>i</mi><mo>&sdot;</mo><mi>i</mi><mo>=</mo><mn>&minus;1</mn></math>. So we can safely conclude that if a multiplication by minus one corresponds to a rotation of a vector by 180 degree, and two times a multiplication with <i>i</i> also corresponds to a rotation by 180 degree, then one times a multiplication with <i>i</i> must be a rotation by 180/2 = 90 degree:</p>
+
+<figure><figcaption class="figure">Multiplying With <em>i</em></figcaption>
+<object data="diagrams/fig-003.svg"></object>
+</figure>
+
+<p>Let's go back to the idea of representing complex numbers as ordered pairs of real numbers in the complex plane:</p>
+
+<figure><figcaption class="figure">Complex numbers in the complex plane</figcaption>
+<object data="diagrams/fig-004.svg"></object>
+</figure>
+
+<div data-load-fragment="definitions/defn-020.htm"></div>
+
+<p>The blue vector in figure 3 has a special meaning:</p>
+
+<div data-load-fragment="definitions/defn-021.htm"></div>
+
+<p>The complex conjugate mirrors the original complex number on the (horizontal) real axis.</p>
+
+<!--h2--Complex Numbers--></div>
+
+<h2 cbc>Complex Number Arithmetic</h2><div>
+
+<p>At this point, we should have a fair amount of understanding, so that we can formulate the laws of complex arithmetic:</p>
+
+<div data-load-fragment="definitions/defn-022.htm"></div>
+
+<p>Addition exploits the associative properties of complex numbers.</p>
+
+<div data-load-fragment="definitions/defn-023.htm"></div>
+
+<p>Multiplication uses the distributivity properties of complex numbers and the definition of <i>i</i>.</p>
+
+<!--h2--Complex Number Arithmetic--></div>
+
+<h2 cbc>Conjugation and Magnitude</h2><div>
+
+<p>Here a number of theorems that follow from the definition of complex numbers.</p>
+
+<div data-load-fragment="theorems/t-001.htm"></div>
+
+<div data-load-fragment="theorems/t-002.htm"></div>
+
+<div data-load-fragment="theorems/t-003.htm"></div>
+
+<div data-load-fragment="theorems/t-004.htm">Complex conjugate sum</div>
+
+<div data-load-fragment="theorems/t-005.htm">Complex conjugate product</div>
+
+<div data-load-fragment="theorems/t-006.htm">Division</div>
+
+<!--h2--Conjugation and Magnitude--></div>
+
+<h2 cbc>Solution of Polynomials</h2>
+
+
+<p>Now that we have a complete number system at hand, we can turn our focus to the</p>
+
+<div data-load-fragment="theorems/t-007.htm">Fundamental theorem of algebra</div>
+
+<p>Without complex numbers, we were not able to solve polynomial equations if the form of <math><msup><mi>a</mi><mn>2</mn></msup><mo>=</mo><mn>&minus1</mn></math>. This is now history.</p>
+
+<p>The proof of the theorem is rather difficult and does not provide any hint to <em>how</em> these equations can be solved. We can use numerical approximation techniques to get sufficiently precise solutiones. However, for polynomials of low orders (n < 5) there are formulas we can use.</p>
+
+<h3 cbc>"Rationalizing" a Complex Denominator</h3><div>
+
+<p>Consider the following fraction:</p>
+
+<div class="math"><math>
+<mfrac>
+<mrow><mi>a</mi><mo>+</mo><mi>b</mi><mi>i</mi></mrow>
+<mrow><mi>c</mi><mo>+</mo><mi>d</mi><mi>i</mi></mrow>
+</mfrac>
+</math></div>
+
+<p>To eliminate the complex denominator, we expand with the complex conjugate of the denominator:</p>
+
+<div class="math"><math>
+<mtable class="taller" style="font-size:18pt"><mtr><mtd>
+	<mfrac>
+	<mrow><mi>a</mi><mo>+</mo><mi>b</mi><mi>i</mi></mrow>
+	<mrow><mi>c</mi><mo>+</mo><mi>d</mi><mi>i</mi></mrow>
+	</mfrac>
+	<mo></mo>
+	<mfrac>
+	<mrow><mi>c</mi><mo>&minus;</mo><mi>d</mi><mi>i</mi></mrow>
+	<mrow><mi>c</mi><mo>&minus;</mo><mi>d</mi><mi>i</mi></mrow>
+	</mfrac>
+</mtd></mtr><mtr><mtd><mo>=</mo>
+	<mfrac>
+	<mrow><mo>(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mi>i</mi><mo>)</mo><mo>(</mo><mi>c</mi><mo>&minus;</mo><mi>d</mi><mi>i</mi><mo>)</mo></mrow>
+	<mrow><mo>(</mo><mi>c</mi><mo>+</mo><mi>d</mi><mi>i</mi><mo>)</mo><mo>(</mo><mi>c</mi><mo>&minus;</mo><mi>d</mi><mi>i</mi><mo>)</mo></mrow>
+	</mfrac>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>Application of the distributive law obtains</p>
+
+<div class="math"><math>
+<mtable class="taller" style="font-size:18pt"><mtr><mtd><mo>=</mo>
+	<mfrac><mrow>
+		<mi>a</mi><mi>c</mi><mo>&minus;</mo><mi>a</mi><mi>d</mi><mi>i</mi>
+		<mo>+</mo><mi>b</mi><mi>i</mi><mi>c</mi><mo>&minus;</mo><mi>b</mi><mi>i</mi><mi>d</mi><mi>i</mi>
+	</mrow><mrow>
+		<mi>c</mi><mi>c</mi><mo>&minus;</mo><mi>c</mi><mi>d</mi><mi>i</mi><mo>+</mo><mi>d</mi><mi>i</mi><mi>c</mi><mo>&minus;</mo><mi>d</mi><mi>i</mi><mi>d</mi><mi>i</mi>
+	</mrow></mfrac>
+</mtd></mtr><mtr><mtd><mo>=</mo>
+	<mfrac><mrow>
+	<mo>(</mo><mi>a</mi><mi>c</mi><mo>+</mo><mi>b</mi><mi>d</mi><mo>)</mo><mo>&plus;</mo><mi>i</mi><mo>(</mo><mi>b</mi><mi>c</mi><mo>&minus;</mo><mi>a</mi><mi>d</mi><mo>)</mo>
+	</mrow><mrow>
+		<msup><mi>c</mi><mn>2</mn></msup>
+		<mo>+</mo>
+		<msup><mi>d</mi><mn>2</mn></msup>
+	</mrow></mfrac>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>We also exploited the fact that <i>i</i><sup>2</sup>=&minus;1, according to <a href="#defn-016">definition 16</a>.</p>
+
+<!--h3--"Rationalizing" a Complex Denominator--></div>
+
+<!--h2--Solution of Polynomials-->
+
+</main><footer id="page-footer"></footer>
+<script type="module" src="/inc/page.js" ></script>
+<script type="module" src="/inc/fragment-loader/simple-fragment-loader-2.js"></script>
+</body></html>

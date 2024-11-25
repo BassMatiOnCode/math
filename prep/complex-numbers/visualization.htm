@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2023-12-17" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-02-21" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-02-21" />
+<meta name="version" content="1" />
+<meta name="categories" content="" />
+<meta name="tags" content="math, linear agebra" />
+<meta name="description" content="" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/page.css" />
+<link rel="stylesheet" href="/inc/css/math.css" />
+<link rel="stylesheet" href="/inc/css/scientific-1.css" />
+
+<title>Math > Complex Numbers > Visualization of Complex Numbers</title>
+
+</head><body><header id="page-header"><object data="title.svg" type="image/svg+xml"></object></header><div id="main-toolbar"></div><main id="page-content">
+
+<h1>Visualization of Complex Numbers</h1>
+
+<p id="page-abstract"></p>
+
+<p></p>
+
+<figure><figcaption class="figure">The Argand Plane</figcaption>
+<object data="fig-010.svg" type="text/svg+xml"></object>
+</figure>
+
+</main><footer id="page-footer"></footer>
+<script type="module" src="/inc/page.js" ></script>
+<script type="module">
+const t = document.createElement( "template" );
+for ( const e of document.querySelectorAll( "[data-load-uri]" )) {
+	const response = await fetch( e.getAttribute( "data-load-uri" ));
+	const text = await response.text();
+	t.innerHTML = text ;
+	// t.innerHTML = await ( await fetch( e.getAttribute( "data-load-uri" ))).text( );
+	e.replaceWith( t.content );
+	debugger;
+	}
+</script>
+</body></html>

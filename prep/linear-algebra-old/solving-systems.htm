@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2023-12-17" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-02-22" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-02-22" />
+<meta name="version" content="1" />
+<meta name="categories" content="" />
+<meta name="tags" content="math, linear agebra" />
+<meta name="description" content="Linear equation systems can be solved by using the substitution method." />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/page.css" />
+ <link rel="stylesheet" href="/inc/css/math.css" />
+<link rel="stylesheet" href="/inc/css/scientific-1.css" />
+
+<title>Math > Linear Algebra >In this installment we will explore the methods of solving linear equation systems.</title>
+
+</head><body><header id="page-header"><object data="title.svg" type="image/svg+xml"></object></header><div id="main-toolbar"></div><main id="page-content">
+
+<h1>Solving Linear Equation Systems</h1>
+
+<p id="page-abstract"></p>
+
+<h2 cbc>Substitution Method</h2><div>
+
+<p>Consider the following equation system:</p>
+
+<div class="math"><math>
+<mtable class="numbered equation"><mtr>
+	<mtd><mtable><mtr>
+		<mtd><msub><mi>x</mi><mn>1</mn></msub></mtd>
+		<mtd>+</mtd>
+		<mtd><mn>2</mn><msub><mi>x</mi><mn>2</mn></msub></mtd>
+		<mtd><mo>=</mo></mtd>
+		<mtd><mn>10</mn></mtd>
+	</mtr></mtable></mtd>
+	<mtd><mtext>(1)</mtext></mtd>
+</mtr><mtr><mtd>
+	<mtable><mtr><mtd>
+		<mtd><mfrac><mn>1</mn><mn>2</mn></mfrac><msub><mi>x</mi><mn>1</mn></msub></mtd>
+		<mtd>&minus;</mtd>
+		<mtd><mn>3</mn><msub><mi>x</mi><mn>2</mn></msub></mtd>
+		<mtd><mo>=</mo></mtd>
+		<mtd><mn>&minus;11</mn></mtd>
+	</mtr></mtable></mtd>
+	<mtd><mtext>(2)</mtext></mtd>
+</mtr></mtable>
+</math></div>
+
+<p>We solve equation (1) for <math><msub><mi>x</mi><mn>1</mn></msub></math>:</p>
+
+<div class="math"><math>
+<mtable class="numbered equation"><mtr><mtd>
+	<mtable><mtr>
+	<mtd><msub><mi>x</mi><mn>1</mn></msub></mtd>
+	<mtd><mo>=</mo></mtd>
+	<mtd>&minus;</mtd>
+	<mtd><mn>2</mn><msub><mi>x</mi><mn>2</mn></msub></mtd>
+	<mtd><mo>+</mo></mtd>
+	<mtd><mn>10</mn></mtd>
+	</mtr></mtable>
+</mtd><mtd>
+	<mtext>(3)</mtext>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>and substitute <math><msub><mi>x</mi><mn>1</mn></msub></math> in equation (2) with the result:</p>
+
+<div class="math"><math>
+<mtable class="numbered equation"><mtr><mtd>
+	<mtable><mtr>
+	<mtd>
+	<mfrac><mn>1</mn><mn>2</mn></mfrac><mo>(</mo>
+	<mn>&minus;2</mn><msub><mi>x</mi><mn>2</mn></msub>
+	<mo>+</mo>
+	<mn>10</mn><mo>)</mo>
+	</mtd>
+	<mtd>&minus;</mtd>
+	<mtd><mn>3</mn><msub><mi>x</mi><mn>2</mn></msub></mtd>
+	<mtd><mo>=</mo></mtd>
+	<mtd><mn>&minus;11</mn></mtd>
+	</mtr></mtable>
+</mtd>	<mtd>
+	<mtext>(4)</mtext>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>This eliminated <math><msub><mi>x</mi><mn>1</mn></msub></math>. Now we can solve (4) for <math><msub><mi>x</mi><mn>2</mn></msub></math>:</p>
+
+<div class="math"><math>
+<mtable class="numbered equation"><mtr>
+<mtd>
+	<mtable><mtr>
+		<mtd><mo>(</mo><mo>&minus;</mo><msub><mi>x</mi><mn>2</mn></msub><mo>+</mo><mn>5</mn><mo>)</mo></mtd>
+		<mtd>&minus;</mtd>
+		<mtd><mn>3</mn><msub><mi>x</mi><mn>2</mn></msub></mtd>
+		<mtd><mo>=</mo></mtd>
+		<mtd><mn>&minus;11</mn></mtd>
+	</mtr><mtr>
+		<mtd><mo>&minus;</mo><msub><mi>x</mi><mn>2</mn></msub></mtd>
+		<mtd>&minus;</mtd>
+		<mtd><mn>3</mn><msub><mi>x</mi><mn>2</mn></msub></mtd>
+		<mtd><mo>=</mo></mtd>
+		<mtd><mn>&minus;16</mn></mtd>
+	</mtr><mtr>
+		<mtd></mtd>
+		<mtd>&minus;</mtd>
+		<mtd><mn>4</mn><msub><mi>x</mi><mn>2</mn></msub></mtd>
+		<mtd><mo>=</mo></mtd>
+		<mtd><mn>&minus;16</mn></mtd>
+	</mtr><mtr>
+		<mtd></mtd>
+		<mtd></mtd>
+		<mtd><msub><mi>x</mi><mn>2</mn></msub></mtd>
+		<mtd><mo>=</mo></mtd>
+		<mtd><mn>4</mn></mtd>
+	</mtr></mtable>
+</mtd><mtd style="vertical-align:bottom;padding-bottom:10px">
+	<mtext>(5)</mtext>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>This result can substitute <math><msub><mi>x</mi><mn>2</mn></msub></math> in equation (3):</p>
+
+<div class="math"><math>
+<mtable class="numbered equation"><mtr>
+<mtd>
+<mtable><mtr>
+	<mtd><msub><mi>x</mi><mn>1</mn></msub></mtd>
+	<mtd><mo>=</mo></mtd>
+	<mtd><mn>&minus;2</mn><mo>(</mo><mn>4</mn>	<mo>)</mo></mtd>
+	<mtd><mo>+</mo></mtd>
+	<mtd><mn>10</mn></mtd>
+</mtr><mtr>
+	<mtd><msub><mi>x</mi><mn>1</mn></msub></mtd>
+	<mtd><mo>=</mo></mtd>
+	<mtd><mn>&minus;8</mn></mtd>
+	<mtd><mo>+</mo></mtd>
+	<mtd><mn>10</mn></mtd>
+</mtr><mtr>
+	<mtd><msub><mi>x</mi><mn>1</mn></msub></mtd>
+	<mtd><mo>=</mo></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd></mtd>
+	<mtd></mtd>
+</mtr></mtable>
+</mtd><mtd style="vertical-align:bottom;padding-bottom:10px">
+	<mtext>(6)</mtext>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>So the result set of that system is <math><mrow><mo>(</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>)</mo></mrow></math>.</p>
+
+<!--h2--Substitution Method--></div>
+
+<h2 cbc>Elimination Method</h2><div>
+
+<p>Consider the same equation as above:</p>
+
+<div class="math"><math>
+<mtable class="numbered equation"><mtr>
+	<mtd><mtable><mtr>
+		<mtd><msub><mi>x</mi><mn>1</mn></msub></mtd>
+		<mtd>+</mtd>
+		<mtd><mn>2</mn><msub><mi>x</mi><mn>2</mn></msub></mtd>
+		<mtd><mo>=</mo></mtd>
+		<mtd><mn>10</mn></mtd>
+	</mtr></mtable></mtd>
+	<mtd><mtext>(1)</mtext></mtd>
+</mtr><mtr><mtd>
+	<mtable><mtr><mtd>
+		<mtd><mfrac><mn>1</mn><mn>2</mn></mfrac><msub><mi>x</mi><mn>1</mn></msub></mtd>
+		<mtd>&minus;</mtd>
+		<mtd><mn>3</mn><msub><mi>x</mi><mn>2</mn></msub></mtd>
+		<mtd><mo>=</mo></mtd>
+		<mtd><mn>&minus;11</mn></mtd>
+	</mtr></mtable></mtd>
+	<mtd><mtext>(2)</mtext></mtd>
+</mtr></mtable>
+</math></div>
+
+<p>We subtract 1/2 &times; (1) from (2):</p>
+
+<div class="math"><math>
+<mtable class="numbered equation"><mtr>
+	<mtd><mtable><mtr>
+		<mtd><msub><mi>x</mi><mn>1</mn></msub></mtd>
+		<mtd>+</mtd>
+		<mtd><mn>2</mn><msub><mi>x</mi><mn>2</mn></msub></mtd>
+		<mtd><mo>=</mo></mtd>
+		<mtd><mn>10</mn></mtd>
+	</mtr></mtable></mtd>
+	<mtd><mtext>(1)</mtext></mtd>
+</mtr><mtr><mtd>
+	<mtable><mtr><mtd>
+		<mtd></mtd>
+		<mtd>&minus;</mtd>
+		<mtd><mn>4</mn><msub><mi>x</mi><mn>2</mn></msub></mtd>
+		<mtd><mo>=</mo></mtd>
+		<mtd><mn>&minus;16</mn></mtd>
+	</mtr></mtable></mtd>
+	<mtd><mtext>(2)</mtext></mtd>
+</mtr></mtable>
+</math></div>
+
+<p>Then we can divide (2) by &minus;4:</p>
+
+<div class="math"><math>
+<mtable class="numbered equation"><mtr>
+	<mtd><mtable><mtr>
+		<mtd><msub><mi>x</mi><mn>1</mn></msub></mtd>
+		<mtd>+</mtd>
+		<mtd><mn>2</mn><msub><mi>x</mi><mn>2</mn></msub></mtd>
+		<mtd><mo>=</mo></mtd>
+		<mtd><mn>10</mn></mtd>
+	</mtr></mtable></mtd>
+	<mtd><mtext>(1)</mtext></mtd>
+</mtr><mtr><mtd>
+	<mtable><mtr><mtd>
+		<mtd></mtd>
+		<mtd></mtd>
+		<mtd><msub><mi>x</mi><mn>2</mn></msub></mtd>
+		<mtd><mo>=</mo></mtd>
+		<mtd><mn>4</mn></mtd>
+	</mtr></mtable></mtd>
+	<mtd><mtext>(2)</mtext></mtd>
+</mtr></mtable>
+</math></div>
+
+<p>Then we subtract 2 &times; (2) from (1):</p>
+
+<div class="math"><math>
+<mtable class="numbered equation"><mtr>
+	<mtd><mtable><mtr>
+		<mtd><msub><mi>x</mi><mn>1</mn></msub></mtd>
+		<mtd></mtd>
+		<mtd></mtd>
+		<mtd><mo>=</mo></mtd>
+		<mtd><mn>2</mn></mtd>
+	</mtr></mtable></mtd>
+	<mtd><mtext>(1)</mtext></mtd>
+</mtr><mtr><mtd>
+	<mtable><mtr><mtd>
+		<mtd></mtd>
+		<mtd></mtd>
+		<mtd><msub><mi>x</mi><mn>2</mn></msub></mtd>
+		<mtd><mo>=</mo></mtd>
+		<mtd><mn>4</mn></mtd>
+	</mtr></mtable></mtd>
+	<mtd><mtext>(2)</mtext></mtd>
+</mtr></mtable>
+</math></div>
+
+<p>Obviously, the elimination method is much faster.</p>
+
+<h3 cbc>Row Transformations</h3><div>
+
+<p>An operation on an equation transforms the original into an equivalent equation. If we apply the inverse transformation on the transformed equation, we must get back to the original version. Therefore the operations must be <em>reversible</em>. If so, the transformed equation is <em>equivalent</em> to the original equation. Information is neither lost nor added by a transformation.</p>
+
+<p>Allowed transformation operations are:</p>
+
+<ol>
+<li>Scaling: Multiply a row with a non-zero constant</li>
+<li>Replacment: Add a multiple of one row to another.</li>
+<li>Swapping: Exchange the position of equations</li>
+</ol>
+
+<p>Note that multiplying a row by zero is not an allowed operation because it wipes out information.</p>
+
+<!--h3--Row Transformation--></div>
+
+<h3 cbc>Triangular Form of an Equation System</h3><div>
+
+<p>The goal of transformation is to get an equation system into a "triangular" form:</p>
+
+<div data-load-fragment="fragments/triangular-equation-system.htm"></div>
+
+<p>Every equation has one more variable eliminated as the line above. The last equation has only one variable and its solution value. We can then divide that equation by the coefficient <math><msub><mi>a</mi><mi>m,n</mi></msub></math> to obtain a solution for <math><msub><mi>x</mi><mi>n</mi></msub></math>.</p>
+
+<p>We can then back-subtitute that variable by its solution in the equation above, order the terms and divide by the coefficient <math><msub><mi>a</mi><mi>m-1,n-1</mi></msub></math> to get a solution for <math><msub><mi>x</mi><mi>n-1</mi></msub></math>, and so forth until we have a solution for all variables.</p>
+
+<!--h3--Triangular Form of an Equation System--></div>
+
+<h3 cbc>Introduction of the Matrix</h3><div>
+
+<p>Let's take a look at a more complex example:</p>
+
+<div class="math"><math>
+<mtable class="simple equation"><mtr><mtd>
+	<msub><mi>x</mi><mn>1</mn></msub>
+	<mo>&minus;</mo><mn>3</mn><msub><mi>x</mi><mn>2</mn></msub>
+	<mo>+</mo><mn>4</mn><msub><mi>x</mi><mn>3</mn></msub>
+</mtd><mtd>
+	<mo>=</mo><mn>&minus;4</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>4</mn><msub><mi>x</mi><mn>1</mn></msub>
+	<mo>&minus;</mo><mn>7</mn><msub><mi>x</mi><mn>2</mn></msub>
+	<mo>+</mo><mn>7</mn><msub><mi>x</mi><mn>3</mn></msub>
+</mtd><mtd>
+	<mo>=</mo><mn>&minus;8</mn>
+</mtd></mtr><mtr><mtd>
+	<mo>&minus;</mo><mn>4</mn><msub><mi>x</mi><mn>1</mn></msub>
+	<mo>+</mo><mn>6</mn><msub><mi>x</mi><mn>2</mn></msub>
+	<mo>&minus;</mo><msub><mi>x</mi><mn>3</mn></msub>
+</mtd><mtd>
+	<mo>=</mo><mn>7</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>It is somewhat obvious that the variables <math><msub><mi>x</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub></math> are kind of "redundant", and therefore should be omitted to reduce the writing effort. The only relevant parts of the equation systems are the <em>coefficients</em> and the result values on the right side of the equal signs.</p>
+
+<p>This is a <em>coefficient matrix</em>:</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable class="tall-rows matrix"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>&minus;3</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>&minus;7</mn></mtd>
+	<mtd><mn>7</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>&minus;4</mn></mtd>
+	<mtd><mn>6</mn></mtd>
+	<mtd><mn>&minus;1</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<p>This is an <em>augmented matrix</em>:</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable class="tall-rows augmented matrix"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>&minus;3</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+	<mtd><mn>&minus;4</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>&minus;7</mn></mtd>
+	<mtd><mn>7</mn></mtd>
+	<mtd><mn>&minus;8</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>&minus;4</mn></mtd>
+	<mtd><mn>6</mn></mtd>
+	<mtd><mn>&minus;1</mn></mtd>
+	<mtd><mn>7</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<p>Sometimes the vertical bar is omitted but then it must be clarified in the context whether it's a coefficient or an augmented matrix.</p>
+
+<p>The augmented matrix carries the complete information of the equation system and therefore is equivalent to the equation system.</p>
+
+<p>We can apply the transformation rules on the rows of the matrix. The first goal is to eliminate the <math><msub><mi>x</mi><mn>1</mn></msub></math> coefficients in row 2 and 3. For this purpose, we subtract three times row 1 from row 2, and in a second step we add four times row 1 to row 3:</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable class="tall-rows augmented matrix"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>&minus;3</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+	<mtd><mn>&minus;4</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>&minus;5</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>&minus;6</mn></mtd>
+	<mtd><mn>15</mn></mtd>
+	<mtd><mn>&minus;9</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<p>The next step eliminates the minus six in row 3. We add three times row 2 to row 3:</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable class="tall-rows augmented matrix"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>&minus;3</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+	<mtd><mn>&minus;4</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>&minus;5</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<p>Let's have a look at row three. It says:</p>
+
+<div class="math"><math>
+<mtable class="tall"><mtr><mtd>
+	<mn>0</mn><msub><mi>x</mi><mn>1</mn></msub>
+	<mo>+</mo>
+	<mn>0</mn><msub><mi>x</mi><mn>2</mn></msub>
+	<mo>+</mo>
+	<mn>0</mn><msub><mi>x</mi><mn>3</mn></msub>
+	<mo>=</mo>
+	<mn>3</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>0</mn>
+	<mo>=</mo>
+	<mn>3</mn>
+</mtd></mtr><mtr><mtd>
+	<mtext>false</mtext>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>This is a <em>contradiction</em>. The equation system has no solution.</p>
+
+<p>Another example:</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable class="tall"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>-3</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>5</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>-1</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>5</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<p>Add one times row 1 to row two.</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable class="tall"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>-3</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>5</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>-2</mn></mtd>
+	<mtd><mn>5</mn></mtd>
+	<mtd><mn>7</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<p>Swap rows 2 and 3, then add two times row 2 to row 3:</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable class="tall"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>-3</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>5</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>7</mn></mtd>
+	<mtd><mn>7</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<p>Then divide row 3 by 7:</p>
+<div class="math"><math>
+<mo>[</mo><mtable class="tall"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>-3</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>5</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<p>The last row tells us that <math><mi>x</mi><mn>3</mn><mo>=</mo><mn>1</mn></math>: We have our first element of the solution.</p>
+
+<p>Now we <em>could</em> use back-substitution as we did with the equation systems above, but we will continue to apply the rules to elimiate variables in the rows above row 3. So we add negative row 3 to row 2:</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable class="tall"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>-3</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>5</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>-1</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<p>This gives us the second element of the solution: <math><mi>x</mi><mn>2</mn><mo>=</mo><mn>&minus;1</mn></math>.</p>
+
+<p>We continue and add three times row 2 to row 1:</p>
+
+
+<div class="math"><math>
+<mo>[</mo><mtable class="tall"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>-1</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<p>Which gives us the third element of the solution set. The entire solution can be read out directly from the matrix: <math><mo>(</mo><mn>2</mn><mo>,</mo><mn>&minus;1</mn><mo>,</mo><mn>1</mn><mo>)</mo></math>.</p>
+
+<!--h3--Introduction of the Matrix--></div>
+
+<!--h2--Elimination Method--></div>
+
+</main><footer id="page-footer"></footer>
+<script type="module" src="/inc/page.js" ></script>
+<script type="module" src="/inc/simple-fragment-loader-1.js"></script>
+</body></html>

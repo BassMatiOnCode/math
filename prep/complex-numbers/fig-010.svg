@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xxml-stylesheet href="\svg.css" type="text/css"?>
+<!-- fig-003.svg   2024-02-06   usp    Verifies the line length correction for lines with arrows in svg-2.js -->
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="340"  viewBox="-150 -190 340 340" style="border:1px none silver;margin:0px">
+
+<script href="/inc/svg/svg-2.js"></script>
+
+<style>
+	g.coordinate-system {
+		stroke : black ;
+		fill : none ;
+		stroke-width : 0.9px ;
+		}
+	g.coordinate-system line {
+		marker-end : url( #arrow-black );
+		}
+	g.coordinate-system circle {
+		fill : white;
+		}
+	g.coordinate-system text {
+		}
+	g.textbox rect { 
+		stroke : none ; 
+		fill : white ;
+		}
+	line.vector { 
+		stroke-width : 2px ;
+		}
+	line.vector[stroke="black"] { 
+		marker-end : url(#small-arrow-black) ;
+		}
+	line.vector[stroke="seagreen"] { 
+		marker-end : url(#arrow-seagreen) ;
+		}
+	line.vector[stroke="steelblue"] { 
+		marker-end : url(#arrow-steelblue) ;
+		}
+	marker path {
+		stroke : "none" ;
+		}
+	text {
+		stroke : none ;
+		fill : black ;
+		text-anchor : middle ;
+		dominant-baseline : middle ;
+		}
+	tspan {
+		text-anchor : middle ;
+		dominant-baseline : middle ;
+		}
+	</style>
+
+<defs>
+	<marker id="point-black" viewBox="-6 -6 12 12" refX="0" refY="0" markerWidth="6" markerHeight="6" markerUnits="strokeWidth">
+		<circle r="5" fill="white" stroke="black" stroke-width="2" />
+		</marker>
+	<marker id="arrow-black" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="18" markerHeight="6" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="black" />
+		</marker>
+	<marker id="small-arrow-black" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="12" markerHeight="4" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="black" />
+		</marker>
+	<marker id="arrow-steelblue" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="12" markerHeight="4" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="steelblue" />
+		</marker>
+	<marker id="arrow-seagreen" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="12" markerHeight="4" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="seagreen" />
+		</marker>
+	</defs>
+
+<g class="coordinate-system">
+	<line x1="-140" y1="0" x2="170" y2="0" />
+	<path d="M -120 10 v -20 m 40 20 v -20 m 40 20 v -20 m 40 20 v -20 m 40 20 v -20 m 40 20 v -20 m 40 20 v -20" />
+	<line x1="0" y1="140" x2="0" y2="-170" />
+	<path d="M -10 120 h 20 m -20 -40 h 20 m -20 -40 h 20 m -20 -40 h 20 m -20 -40 h 20 m -20 -40 h 20 m -20 -40 h 20"/>
+	</g>
+
+<g>
+	<line class="vector" x1="0" y1="0" x2="0" y2="-40" stroke="black" />
+	<foreignObject x="-25" y="-32" width="13" height="30" requiredExtensions="http://www.w3.org/1998/Math/MathML" style="border:1px none silver">
+		<math xmlns="http://www.w3.org/1998/Math/MathML">
+		<mover><mi>i</mi><mo>&#x2192;</mo></mover>
+		</math>
+		</foreignObject>
+	<line class="vector" x1="0" y1="0" x2="40" y2="0" stroke="black"/>
+	<foreignObject x="15" y="8" width="13" height="30" requiredExtensions="http://www.w3.org/1998/Math/MathML" style="border:1px none silver">
+		<math xmlns="http://www.w3.org/1998/Math/MathML">
+		<mover><mi>j</mi><mo>&#x2192;</mo></mover>
+		</math>
+		</foreignObject>
+</g>
+
+<g display="none">
+	<path d="M 40 0  a 40 40 90 0 0 -35 -40" stroke="black" stroke-width="1px" fill="none" marker-end="url(#arrow-black)" stroke-dasharray="5 5"/>
+	<path d="M 0 -40 a 40 40 90 0 0 -40 35" stroke="black" stroke-width="1px" fill="none" marker-end="url(#arrow-black)" stroke-dasharray="5 5"/>
+	<path d="M -40 0 a 40 40 90 0 0 35 40" stroke="black" stroke-width="1px" fill="none" marker-end="url(#arrow-black)" stroke-dasharray="5 5"/>
+	<path d="M 0 40 a 40 40 90 0 0 40 -35" stroke="black" stroke-width="1px" fill="none" marker-end="url(#arrow-black)" stroke-dasharray="5 5"/>
+	</g>
+
+<g class="coordinate-system">
+	<g class="textbox" transform="translate(-120,20)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>−3</text>
+		</g>
+	<g class="textbox" transform="translate(-80,20)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>−2</text>
+		</g>
+	<g class="textbox" transform="translate(-40,20)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>−1</text>
+		</g>
+	<g class="textbox" transform="translate(40,20)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>+1</text>
+		</g>
+	<g class="textbox" transform="translate(80,20)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>+2</text>
+		</g>
+	<g class="textbox" transform="translate(120,20)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>+3</text>
+		</g>
+	<g class="textbox" transform="translate(160,20)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>Re</text>
+		</g>
+	<g class="textbox" transform="translate(-20,120)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>−3</text>
+		</g>
+	<g class="textbox" transform="translate(-20,80)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>−2</text>
+		</g>
+	<g class="textbox" transform="translate(-20,40)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>−1</text>
+		</g>
+	<g class="textbox" transform="translate(-20,-40)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>+1</text>
+		</g>
+	<g class="textbox" transform="translate(-20,-80)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>+2</text>
+		</g>
+	<g class="textbox" transform="translate(-20,-120)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>+3</text>
+		</g>
+	<g class="textbox" transform="translate(-20,-160)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>Im</text>
+		</g>
+	</g>
+
+<script>
+Synesis.Svg.adjustLineLength( document.querySelectorAll( ".vector" ));
+</script>
+
+</svg>

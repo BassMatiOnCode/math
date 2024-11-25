@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xxml-stylesheet href="\svg.css" type="text/css"?>
+<!-- fig-003.svg   2024-02-06   usp    Verifies the line length correction for lines with arrows in svg-2.js -->
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="280"  viewBox="-120 -160 260 280" style="border:1px solid silver">
+
+<script href="/inc/svg/svg-2.js"></script>
+
+<style>
+	g.coordinate-system {
+		stroke : black ;
+		fill : none ;
+		stroke-width : 0.7px ;
+		}
+	g.coordinate-system line {
+		marker-end : url( #arrow-black );
+		}
+	g.coordinate-system circle {
+		fill : white;
+		}
+	g.coordinate-system text {
+		}
+	g.textbox rect { 
+		stroke : none ; 
+		fill : white ;
+		}
+	line.vector { stroke-width : 2px }
+	line.vector[stroke="seagreen"] { marker-end : url(#arrow-seagreen) }
+	line.vector[stroke="steelblue"] { marker-end : url(#arrow-steelblue) }
+	text {
+		stroke : none ;
+		fill : black ;
+		text-anchor : middle ;
+		dominant-baseline : middle ;
+		}
+	tspan {
+		text-anchor : middle ;
+		dominant-baseline : middle ;
+		}
+	</style>
+
+<defs>
+	<marker id="point-black" viewBox="-6 -6 12 12" refX="0" refY="0" markerWidth="6" markerHeight="6" markerUnits="strokeWidth">
+		<circle r="5" fill="white" stroke="black" stroke-width="2" />
+		</marker>
+	<marker id="arrow-black" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="18" markerHeight="6" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="black" stroke="none"/>
+		</marker>
+	<marker id="arrow-steelblue" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="12" markerHeight="4" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="steelblue" stroke="none"/>
+		</marker>
+	<marker id="arrow-seagreen" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="12" markerHeight="4" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="seagreen" stroke="none"/>
+		</marker>
+	</defs>
+
+<g class="coordinate-system">
+	<line x1="-100" y1="0" x2="120" y2="0" />
+	<path d="M -80 10 v -20 m 40 20 v -20 m 40 20 v -20 m 40 20 v -20 m 40 20 v -20" />
+	<line x1="0" y1="100" x2="0" y2="-120" />
+	<path d="M -10 80 h 20 m -20 -40 h 20 m -20 -40 h 20 m -20 -40 h 20 m -20 -40 h 20"/>
+	</g>
+
+<g>
+	<path d="M 40 0  a 40 40 90 0 0 -35 -40" stroke="black" stroke-width="1px" fill="none" marker-end="url(#arrow-black)" stroke-dasharray="5 5"/>
+	<path d="M 0 -40 a 40 40 90 0 0 -40 35" stroke="black" stroke-width="1px" fill="none" marker-end="url(#arrow-black)" stroke-dasharray="5 5"/>
+	<path d="M -40 0 a 40 40 90 0 0 35 40" stroke="black" stroke-width="1px" fill="none" marker-end="url(#arrow-black)" stroke-dasharray="5 5"/>
+	<path d="M 0 40 a 40 40 90 0 0 40 -35" stroke="black" stroke-width="1px" fill="none" marker-end="url(#arrow-black)" stroke-dasharray="5 5"/>
+	</g>
+
+<g class="coordinate-system">
+	<g class="textbox" transform="translate(-80,20)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>−2</text>
+		</g>
+	<g class="textbox" transform="translate(-40,20)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>−1</text>
+		</g>
+	<g class="textbox" transform="translate(40,20)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>+1</text>
+		</g>
+	<g class="textbox" transform="translate(80,20)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>+2</text>
+		</g>
+	<g class="textbox" transform="translate(120,20)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>Re</text>
+		</g>
+	<g class="textbox" transform="translate(-20,80)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>−2</text>
+		</g>
+	<g class="textbox" transform="translate(-20,40)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>−1</text>
+		</g>
+	<g class="textbox" transform="translate(-20,-40)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>+1</text>
+		</g>
+	<g class="textbox" transform="translate(-20,-80)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>+2</text>
+		</g>
+	<g class="textbox" transform="translate(-20,-120)">
+		<rect x="-10" y="-10" width="20" height="20"></rect>
+		<text>Im</text>
+		</g>
+	</g>
+
+</svg>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2023-12-17" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-02-23" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-02-23" />
+<meta name="version" content="1" />
+<meta name="categories" content="" />
+<meta name="tags" content="math, linear agebra" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/page.css" />
+ <link rel="stylesheet" href="/inc/css/math.css" />
+<link rel="stylesheet" href="/inc/css/scientific-1.css" />
+
+<meta name="description" content="" />
+
+<title>Math > Linear Algebra >Solutions</title>
+
+</head><body><header id="page-header"><object data="title.svg" type="image/svg+xml"></object></header><div id="main-toolbar"></div><main id="page-content">
+
+<h1>Solutions</h1>
+
+<p id="page-abstract"></p>
+
+<p>The reason why we transform a system of linear equation or its matrix into echelon or reduced echelon form is that we can easier analyze its solutions.</p>
+
+<div data-load-fragment="definitions/defn-003.htm"></div>
+
+<p>If a linear system has free variables, basic variables are expressed in terms of free variables. You can choose arbitrary values for the free variables. Your choice then determines the basic variables.</p>
+
+<div data-load-fragment="corollaries/coro-001.htm"></div>
+
+<div data-load-fragment="definitions/defn-004.htm"></div>
+
+<p>A consistent system has one unique solution if there are no free variables. A consistent system has infinitely many solutions if there is at least one free variable.</p>
+
+<h2 cbc>Solving a System of Linear Equations</h2><div>
+
+<p>To solve a system of linear equations, follow these steps:</p>
+
+<ol>
+<li>Create the augmented matrix from the equations</li>
+<li>Reduce the matrix to the echelon form</li>
+<li>Rewrite the matrix in equation form</li>
+<li>Solve each equation for the basic variable</li>
+</ol>
+
+<!--h2--Solving a System of Linear Equations--></div>
+
+<h2 cbc>Describing a Solution</h2><div>
+
+<p>Sometimes not a complete solution is required, and is sufficient to describe the solution or point out certain properties of the solution:</p>
+
+<ul>
+<li>Does the system have at least one solution?</li>
+<li>Does the system have a single unique solution?</li>
+</ul>
+
+<p>These questions can be deduced from the echelon form, the reduced echelon form is not necessary.</p>
+
+<p>If the echelon form has a row with a contradiction (e. g. 0 = 5), the system has no solution and is inconsistent. </p>
+
+<div data-load-fragment="corollaries/coro-002.htm"></div>
+
+<!--h2--Describing a Solution--></div>
+
+</main><footer id="page-footer"></footer>
+<script type="module" src="/inc/page.js" ></script>
+<script type="module" src="/inc/simple-fragment-loader-1.js"></script>
+</body></html>

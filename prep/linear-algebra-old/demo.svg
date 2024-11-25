@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xxml-stylesheet href="\svg.css" type="text/css"?>
+<!-- fig-003.svg   2024-02-06   usp    Verifies the line length correction for lines with arrows in svg-2.js -->
+<svg xmlns="http://www.w3.org/2000/svg" width="562" height="742"  viewBox="-281 -371 562 742" style="border:1px solid silver">
+
+<script href="/inc/svg/svg-2.js"></script>
+
+<style>
+	text { font-family : "Times New Roman" ; font-size : 20px }
+	tspan.vector.letter + tspan { font-size : 14px }
+	line.vector-line { stroke-width : 2px ; stroke : blue ; marker-start: url(#arrow-black) ; marker-end : url(#arrow-black) }
+	</style>
+<defs>
+	<marker id="dot-black" viewBox="-3 -3 6 6" refX="0" refY="0" markerWidth="6" markerHeight="6" markerUnits="strokeWidth">
+		<circle r="3" fill="black" stroke="none"/>
+		</marker>
+	<marker id="arrow-black" overhang="" viewBox="-15 -5 30 10" refX="0" refY="0" markerWidth="12" markerHeight="4" markerUnits="strokeWidth" orient="auto-start-reverse">
+		<path d="M 15 0 l -30 5 0 -10 z" fill="black" stroke="none"/>
+		</marker>
+	</defs>
+
+<g id="u-vectors">
+	<circle r="10" stroke-width="2" stroke="black" fill="white" />
+	<circle cx="100" cy="30" r="5" stroke-width="2" stroke="black" fill="white" />
+	<circle cx="100" cy="-30" r="5" stroke-width="2" stroke="black" fill="white" />
+	<circle cx="-100" cy="-30" r="5" stroke-width="2" stroke="black" fill="white" />
+	<circle cx="-100" cy="30" r="5" stroke-width="2" stroke="black" fill="white" />
+	<script>
+		const x = 100 ;
+		const y = 30 ;
+		const slope = y / x ;
+		const length = Math.sqrt( x**2 + y**2 );
+		const target = document.currentScript.parentElement ;
+		target.append( Synesis.Svg.line2( 0, 0, length, slope, { attributes : { class: "vector-line" } } ) );
+		target.append( Synesis.Svg.line2( 0, 0, length, -slope, { attributes : { class: "vector-line" } } ) );
+		target.append( Synesis.Svg.line2( 0, 0, -length, -slope, { attributes : { class: "vector-line" } } ) );
+		target.append( Synesis.Svg.line2( 0, 0, -length, slope, { attributes : { class: "vector-line" } } ) );
+		</script>
+	</g>
+</svg>

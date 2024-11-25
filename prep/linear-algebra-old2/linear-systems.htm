@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2024-08-07" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-03-05" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-03-05" />
+<meta name="version" content="1" />
+<meta name="sectionTitle" content="title.svg" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/web-cat/page-structure/tutorial-page-1.css" />
+<script type="module" src="/inc/web-cat/page-structure/tutorial-page-1.js" ></script>
+
+<link rel="stylesheet" href="/inc/css/math.css" />
+<link rel="stylesheet" href="/inc/css/scientific-1.css" />
+
+<meta name="categories" content="Math > Linear Algebra" />
+<meta name="tags" content="math, linear agebra, introduction" />
+<meta name="description" content="Linear algebra is about solving systems of linear equations." />
+
+<title>Linear Systems of Equations (Math > Linear Algebra)</title>
+
+</head><body>
+
+<h1>Linear Systems of Equations</h1>
+<p class="subtitle">Subtitle</p>
+
+<p id="page-abstract"></p>
+
+<p>We have a number of unknowns which are related to each other in a given way. Solving the system means finding values for the unknowns that fulfill these relations.</p>
+
+<h2 cbc>Examples</h2><div>
+
+<h3 id="ex-1-1" cbc>Example 1.1</h3><div>
+
+<p>Let's assume the following equations:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>=</mo><mn>5</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>4</mn><mi>x</mi><mo>+</mo><mi>y</mi><mo>=</mo><mn>6</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>Solution:</p>
+
+<p>This is a system of two equations with two unknowns. We already know that equations of the form</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi><mo>+</mo><mi>c</mi><mo>=</mo><mn>0</mn>
+</math></div>
+
+<p>describe a straight line in a two-dimensional coordinate system. So our sysem describes two lines. The solution is the point (x, y) that lies on both lines. In other words, we are searching for the intersection point of these two graphs:</p>
+
+<figure><figcaption class="figure">Graphical solution to the equation system</figcaption>
+<object data="diagrams/fig-001.svg" type="text/svg+xml"></object>
+</figure>
+
+<p>We measure the coordinates of the intersection point and find the solution (1.5, 2).</p>
+
+<div class="recap" style="margin-top : 60px ; margin-bottom : 60px"><figcaption>Recap: Constructing Lines</figcaption>
+
+<p>First, we set choose x = 0 and solve equation 2 for y:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mn>0</mn><mo>+</mo><mn>2</mn><mi>y</mi>
+	</mtd><mtd>
+	<mo>=</mo><mn>5</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>y</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>5</mn><mo>/</mo><mn>2</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>This gives us the first point (0, 2.5). Then we choose y = 0 and slove for x:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mi>x</mi><mo>+</mo><mn>2</mn><mo>&sdot;</mo><mn>0</mn>
+	</mtd><mtd>
+	<mo>=</mo><mn>5</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>x</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>5</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>This gives us the second point (5, 0), and we can draw the blue line.</p>
+<p>The same procedure applied to the second equation gives us the points (0, 6) and (1.5, 0) for the red line. Then we can measure out the intersection point (1, 2), wich is the solution for the equation system.</p>
+
+<!--div--Recap: Constructing Lines--></div>
+
+<p>Of course, manual measurings in a diagram seldomly produce an exact solution. An exact algebraic solution uses the <em>substitution method</em> to solve the system:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>=</mo><mn>5</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>4</mn><mi>x</mi><mo>+</mo><mi>y</mi><mo>=</mo><mn>6</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>There are always multiple possible routes we can follow, but here the second equation offers itself for easily solving for y:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>=</mo><mn>5</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>y</mi><mo>=</mo><mn>6</mn><mo>&minus;</mo><mn>4</mn><mi>x</mi>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>Then we substitute y in the first equation with the right&ndash;hand side expression:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>x</mi><mo>+</mo><mn>2</mn><mo>(</mo><mn>6</mn><mo>&minus;</mo><mn>4</mn><mi>x</mi><mo>)</mo><mo>=</mo><mn>5</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>y</mi><mo>=</mo><mn>6</mn><mo>&minus;</mo><mn>4</mn><mi>x</mi>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>Then we simplify and order:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>x</mi><mo>+</mo><mn>2</mn><mo>&sdot;</mo><mn>6</mn><mo>&minus;</mo><mn>2</mn><mo>&sdot;</mo><mn>4</mn><mi>x</mi><mo>=</mo><mn>5</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>y</mi><mo>=</mo><mn>6</mn><mo>&minus;</mo><mn>4</mn><mi>x</mi>
+</mtd></mtr></mtable>
+</math></div>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>x</mi><mo>+</mo><mn>12</mn><mo>&minus;</mo><mn>8</mn><mi>x</mi><mo>=</mo><mn>5</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>y</mi><mo>=</mo><mn>6</mn><mo>&minus;</mo><mn>4</mn><mi>x</mi>
+</mtd></mtr></mtable>
+</math></div>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>x</mi><mo>&minus;</mo><mn>8</mn><mi>x</mi><mo>=</mo><mn>5</mn><mo>&minus;</mo><mn>12</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>y</mi><mo>=</mo><mn>6</mn><mo>&minus;</mo><mn>4</mn><mi>x</mi>
+</mtd></mtr></mtable>
+</math></div>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mo>&minus;</mo><mn>7</mn><mi>x</mi><mo>=</mo><mo>&minus;</mo><mn>7</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>y</mi><mo>=</mo><mn>6</mn><mo>&minus;</mo><mn>4</mn><mi>x</mi>
+</mtd></mtr></mtable>
+</math></div>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd style="padding-bottom : 10px">
+	<mi>x</mi><mo>=</mo><mfrac scriptlevel="-1"><mrow style="padding : 10px"><mo>&minus;</mo><mn>7</mn></mrow> <mrow><mo>&minus;</mo><mn>7</mn></mrow></mfrac><mo>=</mo>1
+</mtd></mtr><mtr><mtd>
+	<mi>y</mi><mo>=</mo><mn>6</mn><mo>&minus;</mo><mn>4</mn><mi>x</mi>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>There we found our first solution, x = 1. We can now substitute x in the second equation with that result:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd style="padding-bottom : 10px">
+	<mi>x</mi><mo>=</mo><mo>=</mo>1
+</mtd></mtr><mtr><mtd>
+	<mi>y</mi><mo>=</mo><mn>6</mn><mo>&minus;</mo><mn>4</mn><mo>&sdot;</mo><mi>1</mi><mo>=</mo><mn>2</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>and thereby obtain our second result, y = 2. So the exact result set of the equation system is (1, 2), which is in accordance to the estimated graphical solution we obtained above.</p>
+
+<!--h3--Example 1.1--></div>
+
+<h3 cbc>Solutions Sets</h3><div>
+
+<p>If we analyze the graphical representation of the equation system with lines, be can imagine three different <em>solution sets</em> to the system:</p>
+
+<ol>
+<li>The lines intersect in a single point: The system has <em>one unique solution</em>, which are the coordinates of that point. The solution set contains one unique solution.</li>
+<li>Both lines are parallel to each other with some distance between them: The system has <em>no solutions</em>, because parallel lines never intersect anywhere. The solution set is empty.</li>
+<li>Both lines are parallel with no distance between them: There are <em>infinitely many solutions</em>, because every point on the first line is also a point on the second line. The solution set contains infinitely many solutions..</li>
+</ol>
+
+<!--h3--Solutions Sets--></div>
+
+<h3 cbc>Example 1.2</h3><div>
+
+<p>Question: For what values of the unknowns <i>x</i>, <i>y</i> and <i>z</i> are the following equations satisfied?</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>5</mn><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>11</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>4</mn><mi>x</mi><mo>+</mo><mn>6</mn><mi>y</mi><mo>+</mo><mn>8</mn><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>24</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>4</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>Solution:</p>
+
+<p>This is an equation system with three variables (unknowns). A geometrical solution is rather impractial, because we would have to draw three dimensions on a two-dimensional sheet of paper. So we will apply the <em>substitution method</em> as before.</p>
+
+<p>We can solve the third equation for <i>z</i> and substitute <i>z</i> in the second equation with the result:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mn>4</mn><mi>x</mi><mo>+</mo><mn>6</mn><mi>y</mi><mo>+</mo><mn>8</mn><mo>(</mo><mn>4</mn><mo>&minus;</mo><mi>x</mi><mo>&minus;</mo><mi>y</mi><mo>)</mo>
+</mtd><mtd>
+	<mo>=</mo><mn>24</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>4</mn><mo>&minus;</mo><mi>x</mi><mo>&minus;</mo><mi>y</mi>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>The second equation simplified, ordered and solved for <i>y</i>:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mn>4</mn><mi>x</mi><mo>+</mo><mn>6</mn><mi>y</mi><mo>+</mo><mn>8</mn><mo>&sdot;</mo><mn>4</mn><mo>&minus;</mo><mn>8</mn><mo>&sdot;</mo><mi>x</mi><mo>&minus;</mo><mn>8</mn><mo>&sdot;</mo><mi>y</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>24</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>4</mn><mi>x</mi><mo>&minus;</mo><mn>8</mn><mi>x</mi><mo>+</mo><mn>6</mn><mi>y</mi><mo>&minus;</mo><mn>8</mn><mi>y</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>24</mn><mo>&minus;</mo><mn>32</mn>
+</mtd></mtr><mtr><mtd>
+	<mo>&minus;</mo><mn>4</mn><mi>x</mi><mo>&minus;</mo><mn>2</mn><mi>y</mi>
+</mtd><mtd>
+	<mo>=</mo><mo>&minus;</mo><mn>8</mn>
+</mtd></mtr><mtr><mtd>
+	<mo>&minus;</mo><mn>2</mn><mi>y</mi>
+</mtd><mtd>
+	<mo>=</mo><mo>+</mo><mn>4</mn><mi>x</mi><mo>&minus;</mo><mn>8</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>y</mi>
+</mtd><mtd>
+	<mo>=</mo><mo>&minus;</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>4</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>Then we can substitute <i>y</i> and <i>z</i> in the first equation:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn><mo>(</mo></mo><mo>&minus;</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>4</mn><mo>)</mo><mo>+</mo><mn>5</mn><mo>(</mo><mn>4</mn><mo>&minus;</mo><mi>x</mi><mo>&minus;</mo><mi>y</mi><mo>)</mo>
+</mtd><mtd>
+	<mo>=</mo><mn>11</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>Simplified, ordered and solved for <i>x</i>:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn><mo>(</mo></mo><mo>&minus;</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>4</mn><mo>)</mo><mo>+</mo><mn>5</mn><mo>(</mo><mn>4</mn><mo>&minus;</mo><mi>x</mi><mo>&minus;</mo><mi>y</mi><mo>)</mo>
+</mtd><mtd>
+	<mo>=</mo><mn>11</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn><mo>&sdot;</mo></mo><mo>&minus;</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn><mo>&sdot;</mo><mn>4</mn><mo>+</mo><mn>5</mn><mo>&sdot;</mo><mn>4</mn><mo>&minus;</mo><mn>5</mn><mi>x</mi><mo>&minus;</mo><mn>5</mn><mi>y</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>11</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>2</mn><mi>x</mi><mo>&minus;</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>8</mn><mo>+</mo><mn>20</mn><mo>&minus;</mo><mn>5</mn><mi>x</mi><mo>&minus;</mo><mn>5</mn><mi>y</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>11</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>2</mn><mi>x</mi><mo>&minus;</mo><mn>4</mn><mi>x</mi><mo>&minus;</mo><mn>5</mn><mi>x</mi><mo>&minus;</mo><mn>5</mn><mi>y</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>11</mn><mo>&minus;</mo><mn>8</mn><mo>&minus;</mo><mn>20</mn>
+	<mo>=</mo><mo>&minus;</mo><mn>17</mn>
+</mtd></mtr><mtr><mtd>
+	<mo>&minus;</mo><mn>7</mn><mi>x</mi><mo>&minus;</mo><mn>5</mn><mi>y</mi>
+</mtd><mtd>
+	<mo>=</mo><mo>&minus;</mo><mn>17</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>We must substitute the <i>y</i> that came in with the substitution of <i>z</i>:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mo>&minus;</mo><mn>7</mn><mi>x</mi><mo>&minus;</mo><mn>5</mn><mo>(</mo><mo>&minus;</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>4</mn><mo>)</mo>
+</mtd><mtd>
+	<mo>=</mo><mo>&minus;</mo><mn>17</mn>
+</mtd></mtr><mtr><mtd>
+	<mo>&minus;</mo><mn>7</mn><mi>x</mi><mo>&minus;</mo><mn>5</mn><mo>&sdot;</mo><mo>&minus;</mo><mn>2</mn><mi>x</mi><mo>&minus;</mo><mn>5</mn><mo>&sdot;</mo><mo>+</mo><mn>4</mn>
+</mtd><mtd>
+	<mo>=</mo><mo>&minus;</mo><mn>17</mn>
+</mtd></mtr><mtr><mtd>
+	<mo>&minus;</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>5</mn><mo>&sdot;</mo><mn>2</mn><mi>x</mi><mo>&minus;</mo><mn>5</mn><mo>&sdot;</mo><mn>4</mn>
+</mtd><mtd>
+	<mo>=</mo><mo>&minus;</mo><mn>17</mn>
+</mtd></mtr><mtr><mtd>
+	<mo>+</mo><mn>3</mn><mi>x</mi><mo>&minus;</mo><mn>20</mn>
+</mtd><mtd>
+	<mo>=</mo><mo>&minus;</mo><mn>17</mn>
+</mtd></mtr><mtr><mtd>
+	<mo>+</mo><mn>3</mn><mi>x</mi>
+</mtd><mtd>
+	<mo>=</mo><mo>&minus;</mo><mn>17</mn><mo>+</mo><mn>20</mn>
+	<mo>=</mo><mn>3</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>x</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>1</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>This is our first result, which we can substitute into the solution for <i>y</i> above:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mi>y</mi>
+</mtd><mtd>
+	<mo>=</mo><mo>&minus;</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>4</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>y</mi>
+</mtd><mtd>
+	<mo>=</mo><mo>&minus;</mo><mn>2</mn><mo>&sdot;</mo><mn>1</mn><mo>+</mo><mn>4</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>y</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>2</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>Our second result. Now we can sove the equation for <i>z</i> by substituting <i>x</i> and <i>y</i> with their solutions:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>4</mn><mo>&minus;</mo><mi>x</mi><mo>&minus;</mo><mi>y</mi>
+</mtd></mtr><mtr><mtd>
+	<mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>4</mn><mo>&minus;</mo><mn>1</mn><mo>&minus;</mo><mn>2</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>1</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>This is the solution for the third variable.</p>
+
+<p>So the solution set for the equation system has a single unique solution (1, 2, 1).</p>
+
+<p>Verification:</p>
+<p>We subsitute the variables for their results in the original equation system:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>5</mn><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>11</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>4</mn><mi>x</mi><mo>+</mo><mn>6</mn><mi>y</mi><mo>+</mo><mn>8</mn><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>24</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>4</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>Let's start with the first equation:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>5</mn><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>11</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>2</mn><mo>&sdot;</mo><mi>1</mi><mo>+</mo><mn>2</mn><mo>&sdot;</mo><mi>2</mi><mo>+</mo><mn>5</mn><mo>&sdot;</mo><mi>1</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>11</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>2</mn><mo>+</mo><mn>4</mn><mo>+</mo><mn>5</mn>
+</mtd><mtd>
+	<mo>=</mo><mn>11</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>11</mn>
+</mtd><mtd>
+	<mo>=</mo><mn>11</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>That's correct. Equation 2:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mn>4</mn><mi>x</mi><mo>+</mo><mn>6</mn><mi>y</mi><mo>+</mo><mn>8</mn><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>24</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>4</mn><mo>&sdot;</mo><mn>1</mn><mo>+</mo><mn>6</mn><mo>&sdot;</mo><mn>2</mn><mo>+</mo><mn>8</mn><mo>&sdot;</mo><mn>1</mn>
+</mtd><mtd>
+	<mo>=</mo><mn>24</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>4</mn><mo>+</mo><mn>12</mn><mo>+</mo><mn>8</mn>
+</mtd><mtd>
+	<mo>=</mo><mn>24</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>24</mn>
+</mtd><mtd>
+	<mo>=</mo><mn>24</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>Also correct. Equation 3:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>4</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>1</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>1</mn>
+</mtd><mtd>
+	<mo>=</mo><mn>4</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>4</mn>
+</mtd><mtd>
+	<mo>=</mo><mn>4</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>Everything is correct. The solution (1, 2, 1) has been verified to satisfy the equation system.</p>
+
+<!--h3--Example 1.2--></div>
+
+<h3 cbc>Example 1.3</h3><div>
+
+<p>The substitution method incorporates a fair amount of copying and transformation steps, which easily can introduce errors. In this example we will apply a different method called "elimination of variables", which involves a different kind of transformation: Adding multiples of one row to another.</p>
+
+<p>Here again the original equation system:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>5</mn><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>11</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>4</mn><mi>x</mi><mo>+</mo><mn>6</mn><mi>y</mi><mo>+</mo><mn>8</mn><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>24</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>4</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>The first step is to eliminate the 2<i>x</i> in row 1. For this purpose, we replace row 1 with the sum of  row 1 minus 2 times row 3. In short:<br/> R1 &minus; 2&times;R3 &rarr; R1:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mn>2</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>+</mo><mn>5</mn><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>11</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>4</mn>
+</mtd></mtr><mtr><mtd>
+	<mo>(</mo><mn>2</mn><mo>&minus;</mo><mn>2</mn><mo>&sdot;</mo><mn>1</mn><mo>)</mo><mi>x</mi>
+	<mo>+</mo><mo>(</mo><mn>2</mn><mo>&minus;</mo><mn>2</mn><mo>&sdot;</mo><mn>1</mn><mo>)</mo><mi>y</mi>
+	<mo>+</mo><mo>(</mo><mn>5</mn><mo>&minus;</mo><mn>2</mn><mo>&sdot;</mo><mn>1</mn><mo>)</mo><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>11</mn><mo>&minus;</mo><mn>2</mn><mo>&sdot;</mo><mn>4</mn>
+</mtd></mtr><mtr><mtd>
+	<mo>(</mo><mn>2</mn><mo>&minus;</mo><mn>2</mn><mo>)</mo><mi>x</mi>
+	<mo>+</mo><mo>(</mo><mn>2</mn><mo>&minus;</mo><mn>2</mn><mo>)</mo><mi>y</mi>
+	<mo>+</mo><mo>(</mo><mn>5</mn><mo>&minus;</mo><mn>2</mn><mo>)</mo><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>11</mn><mo>&minus;</mo><mn>8</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>0</mn><mi>x</mi>
+	<mo>+</mo><mn>0</mn><mi>y</mi>
+	<mo>+</mo><mn>3</mn><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>3</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>3</mn><mo>&div;</mo><mn>3</mn>
+	<mo>=</mo><mn>1</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>Fortunately, this also eliminates the 2<i>y</i> and leaves only the variable <i>z</i>. So we have our first result: <i>z</i>=1.</p>
+
+<p>The next goal is to eliminate the 4<i>x</i> in row 2. So we replace row 2 with row 2 minus 4 times row 3:<br/>R2 &minus; 4 &times; R3 &rarr; R2:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mn>4</mn><mi>x</mi><mo>+</mo><mn>6</mn><mi>y</mi><mo>+</mo><mn>8</mn><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>24</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>4</mn>
+</mtd></mtr><mtr><mtd>
+	<mo>(</mo><mn>4</mn><mo>&minus;</mo><mn>4</mn><mo>&sdot;</mo><mn>1</mn><mo>)</mo><mi>x</mi><mo>+</mo><mo>(</mo><mn>6</mn><mo>&minus;</mo><mn>4</mn><mo>&sdot;</mo><mn>1</mn><mo>)</mo><mi>y</mi><mo>+</mo><mo>(</mo><mn>8</mn><mo>&minus;</mo><mn>4</mn><mo>&sdot;</mo><mn>1</mn><mo>)</mo><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>24</mn><mo>&minus;</mo><mn>4</mn><mo>&sdot;</mo><mn>4</mn>
+</mtd></mtr><mtr><mtd>
+	<mo>(</mo><mn>4</mn><mo>&minus;</mo><mn>4</mn><mo>)</mo><mi>x</mi><mo>+</mo><mo>(</mo><mn>6</mn><mo>&minus;</mo><mn>4</mn><mo>)</mo><mi>y</mi><mo>+</mo><mo>(</mo><mn>8</mn><mo>&minus;</mo><mn>4</mn><mo>)</mo><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>24</mn><mo>&minus;</mo><mn>16</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>2</mn><mi>y</mi><mo>+</mo><mn>4</mn><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>8</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>The current state of the system:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>1</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>2</mn><mi>y</mi><mo>+</mo><mn>4</mn><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>8</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>4</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>Now we can subtract 4 times row 1 from row 2 to eliminate the 4<i>z</i> in row 2. At this point, the procedure should be clear, so we left out the intermediary steps. We still recommend to use a scratchpad and write down these steps until your brain is used to juggle around all these numbers and signs and additions and subtractions.</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>1</mn>
+</mtd></mtr><mtr><mtd>
+	<mn>2</mn><mi>y</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>4</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>x</mi><mo>+</mo><mi>y</mi><mo>+</mo><mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>4</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>Then divide row 2 by 2, and subtract row 1 from row 3, which should eliminate the <i>z</i> in row 3:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>1</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>y</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>2</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>x</mi><mo>+</mo><mi>y</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>3</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>Finally subtract row 2 from row 1 to eliminate the <i>y</i>:</p>
+
+<div class="math"><math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="simple equation"><mtr><mtd>
+	<mi>z</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>1</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>y</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>2</mn>
+</mtd></mtr><mtr><mtd>
+	<mi>x</mi>
+</mtd><mtd>
+	<mo>=</mo><mn>1</mn>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>So we have it. The solution of the equation system is (1, 2, 1), the same result as above.</p>
+
+<p>It appears that we have much less copying and computation effort with this method, especially if you can do the calculations in your head.</p>
+
+<!--h3--Example 1.3--></div>
+
+<h3 cbc>Geometrical Interpretation</h3><div>
+
+<p>An equation of the form <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi><mo>+</mo><mi>c</mi><mi>z</mi><mo>=</mo><mi>d</mi></math> describes a <em>plane</em> in a three-dimensional space. Three planes may intersect in a point, the system of equations has one unique solution. Two planes may intersect in a line. If the plancs are parallel with some distance between them, they will not intersect. If the planes are identical, they intersect everywhere.</p>
+
+<!--h3--Geometrical Interpretation--></div>
+
+<!--h2--Examples--></div>
+
+<h2 cbc>Definitions</h2><div>
+
+<p>Before carrying on, we need to set up some terms.</p>
+
+<div data-load-fragment="definitions/defn-001.htm"></div>
+
+<p>The definition specifies coefficients and variables in &Copf;, the set of complex numbers. And because the set of real numbers &Ropf; is a subset of the complex numbers (&Ropf; &sub; &Copf;), a linear equation works perfectly with real numbers.</p>
+
+<p>Multiple linear equations can be combined to form a system of linear equations, or short, linear system:</p>
+
+<div data-load-fragment="definitions/defn-002.htm"></div>
+
+<p>Note that <i>m</i> is a row index, and <i>n</i> is a column index.</p>
+
+<p>The separator "," between indices is often omitted in literature where the meaning is clear.</p>
+
+<p>We can derive a number of facts from the definition 1.1:</p>
+
+<ol start="1">
+<li>Variables only appear to the power of one: <math xmlns="http://www.w3.org/1998/Math/MathML"><msubsup><mi>x</mi><mi>i</mi><mn>1</mn></msubsup><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub></math></li>
+</ol>
+
+<p>There are no squares, cubes or higher exponents or roots.</p>
+
+<ol start="2">
+<li>There cannot be fractions of in the form of <math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><msub style="padding: 0 5px"><mi>x</mi><mi>i</mi></msub><msub><mi>x</mi><mi>j</mi></msub></mfrac></math></li>
+</ol>
+
+<p>The variable in the denominator would have a negative exponent: <math xmlns="http://www.w3.org/1998/Math/MathML"><msubsup><mi>x</mi><mi>j</mi><mn>&minus;1</mn></msubsup></math>, which we already have ruled out above.</p>
+
+<ol start="3">
+<li>There cannot be products of variables: <math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>x</mi><mi>i</mi></msub><mo>&sdot;</mo><msub><mi>x</mi><mi>j</mi></msub></math></li>
+</ol>
+
+<p>The operator between two variables must be <em>additive</em>, either + or &minus;. Multiplicative operators ( &sdot; or &sol; ) are not allowed.</p>
+
+<ol start="4">
+<li>There cannot be nonlinear functions of variables, such as <math xmlns="http://www.w3.org/1998/Math/MathML"><mo>sin</mo><mi>x</mi><mo>,</mo><mo>cos</mo><mi>x</mi><mo>,</mo><msup><mi>a</mi><mi>x</mi></msup></math>, et cetera.</li>
+<li>If a coefficient is missing, its value is 1.</li>
+<li>If a variable is missing, its coefficient has a value of 0.</li>
+</ol>
+
+<!--h2--Definitions--></div>
+
+</body></html>

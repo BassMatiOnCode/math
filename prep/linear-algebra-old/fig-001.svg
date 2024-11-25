@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet href="\svg.css" type="text/css"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="562" height="742"  viewBox="-281 -371 562 742" style="border:1px solid silver">h
+
+<defs>
+	<marker id="circle-black" viewBox="-5 -5 10 10" refX="0" refY="0" 
+		markerWidth="10" markerHeight="10" markerUnits="strokeWidth">
+		<circle r="3" fill="white" stroke="black"/>
+		</marker>
+	</defs>
+
+<g>
+	<rect x="-150" y="-60" width="300" height="120" stroke-width="1" stroke="black" fill="none" />
+	<rect x="-270" y="-60" width="120" height="120" stroke-width="2" stroke="darkseagreen" fill="#BBE6CE"/>
+	<rect x="-150" y="-360" width="300" height="300" stroke-width="2" stroke="#E99C7E" fill="#F5DED6"/>
+	<line x1="-150" y1="60" x2="150" y2="-60" stroke="black" stroke-width="2" marker-start="url(#circle-black)" marker-end="url(#circle-black)" />
+	</g>
+
+</svg>

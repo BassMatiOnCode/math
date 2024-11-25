@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2023-12-17" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-03-05" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-03-13" />
+<meta name="version" content="1" />
+<meta name="categories" content="" />
+<meta name="tags" content="math, linear agebra, introduction" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/page.css" />
+ <link rel="stylesheet" href="/inc/css/math.css" />
+<link rel="stylesheet" href="/inc/css/scientific-1.css" />
+
+<meta name="description" content="This unit establishes the first definitions and notations to work with elements and sets of elements." />
+
+<title>Math > Set Theory >Element, Set and Relations</title>
+
+</head><body><header id="page-header"><object data="title.svg" type="image/svg+xml"></object></header><div id="main-toolbar"></div><main id="page-content">
+
+<h1>Element, Set, Relations</h1>
+
+<p id="page-abstract"></p>
+
+<h2 cbc>Element, Set and Relations</h2><div>
+
+<p>Set theory is about working with <em>elements</em>. So we first need to define what an element is:</p>
+
+<div data-load-fragment="definitions/d-001.htm"></div>
+
+<p>Elements can be "grouped" into <em>sets</em>, usually for the purpose of addressing elements with common properties.</p>
+
+<div data-load-fragment="definitions/d-002.htm"></div>
+
+<p>Sets can be defined by <em>enumerating</em> elements in curly braces:</p>
+
+<div class="math"><math>
+<mi>A</mi><mo>=</mo><mo>{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>}</mo>
+</math></div>
+
+<div class="math continued"><math>
+<mi>A</mi><mo>=</mo><mo>{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mo>&hellip;</mo><mo>}</mo>
+</math></div>
+
+<div class="math continued"><math>
+<mi>A</mi><mo>=</mo><mo>{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>8</mn><mo>,</mo><mo>&hellip;</mo><mo>}</mo>
+</math></div>
+
+<p>An ellipsis indicates that there are infinitely many elements following, according to the implicit rule inherent in the sequence of precding elements.</p>
+
+<p>A set can also be defined by defining conditions that must be fulfilled by all elements of the set:</p>
+
+<div class="math"><math>
+<mi>A</mi><mo>=</mo><mo>{</mo><mi>a</mi><mo>&isin;</mo><mi>A</mi><mo>|</mo><mi>a</mi><mo>&isin;</mo><mi>&Nopf;</mi><mo>,</mo><mn>3</mn><mo>&le;</mo><mi>a</mi><mo>&le;</mo><mn>9</mn><mo>}</mo>
+</math></div>
+
+<p>Read: The set A contains all numbers from the natural numbers between 3 and 9, inclusive.</p>
+<p>Then we need a way to say that an elment is a member of a set:</p>
+
+<div data-load-fragment="definitions/d-003.htm">Set Membership</div>
+
+<p>This is also read as "element a is contained in A" or "A contains element a".</p>
+
+<p>Sets can be contained in other sets: </p>
+
+<div data-load-fragment="definitions/d-004.htm">Definition of subset</div>
+
+<p>A is completely contained in B. No element of A is outside of B. A may contain <em>all</em> elements of B, i. e. A = B. This can also be read as "B is a superset of A".</p>
+
+<div data-load-fragment="definitions/d-005.htm">Definition of proper subset</div>
+
+<p>An intuitive image should make that clear:</p>
+
+<figure><figcaption class="figure">Subset</figcaption>
+<object data="figures/fig-005.svg" type="text/svg+xml"></object>
+</figure>
+
+<p>A is completely contained in B, no element of A is outside of B, but there must be some members of B that are not member of A.</p>
+
+<div data-load-fragment="definitions/d-006.htm">Intersection</div>
+
+<figure><figcaption class="figure">Intersection</figcaption>
+<object data="figures/fig-006.svg" type="text/svg+xml"></object>
+</figure>
+
+<p>The intersection of A and B contains all the elements that are members of both, A and B.</p>
+
+<div data-load-fragment="definitions/d-007.htm">Union</div>
+
+<figure><figcaption class="figure">Union</figcaption>
+<object data="figures/fig-007.svg" type="text/svg+xml"></object>
+</figure>
+
+<p>The union of A and B contains all elements that are members of A or members of B or members of both, A and B. The operator "or" here is the logical inclusive OR operator, not the exclusive OR.</p>
+
+<div data-load-fragment="definitions/d-008.htm"></div>
+
+<figure><figcaption class="figure">Difference</figcaption>
+<object data="figures/fig-008.svg" type="text/svg+xml"></object>
+</figure>
+
+<p>The difference of A minus B contains all elements of A that are not member of B.</p>
+
+<!--h2--Element, Set and Relations--></div>
+
+<h2 cbc>Notation</h2><div>
+
+<p>Some notation conventions:</p>
+
+<dl style="margin-left:20px">
+<dt>{ } or &empty;</dt><dd>designate the empty set</dd>
+<dt>a &isin; A</dt><dd>a is a member of the set A</dd>
+<dt>A = B</dt><dd>The set A is equal to the set B. All members of A are also members of B, and vice versa.</dd>
+<dt>A &sub; B</dt><dd>A is a proper subset of B</dd>
+<dt>A &sube; B</dt><dd>A is a subset of or identical to B</dd>
+</dl>
+
+<p>Some ways to define a set:</p>
+
+<dl class="definition-list" style="margin-left:20px">
+<dt>	List of elements:</dt><dd>
+	<math><mi>A</mi><mo>=</mo><mo>{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>}</mo></math>
+	<p>A contains the elements 1, 2 and 3.</p></dd>
+<dt>By rule:</dt><dd>
+	<p><math><mi>A</mi><mo>=</mo><mo>{</mo><mi>a</mi><mo>|</mo><mi>a</mi><mo>&isin;</mo><mi>&Nopf;</mi><mo>and</mo><mn>1</mn><mo>&le;</mo><mi>a</mi><mo>&le;</mo><mn>3</mn><mo>}</mo></math></p>
+	<p>A contains the natural numbers 1, 2 and 3.</p></dd>
+</dl>
+
+<!--h2--Notation--></div>
+
+<h2 cbc>Examples</h2><div>
+
+<p>Let A = { 0, 1, 3 } and B = { 0, 1, 2, 4 }. Then</p>
+
+<div class="math"><math>
+<mtable align="left" row-height="33"><mtr><mtd>
+	<mi>A</mi><mo>&cup;</mo><mi>&empty;</mi><mo>=</mo><mi>A</mi>
+</mtd></mtr><mtr><mtd>
+	<mi>A</mi><mo>&cap;</mo><mi>&empty;</mi><mo>=</mo><mi>A</mi>
+</mtd></mtr><mtr><mtd>
+	<mi>A</mi><mo>&cup;</mo><mi>B</mi><mo>=</mo><mo>{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mn>4</mn><mo>}</mo>
+</mtd></mtr><mtr><mtd>
+	<mi>A</mi><mo>&cap;</mo><mi>B</mi><mo>=</mo><mo>{</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>}</mo>
+</mtd></mtr><mtr><mtd>
+	<mi>A</mi><mo>&minus;</mo><mi>B</mi><mo>=</mo><mo>{</mo><mn>3</mn><mo>}</mo>
+</mtd></mtr></mtable>
+</math></div>
+
+<!--h2--Examples--></div>
+
+</main><footer id="page-footer"></footer>
+<script type="module" src="/inc/page.js" ></script>
+<script type="module" src="/inc/fragment-loader/scroll-to-target-1.js"></script>
+<script type="module" src="/inc/fragment-loader/simple-fragment-loader-2.js"></script>
+</body></html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2023-12-17" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-02-22" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-02-22" />
+<meta name="version" content="1" />
+<meta name="categories" content="" />
+<meta name="tags" content="math, linear agebra" />
+<meta name="description" content="" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/page.css" />
+ <link rel="stylesheet" href="/inc/css/math.css" />
+<link rel="stylesheet" href="/inc/css/scientific-1.css" />
+
+<title>Math > Linear Algebra >Echelon Form of a Matrix</title>
+
+</head><body><header id="page-header"><object data="title.svg" type="image/svg+xml"></object></header><div id="main-toolbar"></div><main id="page-content">
+
+<h1>Echelon Form of a Matrix</h1>
+
+<p id="page-abstract"></p>
+
+<h2 cbc>Definition</h2><div>
+
+<p>The term <em>echelon form</em> defines precisely what we previously have called the "triangular form" of a matrix. But firstly, we will need a definition:</p>
+
+<div class="definition"><figcaption>Definition 1: Leading Entry</figcaption>
+<p>The leading entry is the first non-zero element in a row of a matrix	.</p>
+</div>
+
+<div class="definition"><figcaption>Definition 2: Echelon Form</figcaption>
+<p>A matrix is in echelon form if these two conditions are fulfilled:</p>
+<ol>
+<li>Rows of all zeroes are below all non-zero rows.</li>
+<li>Each leading entry has only zeroes in the column below.</li>
+</ol>
+</div>
+
+<p>Because a leading entry has per definition 1 all zeros in front of it, any leading entry must be in a column further right to the leading entry of the row above. If a leading element has non-zero elements below, the matrix is not in echelon from. If a leading element has a non-zero element in front, the matrix is not in echelon form. Some columsn may not have a leading entry, but the matrix can still be in echelon form.</p>
+
+<div class="definition"><figcaption>Definition 3: Pivot</figcaption>
+<p>When a matrix is in echelon form, the leading element in a row is called <em>pivot</em>.</p>
+<p>A column that contains a pivot element is called a <em>pivot column</em>.</p>
+</div>
+
+<!--h2--Definition--></div>
+
+<h2 cbc>Reduced Echelon Form</h2><div>
+
+<p>The <em>reduced echelon form</em> of a matrix is very useful because its even simpler to obtain the solution values for the unknowns. In fact, we already have used that form in the previous example.</p>
+
+<p>So, here is the definition:</p>
+
+<div class="definition"><figcaption>Definition 4: Reduced Echelon Form</figcaption>
+<p>A matrix is in reduced echelon from if the following conditions are satisfied:</p>
+<ol>
+<li>The matrix is in echelon form</li>
+<li>The leading entry of each row is 1</li>
+<li>The entries above each leading entry are all zero</li>
+</ol>
+</div>
+
+<p>Effectively, we have zero entries in front, below, and above the leading entries, and each leading entry is in a further right column than the leading entry in the column above.</p>
+
+<!--h2--Reduced Echelon Form--></div>
+
+<h2 cbc>Uniqueness of the Reduced Echelon Form</h2><div>
+
+<p>A system of equations or its autmented matrix may have multiple different but equivalent echelon forms. But a system can have only one unique reduced echelon form. Equation systems that can be reduced to the same reduced echelon form are <em>equivalent</em>.</p>
+
+<!--h2--Uniqueness of the Reduced Echelon Form--></div>
+
+<h2 cbc>Reduction Algorithm</h2><div>
+
+<p>To reduce a matrix to echelon form, follow these steps:</p>
+
+<ol>
+<li>Bring a row with a pivot in the first column into the first row.</li>
+<li>Replace rows below to eliminate entries in the pivot column.</li>
+<li>Move to the next pivot column and repeat from step 2.</li>
+</ol>
+
+<!--h2--Reduction Algorithm--></div>
+
+<h2 cbc>Position of Pivots</h2><div>
+
+<div class="theorem"><figcaption>Theorem 1: Pivot Positions in Echelon Form Matrices</figcaption>
+<p>Even though matrices can have different echelon forms, the pivots will always be in the same locations.</p>
+</div>
+
+<!--h2--Position of Pivots--></div>
+
+<h2 cbc>Examples</h2><div>
+
+<h3 cbc>Example 1</h3><div>
+
+<p>Bring the following matrix into echelon form:</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable class="tall matrix"><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>-1</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>-2</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>8</mn></mtd>
+	<mtd><mn>20</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>6</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable class="tall matrix"><mtr>
+	<mtd><mn>-2</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>-1</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>8</mn></mtd>
+	<mtd><mn>20</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>6</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable class="tall matrix"><mtr>
+	<mtd><mn>-2</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>-1</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>10</mn></mtd>
+	<mtd><mn>20</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>8</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable class="tall matrix"><mtr>
+	<mtd><mn>-2</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>-1</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>18</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<!--h3--Example 1--></div>
+
+<h3 cbc>Example 2</h3><div>
+
+<p>Reduce the following matrix:</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable class="tall matrix"><mtr>
+	<mtd class="pivot"><mn>1</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+	<mtd><mn>8</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>8</mn></mtd>
+	<mtd><mn>-1</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>-3</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>-4</mn></mtd>
+	<mtd><mn>16</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable class="tall matrix"><mtr>
+	<mtd class="pivot"><mn>1</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+	<mtd><mn>8</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>-17</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>12</mn></mtd>
+	<mtd><mn>24</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>-8</mn></mtd>
+	<mtd><mn>8</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable class="tall matrix"><mtr>
+	<mtd class="pivot"><mn>1</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+	<mtd><mn>8</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd class="pivot"><mn>12</mn></mtd>
+	<mtd><mn>24</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>-8</mn></mtd>
+	<mtd><mn>8</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>-17</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable class="tall matrix"><mtr>
+	<mtd class="pivot"><mn>1</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+	<mtd><mn>8</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd class="pivot"><mn>12</mn></mtd>
+	<mtd><mn>24</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd class="pivot"><mn>24</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>-17</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable class="tall matrix"><mtr>
+	<mtd class="pivot"><mn>1</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+	<mtd><mn>8</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd class="pivot"><mn>12</mn></mtd>
+	<mtd><mn>24</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd class="pivot"><mn>24</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<!--h3--Example 2--></div>
+
+<h3 cbc>Example 3</h3><div>
+
+<p>Bring the result matrix of the previous example into reduced echelon form.</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable class="tall matrix"><mtr>
+	<mtd class="pivot"><mn>1</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+	<mtd><mn>8</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd class="pivot"><mn>12</mn></mtd>
+	<mtd><mn>24</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd class="pivot"><mn>24</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable class="tall matrix"><mtr>
+	<mtd class="pivot"><mn>1</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+	<mtd><mn>8</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd class="pivot"><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd class="pivot"><mn>1</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<p>This is rather simple, because we can scale the rows down to make the pivot cells zero.</p>
+
+<!--h3--Example 3--></div>
+
+<h3 cbc>Example 4</h3><div>
+
+<p>Transform the following matrix to reduced echelon form:</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable class="matrix"><mtr>
+	<mtd class="pivot"><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>4</mn></mtd>
+	<mtd><mn>5</mn></mtd>
+	<mtd><mn>6</mn></mtd>
+	<mtd><mn>7</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>6</mn></mtd>
+	<mtd><mn>7</mn></mtd>
+	<mtd><mn>8</mn></mtd>
+	<mtd><mn>9</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable class="matrix"><mtr>
+	<mtd class="pivot"><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd class="pivot"><mn>-3</mn></mtd>
+	<mtd><mn>-6</mn></mtd>
+	<mtd><mn>-9</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>-5</mn></mtd>
+	<mtd><mn>-10</mn></mtd>
+	<mtd><mn>-15</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable class="matrix"><mtr>
+	<mtd class="pivot"><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd class="pivot"><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable class="matrix"><mtr>
+	<mtd class="pivot"><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>-1</mn></mtd>
+	<mtd><mn>-2</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd class="pivot"><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<p>The matrix has only two pivot columns and cannot be reduced further.</p>
+
+<!--h3--Example 4--></div>
+
+<!--h2--Examples--></div>
+
+</main><footer id="page-footer"></footer>
+<script type="module" src="/inc/page.js" ></script>
+<script type="module" src="/inc/simple-fragment-loader-1.js"></script>
+</body></html>

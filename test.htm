@@ -1,0 +1,1008 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html><head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=MML_HTMLorMML" id=""></script>
+<style>
+.indent { margin-left : 20px }
+.border { border : 1px solid silver }
+.line { text-decoration : overline ; font-family : 'Latin Modern Math' }
+body { margin-left : 20px ; margin-right : 20px ; line-height : 150% }
+vector { font-style: italic; font-family : 'Latin Modern Math' }
+vector > above { vertical-align : 5px ; font-size : smaller }
+svg text { stroke : none ; font-family : 'Latin Modern Math', 'Stix Two Math' } 
+svg text[vector] { font-style : italic }
+svg tspan[sub] { xbaseline-shift : sub ; font-size : 80% ; font-weight : normal }
+svg tspan[sup] { xbaseline-shift : super ; font-size : 80% ; font-weight : normal }
+svg tspan { font-size : 100% }
+math {
+	font-family : 'Latin Modern Math', 'Stix Two Math' ;
+	margin-left : 20px ;
+	}
+math[display="inline"] { margin-left: 0px }
+math .narrow { font-size : 60% }  /* alternative to attribute mathsize="50%" */
+/* Definition */
+div.definition :first-child > span { font-style : normal ; color : grey }
+div.definition :first-child > span::before { content : "("  }
+div.definition :first-child > span::after { content : ")"  }
+</style>
+
+<!-- &#8407; Combining Right Arrow Above -->
+
+</head><body>
+
+<h1>Vector Algebra</h1>
+
+<h2 cbc>Space</h2><div>
+
+<p>Let't talk about <em>space</em> first. We all have a trivial notion of space, 1D, 2D and 3D space. And even 4D, if we add time. So a space has a number of <em>dimensions</em>. A dimension is represented by an <em>axis</em> of a <em>coordinate system</em>. We define a <em>unit length</em> on each axis so that we are able to identify the location of every <em>point</em> in space by a sequence of numbers, so-called <em>coordinates</em>.</p>
+
+<svg class="indent" version="1.1" viewBox="-105 -110 230 140 " width="230" xmlns="http://www.w3.org/2000/svg" stroke="black" style="border: 1px none silver">
+
+<defs>
+<marker id="arrowhead" markerWidth="15" markerHeight="7" refX="15" refY="0" orient="auto" overflow="visible">
+	<polygon points="0 2 , 15 0 , 0 -2" />
+	</marker>
+<marker id="arrowhead2" markerWidth="15" markerHeight="7" refX="0" refY="0" orient="auto" overflow="visible">
+	<polygon points="-10 3 , 0 0 , -10 -3" />
+	</marker>
+<marker id="barhead" markerWidth="1" markerHeight="10" refX="0" refY="0" orient="auto" overflow="visible">
+	<line x1="0" y1="-5" x2="0" y2="5" />
+	</marker>
+</defs>
+
+	<!-- x axis-->
+	<line x1="-100" y1="0" x2="120" y2="0" marker-end="url(#arrowhead)" /> 
+	<text fill="red" x="105" y="-8">x</text>
+	<line x1="-5" y1="-20" x2="5" y2="-20" />
+	<line x1="-5" y1="-40" x2="5" y2="-40" />
+	<line x1="-5" y1="-60" x2="5" y2="-60" />
+	<line x1="-80" y1="-5" x2="-80" y2="5" />
+	<line x1="-60" y1="-5" x2="-60" y2="5" />
+	<line x1="-40" y1="-5" x2="-40" y2="5" />
+	<line x1="-20" y1="-5" x2="-20" y2="5" />
+	<line x1="20" y1="-5" x2="20" y2="5" />
+	<line x1="40" y1="-5" x2="40" y2="5" />
+	<line x1="60" y1="-5" x2="60" y2="5" />
+	<line x1="80" y1="-5" x2="80" y2="5" />
+	<g text-anchor="middle" font-size="12px" >
+	<text x="-80" y="20">-4</text>
+	<text x="-60" y="20">-3</text>
+	<text x="-40" y="20">-2</text>
+	<text x="-20" y="20">-1</text>
+	<text x="20" y="20">1</text>
+	<text x="40" y="20">2</text>
+	<text x="60" y="20">3</text>
+	<text x="80" y="20">4</text>
+	</g>
+	<g text-anchor="end" font-size="12px">
+	<text x="-10" y="-17">1</text>
+	<text x="-10" y="-37">2</text>
+	<text x="-10" y="-57">3</text>
+	</g>
+	<g stroke-dasharray="4">
+	<line x1="-60" y1="-5" x2="-60" y2="-40" />
+	<line x1="-20" y1="-40" x2="-60" y2="-40" />
+	<line x1="5" y1="-60" x2="80" y2="-60" />
+	<line x1="80" y1="-5" x2="80" y2="-60" />
+	</g>
+	<g fill="white">
+	<circle cx="-60" cy="-40" r="3" />
+	<circle cx="80" cy="-60" r="3" />
+	</g>
+	<g text-anchor="middle" font-size="14px">
+	<text x="-60" y="-50">P1</text>
+	<text x="-85" y="-27">(-3, 2)</text>
+	<text x="80" y="-70">P2</text>
+	<text x="105" y="-50">(4, 3)</text>
+	</g>
+	<!-- y axis-->
+	<line x1="0" y1="20" x2="0" y2="-100" marker-end="url(#arrowhead)" /> 
+	<text fill="green" x="6" y="-87">y</text>
+
+	<!-- Origin -->
+	<circle cx="0" cy="0" r="5" fill="white" />
+	</svg>
+
+<p>Coordinate values are counted positive in axis direction, and negative in the opposite direction.</p>
+
+<p>Note that the dimensions are <em>independent</em> of each other. We can in move in the direction of a coordinate system axis so that exactly one coordinate changes, while the others remain constant.</p>
+
+<p>So a point in an n-dimensional space of real numbers is represented by an ordered set of n real numbers:</p>
+
+<math>
+<mi>P</mi><mo>&isin;</mo><msup><mi>&Ropf;</mi><mn>n</mn></msup>
+<mpadded width="+20px"><mtext>,</mtext></mpadded>
+<mi>a</mi><mo>&isin;</mo><mi>&Ropf;</mi>
+<mpadded width="+20px"><mtext>,</mtext></mpadded>
+<mi>P</mi><mo>=</mo>
+<mo>(</mo><mtable>
+<mtr><mtd><msub><mi>a</mi><mn>1</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>a</mi><mn>2</mn></msub></mtd></mtr>
+<mtr><mtd><mi>&vellip;</mi></mtd></mtr>
+<mtr><mtd><msub><mi>a</mi><mn>n</mn></msub></mtd></mtr>
+</mtable><mo>)</mo>
+</math>
+
+<p>The coordinate system axes meet in the <em>origin</em> under defined angles:</p>
+
+<svg class="indent" version="1.1" viewBox="-60 -120 180 200 " width="180" height="200" xmlns="http://www.w3.org/2000/svg" stroke="black">
+	<!-- Axes -->
+	<line id="x-axis" x1="0" y1="0" x2="-45" y2="54" marker-end="url(#arrowhead)" /> 
+	<text fill="red" x="-30" y="52">x</text>
+	<path fill="none" d="M -22 27 C 7 32 22 15 25 0"  marker-end="url(#arrowhead2)"/>
+	<text fill="red" x="5" y="35">&alpha;</text>
+	<line id="y-axis" x1="0" y1="0" x2="100" y2="0" marker-end="url(#arrowhead)" /> 
+	<text fill="green" x="85" y="-10">y</text>
+	<path fill="none" d="M 30 0 C 30 -20 20 -30 0 -30"  marker-end="url(#arrowhead2)"/>
+	<text fill="green" x="25" y="-30">&beta;</text>
+	<line id="z-axis" x1="0" y1="0" x2="0" y2="-100" marker-end="url(#arrowhead)" /> 
+	<text fill="blue" x="7" y="-82">z</text>
+	<path fill="none" d="M 0 -35 C -15 -30 -25 0 -18 21"  marker-end="url(#arrowhead2)"/>
+	<text fill="blue" x="-30" y="-15">&gamma;</text>
+	<circle cx="0" cy="0" r="5" fill="white" />
+	</svg>
+
+<p>Usually a <a href="https://en.wikipedia.org/wiki/Cartesian_coordinate_system"><em>cartesian coordinate system</em></a> is choosen, where the axes are orthogonal to each other (at 90 degree angle) and constitue a <a href="https://en.wikipedia.org/wiki/Right-hand_rule">right-hand</a> system: The thumb, index and middle finger of the right hand correspond to the x, y and y axes. Right-turns lead from one axis to the next: Viewing in z direction, the x axis is turned clockwise around z to get to the y axis. Alternatively, consider turning an ordinary screw driven into the ceiling. Looking in the direction of x, rotating the y axis clockwise around x gets us to the z axis. And so on. </p>
+
+<p>Note that if you look in the opposite directions (which seems to be a more "natural" point of view), you will have to <em>counter-clockwise</em> rotate instead.</p>
+
+<p>The origin is considered "point zero" for the axes.</p>
+
+<p>Each pair of axes spans a <em>plane</em>. In a 3D cartesian coordinate system, we have three planes, each one orthogonal to the others.</p>
+
+<!--h3--></div>
+
+<h3 cbc>Points</h3><div>
+
+<p>A point has a location in space, but no direction:</p>
+
+<svg class="indent" version="1.1" viewBox="-40 -220 260 260 " width="260" stroke="black" style="border:1px none silver" xmlns="http://www.w3.org/2000/svg" >
+	<!-- Axes -->
+	<g text-anchor="middle">
+	<line x1="-20" y1="0" x2="200" y2="0" marker-end="url(#arrowhead)" /> 
+	<text fill="red" x="195" y="-12">x</text>
+	<line x1="0" y1="20" x2="0" y2="-200" marker-end="url(#arrowhead)" /> 
+	<text fill="green" x="15" y="-190">y</text>
+	<circle cx="0" cy="0" r="5" fill="white"></circle>
+	</g><g stroke-dasharray="4"><!-- dotted lines -->
+		<line x1="0" y1="-150" x2="150" y2="-150" />
+		<line x1="150" y1="0" x2="150" y2="-150" />
+	</g><g> <!-- point -->
+		<circle cx="150" cy="-150" r="3" fill="white" />
+		<text x="155" y="-155">P1</text>
+	</g><g fill="none"> <!-- component lines -->
+		<path d="M -15 0 L -15 -150 -5 -150" />
+		<path d="M 0 15 L 150 15 150 5" />
+	</g><g fill="white" stroke="none"> <!-- text backgrounds --> 
+		<rect x="-25" y="-85" width="22" height="25" />
+		<rect x="67" y="5" width="22" height="25" />
+	</g><g><!-- component text -->
+		<text x="-20" y="-73">a<tspan sub>y</tspan></text>
+		<text x="70" y="17">a<tspan sub>x</tspan></text>
+	</g>
+	</svg>
+
+<p>With a given coordinate system, the location can be uniqely specified with an ordered set of <em>coordinates</em>:</p>
+
+<math><mtable><mtr><mtd><mrow>
+	<msub><mi>P</mi><mn>1</mn></msub><mo>=</mo>
+	<mo>(</mo>
+	<msub><mi>a</mi><mn>x</mn></msub>
+	<mo>,</mo>
+	<msub><mi>a</mi><mn>y</mn></msub>
+	<mo>)</mo>
+</mrow></mtd></mtr><mtr><mtd><mrow>
+	<msub><mi>P</mi><mn>2</mn></msub><mo>=</mo>
+	<mo>(</mo>
+	<msub><mi>a</mi><mn>1</mn></msub>
+	<mo>,</mo>
+	<msub><mi>a</mi><mn>2</mn></msub>
+	<mo>,</mo>
+	<msub><mi>a</mi><mn>3</mn></msub>
+	<mo>)</mo>
+</mrow></mtd></mtr></mtable></math>
+
+<p>Points are usually written in uppercase letters. For identification purposes, a number can be appended or subscripted. The set of coordinates is enclosed in rounded parentheses, and arranged horizontally (in contrast to vectors, which are usually arranged vertically).</p>
+
+<p>If a<sub>i</sub> are real numbers, P<sub>2</sub> is considered a point in the three-dimensional space of real numbers:</p>
+
+<math><mrow>
+<msub><mi>P</mi><mn>2</mn></msub><mo>&isin;</mo><msup><mi>&Ropf;</mi><mn>3</mn></msup>
+</mrow></math>
+
+<p>A coordinate can be considered the distance of the parallel projection of the point on the axis from the origin.</p>
+
+<p>Remember to use a <em>parallel projection</em> to obtain the correct coordinate values. This is especially important if the axes are not orthogonal to each other. So don't blindly raise a perpendicular on the coordinate system axes. Instead, use <em>parallel lines</em>:</p>
+
+<svg class="indent" version="1.1" viewBox="-40 -180 310 240 " width="310" stroke="black" style="border:1px none silver" xmlns="http://www.w3.org/2000/svg" >
+	<!-- Axes --><g marker-end="url(#arrowhead)">
+		<line x1="-30" y1="0" x2="250" y2="0" />
+		<line x1="-25" y1="43" x2="100" y2="-173" />
+		<text x="235" y="-10" fill="red">x</text>
+		<text x="105" y="-160" fill="green">y</text>
+	</g><!-- Projection Lines --><g stroke-dasharray="4" >
+		<line x1="75" y1="-130" x2="225" y2="-130" />
+		<line x1="150" y1="0" x2="225" y2="-130" />
+		<line x1="225" y1="0" x2="225" y2="-130" stroke="orange" />
+	</g><!-- Points --><g fill="white">
+		<circle cx="225" cy="-130" r="5" />
+		<circle cx="0" cy="0" r="5" />
+	</g><!-- Component Lines --><g fill="none">
+		<path d="M -16 -5 L 57 -130 70 -130" />
+		<path d="M -3 15 L 142 15 148 5" />
+		<path d="M -12 30 L 225 30 225 5" stroke="orange" />
+	</g><!-- Text Boxes --><g fill="white" stroke="none" >
+		<rect x="5" y="-72" width="25" height="17" />
+		<rect x="60" y="5" width="25" height="17" />
+		<rect x="90" y="22" width="50" height="17" />
+	</g><!-- Text --><g>
+		<text x="9" y="-65">a<tspan sub>y</tspan></text>
+		<text x="65" y="15">a<tspan sub>x</tspan></text>
+		<text x="91" y="35" fill="orange">wrong!</text>
+		<text x="230" y="-140">P1</text>
+	</g>
+</svg>
+
+<p>So, to obtain a<sub>x</sub>, draw a line parallel to the y axis through P1 down to the x axis. To obtain a<sub>y</sub>, draw a parallel to the x axis through P1 left onto the y axis. The concept also applies to higher dimensional spaces.</p>
+
+<svg class="indent" version="1.1" viewBox="-80 -170 300 270 " width="250" xmlns="http://www.w3.org/2000/svg" stroke="black" style="border:1px solid silver">
+	<!-- Axes -->
+	<line id="x-axis" x1="0" y1="0" x2="-81" y2="97" marker-end="url(#arrowhead)" /> 
+	<text fill="red" x="-60" y="90">x</text>
+	<line id="y-axis" x1="0" y1="0" x2="215" y2="0" marker-end="url(#arrowhead)" /> 
+	<text fill="green" x="205" y="-12">y</text>
+	<line id="z-axis" x1="0" y1="0" x2="0" y2="-165" marker-end="url(#arrowhead)" /> 
+	<text fill="blue" x="8" y="-155">z</text>
+	<!-- box -->
+	<g stroke-dasharray="8">
+	<line x1="-54" y1="64" x2="116" y2="64" />
+	<line x1="116" y1="64" x2="170" y2="0" />
+	<line x1="170" y1="0" x2="170" y2="-120" />
+	<line x1="0" y1="-120" x2="170" y2="-120" />
+	<line x1="-54" y1="64" x2="-54" y2="-56" />
+	<line x1="-54" y1="-56" x2="0" y2="-120" />
+	<line x1="-54" y1="-56" x2="114" y2="-56" />
+	<line x1="114" y1="-56" x2="114" y2="64" />
+	<line x1="114" y1="-56" x2="114" y2="64" />
+	<line x1="114" y1="-56" x2="170" y2="-120" />
+	</g>
+	<!-- Vector -->
+	<line x1="0" y1="0" x2="114" y2="-56" marker-end="url(#arrowhead)" />
+	<text vector fill="black" x="35" y="-30">a&#8407;</text>
+	<text fill="red" x="-76" y="60">a<tspan sub >x</tspan></text>
+	<circle cx="-54" cy="64" r="3" />
+	<text fill="green" x="165" y="15">a<tspan sub >y</tspan></text>
+	<circle cx="170" cy="0" r="3" />
+	<text fill="blue" x="-25" y="-120">a<tspan sub >z</tspan></text>
+	<circle cx="0" cy="-120" r="3" />
+	<!-- Points -->
+	<circle fill="white" cx="114" cy="-56" r="3" />
+	<text fill="black" x="120" y="-45">P</text>
+	<circle cx="0" cy="0" r="5" fill="white" />
+	<text fill="black" x="-20" y="0">O</text>
+	</svg>
+
+<!--h3--></div>
+
+<h3 cbc>Scalars</h3><div>
+
+<p>A <em>scalar</em> is just another word for "number" or "value". In contrast, a vector is a combinations of a number (which represents the length of the vector), and a direction.</p>
+
+<!-- h3 --></div>
+
+<h3 cbc>Vectors</h3><div>
+
+<p>In constrast to a point, a vector represents a <em>distance</em> or an <em>offset</em>. A vector has a <em>direction</em>, but <em>no location</em>.</p>
+
+<p>From a geometrical point of view, a vector is an object which has a <em>direction</em> and a <em>length</em> or <em>magnitude</em>. In contrast to a <em>point</em>, a vector has <em>no location</em> and thus can be moved in space as long as its direction is maintained.</p>
+
+<svg class="indent" version="1.1" viewBox="-40 -220 260 260 " width="260" stroke="black" style="border:1px none silver" xmlns="http://www.w3.org/2000/svg" >
+	<!-- Axes -->
+	<g text-anchor="middle">
+	<line x1="-20" y1="0" x2="200" y2="0" marker-end="url(#arrowhead)" /> 
+	<text fill="red" x="195" y="-12">x</text>
+	<line x1="0" y1="20" x2="0" y2="-200" marker-end="url(#arrowhead)" /> 
+	<text fill="green" x="15" y="-190">y</text>
+	<circle cx="0" cy="0" r="5" fill="white"></circle>
+	</g><g><!-- vector -->
+		<line x1="40" y1="-40" x2="150" y2="-150" marker-end="url(#arrowhead)" />
+		<text x="75" y="-90">a&#8407;</text>
+	</g><g stroke-dasharray="4"><!-- dotted lines -->
+		<line x1="0" y1="-150" x2="150" y2="-150" />
+		<line x1="0" y1="-40" x2="40" y2="-40" />
+		<line x1="40" y1="0" x2="40" y2="-40" />
+		<line x1="150" y1="0" x2="150" y2="-150" />
+	</g><g fill="none"><!-- component lines -->
+		<path d="M -5 -40 L -15 -40 -15 -150 -5 -150" />
+		<path d="M 40 5 L 40 15 150 15 150 5" />
+	</g><g fill="white" stroke="none"><!-- text backgrounds --> 
+		<rect x="-25" y="-105" width="22" height="25" />
+		<rect x="87" y="5" width="22" height="25" />
+	</g><g><!-- component text -->
+		<text x="-20" y="-93">a<tspan sub>y</tspan></text>
+		<text x="90" y="17">a<tspan sub>x</tspan></text>
+	</g>
+	</svg>
+
+<p>The parallel projection of the vector <vector>a&#8407;</vector> = <span class="line">OP</span> on the coordinate system axes produces the <em>vector components</em> a<sub>x</sub>, a<sub>y</sub>, and a<sub >z</sub>. They can be considered the lenght of the vector in the direction of the coordinate system axes, and are real numbers or <em>scalars</em>. To distinguish a vector notation from a scalar, the vector is typed in a bold face or has an arrow above.</p>
+
+<p>From an arightmetic point of view, a <em>vector</em> is defined by an ordered sequence of its components, also called <em>coordinates</em>:</p>
+
+<math displaystyle="true"><mtable><mtr><mtd>
+	<mrow><mover><mi>a</mi><mo>&rarr;</mo></mover><mo>=</mo><mo>(</mo><msub><mi>a</mi><mn>x</mn></msub><mo>, </mo><msub><mi>a</mi><mn>y</mn></msub><mo>)</mo></mrow>
+</mtd></mtr><mtr><mtd>
+	<mrow><mover><mi>b</mi><mo>&rarr;</mo></mover><mo>=</mo><mo>(</mo><msub><mi>b</mi><mn>x</mn></msub><mo> ,</mo><msub><mi>b</mi><mn>y</mn></msub><mo>, </mo><msub><mi>b</mi><mn>z</mn></msub><mo>)</mo></mrow>
+</mtd></mtr><mtr><mtd>
+	<mrow><mover><mi>c</mi><mo>&rarr;</mo></mover><mo>=</mo><mo>(</mo><msub><mi>c</mi><mn>1</mn></msub><mo> ,</mo><msub><mi>c</mi><mn>2</mn></msub><mo>, </mo><msub><mi>c</mi><mn>3</mn></msub><mo>)</mo></mrow>
+</mtd></mtr></mtable></math>
+
+<p>The amount of coordinates is equal to the number of dimensions of space. For example, in the two-dimensional space <b>R</b><sup>2</sup> we need two coodinates to specify the location of a point, in the 3D space <b>R</b><sup>3</sup> we need three coordinates.</p>
+
+<p>The component subscript is sometimes a letter to indicate the relation to a named coordinate axis, sometimes just a number.</p>
+
+<p>To discern a vector from a scalar, the vector has an arrow above or is written in bold face. A vector in component form can be written with parentheses, sometimes horizontally, but most of the time vertically:</p>
+
+<math>
+	<mover><mi>a</mi><mo>&rarr;</mo></mover>
+	<mo>=</mo>
+	<mi mathvariant="bold-italic">a</mi>
+	<mo>=</mo>
+	<mo>(</mo>
+	<mtable>
+	<mtr><mtd><msub><mi>a</mi><mn>1</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>a</mi><mn>2</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>a</mi><mn>3</mn></msub></mtd></mtr>
+	</mtable>
+	<mo>)</mo>
+	</math>
+
+<!--h3--></div>
+
+<h3 cbc>Unit Vectors</h3><div>
+
+<p>A <em>unit vector</em> <math display="inline"><mover><mi>e</mi><mo>&rarr;</mo></mover></math> is a vector with a length of 1.
+The unit vectors on the coordinate system axes are named <math display="inline"><mover><msub><mi>e</mi><mi>x</mi></msub><mo>&rarr;</mo></mover></math>, <math display="inline"><mover><msub><mi>e</mi><mi>y</mi></msub><mo>&rarr;</mo></mover></math> and <math display="inline"><mover><msub><mi>e</mi><mi>z</mi></msub><mo>&rarr;</mo></mover></math>:</p>
+
+<svg class="indent" version="1.1" viewBox="-60 -120 180 200 " width="180" height="200" xmlns="http://www.w3.org/2000/svg" stroke="black">
+
+	<!-- x axis -->
+	<line id="x-axis" x1="0" y1="0" x2="-34" y2="40" marker-end="url(#arrowhead)" /> 
+	<text vector fill="red" x="-10" y="25">e&#8407;<tspan sub>x</tspan></text>
+	<line x1="-34" y1="40" x2="-45" y2="54" /> 
+	<text fill="red" x="-35" y="55">x</text>
+
+	<!-- y axis-->
+	<line id="y-axis" x1="0" y1="0" x2="75" y2="0" marker-end="url(#arrowhead)" /> 
+	<text vector fill="green" x="20" y="-14">e&#8407;<tspan sub>y</tspan></text>
+	<line x1="50" y1="0" x2="100" y2="0" /> 
+	<text fill="green" x="90" y="-8">y</text>
+
+	<!-- z axis-->
+	<line id="z-axis" x1="0" y1="0" x2="0" y2="-75" marker-end="url(#arrowhead)" /> 
+	<text vector fill="blue" x="-18" y="-35">e&#8407;<tspan sub>z</tspan></text>
+	<line x1="0" y1="-50" x2="0" y2="-100" /> 
+	<text fill="blue" x="4" y="-85">z</text>
+
+	<!-- Origin -->
+	<circle cx="0" cy="0" r="5" fill="white" />
+	<text x="-20" y="-5">O</text>
+	</svg>
+
+<p>The unit vectors in a 3D space in component form are the following:</p>
+
+<math><mtable><mtr><mtd>
+	<mrow>
+	<mover><msub><mi>e</mi><mi>x</mi></msub><mo>&rarr;</mo></mover>
+	<mo>=</mo>
+	<mo>(</mo>
+	<mtable>
+	<mtr><mtd><mn>1</mn></mtr>
+	<mtr><mtd><mn>0</mn></mtr>
+	<mtr><mtd><mn>0</mn></mtr>
+	</mtable>
+	<mo>)</mo>
+	</mrow>
+</mtd><mtd>
+	<mrow>
+	<mover><msub><mi>e</mi><mi>y</mi></msub><mo>&rarr;</mo></mover>
+	<mo>=</mo>
+	<mo>(</mo>
+	<mtable>
+	<mtr><mtd><mn>0</mn></mtr>
+	<mtr><mtd><mn>1</mn></mtr>
+	<mtr><mtd><mn>0</mn></mtr>
+	</mtable>
+	<mo>)</mo>
+	</mrow>
+</mtd><mtd>
+	<mrow>
+	<mover><msub><mi>e</mi><mi>z</mi></msub><mo>&rarr;</mo></mover>
+	<mo>=</mo>
+	<mo>(</mo>
+	<mtable>
+	<mtr><mtd><mn>0</mn></mtr>
+	<mtr><mtd><mn>0</mn></mtr>
+	<mtr><mtd><mn>1</mn></mtr>
+	</mtable>
+	<mo>)</mo>
+	</mrow>
+</mtd><mtr></mtable></math>
+
+
+<!--h3--></div>
+
+<h3 cbc>Magnitude</h3><div>
+
+<p>The <em>magnitude</em> or <em>value</em> is the length of the vector. It is a positive number, or zero. In a cartesian coordiante system, the lenght of a vector can be calculated as</p>
+
+<math><mrow>
+
+<mrow><mo>|</mo><mover><mi>a</mi><mo>&rarr;</mo></mover><mo>|</mo></mrow>
+<mo>=</mo>
+<mrow><mo>|</mo><mo>(</mo><mtable>
+<mtr><mtd><msub><mi>a</mi><mn>1</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>a</mi><mn>2</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>a</mi><mn>3</mn></msub></mtd></mtr>
+</mtable><mo>)</mo><mo>|</mo></mrow>
+<mo>=</mo>
+<mrow><msqrt>
+<msup><msub><mi>a</mi><mn>1</mn></msub><mn>2</mn></msup>
+<mo>+</mo>
+<msup><msub><mi>a</mi><mn>2</mn></msub><mn>2</mn></msup>
+<mo>+</mo>
+<msup><msub><mi>a</mi><mn>3</mn></msub><mn>2</mn></msup>
+</msqrt></mrow>
+</mrow></math>
+
+<!--h3--></div>
+
+<h3 cbc>Identity</h3><div>
+
+<div class="definition" id="d1a">
+<p>Two vectors are <em>identical</em> if they have the same direction and the same length.</p>
+</div>
+
+<p>Because a vector is defined by its scalar components, the definition above is equivalent to</p>
+
+<div class="definition">
+<figcaption class="definition">Equality of vectors 2</figcaption>
+<p>Two vectors are identical if their scalar components are identical.</p>
+</div>
+
+<!--h3--></div>
+
+<h3 cbc>Parallel</h3><div>
+
+<p>Vectors are <em>parallel</em> if they have the same direction and orientation. They are <em>anti-parallel</em> if they have the same direction but opposite orientation. Multiplying a vector with the scalar -1 changes the orientation (inverts the direction).</p>
+
+<!--h3--></div>
+
+<h3 cbc>Addition and Subtraction</h3><div>
+
+<p>Two vectors are added geometrically by <em>concatenation</em>. The vectors are moved in space without altering their directions so that one begins where the other ends:</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="indent" viewBox="-10 -50 120 90" width="120" stroke="black" style="border:1px none silver">
+<line x1="0" y1="0" x2="50" y2="-40" marker-end="url(#arrowhead)" />
+<text vector x="12" y="-25">a&#8407;</text>
+<line x1="50" y1="-40" x2="100" y2="10" marker-end="url(#arrowhead)" />
+<text vector x="75" y="-23">b<tspan dy="-4">&#8407;</tspan></text>
+<line x1="0" y1="0" x2="100" y2="10" marker-end="url(#arrowhead)" />
+<text vector x="5" y="28">c<tspan dx="-10" dy="-5">&#8407;</tspan> = a<tspan>&#8407;</tspan> + b<tspan dy="-4">&#8407;</tspan></text>
+</svg>
+
+<p>The result vector begins at the the start of the first, and ends at the end of the second vector.</p>
+
+<p>Likewise, a to subtract vector <math display="inline"><mover><mi>c</mi><mo>&rarr;</mo></mover></math> from vector <math display="inline"><mover><mi>b</mi><mo>&rarr;</mo></mover></math>, we arrange the end of <math display="inline"><mover><mi>c</mi><mo>&rarr;</mo></mover></math> to the end of <math display="inline"><mover><mi>b</mi><mo>&rarr;</mo></mover></math>. The result is vector <math display="inline"><mover><mi>a</mi><mo>&rarr;</mo></mover></math>, which begins at the start of <math display="inline"><mover><mi>c</mi><mo>&rarr;</mo></mover></math> and ends at the start of <math display="inline"><mover><mi>b</mi><mo>&rarr;</mo></mover></math>.</p>
+
+<p>If we add the vector components to the diagram, we can immediately see how vectors are added or subtracted arithmetically:</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="indent" viewBox="-70 -181 240 251" width="240" stroke="black" style="border:1px none silver">
+<!--axes-->
+<line x1="0" y1="20" x2="0" y2="-180" marker-end="url(#arrowhead)" />
+<text x="-15" y="-168">y</text>
+<line x1="-20" y1="0" x2="170" y2="0" marker-end="url(#arrowhead)" />
+<text x="158" y="15">x</text>
+
+<!--vectors-->
+<line x1="40" y1="-90" x2="90" y2="-150" marker-end="url(#arrowhead)" />
+<text vector x="42" y="-115">a&#8407;</text>
+<line x1="90" y1="-150" x2="140" y2="-50" marker-end="url(#arrowhead)" />
+<text vector x="120" y="-100">b<tspan dy="-4">&#8407;</tspan></text>
+<line x1="40" y1="-90" x2="140" y2="-50" marker-end="url(#arrowhead)" />
+<text vector x="60" y="-60">c&#8407;</text>
+
+<!--y-lines-->
+<line x1="0" y1="-90" x2="40" y2="-90" stroke-dasharray="8" />
+<line x1="0" y1="-150" x2="90" y2="-150" stroke-dasharray="8" />
+<line x1="0" y1="-50" x2="140" y2="-50" stroke-dasharray="8" />
+
+<!--by-->
+<path d="M 0 -150 L -40 -150 -40 -50 0 -50" fill="none" />
+<rect x="-55" y="-115" width="25" height="25" fill="white" stroke="none" />
+<text x="-47" y="-102">b<tspan sub>y</tspan></text>
+
+<!--ay-->
+<path d="M -20 -150 L -20 -90 0 -90" fill="none"" />
+<rect x="-33" y="-132" width="25" height="25" fill="white" stroke="none" />
+<text x="-26" y="-119">a<tspan sub>y</tspan></text>
+
+<!--cy-->
+<line x1="-20" y1="-90" x2="-20" y2="-50" />
+<rect x="-33" y="-80" width="25" height="20" fill="white" stroke="none" />
+<text x="-25" y="-70">c<tspan sub>y</tspan></text>
+
+<!--x-lines-->
+<line x1="40" y1="0" x2="40" y2="-90" stroke-dasharray="8" />
+<line x1="90" y1="0" x2="90" y2="-150" stroke-dasharray="8" />
+<line x1="140" y1="0" x2="140" y2="-50" stroke-dasharray="8" />
+
+<!--ax-->
+<path d="M 40 30 L 90 30 90 0" fill="none"  />
+<rect x="53" y="20" width="20" height="20" fill="white" stroke="none" />
+<text x="58" y="33">a<tspan sub>x</tspan></text>
+
+<!--bx-->
+<path d="M 90 30 L 140 30" />
+<rect x="105" y="20" width="20" height="20" fill="white" stroke="none " />
+<text x="109" y="33">b<tspan sub>x</tspan></text>
+
+<!--cx-->
+<path d="M40 0 L 40 50 140 50 140 0" fill="none" />
+<rect x="80" y="40" width="20" height="20" fill="white" stroke="none " />
+<text x="84" y="53">c<tspan sub>x</tspan></text>
+
+<!--Origin-->
+<circle cx="0" cy="0" r="3" fill="white" />
+</svg>
+
+<p>Algebraically, vectors are added component-wise. c<sub>x</sub> is the sum of a<sub>x</sub> and b<sub>x</sub>. Similarly, c<sub>y</sub> is a<sub>y</sub> minus b<sub>y</sub>. Minus, because <math display="inline"><mover><mi>b</mi><mo>&rarr;</mo></mover></math> goes <em>down</em>, in negative y direction, so the y component of the b vector is negative.</p>
+
+<p>To summarize, two vectors are added arithmetically by adding their related components:</p>
+
+<math>
+	<mover><mi>a</mi><mo>&rarr;</mo></mover><mo>+</mo><mover><mi>b</mi><mo>&rarr;</mo></mover>
+	<mo>=</mo>
+	<mo>(</mo><mtable>
+	<mtr><mtd><mrow><msub><mi>a</mi><mn>1</mn></msub></mrow></mtd></mtr>
+	<mtr><mtd><mrow><msub><mi>a</mi><mn>2</mn></msub></mrow></mtd></mtr>
+	<mtr><mtd><mrow><msub><mi>a</mi><mn>3</mn></msub></mrow></mtd></mtr>
+	</mtable>
+	<mo>)</mo>
+	<mo>+</mo>
+	<mo>(</mo><mtable>
+	<mtr><mtd><mrow><msub><mi>b</mi><mn>1</mn></msub></mrow></mtd></mtr>
+	<mtr><mtd><mrow><msub><mi>b</mi><mn>2</mn></msub></mrow></mtd></mtr>
+	<mtr><mtd><mrow><msub><mi>b</mi><mn>3</mn></msub></mrow></mtd></mtr>
+	</mtable>
+	<mo>)</mo>
+	<mo>=</mo>
+	<mo>(</mo>
+	<mtable>
+	<mtr><mtd><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub></mrow></mtd></mtr>
+	<mtr><mtd><mrow><msub><mi>a</mi><mn>2</mn></msub><mo>+</mo><msub><mi>b</mi><mn>2</mn></msub></mrow></mtd></mtr>
+	<mtr><mtd><mrow><msub><mi>a</mi><mn>3</mn></msub><mo>+</mo><msub><mi>b</mi><mn>3</mn></msub></mrow></mtd></mtr>
+	</mtable>
+	<mo>)</mo>
+	</math>
+
+<!--h3--></div>
+
+<h3 cbc>Commutativity</h3><div>
+
+<p>The vector addition is <em>commutative</em>:</p>
+
+<math>
+	<mover><mi>a</mi><mo>&rarr;</mo></mover><mo>+</mo><mover><mi>b</mi><mo>&rarr;</mo></mover>
+	<mo>=</mo>
+	<mover><mi>b</mi><mo>&rarr;</mo></mover><mo>+</mo><mover><mi>a</mi><mo>&rarr;</mo></mover>
+	</math>
+
+<!--h3--></div>
+
+<h3 cbc>Zero Vector</h3><div>
+
+<p>The neutral operand of the vector addition is called the <em>zero vector</em>, so that </p>
+
+<math>
+<mrow><mover><mi>a</mi><mo>&rarr;</mo></mover><mo>+</mo><mover><mi>0</mi><mo>&rarr;</mo></mover><mo>=</mo><mover><mi>a</mi><mo>&rarr;</mo></mover></mrow>
+</math>
+
+<p>The zero vector has a zero length, and thus no orientation or direction.</p>
+
+<!--h3--></div>
+
+<h3 cbc>Scaling Vectors</h3><div>
+
+<p>Multiplying a vector with a scalar value <em>scales the length</em> of the vector. In other words, applying a vector and a scalar to the multiplication operator returns a vector:</p>
+
+<math><mrow>
+<mn>n</mn><mo>&middot;</mo><mover><mi>a</mi><mo>&rarr;</mo></mover>
+<mo>=</mo>
+<mn>n</mn>
+<mo>&middot;</mo>
+<mo>(</mo><mtable>
+<mtr><mtd><msub><mi>a</mi><mn>1</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>a</mi><mn>2</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>a</mi><mn>3</mn></msub></mtd></mtr>
+</mtable><mo>)</mo>
+<mo>=</mo>
+<mo>(</mo><mtable>
+<mtr><mtd><mrow><mn>n</mn><mo>&middot;</mo><msub><mi>a</mi><mn>1</mn></msub></mrow></mtd></mtr>
+<mtr><mtd><mrow><mn>n</mn><mo>&middot;</mo><msub><mi>a</mi><mn>2</mn></msub></mrow></mtd></mtr>
+<mtr><mtd><mrow><mn>n</mn><mo>&middot;</mo><msub><mi>a</mi><mn>3</mn></msub></mrow></mtd></mtr>
+</mtable><mo>)</mo>
+</mrow></math>
+
+<p>This operation changes the length (i. e. the value) of a vector.</p>
+
+<svg class="indent" version="1.1" viewBox="-50 -220 270 280 " width="260" stroke="black" style="border:1px solid silver" xmlns="http://www.w3.org/2000/svg" >
+<!-- Axes --><g text-anchor="middle" marker-end="url(#arrowhead)">
+	<line x1="-20" y1="0" x2="200" y2="0" /> 
+	<text fill="red" x="195" y="-12">x</text>
+	<line x1="0" y1="20" x2="0" y2="-200" /> 
+	<text fill="green" x="15" y="-190">y</text>
+	<circle cx="0" cy="0" r="5" fill="white"></circle>
+</g><!-- vector --><g marker-end="url(#arrowhead)">
+	<line x1="40" y1="-40" x2="150" y2="-150" />
+	<text x="77" y="-100">a&#8407;</text>
+	<line x1="40" y1="-40" x2="95" y2="-95" />
+	<text x="127" y="-155">2a&#8407;</text>
+</g><!-- dotted lines --><g stroke-dasharray="4">
+		<line x1="0" y1="-150" x2="150" y2="-150" />
+		<line x1="0" y1="-95" x2="95" y2="-95" />
+		<line x1="0" y1="-40" x2="40" y2="-40" />
+		<line x1="40" y1="0" x2="40" y2="-40" />
+		<line x1="95" y1="0" x2="95" y2="-95" />
+		<line x1="150" y1="0" x2="150" y2="-150" />
+</g><!-- component lines --><g fill="none">
+		<path d="M -5 -40 L -35 -40 -35 -150 -5 -150" />
+		<path d="M -15 -40 L -15 -95 -5 -95" />
+		<path d="M 40 5 L 40 40 150 40 150 5" />
+		<path d="M 40 20 L 95 20 95 5" />
+</g><!-- text backgrounds --><g fill="white" stroke="none"> 
+		<rect x="-45" y="-135" width="22" height="25" />
+		<rect x="-25" y="-81" width="22" height="25" />
+		<rect x="87" y="27" width="27" height="25" />
+		<rect x="55" y="7" width="22" height="25" />
+</g><g><!-- component text -->
+		<text x="-42" y="-118">2a<tspan sub>y</tspan></text>
+		<text x="-22" y="-68">a<tspan sub>y</tspan></text>
+		<text x="60" y="22">a<tspan sub>x</tspan></text>
+		<text x="92" y="44">2a<tspan sub>x</tspan></text>
+</g></svg>
+
+<p>Multiplying with a <em>negative</em> number <em>inverts</em> the orientation, but maintains direction:</p>
+
+
+<svg class="indent" version="1.1" viewBox="-50 -220 270 280 " width="260" stroke="black" style="border:1px solid silver" xmlns="http://www.w3.org/2000/svg" >
+<!-- axes --><g text-anchor="middle" marker-end="url(#arrowhead)">
+	<line x1="-20" y1="0" x2="200" y2="0" /> 
+	<text fill="red" x="195" y="-12">x</text>
+	<line x1="0" y1="20" x2="0" y2="-200" /> 
+	<text fill="green" x="15" y="-190">y</text>
+	<circle cx="0" cy="0" r="5" fill="white"></circle>
+</g><!-- vectors --><g marker-end="url(#arrowhead)">
+	<line x1="40" y1="-40" x2="150" y2="-150" />
+	<text x="42" y="-70">&minus;a&#8407;</text>
+	<line x1="95" y1="-95" x2="40" y2="-40" />
+	<text x="100" y="-120">a&#8407;</text>
+	<circle cx="95" cy="-95" r="3" fill="white" />
+</g><!-- dotted lines --><g stroke-dasharray="4">
+		<line x1="0" y1="-150" x2="150" y2="-150" />
+		<line x1="0" y1="-95" x2="95" y2="-95" />
+		<line x1="0" y1="-40" x2="40" y2="-40" />
+		<line x1="40" y1="0" x2="40" y2="-40" />
+		<line x1="95" y1="0" x2="95" y2="-95" />
+		<line x1="150" y1="0" x2="150" y2="-150" />
+</g><!-- component lines --><g fill="none">
+		<path d="M -5 -95 L -30 -95 -30 -150 -5 -150" />
+		<path d="M -5 -40 L -30 -40 -30 -95" />
+		<path d="M 40 5 L 40 30 95 30 95 5" />
+		<path d="M 95 30 L 150 30 150 5" />
+</g><!-- text backgrounds --><g fill="white" stroke="none"> 
+		<rect x="-41" y="-135" width="22" height="24" />
+		<rect x="-41" y="-80" width="22" height="24" />
+		<rect x="50" y="18" width="28" height="24" />
+		<rect x="111" y="18" width="20" height="24" />
+</g><g text-anchor="middle" ><!-- component text -->
+		<text x="-30" y="-122">a<tspan sub>y</tspan></text>
+		<text x="-30" y="-65">&minus;a<tspan sub>y</tspan></text>
+		<text x="66" y="35">&minus;a<tspan sub>x</tspan></text>
+		<text x="122" y="35">a<tspan sub>x</tspan></text>
+</g></svg>
+
+<p>Multiplication of vectors with scalars is <em>distributive</em>:</p>
+
+<math>
+<mrow><mo>(</mo><mi>n</mi><mo>+</mo><mi>m</mi><mo>)</mo><mo>&middot;</mo><mover><mi>a</mi><mo>&rarr;</mo></mover>
+<mo>=</mo>
+<mi>n</mi><mo>&middot;</mo><mover><mi>a</mi><mo>&rarr;</mo></mover><mo>+</mo><mi>m</mi><mo>&middot;</mo><mover><mi>a</mi><mo>&rarr;</mo></mover></mrow>
+</math>
+
+<p>and</p>
+
+<math>
+<mrow><mi>n</mi><mo>&middot;</mo><mo>(</mo><mover><mi>a</mi><mo>&rarr;</mo></mover><mo>+</mo><mover><mi>b</mi><mo>&rarr;</mo></mover><mo>)</mo>
+<mo>=</mo>
+<mi>n</mi><mo>&middot;</mo><mover><mi>a</mi><mo>&rarr;</mo></mover><mo>+</mo><mi>n</mi><mo>&middot;</mo><mover><mi>b</mi><mo>&rarr;</mo></mover></mrow>
+</math>
+
+<p>Multiplication with scalars is commutative:</p>
+
+<math><mrow>
+<mo>(</mo><mi>n</mi><mo>&middot;</mo><mi>m</mi><mo>)</mo><mo>&middot;</mo><mover><mi>a</mi><mo>&rarr;</mo></mover>
+<mo>=</mo>
+<mi>n</mi><mo>&middot;</mo><mo>(</mo><mi>m</mi><mo>&middot;</mo><mover><mi>a</mi><mo>&rarr;</mo></mover><mo>)</mo>
+<mo>=</mo>
+<mo>(</mo><mover><mi>a</mi><mo>&rarr;</mo></mover><mo>&middot;</mo><mi>n</mi><mo>)</mo><mo>&middot;</mo><mi>m</mi>
+</mrow></math>
+
+<p>Every vector can be expressd with addition and scalar multiplication:</p>
+
+<math><mtable rowspacing="50px"><mtr><mtd style="padding-bottom: 20px"><mrow>
+	<mover><mi>a</mi><mo>&rarr;</mo></mover>
+	<mo>=</mo>
+	<mo>(</mo><mtable>
+	<mtr><mtd><msub><mi>a</mi><mn>1</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>a</mi><mn>2</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>a</mi><mn>3</mn></msub></mtd></mtr>
+	</mtable><mo>)</mo>
+</mrow></mtd></mtr><mtr><mtd style="padding-bottom: 20px"><mrow>
+	<mo>=</mo>
+	<mo>(</mo><mtable>
+	<mtr><mtd><msub><mi>a</mi><mn>1</mn></msub></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	</mtable><mo>)</mo>
+	<mo>+</mo>
+	<mo>(</mo><mtable>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><msub><mi>a</mi><mn>2</mn></msub></mtd></mtr>
+		<mtr><mtd><mn>0</mn></mtd></mtr>
+	</mtable><mo>)</mo>
+	<mo>+</mo>
+	<mo>(</mo><mtable>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><msub><mi>a</mi><mn>3</mn></msub></mtd></mtr>
+	</mtable><mo>)</mo>
+</mrow></mtd></mtr><mtr><mtd style="padding-bottom: 20px"><mrow>
+	<mo>=</mo>
+	<msub><mi>a</mi><mn>1</mn></msub>
+	<mo>&middot;</mo>
+	<mo>(</mo><mtable>
+	<mtr><mtd><mn>1</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	</mtable><mo>)</mo>
+	<mo>+</mo>
+	<msub><mi>a</mi><mn>2</mn></msub>
+	<mo>&middot;</mo>
+	<mo>(</mo><mtable>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><mn>1</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	</mtable><mo>)</mo>
+	<mo>+</mo>
+	<msub><mi>a</mi><mn>3</mn></msub>
+	<mo>&middot;</mo>
+	<mo>(</mo><mtable>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><mn>1</mn></mtd></mtr>
+	</mtable><mo>)</mo>
+</mrow></mtd></mtr><mtr><mtd><mrow>
+	<mo>=</mo>
+	<msub><mi>a</mi><mn>1</mn></msub>
+	<mo>&middot;</mo>
+	<mover><msub><mi>e</mi><mn>1</mn></msub><mo>&rarr;</mo></mover>
+	<mo>+</mo>
+	<msub><mi>a</mi><mn>2</mn></msub>
+	<mo>&middot;</mo>
+	<mover><msub><mi>e</mi><mn>2</mn></msub><mo>&rarr;</mo></mover>
+	<mo>+</mo>
+	<msub><mi>a</mi><mn>3</mn></msub>
+	<mo>&middot;</mo>
+	<mover><msub><mi>e</mi><mn>3</mn></msub><mo>&rarr;</mo></mover>
+</mrow></mtd></mtr></mtable></math>
+
+<!--h3--></div>
+
+<h3 cbc>Scalar Dot Product</h3><div>
+
+<p>The <em>dot product</em> or <em>scalar product</em> or <em>Euclidian innner product</em> operator is a multiplication operator that takes two vectors and returns a scalar. </p>
+
+<p>Geometrically, the dot product of two vectors  is <math display="inline"><mover><mi>a</mi><mo>&rarr;</mo></mover><mo>&middot;</mo><mover><mi>b</mi><mo>&rarr;</mo></mover></math> is the orthogonal projection of <math display="inline"><mover><mi>a</mi><mo>&rarr;</mo></mover></math> onto the vector <math display="inline"><mover><mi>b</mi><mo>&rarr;</mo></mover></math>, multiplied with the length of <math display="inline"><mover><mi>b</mi><mo>&rarr;</mo></mover></math>:</p>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" class="indent" viewBox="-10 -80 270 180" width="280" stroke="black" style="border:1px none silver">
+	<!-- Vectors --><g marker-end="url(#arrowhead)" >
+		<line x1="0" y1="0" x2="150" y2="-50" />
+		<line x1="0" y1="0" x2="180" y2="0" />
+	</g><!-- bar line --><g marker-end="url(#barhead)" >
+		<line x1="0" y1="0" x2="250" y2="0" />
+	</g><!-- perpendicular --><g stroke-dasharray="4">
+		<line x1="150" y1="0" x2="150" y2="-50" />
+	</g>	<!-- arcs --><g fill="none">
+		<path d="M 50 0 A 50 50 15 0 0 48 -17" />
+		<path d="M 135 0 A 15 15 90 0 1 150 -15" />
+	</g><!-- circles --><g>
+		<circle cx="144" cy="-6" r="1" fill="black" />
+		<circle cx="150" cy="0" r="3" fill="white" />
+		<circle cx="150" cy="-50" r="3" fill="white" />
+	</g><g text-anchor="middle" font-size="12" >
+		<text x="166" y="-50">P1</text>
+		<text x="135" y="20">P2</text>
+	</g><!-- component lines --><g fill="none">
+		<path d="M 0 5 L 0 30 150 30 150 10" />
+		<path d="M 0 30 L 0 50 180 50 180 5" />
+		<path d="M 0 50 L 0 70 250 70 250 10" />
+	</g><g fill="white" stroke="none"><!-- background boxes -->
+		<rect x="65" y="19" width="20" height="22" />
+		<rect x="95" y="39" width="20" height="22" />
+		<rect x="110" y="59" width="50" height="22" />
+	</g><!-- text --><g text-anchor="middle">
+		<text x="57" y="-6">&alpha;</text>
+		<text x="80" y="-40">a<tspan over>&#8407;</tspan></text>
+		<text x="100" y="-5">b<tspan dy="-4">&#8407;</tspan></text>
+		<text x="75" y="35">a<tspan sub>b</tspan></text>
+		<text x="105" y="55">b</text>
+		<text x="135" y="75">a<tspan sub>b</tspan><tspan dy="-6"> &middot; b</tspan></text>
+	</g></svg>
+
+<p>This can be expressed as</p>
+
+<math><mover><mi>a</mi><mo>&rarr;</mo></mover><mo>&middot;</mo><mover><mi>b</mi><mo>&rarr;</mo></mover>
+	<mrow><mo>=</mo>
+	<mo>|</mo><mover><mi>a</mi><mo>&rarr;</mo></mover><mo>|</mo>
+	<mo>&middot;</mo>
+	<mo>|</mo><mover><mi>b</mi><mo>&rarr;</mo></mover><mo>|</mo>
+	<mo>&middot;</mo>
+	<mo>cos</mo><mn>&phi;</mn>
+	</mrow>
+	<mo>=</mo>
+	<mi>a</mi><mo>&middot;</mo><mi>b</mi><mo>&middot;</mo><mo>cos</mo><mn>&phi;</mn></math>
+
+<p>Algebraically, the dot product is defined as sum of the component products:</p>
+
+<math>
+<mrow><mover><mi>a</mi><mo>&rarr;</mo></mover>
+<mo>&middot;</mo>
+<mover><mi>b</mi><mo>&rarr;</mo></mover></mrow>
+<mo>=</mo>
+	<mo>(</mo><mtable>
+	<mtr><mtd><msub><mi>a</mi><mn>1</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>a</mi><mn>2</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>a</mi><mn>3</mn></msub></mtd></mtr>
+	</mtable><mo>)</mo>
+	<mo>&middot;</mo>
+	<mo>(</mo><mtable>
+	<mtr><mtd><msub><mi>b</mi><mn>1</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>b</mi><mn>2</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>b</mi><mn>3</mn></msub></mtd></mtr>
+	</mtable><mo>)</mo>
+	<mo>=</mo>
+	<mtr><mtd><msub><mi>a</mi><mn>1</mn></msub></mtd></mtr>
+	<mo>&middot;</mo>
+	<mtr><mtd><msub><mi>b</mi><mn>1</mn></msub></mtd></mtr>
+	<mo>+</mo>
+	<mtr><mtd><msub><mi>a</mi><mn>2</mn></msub></mtd></mtr>
+	<mo>&middot;</mo>
+	<mtr><mtd><msub><mi>b</mi><mn>2</mn></msub></mtd></mtr>
+	<mo>+</mo>
+	<mtr><mtd><msub><mi>a</mi><mn>3</mn></msub></mtd></mtr>
+	<mo>&middot;</mo>
+	<mtr><mtd><msub><mi>b</mi><mn>3</mn></msub></mtd></mtr>
+</math>
+
+<p>Usage:</p>
+
+<ul>
+<li>Check for orthogonality (cos &phi; = 0)</li>
+<li>Check for parallelity (cos &phi; = 1)</li>
+</ul>
+
+<!--h3--></div>
+
+<h3 cbc>Projection</h3><div>
+
+<p>A vector projected to another vector is calulated as</p>
+
+<math displaystyle="true">
+	<msub><mover><mi>b</mi><mo>&rarr;</mo></mover><mi>a</mi></msub>
+	<mo>=</mo>
+	<mfrac>
+		<mrow>
+			<mover><mi>a</mi><mo>&rarr;</mo></mover>
+			<mo>&middot;</mo>
+			<mover><mi>b</mi><mo>&rarr;</mo></mover>
+			</mrow>
+		<mrow>
+			<mo>|</mo>
+			<msup><mover><mi>a</mi><mo>&rarr;</mo></mover><mn>2</mn></msup>
+			<mo>|</mo>
+			</mrow>
+		</mfrac>
+		<mo>&middot;</mo>
+		<mover><mi>a</mi><mo>&rarr;</mo></mover>
+		<mo>=</mo>
+		<mrow>
+		<mo>(</mo>
+		<msub><mover><mi>e</mi><mo>&rarr;</mo></mover><mi>a</mi></msub>
+		<mo>&middot;</mo>
+		<mover><mi>b</mi><mo>&rarr;</mo></mover>
+		<mo>)</mo>
+		</mrow>
+		<msub><mover><mi>e</mi><mo>&rarr;</mo></mover><mi>a</mi></msub>
+	</math>
+
+
+<!--h3--></div>
+
+<h3 cbc>Vector Product</h3><div>
+
+<p>The <em>vector product &times;</em> is an operator that takes two vectors and retuns a third vector. Geometrically, the result vector is orthogonal to the plane spanned by the operand vectors, and its  length is calculated as</p>
+
+<math>
+<mi>c</mi><mo>=</mo>	<mi>a</mi><mo>&middot;</mo><mi>b</mi><mo>&middot;</mo><mo>sin</mo><mn>&phi;</mn>
+</math>
+
+<p>with 0 &le; &phi; &le; 180 degree.</p>
+
+<p>Additionally, the vectors <math display="inline"><mover><mi>a</mi><mo>&rarr;</mo></mover></math>, <math display="inline"><mover><mi>b</mi><mo>&rarr;</mo></mover></math> and <math display="inline"><mover><mi>c</mi><mo>&rarr;</mo></mover></math> constitute a right-hand system.</p>
+
+<p>The value of the vector product can be considered the area of the parallelogram, spanned by the vectors <b>a</b> and <b>b</b>.</p>
+
+<math>
+<mi>A</mi><mo>=</mo>
+<mi>a</mi><mo>&middot;</mo><mi>h</mi><mo>=</mo>
+<mi>a</mi><mo>&middot;</mo><mi>b</mi><mo>&middot;</mo><mo>sin</mo><mn>&phi;</mn>
+</math>
+
+<p>where b &middot; sin &phi; can be considered the height of the parallelogram above <math display="inline"><mover><mi>a</mi><mo>&rarr;</mo></mover></math>.</p>
+
+<!--h3--></div>
+
+<script>
+function calculate( id ) {
+	/*
+	 *	helper script to calculate coordinates for vectors 
+	 */
+	window.event.preventDefault();
+	window.event.stopPropagation();
+	let length = document.getElementById("length").value;
+	let angle = (document.getElementById("angle").value)/180*Math.PI;
+	let scale = (document.getElementById("scale").value);
+	document.getElementById("cosine").value=Math.round(scale*length * Math.cos( angle ));
+	document.getElementById("sine").value=Math.round(scale*length * Math.sin( angle ));
+	}
+</script>
+<style>label { display: inline-block; width : 100px }
+form { line-height : 120% ; margin-top : 10px ; margin-bottom : 10px }
+input {
+	height : 1.2em ;
+	padding : 2px ;
+	margin : 4px ;
+	border : 1px solid silver ;
+}
+button { margin : 4px }
+</style>
+<form style="display:block">
+<label>Angle: </label><input id="angle" type="number" value="130" /><br />
+<label>Value: </label><input id="length" type="number" value="100" /><br />
+<label>Scale: </label><input id="scale" type="number" value="0.7" /><br />
+<label> </label><button onclick="calculate( 'value' )">Calculate</button><br />
+<label>x cos: </label><input id="cosine" type="number" /><br />
+<label>y sin: </label><input id="sine" type="number" />
+</form>
+
+<script>
+( function ( ) {
+	//	Emulates subscripts and superscripts in SVG across browsers.
+	let elements = document.querySelectorAll( "tspan[sup]" );
+	for ( let i = 0 ; i < elements.length ; i ++ ) elements[ i ].setAttribute( "dy" , "-6" );
+	elements = document.querySelectorAll( "tspan[sub]" );
+	for ( let i = 0 ; i < elements.length ; i ++ ) elements[ i ].setAttribute( "dy" , "6" );
+	} ) ( ) ;
+</script>
+</body>
+</html>

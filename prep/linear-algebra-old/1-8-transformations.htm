@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2022-02-09" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-02-13" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-02-13" />
+<meta name="version" content="1" />
+<meta name="categories" content="Math > Linear Algebra" />
+<meta name="tags" content="math, algebra, matrix, vector, tranformation" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="/inc/page.css" />
+<link rel="stylesheet" href="/inc/css/math.css" />
+<link rel="stylesheet" href="/inc/css/scientific-1.css" />
+<style>
+div.theorem > figcaption:before { content : "" }
+div.definition > figcaption:before { content : "" }
+div.corollary > figcaption:before { content : "" }
+</style>
+
+<title>Math >  Linear Algebra - 1.8 Transformations</title>
+
+</head><body><header id="page-header"></header><div id="main-toolbar"></div><main id="page-content">
+
+<h1>1.8 Transformations</h1>
+
+<p id="page-abstract"></p>
+
+<p>We know now that a matrix equation <math><mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>=</mo><mover><mi>b</mi><mo>&rarr;</mo></mover></math> is a different notation for a vector equation <math><msub><mi>x</mi><mn>1</mn></msub><msub><mover><mi>x</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>+ &ctdot; +</mo><msub><mi>x</mi><mn>n</mn></msub><msub><mover><mi>x</mi><mo>&rarr;</mo></mover><mn>n</mn></msub><mo>=</mo><mover><mi>b</mi><mo>&rarr;</mo></mover></math>. However, a matrix <math><mi>A</mi></math> can be seen as <em>transformation</em> that transforms a vector <math><mover><mi>x</mi><mo>&rarr;</mo></mover></math> into a new vector <math><mover><mi>b</mi><mo>&rarr;</mo></mover></math>. The matrix can also be seen as a <em>function</em> that takes <math><mover><mi>x</mi><mo>&rarr;</mo></mover></math> as input and produces the vector <math><mover><mi>b</mi><mo>&rarr;</mo></mover></math> as output.</p>
+
+<p>A system of linear equations:</p>
+
+<div class="math"><math><mtable>
+<mtr><mtd>
+	<msub><mi>a</mi><mn>1,1</mn></msub><msub><mi>x</mi><mn>1,1</mn></msub>
+</mtd><mtd>
+	<mo>+ &ctdot; +</mo>
+</mtd><mtd>
+	<msub><mi>a</mi><mn>1,n</mn></msub><msub><mi>x</mi><mn>1,n</mn></msub>
+</mtd><mtd>
+	<mo>=</mo>
+	<msub><mn>b</mn><mn>1</mn></msub>
+</mtd></mtr><mtr><mtd>
+	<msub><mi>a</mi><mn>2,1</mn></msub><msub><mi>x</mi><mn>2,2</mn></msub>
+</mtd><mtd>
+	<mo>+ &ctdot; +</mo>
+</mtd><mtd>
+	<msub><mi>a</mi><mn>2,n</mn></msub><msub><mi>x</mi><mn>2,n</mn></msub>
+</mtd><mtd>
+	<mo>=</mo>
+	<msub><mn>b</mn><mn>2</mn></msub>
+</mtd></mtr><mtr>
+	<mtd><mo>&vellip;</mo></mtd>
+	<mtd><mo>&vellip;</mo></mtd>
+	<mtd><mo>&vellip;</mo></mtd>
+	<mtd><mo>&vellip;</mo></mtd>
+</mtr><mtr><mtd>
+	<msub><mi>a</mi><mn>m,1</mn></msub><msub><mi>x</mi><mn>m,1</mn></msub>
+</mtd><mtd>
+	<mo>+ &ctdot; +</mo>
+</mtd><mtd>
+	<msub><mi>a</mi><mn>m,n</mn></msub><msub><mi>x</mi><mn>m,n</mn></msub>
+</mtd><mtd>
+	<mo>=</mo>
+	<msub><mn>b</mn><mn>m</mn></msub>
+</mtd></mtr>
+</mtable>
+</math></div>
+
+<p>A matrix equation:</p>
+
+<div class="math"><math>
+<mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>=</mo><mover><mi>b</mi><mo>&rarr;</mo></mover>
+</math></div>
+
+<p>A vector equation:</p>
+
+<div class="math"><math>
+<msub><mi>x</mi><mn>1</mn></msub><msub><mover><mi>a</mi><mo>&rarr;</mo></mover><mn>1</mn></msub>
+	<mo>+ &ctdot; +</mo>
+<msub><mi>x</mi><mn>n</mn></msub><msub><mover><mi>a</mi><mo>&rarr;</mo></mover><mn>n</mn></msub>	<mo>=</mo>
+	<mover><mi>b</mi><mo>&rarr;</mo></mover>
+</math></div>
+
+<p>A <em>transformation</em> or <em>function</em> or <em>mapping</em> from a vector <math><mover><mi>x</mi><mo>&rarr;</mo></mover></math> in <math><msup><mn>&#8477;</mn><mn>m</mn></math> to a different vector <math><mover><mi>b</mi><mo>&rarr;</mo></mover></math> in <math><msup><mn>&#8477;</mn><mn>p</mn></math></p>
+
+<div class="math"><math>
+<mi>A</mi><mo>:</mo><msup><mn>&#8477;</mn><mn>n</mn></msup><mo>&rarr;</mo><msup><mn>&#8477;</mn><mn>m</mn></msup>
+</math></div>
+
+<div class="math"><math>
+<mi>A</mi><mrow><mo lspace="3px">[</mo><mtable>
+	<mtr><mtd><msub><mi>x</mi><mn>1</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>x</mi><mn>2</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>x</mi><mn>3</mn></msub></mtd></mtr>
+</mtable><mo>]</mo></mrow>
+<mo>=</mo>
+<mrow><mo>[</mo><mtable>
+	<mtr><mtd><msub><mi>b</mi><mn>1</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>b</mi><mn>2</mn></msub></mtd></mtr>
+</mtable><mo>]</mo></mrow>
+</math></div>
+
+<p>The correspondence from <math><mover><mi>x</mi><mo>&rarr;</mo></mover></math> to <math><mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover></math> is a function from one set of vectors to another set of vectors. This is a generalization of the function concept from numbers arguments to vector arguments.</p>
+
+<p>The set &#8477;<sup>m</sup> is called the <em>domain</em> of the transformation, the set &#8477;<sup>n</sup> is called the <em>codomain</em>.</p>
+
+<p>The transformation assigns an <em>image</em> in the codomain to every vector in the domain of the tranformation. The set of all images in the codomain is called the <em>range</em> of the transformation.</p>
+
+<p>Or a <em>projection</em> from one space to another:</p>
+
+
+<div class="math"><math>
+<mi>A</mi><mo>:</mo><msup><mn>&#8477;</mn><mn>n</mn></msup><mo>&RightTeeArrow;</mo><msup><mn>&#8477;</mn><mn>m</mn></msup>
+</math></div>
+
+
+<h2 cbc>Matrix Transformations</h2><div>
+
+<p>In this chapter we will focus on <em>mappings</em> associated with a matrix multiplication <math><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>&RightTeeArrow;</mo><mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover></math>. For each <math><mover><mi>x</mi><mo>&rarr;</mo></mover></math> in <math><msup><mn>&#8477;</mn><mn>n</mn></msup></math>, <math><mi>T</mi><mo>(</mo><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>)</mo></math> is computed as <math><mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover></math>, where <math><mi>A</mi></math> is a matrix of size m &times; n, the vector <math><mover><mi>x</mi><mo>&rarr;</mo></mover></math> is a matrix of size n &times; 1, and the result vector <math><mover><mi>b</mi><mo>&rarr;</mo></mover></math> is a matrix of size m &times; 1.</p>
+
+<p>Thus the domain of T is &#8477;<sup>n</sup> as the number of columns in the matrix A, and the codomain of T is &#8477;<sup>m</sup> as the number of rows in the matrix A.</p>
+
+<p>The range of T is the set of all linear combinations of the columns of A, because each image <math><mi>T</mi><mo>(</mo><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>)</mo></math> is of the form <math><mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>=</mo><msub><mi>x</mi><mn>1</mn></msub><msub><mover><mi>a</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>+ &ctdot; +</mo><msub><mi>x</mi><mn>n</mn></msub><msub><mover><mi>a</mi><mo>&rarr;</mo></mover><mn>n</mn></msub></math>.</p>
+
+<p>Example 1</p>
+
+<p>Let <math><mi>A</mi><mo>=</mo>
+<mo>[</mo><mtable class="matrix"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>&minus;3</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>5</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>&minus;1</mn></mtd>
+	<mtd><mn>7</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math> , <math><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>=</mo>
+<mo>[</mo><mtable class="matrix">
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+	<mtr><mtd><mn>&minus;1</mn></mtd></mtr>
+</mtable><mo>]</mo>
+</math> , <math><mover><mi>b</mi><mo>&rarr;</mo></mover><mo>=</mo>
+<mo>[</mo><mtable class="matrix">
+	<mtr><mtd><mn>3</mn></mtd></mtr>
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+	<mtr><mtd><mn>&minus;5</mn></mtd></mtr>
+</mtable><mo>]</mo>
+</math> , <math><mover><mi>c</mi><mo>&rarr;</mo></mover><mo>=</mo>
+<mo>[</mo><mtable class="matrix">
+	<mtr><mtd><mn>3</mn></mtd></mtr>
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+	<mtr><mtd><mn>5</mn></mtd></mtr>
+</mtable><mo>]</mo>
+</math></p>
+
+<p>Define a transformation <math><mi>T</mi><mo> : </mo><msup><mi>&#8477;</mi><mn>2</mn></msup><mo>&RightTeeArrow;</mo><msup><mi>&#8477;</mi><mn>3</mn></msup></math> so that</p>
+
+<div class="math"><math>
+<mrow><mi>T</mi><mo>(</mo><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>)</mo></mrow>
+<mo>=</mo>
+<mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover>
+<mo>=</mo>
+<mrow><mo>[</mo><mtable class="matrix"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>&minus;3</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>5</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>&minus;1</mn></mtd>
+	<mtd><mn>7</mn></mtd>
+</mtr></mtable><mo>]</mo></mrow>
+<mrow><mo>[</mo><mtable class="matrix">
+	<mtr><mtd><msub><mi>x</mi><mn>1</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>x</mi><mn>2</mn></msub></mtd></mtr>
+</mtable><mo>]</mo></mrow>
+<mo>=</mo>
+<mrow><mo>[</mo><mtable>
+<mtr><mtd>
+	<msub><mi>x</mi><mn>1</mn></msub>
+	<mo>&minus;</mo>
+	<mn>3</mn><msub><mi>x</mi><mn>2</mn></msub>
+</mtd></mtr><mtr><mtd>
+	<mn>3</mn><msub><mi>x</mi><mn>1</mn></msub>
+	<mo>&plus;</mo>
+	<mn>5</mn><msub><mi>x</mi><mn>2</mn></msub>
+</mtd></mtr><mtr><mtd>
+	<msub><mi>&minus;x</mi><mn>1</mn></msub>
+	<mo>&plus;</mo>
+	<mn>7</mn><msub><mi>x</mi><mn>2</mn></msub>
+</mtd></mtr>
+</mtable><mo>]</mo></mrow>
+</math></div>
+
+<p>Find <math><mi>T</mi><mo>(</mo><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>)</mo></math>, the image of <mover><mi>u</mi><mo>&rarr;</mo></mover> under the transformation <math><mi>T</mi></math>.</p>
+
+<p>Solution:</p>
+
+<div class="math"><math>
+<mrow><mi>T</mi><mo>(</mo><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>)</mo></mrow>
+<mo>=</mo>
+<mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover>
+<mo>=</mo>
+<mrow><mo>[</mo><mtable class="matrix"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>&minus;3</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>5</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>&minus;1</mn></mtd>
+	<mtd><mn>7</mn></mtd>
+</mtr></mtable><mo>]</mo></mrow>
+<mrow><mo>[</mo><mtable class="matrix">
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+	<mtr><mtd><mn>&minus;1</mn></mtd></mtr>
+</mtable><mo>]</mo></mrow>
+<mo>=</mo>
+<mrow><mo>[</mo><mtable class="no-cellpadding-h">
+<mtr>
+	<mtd><mo>(</mo><mn>1</mn><mo>&times;</mo><mn>2</mn><mo>)</mo></mtd>
+	<mtd><mo>+</mo></mtd>
+	<mtd><mo>(</mo><mn>&minus;3</mn><mo>&times;</mo><mn>&minus;1</mn><mo>)</mo></mtd>
+</mtr><mtr>
+	<mtd><mo>(</mo><mn>3</mn><mo>&times;</mo><mn>2</mn><mo>)</mo></mtd>
+	<mtd><mo>+</mo></mtd>
+	<mtd><mo>(</mo><mn>5</mn><mo>&times;</mo><mn>&minus;1</mn><mo>)</mo></mtd>
+</mtr><mtr>
+	<mtd><mo>(</mo><mn>&minus;1</mn><mo>&times;</mo><mn>2</mn><mo>)</mo></mtd>
+	<mtd><mo>+</mo></mtd>
+	<mtd><mo>(</mo><mn>7</mn><mo>&times;</mo><mn>&minus;1</mn><mo>)</mo></mtd>
+</mtr>
+</mtable><mo>]</mo></mrow>
+<mo>=</mo>
+<mrow><mo>[</mo><mtable class="matrix">
+<mtr><mtd><mn>2</mn><mo>+</mo><mn>3</mn></mtd></mtr>
+<mtr><mtd><mn>6</mn><mo>&minus;</mo><mn>5</mn></mtd></mtr>
+<mtr><mtd><mn>&minus;2</mn><mo>&minus;</mo><mn>7</mn></mtd></mtr>
+</mtable><mo>]</mo></mrow>
+<mo>=</mo>
+<mrow><mo>[</mo><mtable class="matrix">
+<mtr><mtd><mn>5</mn></mtd></mtr>
+<mtr><mtd><mn>1</mn></mtd></mtr>
+<mtr><mtd><mn>&minus;9</mn></mtd></mtr>
+</mtable><mo>]</mo></mrow>
+</math></div>
+
+<p>Exercise 1.2: Find an <math><mover><mi>x</mi><mo>&rarr;</mo></mover></math> in <math><msup><mn>&#8477;</mn><mn>2</mn></msup></math> whose image under <math><mi>T</mi></math> is <math><mover><mi>b</mi><mo>&rarr;</mo></mover></math>.</p>
+
+<p>Solution: Sove <math><mi>T</mi><mo>(</mo><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>)</mo></math> for <math><mover><mi>x</mi><mo>&rarr;</mo></mover></math>:</p>
+
+<div class="math"><math>
+<mrow><mi>T</mi><mo>(</mo><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>)</mo></mrow>
+<mo>=</mo>
+<mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover>
+<mo>=</mo>
+<mrow><mo>[</mo><mtable class="matrix"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>&minus;3</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>5</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>&minus;1</mn></mtd>
+	<mtd><mn>7</mn></mtd>
+</mtr></mtable><mo>]</mo></mrow>
+<mrow><mo>[</mo><mtable class="matrix">
+	<mtr><mtd><msub><mi>x</mi><mn>1</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>x</mi><mn>2</mn></msub></mtd></mtr>
+</mtable><mo>]</mo></mrow>
+<mo>=</mo>
+<mrow><mo>[</mo><mtable class="matrix">
+<mtr><mtd><mn>3</mn></mtd></mtr>
+<mtr><mtd><mn>2</mn></mtd></mtr>
+<mtr><mtd><mn>&minus;5</mn></mtd></mtr>
+</mtable><mo>]</mo></mrow>
+</math></div>
+
+<p>We create an augmented matrix and reduce:</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable number="1" class="augmented matrix"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>&minus;3</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>5</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>&minus;1</mn></mtd>
+	<mtd><mn>7</mn></mtd>
+	<mtd><mn>&minus;5</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable number="2" class="augmented matrix"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>&minus;3</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>14</mn></mtd>
+	<mtd><mn>&minus;7</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+	<mtd><mn>&minus;2</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable number="3" class="augmented matrix"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>&minus;3</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>&minus;1/2</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>&minus;1/2</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo> ~ </mo>
+<mo>[</mo><mtable number="4" class="augmented matrix"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>3/2</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>&minus;1/2</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+<p>The solution is <math><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>=</mo>
+<mrow><mo>[</mo><mtable>
+<mtr><mtd><msub><mi>x</mi><mn>1</mn></msub></mtd></mtr>
+<mtr><mtd><msub><mi>x</mi><mn>2</mn></msub></mtd></mtr>
+</mtable><mo>]</mo></mrow>
+<mo>=</mo>
+<mrow><mo>[</mo><mtable class="right-aligned">
+	<mtr><mtd><mfrac><mn>3</mn><mn>2</mn></mfrac></mtd></mtr>
+	<mtr><mtd><mo>&minus;</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mtd></mtr>
+</mtable><mo>]</mo></mrow>
+</math></p>
+
+<p>The image of this vector <math><mover><mi>x</mi><mo>&rarr;</mo></mover></math> under <math><mi>T</mi></math> is the given vector <math><mover><mi>b</mi><mo>&rarr;</mo></mover></math>.</p>
+
+<p>Exercise 1.3: Is there more than one <math><mover><mi>x</mi><mo>&rarr;</mo></mover></math> whose image under <math><mi>T</mi></math> is <math><mover><mi>b</mi><mo>&rarr;</mo></mover></math>?</p>
+
+<p>Solution: The previous answer showed that <math><mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover></math> has a unique solution. So there cannot be another vector x that also solves the equation.</p>
+
+<p>Question 4: Determine if <math><mover><mi>c</mi><mo>&rarr;</mo></mover></math> is in the range of the transformation <math><mi>T</mi></math>.</p>
+
+<p>Answer: The vector <math><mover><mi>c</mi><mo>&rarr;</mo></mover></math> is in the range of <math><mi>T</mi></math> if <math><mover><mi>c</mi><mo>&rarr;</mo></mover></math> is the image of some <math><mover><mi>x</mi><mo>&rarr;</mo></mover></math> in <math><msup><mn>&#8477;</mn><mn>2</mn></msup></math>, or in other words, if <math><mover><mi>c</mi><mo>&rarr;</mo></mover><mo>=</mo><mi>T</mi><mo>(</mo><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>)</mo></math> for some <math><mover><mi>x</mi><mo>&rarr;</mo></mover></math>. This is just another way of asking if the system <math><mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>=</mo><mover><mi>c</mi><mo>&rarr;</mo></mover></math>.</p>
+
+<p>Answer: We create a matrix and reduce:</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable class="matrix" number="1"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>-3</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>3</mn></mtd>
+	<mtd><mn>5</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>-1</mn></mtd>
+	<mtd><mn>7</mn></mtd>
+	<mtd><mn>5</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo>~</mo>
+<mo>[</mo><mtable class="matrix" number="2"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>-3</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>14</mn></mtd>
+	<mtd><mn>-7</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>4</mn></mtd>
+	<mtd><mn>8</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo>~</mo>
+<mo>[</mo><mtable class="matrix" number="3"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>-3</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>-1/2</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>1/2</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo>~</mo>
+<mo>[</mo><mtable class="matrix" number="4"><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>-3</mn></mtd>
+	<mtd><mn>3</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>-1/2</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+</mtr></mtable><mo>]</mo>
+</math></div>
+
+
+<p>The last row in the last matrix has a contradiction (0=1), which shows that the equation system is inconsistent and therefore has no solution. So <math><mover><mi>c</mi><mo>&rarr;</mo></mover></math> is not in the range of <math><mi>T</mi></math>.</p>
+
+<p>The question 1.3 is a <em>uniqueness problem</em> for a system of linear equations, translated into the language of matrix transformations. Similarly, question 1.4 is an <em>existence problem</em>, does there <em>exist</em> an <math><mover><mi>x</mi><mo>&rarr;</mo></mover></math> whose image is <math><mover><mi>c</mi><mo>&rarr;</mo></mover></math>?</p>
+
+<h3 cbc>Example 2</h3><div>
+
+<p>The following transformation matrix has an interesting geometrical explanation:</p>
+
+<p>If <math><mi>A</mi><mo>=</mo><mo>[</mo><mtable><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr></mtable><mo>]</mo></math> , </p>
+<p>then the transformation <math><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>&RightTeeArrow;</mo><mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover></math> <em>projects</em> points in <math><msup><mn>&#8477;</mn><mn>3</mn></msup></math> onto the <math><msub><mi>x</mi><mn>1</mn></msub><msub><mi>x</mi><mn>2</mn></msub></math> plane, because</p>
+
+<div class="math"><math>
+<mo>[</mo><mtable>
+	<mtr><mtd><msub><mi>x</mi><mn>1</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>x</mi><mn>2</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>x</mi><mn>3</mn></msub></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>&RightTeeArrow;</mo>
+<mo>[</mo><mtable><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>0</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><msub><mi>x</mi><mn>1</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>x</mi><mn>2</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>x</mi><mn>3</mn></msub></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><msub><mi>x</mi><mn>1</mn></msub></mtd></mtr>
+	<mtr><mtd><msub><mi>x</mi><mn>2</mn></msub></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtr>
+</mtable><mo>]</mo>
+</math></div>
+
+<p>Whatever you will put in for <math><mover><mi>x</mi><mo>&rarr;</mo></mover></math>, its <math><msub><mi>x</mi><mn>3</mn></msub></math> component will be diminished to zero.</p>
+
+<!--h3--Example 2--></div>
+
+<h3 cbc>Example 3: Shear Transformation</h3><div>
+
+<p>Let <math><mi>A</mi><mo>=</mo><mo>[</mo><mtable><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+</mtr><mtr>
+	<mtd><mn>0</mn></mtd>
+	<mtd><mn>1</mn></mtd>
+</mtr></mtable><mo>]</mo></math> .</p>
+
+<p>The transformation <math><mi>T</mi><mo>:</mo><msup><mn>&#8477;</mn><mn>2</mn></msup><mo>&RightTeeArrow;</mo><msup><mn>&#8477;</mn><mn>2</mn></msup></math> defined by <math><mi>T</mi><mo>(</mo><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>)</mo><mo>=</mo><mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover></math> is called a <em>shear transformation</em>. Let this transformation act on the points (0,0), (0,2), (2,2) and (2,0), the corners of a square.</p>
+
+<p>So we perform the transformations:</p>
+
+<div class="math"><math>
+<mi>T</mi><mo>(</mo><msub><mover><mi>u</mi><mo>&rarr;</mo></mover><mn>1</mn></msub><mo>)</mo>
+<mo>=</mo>
+<mo>[</mo><mtable><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+</mtr>
+	<mtr><mtd><mn>0</mn></mtd>
+	<mtr><mtd><mn>1</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+</mtable><mo>]</mo>
+</math></div>
+
+<div class="math"><math>
+<mi>T</mi><mo>(</mo><msub><mover><mi>u</mi><mo>&rarr;</mo></mover><mn>2</mn></msub><mo>)</mo>
+<mo>=</mo>
+<mo>[</mo><mtable><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+</mtr>
+	<mtr><mtd><mn>0</mn></mtd>
+	<mtr><mtd><mn>1</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><mn>4</mn></mtd></mtr>
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+</mtable><mo>]</mo>
+</math></div>
+
+<div class="math"><math>
+<mi>T</mi><mo>(</mo><msub><mover><mi>u</mi><mo>&rarr;</mo></mover><mn>3</mn></msub><mo>)</mo>
+<mo>=</mo>
+<mo>[</mo><mtable><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+</mtr>
+	<mtr><mtd><mn>0</mn></mtd>
+	<mtr><mtd><mn>1</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><mn>6</mn></mtd></mtr>
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+</mtable><mo>]</mo>
+</math></div>
+
+<div class="math"><math>
+<mi>T</mi><mo>(</mo><msub><mover><mi>u</mi><mo>&rarr;</mo></mover><mn>4</mn></msub><mo>)</mo>
+<mo>=</mo>
+<mo>[</mo><mtable><mtr>
+	<mtd><mn>1</mn></mtd>
+	<mtd><mn>2</mn></mtd>
+</mtr>
+	<mtr><mtd><mn>0</mn></mtd>
+	<mtr><mtd><mn>1</mn></mtd>
+</mtr></mtable><mo>]</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+</mtable><mo>]</mo>
+<mo>=</mo>
+<mo>[</mo><mtable>
+	<mtr><mtd><mn>2</mn></mtd></mtr>
+	<mtr><mtd><mn>0</mn></mtd></mtr>
+</mtable><mo>]</mo>
+</math></div>
+
+<p>The result is a parallelogram with the points (0,0), (4,2), (6,2) and (2,0);</p>
+
+<figure><figcaption class="figure">The Square (Original)</figcaption>
+<object type="text/xml+svg" data="./fig-003.svg" style="border:1px solid silver"></object>
+</figure>
+
+<figure><figcaption class="figure">Shear Transformation Applied (Image)</figcaption>
+<object type="text/xml+svg" data="./fig-004.svg" style="border:1px solid silver"></object>
+</figure>
+
+<!--h3--Example 3--></div>
+
+<h3 cbc>Linear Transformations</h3><div>
+
+<p></p>
+<p><a href="http://localhost/linear-algebra/linear-algebra.htm#theorem-6">Theorem 5</a> in section 1.4 showed that if A is a matrix of size m &times; n, the transformation <math><mover><mi>x</mi><mo>&rarr;</mo></mover><mo>&RightTeeArrow;</mo><mi>A</mi><mover><mi>x</mi><mo>&rarr;</mo></mover></math> has the properties</p>
+
+<div class="math"><math>
+<mtable><mtr><mtd>
+	<mi>A</mi><mo>(</mo><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>+</mo><mover><mi>v</mi><mo>&rarr;</mo></mover><mo>)</mo><mo>=</mo><mi>A</mi><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>+</mo><mi>A</mi><mover><mi>v</mi><mo>&rarr;</mo></mover>
+</mtd></mtr><mtr><mtd style="padding: 20px 0px">
+	<mtext>and</mtext>
+</mtdstyle="padding:></mtr><mtr><mtd>
+	<mi>A</mi><mo>(</mo><mi>c</mi><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>)</mo><mo>=</mo><mi>c</mi><mi>A</mi><mover><mi>u</mi><mo>&rarr;</mo></mover>
+</mtd></mtr></mtable>
+</math></div>
+
+<p>for all <math><mover><mi>u</mi><mo>&rarr;</mo></mover><mo>,</mo> <mover><mi>v</mi><mo>&rarr;</mo></mover></math> in <math><msup><mi>&#8477;</mi><mn>n</mn></msup></math> and all scalars <math><mi>c</mi></math>. Written if function notation:</p>
+
+<object id="o" data="./d-1-8-1.htm" type="text/html" style="width:100%;"></object>
+
+<p>Every matrix transformation is a linear transformation, but not all linear transformations are matrix transformations.</p>
+
+<p>A conclusion of this theorem is the following corollary:</p>
+
+<div data-load-uri="./c-1-8-1.htm" type="text/html" xstyle="width:100%;"></div>
+
+<div data-load-uri="./c-1-8-2.htm" type="text/html" xstyle="width:100%;"></div>
+
+<div data-load-uri="./c-1-8-3.htm" type="text/html" xstyle="width:100%;"></div>
+
+<p>Example: Electronic amplifier with n imputs and one output. Each input has its own "weight". </p>
+
+<!--h3--Linear Transformations--></div>
+
+<!--h2--Matrix Transformations--></div>
+
+<script type="module">
+o.addEventListener( "load", function( e ) { 
+	function heightWatcher( entries, observer ) {
+		for ( const entry of entries ) {
+			entry.target.parentNode.parentContainer.style.height = entry.borderBoxSize[0].blockSize + 0 + "px" ;
+			console.log( entry.target.parentNode.parentContainer.style.height );
+			}
+		}
+	const target = this;
+	this.contentDocument.parentContainer = target;
+	const observer = new ResizeObserver( heightWatcher );
+	observer.observe( this.contentDocument.documentElement );
+	} ) ;
+
+const t = document.createElement( "template" );
+for ( const o of document.querySelectorAll( "div[data-load-uri]" )) {
+	t.innerHTML = await (await fetch( o.getAttribute( "data-load-uri" ))).text(); 
+	o.replaceWith( t.content );
+	}
+</script>
+
+</main><footer id="page-footer"></footer><script type="module" src="/inc/page.js" ></script></body></html>
