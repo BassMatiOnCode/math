@@ -1,0 +1,445 @@
+﻿<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2024-08-07" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-11-25" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-11-25" />
+<meta name="version" content="1" />
+<meta name="sectionTitle" content="../title.svg" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/webcat/page-structure/tutorial-page-1.css" />
+<script type="module" src="/inc/webcat/page-structure/tutorial-page-1.js" ></script>
+ 
+<meta name="categories" content="Math > Algebra" />
+<meta name="tags" content="math, algebra, tutorial" />
+<meta name="description" content="" />
+
+<title>Equivalence (Math > Algebra)</title>
+
+</head><body class="math"
+
+<h1>Equivalence</h1><p class="subtitle"></p>
+
+<p id="pageAbstract"></p>
+
+<h2 cbc>Relations</h2><div>
+
+<p>In this section, we will look at the relation between ordered pairs of members (a, b) of a set S.</p>
+
+<p>We create a set of ordered pairs R from a set S with the help of the cartesian product, S&times;S:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>R</mi><mo>=</mo><mi>S</mi><mo>&Cross;</mo><mi>S</mi><mo>=</mo><mo>{</mo><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo><mo>|</mo><mi>a</mi><mo>&isin;</mo><mi>S</mi><mo>&wedge;</mo><mi>b</mi><mo>&isin;</mo><mi>S</mi><mo>}</mo>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<p>The set R contains all ordered pairs (a, b) of members a, b from S:</p>
+
+<p>This per se is not very interesting, R contains all possible combinations of members from S, and there is no special relation between the elements of S. A useful relation needs a <em>filter condition</em> that creates a subset R of S:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>R</mi><mo>=</mo><mo>{</mo><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo><mo>&isin;</mo><mi>S</mi><mo>&Cross;</mo><mi>S</mi><mo>|</mo><mi>a</mi><mo>,</mo><mi>b</mi><mtext>&nbsp;satisfy a condition</mtext><mo>}</mo>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<p>Which effectively makes R a subset of S:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>R</mi><mo>&SubsetEqual;</mo><mi>S</mi>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<p>For example, with a given set S, we could create a subset R which contains pairs of equal elements:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>S</mi><mo>=</mo><mo>{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>}</mo>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr><mtr><mtd>
+	<mi>R</mi><mo>=</mo><mo>{</mo><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo><mo>&isin;</mo><mi>S</mi><mo>&Cross;</mo><mi>S</mi><mo>|</mo><mi>a</mi><mo>=</mo><mi>b</mi><mo>}</mo>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<p>While S contains all possible combinations, </p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>S</mi><mo>&Cross;</mo><mi>S</mi><mo>=</mo><mo>{</mo><mo>(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>)</mo><mo>,</mo><mo>(</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>)</mo><mo>,</mo><mo>&hellip;&nbsp;</mo><mo>,</mo><mo>(</mo><mn>3</mn><mo>,</mo><mn>2</mn><mo>)</mo><mo>,</mo><mo>(</mo><mn>3</mn><mo>,</mo><mn>3</mn><mo>)</mo><mo>}</mo>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<p>R only contains pairs of elements that are equal:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>R</mi><mo>=</mo><mo>{</mo><mo>(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>)</mo><mo>,</mo><mo>(</mo><mn>3</mn><mo>,</mo><mn>2</mn><mo>)</mo><mo>,</mo><mo>(</mo><mn>3</mn><mo>,</mo><mn>3</mn><mo>)</mo><mo>}</mo></mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<!--h2--Relations--></div>
+
+<h2 cbc>Equivalence Relation</h2><div>
+
+<p>If we use a condition that selects pairs of equivalent elements, we get an <em>equivalence relation</em>.</p>
+
+<p>Equivalence can mean a lot of things. For example, with a set of Lego bricks, we could say that they are equivalent if they have the same number of studs. Or the same color. Applying the filter condition on every possible combination of elements from the set divides the original set S into non-overlapping subsets with equivalent objects. These subsets are called <em>partitions</em>. Depending on the equivalence relation, we get different partitions called <em>equivalence classes</em>.</p>
+
+<p>A valid equivalence relation must have <em>reflexive</em>, <em>symmetric</em> and <em>transitive</em> properties:</p>
+
+<figure class="definition"><figcaption>Subset definition of equivalence</figcaption>
+
+<p>With <math xmlns="http://www.w3.org/1998/Math/MathML">
+	<mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>&isin;</mo><mi>S</mi><mo> and</mo><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo><mo>&isin;</mo><mi>R</mi><mo>&SubsetEqual;</mo><mi>S</mi><mo>&Cross;</mo><mi>S</mi><mtext>,</mtext>
+</math> we have an <em>equivalence relation</em> between <span class="math-text idf">a</span> and <span class="math-text idf">b</span> if the elements have the following properties:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mo>(</mo><mi>a</mi><mo>,</mo><mi>a</mi><mo>)</mo><mo>&isin;</mo><mi>R</mi><mo> &forall; </mo><mi>a</mi><mo>&isin;</mo><mi>S</mi>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr><mtr><mtd>
+	<mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo><mo>&isin;</mo><mi>R</mi><mo>&Rightarrow;</mo><mo>(</mo><mi>b</mi><mo>,</mo><mi>a</mi><mo>)</mo><mo>&isin;</mo><mi>R</mi>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr><mtr><mtd>
+	<mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo><mo>&isin;</mo><mi>R</mi><mo>&wedge;</mo><mo>(</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>)</mo><mo>&isin;</mo><mi>R</mi><mo>&Rightarrow;</mo><mo>(</mo><mi>a</mi><mo>,</mo><mi>c</mi><mo>)</mo><mo>&isin;</mo><mi>R</mi>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+</figure>
+
+<p>The reflexive property means that every element <span class="math-text idf">a</span>  of <span class="math-text"><span class="idf">S</span></span> is equivalent to itself. For example, if an equivalence relation demands that bricks have the same color, then the condition is fulfilled: A brick has always the same color as itself.</p>
+
+<p>The symmetric property means that if an element <span class="math-text idf">a</span> is equivalent to an element <span class="math-text"><span class="idf">b</span></span>, then the element <span class="math-text"><span class="idf">b</span></span> is also equivalend to the element <span class="math-text"><span class="idf">a</span></span>. Applied to the color equivalence relation, if a yellow brick is equivalent to another yellow brick, then the reverse is also true.</p>
+
+<p>The transitive property means that if an element <span class="math-text"><span class="idf">a</span></span> is equivalent to an element <span class="math-text"><span class="idf">b</span></span>, and if that element <span class="math-text"><span class="idf">b</span></span> is equivalent to an element <span class="math-text"><span class="idf">c</span></span>, then <span class="math-text"><span class="idf">a</span></span> must be equivalent to element <span class="math-text"><span class="idf">c</span></span>. Applied to the color relation on Lego bricks, if a yellow brick is equivalent to a second yellow brick, and if that second brick is equivalent to a third yellow brick, then the first yellow brick is equivalent to the third yellow brick.</p>
+
+<p>At this point we will introduce a shorthand notation for the equivalence relation:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo><mo>&isin;</mo><mi>R</mi>
+	<mo>&hArr;</mo>
+	<mi>a</mi><mo>~</mo><mi>b</mi>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr><mtr><mtd>
+	<mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo><mo>&isin;</mo><mi>R</mi>
+	<mo>&hArr;</mo>
+	<mi>a</mi><mo>&equiv;</mo><mi>b</mi>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<p>Some authors use the tilde, other use the triple bar character. We will use the tilde here.</p>
+
+<p>With this notation at hand, we can write the equivalence properties much clearer:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="left-aligned"><mtr><mtd style="width:auto">
+	<mtext>Reflexivity:</mtext>
+</mtd><mtd style="width:100%">
+	<mi>a</mi><mo>~</mo><mi>a</mi><mo lspace="5px" rspace="5px">&forall;</mo><mi>a</mi><mo>&isin;</mo><mi>S</mi>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr><mtr><mtd>
+	<mtext>Symmetry:</mtext>
+</mtd><mtd>
+	<mi>a</mi><mo>~</mo><mi>b</mi><mo>&Rightarrow;</mo><mi>b</mi><mo>~</mo><mi>a</mi>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr><mtr><mtd>
+	<mtext>Transitivity:</mtext>
+</mtd><mtd>
+	<mi>a</mi><mo>~</mo><mi>b</mi><mo>&wedge;</mo><mi>b</mi><mo>~</mo><mi>c</mi><mo>&Rightarrow;</mo><mi>a</mi><mo>~</mo><mi>c</mi>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<!--h2--Equivalence Relation--></div>
+
+<h2 cbc>Example: Congruence (mod n) Relation</h2><div>
+
+<p>We can define an equivalence relation for integers that are separated by multiples of <span class="math-text idf">n</span>. For example, if <span class="math-text idf">n</span> was 4, these numbers would all be congruent (mod n):</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mo>{</mo>
+	<mi>&hellip;</mi><mo> ,</mo><mn>&minus;3</mn><mo>,</mo><mn>1</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>9</mn><mo>,</mo><mn>13</mn><mo>,</mo><mn>17</mn><mo>,</mo><mi>&hellip;</mi>
+	<mo>}</mo>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<figure id="congruence-modulo-n" class="definition"><figcaption>Congruence modulo n</figcaption>
+<p>Let <span class="math-text"><span class="idf">a</span>, <span class="idf">b</span> &isin; &Zopf; and <span class="idf">n</span> &isin; &Nopf; </span>, then  <span class="math-text idf">a</span> is congruent to <span class="math-text idf">b</span> modulo <span class="math-text idf">n</span> if there exists a <span class="math-text"><span class="idf">k</span> &isin; &Zopf;</span> such that <span class="math-text"><span class="idf">a</span> &minus; <span class="idf">b</span> = <span class="idf">k</span><span class="idf">n</span></span>:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mo>&exist; </mo><mi>k</mi><mo>&isin;</mo><mi>&Zopf;</mi><mo>|</mo><mi>a</mi><mo>&minus;</mo><mi>b</mi><mo>=</mo><mi>k</mi><mi>n</mi>
+	<mo>&rArr;</mo><mi>a</mi><mo>&equiv;</mo><mi>b</mi><mo>(</mo><mo lspace="0">mod</mo><mi>n</mi><mo>)</mo>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+</figure>
+
+<p>NOTE that the parentheses around mod n are necessary because the term applies to the relation, but not to b.</p>
+
+<p>Example with the numbers negative 3 and positive 9:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="vaxis-aligned"><mtr>
+	<mtd>
+		<mi>&minus;3</mi><mo>&minus;</mo><mi>9</mi>
+	</mtd><mtd>
+		<mo>=</mo>
+	</mtd><mtd>
+		<mi>&minus;12</mi>
+	</mtd><mtd>
+	
+	</mtd>
+</mtr><mtr>
+	<mtd>
+		
+	</mtd><mtd>
+		<mo>=</mo>
+	</mtd><mtd>
+		<mo>(</mo><mi>&minus;3</mi><mo>)</mo><mo>(</mo><mi>4</mi><mo>)</mo>
+	</mtd><mtd>
+
+	</mtd>
+</mtr><mtr>
+	<mtd>
+		<mi>a</mi><mo>&minus;</mo><mi>b</mi>
+	</mtd><mtd>
+		<mo>=</mo>
+	</mtd><mtd>
+		<mi style="padding-left:20px">k</mi><mi style="padding-left:30px">n</mi>
+	</mtd><mtd>
+
+	</mtd>
+</mtr></mtable>
+</math>
+
+<p>So indeed minus 3 is equivalent to 9 (mod 4). To show that congruence mod n is indeed an equivalence relation, we must prove the three equivalence relationship conditions.</p>
+
+<p>Let's start with the reflexive property. We must plug in an element a from &Zopf; into the congruence mod n relation formula, like we did above:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="vaxis-aligned"><mtr>
+	<mtd>
+		<mi>a</mi><mo>&minus;</mo><mi>a</mi>
+	</mtd><mtd>
+		<mo>=</mo>
+	</mtd><mtd>
+		<mi>k</mi><mo> </mo><mi>n</mi>
+	</mtd><mtd>
+
+	</mtd>
+</mtr><mtr>
+	<mtd>
+		<mn>0</mn>
+	</mtd><mtd>
+		<mo>=</mo>
+	</mtd><mtd>
+		<mi>k</mi><mo> </mo><mi>n</mi>
+	</mtd><mtd>
+
+	</mtd>
+</mtr><mtr>
+	<mtd>
+		<mn>0</mn>
+	</mtd><mtd>
+		<mo>=</mo>
+	</mtd><mtd>
+		<mi>k</mi>
+	</mtd><mtd>
+
+	</mtd>
+</mtr><mtr>
+	<mtd>
+		<mn>0</mn>
+	</mtd><mtd>
+		<mo>&isin;</mo>
+	</mtd><mtd>
+		<mi>&Zopf;</mi>
+	</mtd><mtd>
+
+	</mtd>
+</mtr></mtable>
+</math>
+
+<p>On the right hand side, the difference <span class="math-text"><span class="idf">a</span> &minus; <span class="idf">a</span></span> clearly is zero. If we then divide by n, we get that <span class="math-text idf">k</span> is zero, and zero is an integer number. So the reflexive propert is proven.</p>
+
+<p>Next comes the symmetric property. We assume that </p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="vaxis-aligned"><mtr>
+	<mtd>
+		<mi>a</mi>
+	</mtd><mtd>
+		<mo>&equiv;</mo>
+	</mtd><mtd>
+		<mi>b</mi><mo>(</mo><mo lspace="0px">mod</mo><mi>n</mi><mo>)</mo>
+	</mtd><mtd>
+
+	</mtd>
+</mtr><mtr>
+	<mtd>
+		<mi>a</mi><mo>&minus;</mo><mi>b</mi>
+	</mtd><mtd>
+		<mo>=</mo>
+	</mtd><mtd>
+		<mi>k</mi><mo> </mo><mi>n</mi>
+	</mtd><mtd>
+
+	</mtd>
+</mtr><mtr>
+	<mtd>
+		<mi>b</mi><mo>&minus;</mo><mi>a</mi><mo>=</mo><mo>&minus;</mo><mo>(</mo><mi>a</mi><mo>&minus;</mo><mi>b</mi><mo>)</mo>
+	</mtd><mtd>
+		<mo>=</mo>
+	</mtd><mtd>
+		<mo>&minus;</mo><mo>(</mo><mi>k</mi><mo> </mo><mi>n</mi><mo>)</mo><mo>=</mo><mo>(</mo><mo>&minus;</mo><mi>k</mi><mo>)</mo><mo> </mo><mi>n</mi>
+	</mtd><mtd>
+
+	</mtd>
+</mtr></mtable>
+</math>
+
+<p>In the first row we assume that a is congruent to b modulo n, which implies per definition the second row, the difference of a and b is an integer multiple of n.</p>
+<p>In the third row, we want to show that b is congruent to a modulo n. If we factor a minus 1 out, we get the second term, which has the assumption above inside the parentheses. So we can derive from the row above that the terms must be equal to the negative of the right side above, minus (k times n).</p>
+
+<p>Using the associative law for integer mutliplication, we can see that indeed (b minus a) is an integer multiple of n, because minus k &isin; &Zopf;.</p>
+
+<p>Now the third property, transitivity. Suppose <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mo>&equiv;</mo><mi>b</mi><mo>(</mo><mo lspace="0px">mod</mo><mi>n</mi><mo>)</mo> <mo>and</mo> <mi>b</mi><mo>&equiv;</mo><mi>c</mi><mo>(</mo><mo lspace="0px">mod</mo><mi>n</mi><mo>)</mo></math>. Then choose <span class="math-text"><span class="idf">k</span>, <span class="idf">l</span>, <span class="idf">j</span> &isin; &Zopf;</span>, such that</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable class="vaxis-aligned"><mtr>
+	<mtd>
+		<mi>a</mi><mo>&minus;</mo><mi>b</mi><mo>=</mo><mi>k</mi><mo> </mo><mi>n</mi>
+	</mtd><mtd>
+		<mo>and</mo>
+	</mtd><mtd>
+		<mi>b</mi><mo>&minus;</mo><mi>c</mi><mo>=</mo><mi>l</mi><mo> </mo><mi>n</mi>
+	</mtd><mtd>
+
+	</mtd>
+</mtr><mtr>
+	<mtd>
+		<mi>a</mi><mo>&minus;</mo><mi>c</mi>
+	</mtd><mtd>
+		<mo>=</mo>
+	</mtd><mtd>
+		<mi>j</mi><mo> </mo><mi>n</mi>
+	</mtd><mtd>
+
+	</mtd>
+</mtr><mtr>
+	<mtd>
+		<mi>a</mi><mo>&minus;</mo><mi>b</mi><mo>+</mo><mi>b</mi><mo>&minus;</mo><mi>c</mi>
+	</mtd><mtd>
+		<mo>=</mo>
+	</mtd><mtd>
+		<mi>j</mi><mo> </mo><mi>n</mi>
+	</mtd><mtd>
+
+	</mtd>
+</mtr><mtr>
+	<mtd>
+		<mo>(</mo><mi>a</mi><mo>&minus;</mo><mi>b</mi><mo>)</mo><mo>+</mo><mo>(</mo><mi>b</mi><mo>&minus;</mo><mi>c</mi><mo>)</mo>
+	</mtd><mtd>
+		<mo>=</mo>
+	</mtd><mtd>
+		<mo>(</mo><mi>k</mi><mo> </mo><mi>n</mi><mo>)</mo><mo>+</mo><mo>(</mo><mi>l</mi><mo> </mo><mi>n</mi><mo>)</mo>
+	</mtd><mtd>
+
+	</mtd>
+</mtr><mtr>
+	<mtd>
+		<mi>a</mi><mo>&minus;</mo><mi>b</mi><mo>+</mo><mi>b</mi><mo>&minus;</mo><mi>c</mi>
+	</mtd><mtd>
+		<mo>=</mo>
+	</mtd><mtd>
+		<mo>(</mo><mi>k</mi><mo>+</mo><mi>l</mi><mo>)</mo><mi>n</mi>
+	</mtd><mtd>
+
+	</mtd>
+</mtr><mtr>
+	<mtd>
+		<mi>a</mi><mo>&minus;</mo><mi>c</mi>
+	</mtd><mtd>
+		<mo>=</mo>
+	</mtd><mtd>
+		<mi>j</mi><mo> </mo><mi>n</mi>
+	</mtd><mtd>
+
+	</mtd>
+</mtr></mtable>
+</math>
+
+<p>The first line contains the definitions for the congruence relations. The second line contains the definition of the claim. In the third line we added a zero term, minus b plus b to the left side, which gives us the definitions from row 1 in row 4. On the right side, we can pull the right sides from row 1 and replace the right side in row 3. Essentially, we have added the two assumptions from row 1.</p>
+
+<p>On the left siden in row 5, we can drop the parentheses because of the associativity of addition. On the right side, we can factor out n. This brings us to row 6, where we dropped the zero term minus b plus b. Because k and l are integers and their sum j is also an integer, the proof is complete.</p>
+
+<p>We have all three properties verified, so a congruence mod n is an equivalence relation.</p>
+
+
+<!--h2--Example: Congruence (mod n) Relation--></div>
+
+<h2 cbc>Equivalence Classes</h2><div>
+
+<p></p>
+
+<figure class="definition"><figcaption>Equivalence Classes</figcaption>
+<p>If ~ is an equivalence relation on a set <span class="math-text idf">S</span>, and <span class="math-text"><span class="idf">a</span> &isin; <span class="idf">S</span></span>, then the <em>equivalence class</em> <span class="math-text">[<span class="idf">a</span>]</span> is defined as</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr>
+	<mtd>
+		<mo>[</mo><mi>a</mi><mo>]</mo><mo>=</mo><mo>{</mo><mi>x</mi><mo>&isin;</mo><mi>S</mi><mo>|</mo><mi>x</mi><mo>~</mo><mi>a</mi><mo>}</mo>
+	</mtd><mtd>
+		<mtext class="equation-number"></mtext>
+	</mtd>
+</mtr></mtable></math>
+</figure>
+
+<p>An example: Find the equivalence classes of a congruence modulo n relation. From the definition of <a href="#congruence-modulo-n">congruence modulo n</a> with n=4</p>
+
+<!--h2--Equivalence Classes--></div>
+
+<h2 cbc>References</h2><div>
+
+<dl>
+<dt>LibreTexts Mathematics - 6 Relations and Functions</dt><dd>
+	<p><a href="https://math.libretexts.org/Bookshelves/Mathematical_Logic_and_Proof/Gentle_Introduction_to_the_Art_of_Mathematics_(Fields)/06%3A_Relations_and_Functions">Relations and Function</a></p>
+	</dd>
+</dl>
+
+<!--h2--References--></div>
+
+</body></html>
