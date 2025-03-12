@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2024-08-07" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-11-27" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-11-27" />
+<meta name="version" content="1" />
+<meta name="sectionTitle" content="title.svg" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/webcat/page-structure/tutorial-page-1.css" />
+<script type="module" src="/inc/webcat/page-structure/tutorial-page-1.js" ></script>
+ 
+<meta name="categories" content="Math > Algebra" />
+<meta name="tags" content="math, algebra, relation, tutorial" />
+<meta name="description" content="" />
+
+<title>Relation (Math > Algebra)</title>
+
+</head><body class="math">
+
+<h1>Relation</h1><p class="subtitle">Condiditions on Ordered Pairs</p>
+
+<p id="pageAbstract"></p>
+
+<h2 cbc>Definition of a Relation</h2><div>
+
+<p>Suppose we have two sets, A and B. The cartesian product relates all elements a<sub>i</sub> from A to all elements b<sub>j</sub> from B. This creates a set of all possible ordered pairs (a, b):</p>
+
+<a data-load-fragment href="../fragments/def-cartesian-product.htm"></a>
+
+<p>We call it <em>relation</em>, because the set R relates elements from A to elements from B.</p>
+
+<p>Now we can define an additional condition that the elements in R must fulfill to make it into  R. So the R is a subset of the crossproduct:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mtext>R</mtext><mo>&SubsetEqual;</mo><mi>A</mi><mo>&Cross;</mo><mi>B</mi>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<a data-load-fragment href="../fragments/def-relation-set.htm"></a>
+
+<p>In order to express that a pair (a, b) satisfies the relation R, or not, we can use the operator notation:</p>
+
+<a data-load-fragment href="../fragments/def-relation-operator.htm"></a>
+
+<p>For example, if the condition were "equal", we could use the equal sign "=" to designate the relation. Then we get the well-known operator notation</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>a</mi><mo>=</mo><mi>b</mi>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<p><b>Example:</b> Equality operator.</p>
+
+<p>For example, with a given set S, we could create a subset R which contains pairs of equal elements:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>S</mi><mo>=</mo><mo>{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>}</mo>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr><mtr><mtd>
+	<mi>R</mi><mo>=</mo><mo>{</mo><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo><mo>&isin;</mo><mi>S</mi><mo>&Cross;</mo><mi>S</mi><mo>|</mo><mi>a</mi><mo>=</mo><mi>b</mi><mo>}</mo>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<p>While S contains all possible combinations, </p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>S</mi><mo>&Cross;</mo><mi>S</mi><mo>=</mo><mo>{</mo><mo>(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>)</mo><mo>,</mo><mo>(</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>)</mo><mo>,</mo><mo>&hellip;&nbsp;</mo><mo>,</mo><mo>(</mo><mn>3</mn><mo>,</mo><mn>2</mn><mo>)</mo><mo>,</mo><mo>(</mo><mn>3</mn><mo>,</mo><mn>3</mn><mo>)</mo><mo>}</mo>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<p>R only contains pairs of elements that are equal:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>R</mi><mo>=</mo><mo>{</mo><mo>(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>)</mo><mo>,</mo><mo>(</mo><mn>3</mn><mo>,</mo><mn>2</mn><mo>)</mo><mo>,</mo><mo>(</mo><mn>3</mn><mo>,</mo><mn>3</mn><mo>)</mo><mo>}</mo></mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+
+<p><b>Example</b>: Describe the relation "less than" on integers.</p>
+<p>Solution:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>&lt;</mi><mo>=</mo><mi>R</mi><mo>=</mo><mo>{</mo><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo><mo>&isin;</mo><mi>&Zopf;</mi><mo>&Cross;</mo><mi>&Zopf;</mi><mo>|</mo><mi>b</mi><mo>&minus;</mo><mi>a</mi><mo>&isin;</mo><mi>&Nopf;</mi><mo>}</mo>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<!--h2--Definition of a Relation--></div>
+
+<h2 cbc>Inverse Relation</h2><div>
+
+<p>The inverse relation is defined as as an reverse-ordered pair (b, a) with (a, b) being a member of R:</p>
+
+<a data-load-fragment href="../fragments/def-inverse-relation.htm"></a>
+
+<!--h2--Inverse Relation--></div>
+
+<h2 cbc>Composition</h2><div>
+
+<p>Composition of relations follows the scheme of composition of functions, where the innermost (rightmost) function is evaluated first, then followed by the evaluation of the left (outer) function:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>f</mi><mo>&SmallCircle;</mo><mo>g</mo><mo>=</mo><mi>f</mi><mo>(</mo><mi>g</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>)</mo>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<p>The definition states that there must be an (intermediate) element b that connects the first relation to the second.</p>
+
+<a data-load-fragment href="../fragments/def-composition.htm"></a>
+
+<p>Example: Consider the sets A, B and C, and the relations R and S:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mi>A</mi><mo>=</mo><mo>{</mo><mi>1</mi><mo>,</mo><mi>2</mi><mo>,</mo><mi>3</mi><mo>}</mo><mo>,</mo>
+	<mi>B</mi><mo>=</mo><mo>{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>}</mo><mo>,</mo>
+	<mi>C</mi><mo>=</mo><mo>{</mo><mi>A</mi><mo>,</mo><mi>B</mi><mo>,</mo><mi>Cs</mi><mo>}</mo>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<p>&hellip; with the following relations:</p>
+
+<a data-load-fragment href="fig-001.svg"></a>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mtext mathcolor="blue">&emsp;R</mtext><mo>=</mo><mo>{</mo><mo>(</mo><mi>1</mi><mo>,</mo><mi>a</mi><mo>)</mo><mo>,</mo><mo>(</mo><mi>2</mi><mo>,</mo><mi>c</mi><mo>)</mo><mo>,</mo><mo>(</mo><mi>3</mi><mo>,</mo><mi>b</mi><mo>)</mo><mo>}</mo>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr><mtr><mtd>
+	<mtext mathcolor="green">&emsp; S</mtext><mo>=</mo><mo>{</mo><mo>(</mo><mi>a</mi><mo>,</mo><mi>B</mi><mo>)</mo><mo>,</mo><mo>(</mo><mi>b</mi><mo>,</mo><mi>A</mi><mo>)</mo><mo>,</mo><mo>(</mo><mi>c</mi><mo>,</mo><mi>C</mi><mo>)</mo><mo>}</mo>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<p>If the second element of the pair of each member of R maches the first element of a pair of a member of S, we can take the first element from the pair in R and the second element from the pair in S to create the pair in T.</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtable><mtr><mtd>
+	<mtext>T</mtext><mo>=</mo><mtext>S</mtext><mo>&SmallCircle;</mo><mtext>R</mtext><mo>=</mo><mo>{</mo><mo>(</mo><mi>1</mi><mo>,</mo><mi>B</mi><mo>)</mo><mo>,</mo><mo>(</mo><mi>2</mi><mo>,</mo><mi>C</mi><mo>)</mo><mo>,</mo><mo>(</mo><mi>3</mi><mo>,</mo><mi>A</mi><mo>)</mo><mo>}</mo>
+</mtd><mtd>
+	<mtext class="equation-number"></mtext>
+</mtd></mtr></mtable>
+</math>
+
+<p>So the element b is the link between the members of R and S.</p>
+
+<!--h2--Composition--></div>
+
+<h2 cbc>References</h2><div>
+
+<dl>
+<dt>LibreTexts Mathematics - 6.1 Relations</dt><dd>
+	<p><a href="https://math.libretexts.org/Bookshelves/Mathematical_Logic_and_Proof/Gentle_Introduction_to_the_Art_of_Mathematics_(Fields)/06%3A_Relations_and_Functions/6.01%3A_Relations">math.libretexts.org</a></p>
+	</dd>
+</dl>
+
+<!--h2--References--></div>
+
+</body></html>

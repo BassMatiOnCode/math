@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2024-08-07" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-12-03" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-12-03" />
+<meta name="version" content="1" />
+<meta name="sectionTitle" content="title.svg" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/webcat/page-structure/tutorial-page-1.css" />
+<script type="module" src="/inc/webcat/page-structure/tutorial-page-1.js" ></script>
+<link rel="stylesheet" href="/inc/webcat/style-components/collapse-margin-bottom.css" />
+ 
+<style>
+#table-001, #table-002 { margin-left : 20px }
+#table-001 tr > :nth-child(2) { padding-left : 15px }
+#table-002 td { min-width : 30px ; text-align : center }
+#table-002 > thead td { padding-top : 3px ; padding-bottom : 5px }
+#table-002 td.invalid { background-color : #FFEEDD }
+</style>
+
+<meta name="categories" content="Math > Algebra" />
+<meta name="tags" content="math, algebra, tutorial" />
+<meta name="description" content="" />
+
+<title>Properties of Integers (Math > Algebra)</title>
+
+</head><body class="math">
+
+<h1>Properties of Integers</h1><p class="subtitle"></p>
+
+<p id="pageAbstract"></p>
+
+
+<h2 cbc>Well-Ordering Principle</h2><div>
+
+<p>The first property is often used, but it cannot be proved from the usual properties of arithmetic, so we consider it an axiom:</p>
+
+<a data-load-fragment href="fragments/axm-well-ordering-principle.htm"></a>
+
+<!--h2--Well-Ordering Principle--></div>
+
+<h2 cbc>Divisibility</h2><div>
+
+<p>We often need to know whether a number divides another without rest:</p>
+
+<a data-load-fragment href="fragments/def-divisibility.htm"></a>
+
+<p>If t is not a divisor of s, we write <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>t</mi><mo>&NotVerticalBar;</mo><mi>s</mi></math> (t does not divide s).</p>
+
+<!--h2--Divisibility--></div>
+
+<h2 cbc>Euclidean Division</h2><div>
+
+<a data-load-fragment href="fragments/lem-euclidean-division.htm"></a>
+<p>The variables and their roles:</p>
+
+<table id="table-001" class="no-borders">
+<tr><td><mathtext><mi>a</mi></mathtext></td><td>Dividend</td></tr>
+<tr><td><mathtext><mi>b</mi></mathtext></td><td>Divisor</td></tr>
+<tr><td><mathtext><mi>q</mi></mathtext></td><td>Quotient</td></tr>
+<tr><td><mathtext><mi>r</mi></mathtext></td><td>Remainder</td></tr>
+</table>
+
+<p>Computation of quotiend and remainder is called <i>euclidean division</i>.</p>
+
+<div style="display:none">
+<p>Let's see how these value relate to each other. We calculate <mathtext><mi>r</mi> = a &minus;<mi>b</mi><mi>q</mi></mathtext></p>
+<table id="table-002" class="flat-borders" style="display:none"><thead><tr>
+	<td><mathtext><mi>a</mi></mathtext></td>
+	<td><mathtext><mi>b</mi></mathtext></td>
+	<td><mathtext><mi>q</mi></mathtext></td>
+	<td><mathtext><mi>a</mi>&minus;<mi>bq</mi>=<mi>r</mi></mathtext></td>
+</tr></thead><tbody><tr>
+	<td rowspan="8">8</td>
+	<td rowspan="8">2</td>
+	<td>-2</td>
+	<td class="invalid">12</td>
+</tr><tr>
+	<td>-1</td>
+	<td class="invalid">10</td>
+</tr><tr>
+	<td>0</td>
+	<td class="invalid">8</td>
+</tr><tr>
+	<td>1</td>
+	<td class="invalid">6</td>
+</tr><tr>
+	<td>2</td>
+	<td class="invalid">4</td>
+</tr><tr>
+	<td>3</td>
+	<td class="invalid">2</td>
+</tr><tr>
+	<td>4</td>
+	<td>0</td>
+</tr><tr>
+	<td>5</td>
+	<td class="invalid">&minus;2</td>
+</tr></tbody></table>
+</div>
+
+<p><b>Proof</b>: </p>
+
+<p>a) Existence</p>
+
+<p>We can assume that <mathtext><mi>b</mi>&gt;0</mathtext>, because if <mathtext><mi>b</mi>&lt;0</mathtext>, we can rewrite the equality</p>
+
+<math class="collapse-margin-bottom" xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>a</mi><mo>=</mo><mi>b</mi><mi>q</mi><mo>+</mo><mi>r</mi>
+</math>
+
+<p class="collapse-margin-bottom">as</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>a</mi><mo>=</mo><mrow><mo>(</mo><mi>&minus;b</mi><mo>)</mo></mrow><mo>(</mo><mi>&minus;q</mi><mo>)</mo><mo>+</mo><mi>r</mi>
+</math>
+
+<p>without changing the statment. We just have to verify that <mathtext><mi>&minus;b</mi>&gt;0</mathtext>.</p>
+
+<p>Given <mathtext><mi>b</mi>&gt;0</mathtext> and <mathtext><mi>a</mi></mathtext>, there are integers <mathtext><mi>q</mi><sub>1</sub></mathtext> and <mathtext><mi>r</mi><sub>1</sub>&ge;0</mathtext> such that <mathtext><mi>a</mi>=<mi>bq</mi><sub>1</sub>+<mi>r</mi><sub>1</sub></mathtext>. For example, let's choose <mathtext><mi>q</mi><sub>1</sub>=0</mathtext> and <mathtext><mi>r</mi><sub>1</sub>=<mi>a</mi></mathtext> first. Then </p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML"><mtable>
+<mtr><mtd>
+	<mi>a</mi><mo>=</mo><mi>b</mi><mi>q</mi><mo>+</mo><mi>r</mi>
+</mtd></mtr><mtr><mtd xstyle="padding-top:10px;padding-bottom:10px">
+	<mi>a</mi><mo>=</mo><mrow><mo>(</mo><mi>b</mi><mo>)</mo></mrow><mn>0</mn><mo>+</mo><mi>a</mi>
+</mtd></mtr><mtr><mtd>
+	<mi>a</mi><mo>=</mo><mi>a</mi>
+</mtd></mtr></mtable></math>
+
+<p>Which is obviously true. If <mathtext><mi>a</mi>&lt;0</mathtext>, we choose <mathtext><mi>q</mi><sub>1</sub>=<mi>a</mi></mathtext> and <mathtext><mi>r</mi><sub>1</sub>=<mi>a</mi>&minus;<mi>ab</mi></mathtext>:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML"><mtable><mtr><mtd>
+	<mi>a</mi><mo>=</mo><mi>b</mi><mi>q</mi><mo>+</mo><mi>r</mi>
+</mtd></mtr><mtr><mtd>
+	<mi>a</mi><mo>=</mo><mi>b</mi><mi>a</mi><mo>+</mo><mi>a</mi><mo>&minus;</mo><mi>a</mi><mi>b</mi>
+</mtd></mtr><mtr><mtd>
+	<mi>a</mi><mo>=</mo><mi>a</mi>
+</mtd></mtr></mtable></math>
+
+
+<p>Which also is obviously true.</p>
+
+<p>Now let <mathtext><mi>q</mi></mathtext> and <mathtext><mi>r</mi></mathtext> be such a pair of numbers for which <mathtext><mi>r</mi></mathtext> is nonnegative and minimal. If <mathtext><mi>r</mi> &lt; <mi>b</mi></mathtext>, we have an Euclidean division, as per definition in the theorem. Thus, we have to prove that, if <mathtext><mi>r</mi> &ge; <mi>b</mi></mathtext>, then <mathtext><mi>r</mi></mathtext> is not minimal, we have</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML"><mtable><mtr><mtd>
+	<mi>a</mi><mo>=</mo><mi>b</mi><mi>q</mi><mo>+</mo><mi>r</mi><mo>&minus;</mo><mi>b</mi><mo>+</mo><mi>b</mi>
+</mtd></mtr><mtr><mtd>
+	<mi>a</mi><mo>=</mo><mi>b</mi><mo>+</mo><mi>b</mi><mi>q</mi><mo>+</mo><mi>r</mi><mo>&minus;</mo><mi>b</mi>
+</mtd>
+</mtr><mtr>
+	<mtd>
+		<mi>a</mi><mo>=</mo><mi>b</mi><mo>(</mo><mn>1</mn><mo>+</mo><mi>q</mi><mo>)</mo><mo>+</mo><mo>(</mo><mi>r</mi><mo>&minus;</mo><mi>b</mi><mo>)</mo>
+	</mtd>
+</mtr></mtable></math>
+
+<p>with <mathtext>0 &le; (<mi>r</mi> &minus; <mi>b</mi><mo>)</mo> &lt; <mi>r</mi></mathtext>, and <mathtext><mi>r</mi></mathtext> is not minimal.</p>
+
+
+<div style="display:none">
+
+<p>Consider the set</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>S</mi><mo>=</mo><mo>{</mo><mi>a</mi><mo>&minus;</mo><mi>b</mi><mi>k</mi><mo>|</mo><mi>k</mi><mo>&isin;</mo><mi>&Zopf;</mi><mo> and </mo><mi>a</mi><mo>&minus;</mo><mi>b</mi><mi>k</mi><mo>&ge;</mo><mn>0</mn><mo>}</mo>
+</math>
+
+<p>If <mathtext>0 &isin; <mi>S</mi></mathtext>, then <mathtext><mi>b</mi></mathtext> divides <mathtext><mi>a</mi></mathtext> and we obtain the desired result with <mathtext><mi>q</mi>=<mi>a</mi>/<mi>b</mi> and <mi>r</mi>=0</mathtext>. This is the white cell in the table above.</p>
+
+<p>Now assume that <mathtext>0 &notin; <mi>S</mi></mathtext>. The set is not empty, because...</p>
+<p>If <mathtext><mi>a</mi> &gt; 0</mathtext>, <mathtext><mi>a</mi> &minus; <mi>b</mi>&sdot; 0 &isin; <mi>S</mi></mathtext>.</p>
+<p>If <mathtext>a</mathtext> &lt; 0, <mi>a</mi> &minus; <mi>b</mi>(2<mi>a</mi>)</p>
+</div>
+
+
+<!--h2--Euclidean Division--></div>
+
+<h2 cbc>Prime</h2><div>
+
+<p>Prime numbers a kind of special and important:</p>
+
+<a data-load-fragment href="fragments/def-prime.htm"></a>
+
+<!--h2--Prime--></div>
+
+<h2 cbc></h2><div>
+
+<p></p>
+
+<!--h2----></div>
+
+<h2 cbc>References</h2><div>
+
+<dl>
+<dt></dt><dd>
+	<p><a href=""></a></p>
+	</dd>
+</dl>
+
+<!--h2--References--></div>
+
+</body></html>

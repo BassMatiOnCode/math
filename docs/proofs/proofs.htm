@@ -1,0 +1,433 @@
+﻿<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2024-08-07" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-12-07" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-12-07" />
+<meta name="version" content="1" />
+<meta name="sectionTitle" content="title.svg" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/webcat/page-structure/tutorial-page-1.css" />
+<script type="module" src="/inc/webcat/page-structure/tutorial-page-1.js" ></script>
+<link rel="stylesheet" href="/inc/webcat/math/math.css" />
+<link rel="stylesheet" href="proofs.css" />
+<link rel="stylesheet" href="/inc/webcat/table-styles/data-centered-1.css" />
+ 
+<meta name="categories" content="Math > Proofs" />
+<meta name="tags" content="math, algebra, tutorial" />
+<meta name="description" content="" />
+
+<title>Proofs (Math > Proofs)</title>
+
+</head><body class="math">
+
+<h1>Proofs</h1><p class="subtitle">The Foundations of Mathematics</p>
+
+<p id="pageAbstract"></p>
+
+<h2 cbc>Propositional Logic</h2><div>
+
+<p>Propositional or sentential logic is a simple formal system of reasoning.</p>
+
+<h3 cbc>Propositon</h3><div>
+
+<p>Definition: A <i>proposition</i> is a <i>statement</i> which resolves to the value of either <i>true</i>, or <i>false</i>. It is the smallest possible entity in propositional logic. Examples:</p>
+
+<pre>
+A = "It is cold outside"
+B = "The sun is shining"
+</pre>
+
+<p>A proposition can evaluate to either <tt>true</tt>, or <tt>false</tt>, but never both (law of non-contradiction).</p>
+<p>A <i>question</i> is not a proposition, a question cannot be evaluated to true or false.</p>
+<p>Propositions are represented by captial letters. Lowercase letters are used for general propositions that have no meaning. They are used for general proofs.</p>
+
+<p>Examples:</p>
+<p>20x + 10y <em>is not</em> as statement because it contains <i>variables.</i> It has the form P(x,y)</p>
+<p>The sun shines <em>is</em> a statement because it contains no variables. It has the form P.</p>
+<!--h3--Propositon--></div>
+
+<h3 cbc>Connectives</h3><div>
+
+<p>Connectives "connect" or "are connected" to propositions. Examples for connectives are</p>
+<ul>
+<li>not</li>
+<li>and</li>
+<li>or</li>
+<li>if-then</li>
+<li>if-and-only-if (iff)</li>
+</ul>
+
+<p>Examples:</p>
+<p>A = The sun shines, B = It is cloudy.</p>
+<p>not A means "the sun does <i>not</i> shine".</p>
+<p>A and not B  means "the sun shines and it is not cloudy".</p>
+<p>If not A then B means "if it is not cloudy, then the sun shines".</p>
+
+<!--h3--Connectives--></div>
+
+<h3 cbc>Truth Tables</h3><div>
+
+<p>A truth table shows the output of a connective for all possible combinations of connected statements.</p>
+
+<p>For example, the NOT connective:</p>
+
+<figure class="table"><figcaption>The NOT connective</figcaption>
+<table class="flat-borders data-centered" ><thead><tr>
+	<th>P</th>
+	<td>&not; P</td>
+</tr></thead><tbody><tr>
+	<th>T</th>
+	<td>F</td>
+</tr><tr>
+	<th>F</th>
+	<td>T</td>
+</tr></tbody></table>
+</figure>
+
+<p>The NOT connective, also called <i>negation</i> and usually represented by a <mathtext>&not;</mathtext>, <i>inverts</i> a statement. If true and false are represented by the integers 1 and 0, we can express negation with an arithmetic expression as</p>
+
+<math xmlns="http://www.w3.org/TR/MathML">
+<mo>&not;</mo> <mi>P</mi><mo>=</mo><mn>1</mn><mo>&minus;</mo><mi>P</mi>
+</math>
+
+<p>The AND connective, also called <i>conjuction</i>, is usually represented by the symbols <mathtext>&wedge;</mathtext>, <mathtext>&amp;</mathtext> or <mathtext>&sdot;</mathtext>:</p>
+
+<figure class="table"><figcaption>The AND connective</figcaption>
+<table class="flat-borders data-centered" ><thead><tr>
+	<th>A</th>
+	<th>B</th>
+	<td>A &wedge; B</td>
+</tr></thead><tbody><tr>
+	<th>F</th>
+	<th>F</th>
+	<td>F</td>
+</tr><tr>
+	<th>F</th>
+	<th>T</th>
+	<td>F</td>
+</tr><tr>
+	<th>T</th>
+	<th>F</th>
+	<td>F</td>
+</tr><tr>
+	<th>T</th>
+	<th>T</th>
+	<td>T</td>
+</tr></tbody></table>
+</figure>
+
+<p>The result is true only if both connected statements are true. As an arithmetic expression:</p>
+
+<math xmlns="http://www.w3.org/TR/MathML">
+<mi>A</mi><mo>&wedge;</mo><mi>B</mi><mo>=</mo><mi>min</mi><mrow><mo>(</mo><mi>A</mi><mo depth="2">,</mo><mi>B</mi><mo>)</mo></mrow>
+</math>
+
+<p>The OR connective is usually represented by <mathtext>&vee;</mathtext> (from the latin "vel" = "or") or <mathtext>+</mathtext>:</p>
+
+<figure class="table"><figcaption>The OR connective</figcaption>
+<table class="flat-borders data-centered" ><thead><tr>
+	<th>A</th>
+	<th>B</th>
+	<td>A &vee; B</td>
+</tr></thead><tbody><tr>
+	<th>F</th>
+	<th>F</th>
+	<td>F</td>
+</tr><tr>
+	<th>F</th>
+	<th>T</th>
+	<td>T</td>
+</tr><tr>
+	<th>T</th>
+	<th>T</th>
+	<td>F</td>
+</tr><tr>
+	<th>T</th>
+	<th>T</th>
+	<td>T</td>
+</tr></tbody></table>
+</figure>
+
+<p>The result is false only if both connected statements are false. As an arithmetic expression:</p>
+
+<math xmlns="http://www.w3.org/TR/MathML">
+<mi>A</mi><mo>&vee;</mo><mi>B</mi><mo>=</mo><mi>max</mi><mrow><mo>(</mo><mi>A</mi><mo depth="2">,</mo><mi>B</mi><mo>)</mo></mrow>
+</math>
+
+<!--h3--Truth Tables--></div>
+
+<h3 cbc>Operators</h3><div>
+
+<h4 cbc>Negation</h4><div>
+
+<p><mathtext><mi>b</mi> = &not; <mi>a</mi></mathtext></p>
+
+<figure class="table"><figcaption></figcaption>
+<table class="truth-table flat-borders"><thead><tr>
+	<td>a</td>
+	<td>x</td>
+</tr></thead><tbody><tr>
+	<td>0</td>
+	<td>1</td>
+</tr><tr>
+	<td>1</td>
+	<td>0</td>
+</tr></tbody></table>
+</figure>
+
+<!--h4--Negation--></div>
+
+<h4 cbc>Conjugation</h4><div>
+
+<p><i>Conjugation</i> is the logical "and":</p>
+
+<pre><mathtext><mi>x</mi> = <mi>a</mi> &wedge; <mi>b</mi></mathtext></pre>
+
+<table class="operator-symbols"><tbody><tr>
+	<td>Commonly used symbols:</td>
+	<td>&vee;</td>
+	<td>&amp;</td>
+	<td>*</td>
+	<td>&sdot;</td>
+	<td>&times;</td>
+</tr></tbody></table>
+
+<figure class="table"><figcaption></figcaption>
+<table class="truth-table flat-borders"><thead><tr>
+	<td>a</td>
+	<td>b</td>
+	<td>x</td>
+</tr></thead><tbody><tr>
+	<td>0</td>
+	<td>0</td>
+	<td>0</td>
+</tr><tr>
+	<td>0</td>
+	<td>1</td>
+	<td>0</td>
+</tr><tr>
+	<td>1</td>
+	<td>0</td>
+	<td>0</td>
+</tr><tr>
+	<td>1</td>
+	<td>1</td>
+	<td>1</td>
+</tr></tbody></table>
+</figure>
+
+<!--h4--Conjugation--></div>
+
+<h4 cbc>Disjunction</h4><div>
+
+<p><i>Disjunction</i> is the logical inclusive "or":</p>
+
+<pre><mathtext><mi>x</mi> = <mi>a</mi> &vee; <mi>b</mi></mathtext></pre>
+
+<table class="operator-symbols"><tbody><tr>
+	<td>Commonly used ymbols:</td>
+	<td>&vee;</td>
+	<td>+</td>
+</tr></tbody></table>
+
+<figure class="table"><figcaption></figcaption>
+<table class="truth-table flat-borders"><thead><tr>
+	<td>a</td>
+	<td>b</td>
+	<td>x</td>
+</tr></thead><tbody><tr>
+	<td>0</td>
+	<td>0</td>
+	<td>0</td>
+</tr><tr>
+	<td>0</td>
+	<td>1</td>
+	<td>1</td>
+</tr><tr>
+	<td>1</td>
+	<td>0</td>
+	<td>1</td>
+</tr><tr>
+	<td>1</td>
+	<td>1</td>
+	<td>1</td>
+</tr></tbody></table>
+</figure>
+
+<!--h4--Disjunction--></div>
+
+<h4 cbc>Implication</h4><div>
+
+<p><i>Implication</i> is the logical "if-then":</p>
+
+<pre><mathtext><mi>x</mi> = <mi>a</mi> &rArr; <mi>b</mi></mathtext></pre>
+
+<table class="operator-symbols"><tbody><tr>
+	<td>Commonly used symbols:</td>
+	<td>&rArr;</td>
+	<td>&RightArrow;</td>
+</tr></tbody></table>
+
+<figure class="table"><figcaption></figcaption>
+<table class="truth-table flat-borders"><thead><tr>
+	<td>a</td>
+	<td>b</td>
+	<td>x</td>
+</tr></thead><tbody><tr>
+	<td>0</td>
+	<td>0</td>
+	<td>1</td>
+</tr><tr>
+	<td>0</td>
+	<td>1</td>
+	<td>1</td>
+</tr><tr>
+	<td>1</td>
+	<td>0</td>
+	<td>0</td>
+</tr><tr>
+	<td>1</td>
+	<td>1</td>
+	<td>1</td>
+</tr></tbody></table>
+</figure>
+
+<!--h4--Implication--></div>
+
+<h4 cbc>Equivalence</h4><div>
+
+<p><i>Equivalence</i> is similar to "equal", but not identical.</p>
+
+<pre><mathtext><mi>x</mi> = <mi>a</mi> &DoubleLeftRightArrow; <mi>b</mi></mathtext></pre>
+
+<table class="operator-symbols"><tbody><tr>
+	<td>Commonly used symbols:</td>
+	<td>&DoubleLeftRightArrow;</td>
+	<td>&LeftRightArrow;</td>
+</tr></tbody></table>
+
+<figure class="table"><figcaption></figcaption>
+<table class="truth-table flat-borders"><thead><tr>
+	<td>a</td>
+	<td>b</td>
+	<td>x</td>
+</tr></thead><tbody><tr>
+	<td>0</td>
+	<td>0</td>
+	<td>1</td>
+</tr><tr>
+	<td>0</td>
+	<td>1</td>
+	<td>0</td>
+</tr><tr>
+	<td>1</td>
+	<td>0</td>
+	<td>0</td>
+</tr><tr>
+	<td>1</td>
+	<td>1</td>
+	<td>1</td>
+</tr></tbody></table>
+</figure>
+
+<p>An equivalence can be expressed as</p>
+
+<pre><mathtext><mi>a</mi> &DoubleLeftRightArrow; <mi>b</mi> = (<mi>a</mi> &rArr; <mi>b</mi>) &wedge;  (<mi>b</mi> &rArr; <mi>a</mi>)</mathtext></pre>
+
+<p>To prove that, we can build the truth table:</p>
+<figure class="table"><figcaption></figcaption>
+<table class="truth-table flat-borders"><thead><tr>
+	<td>a</td>
+	<td>b</td>
+	<td>a &rArr; b</td>
+	<td>b &rArr; a</td>
+	<td>(a &rArr; b) &wedge; (b &rArr; a)</td>
+</tr></thead><tbody><tr>
+	<td>0</td>
+	<td>0</td>
+	<td>1</td>
+	<td>1</td>
+	<td>1</td>
+</tr><tr>
+	<td>0</td>
+	<td>1</td>
+	<td>1</td>
+	<td>0</td>
+	<td>0</td>
+</tr><tr>
+	<td>1</td>
+	<td>0</td>
+	<td>0</td>
+	<td>1</td>
+	<td>0</td>
+</tr><tr>
+	<td>1</td>
+	<td>1</td>
+	<td>1</td>
+	<td>1</td>
+	<td>1</td>
+</tr></tbody></table>
+</figure>
+<!--h4--Equivalence--></div>
+
+<!--h3--Operators--></div>
+
+<!--h2--Propositional Logic--></div>
+
+<h2 cbc>Predicate Logic</h2><div>
+
+<h3 cbc>Predicates</h3><div>
+
+<p>A predicate is a symbol that represents a property or a relation. For instance, in the first-order formula P(a), the symbol P is a predicate that applies to the individual constant a. Similarly, in the formula R(a,b), the symbol R is a predicate that applies to the individual constants a and b.</p>
+
+<p>A predicate is a function from the domain of objects to the truth values "true" and "false".</p>
+
+<p>Predicates are interpreted as <i>relations</i> between variables. They are non-logical symbols.</p>
+
+<!--h3--Predicates--></div>
+
+<h3 cbc>Values</h3><div>
+
+<p>There are only two logic or <i>boolean</i> values:</p>
+
+<pre>
+true 1 T Yes
+false 0 F No
+</pre>
+
+<!--h3--Values--></div>
+
+<h3 cbc>Variables</h3><div>
+
+
+<!--h3--Variables--></div>
+
+
+
+<!--h2--Predicate Logic--></div>
+
+
+<h2 cbc>References</h2><div>
+
+<dl>
+<dt>Another Roof - How to Read Logic</dt><dd>
+	<p><a href="https://youtu.be/JVjv0CCzHok">Youtube video</a></p>
+	<p>Symbolic logic looks intimidating, combining familiar symbols like equality and inclusion with lesser-known backwards E’s and upside down A’s. But with a bit of guidance, anyone can understand the meaning of these symbols and interpret logical statements.</p>
+	</dd>
+<dt>Kimberley Brehm - Discrete Math 1</dt><dd>
+	<p><a href="https://www.youtube.com/playlist?list=PLl-gb0E4MII28GykmtuBXNUNoej-vY5Rz">Youtube Playlist</a></p>
+	</dd>
+<dt>TrevTutor - Statement Identification and Translation Examples</dt><dd>
+	<p>Discrete Mathematics</p>
+	<p><a href="https://www.youtube.com/watch?v=ebmFeBxrotw">Youtube video</a></p>
+	</dd>
+</dl>
+
+<!--h2--References--></div>
+
+</body></html>

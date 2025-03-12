@@ -1,0 +1,10 @@
+table.truth-table td {
+	min-width : 30px ;
+	text-align : center ;
+	}
+table.operator-symbols td {
+	min-width : 20px ;
+	}
+table.operator-symbols td:first-child {
+	padding-right: 10px;
+	}

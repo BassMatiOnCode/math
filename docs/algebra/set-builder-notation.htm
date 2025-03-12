@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2024-08-07" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2024-12-03" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2024-12-03" />
+<meta name="version" content="1" />
+<meta name="sectionTitle" content="title.svg" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/webcat/page-structure/tutorial-page-1.css" />
+<script type="module" src="/inc/webcat/page-structure/tutorial-page-1.js" ></script>
+ 
+<meta name="categories" content="Math > Algebra > Foundations" />
+<meta name="tags" content="math, algebra, foundation, set, builder, notation, tutorial" />
+<meta name="description" content="" />
+
+<title>Set-Builder Notation (Math > Algebra > Foundations)</title>
+
+</head><body class="math">
+
+<h1>Set-Builder Notation</h1><p class="subtitle"></p>
+
+<p id="pageAbstract"></p>
+
+<h2 cbc>Introduction</h2><div>
+
+<p>We could easily define the set of natural numbers by enumeration:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>S</mi><mo>=</mo><mo>{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>,</mo><mo>&hellip;</mo><mo>}</mo>
+</math>
+
+<p>But this set is not very well defined. Consider this one:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>S</mi><mo>=</mo><mo>{</mo><mn>3</mn><mo>,</mo><mn>5</mn><mo>,</mo><mn>7</mn><mo>,</mo><mn>11</mn><mo>,</mo><mn>13</mn><mo>,</mo><mo>&hellip;</mo><mo>}</mo>
+</math>
+
+<p>One could <em>guess</em> that it is the set of primes. But that is just a guess.</p>
+
+<p>We need <i>predicates</i>.</p>
+
+<p>If <mathtext><mi>P</mi>(<mi>x</mi>)</mathtext> is a <i>predicate</i>, then we can form the set that contains all entities of <mathtext><mi>a</mi></mathtext> such that <mathtext><mi>a</mi></mathtext> is in the domain of discourse for <mathtext><mi>P</mi></mathtext> and <mathtext><mi>P</mi>(<mi>a</mi>)</mathtext> is true.</p>
+
+<p>The notation <mathtext>{<mi>x</mi> | <mi>P</mi>(<mi>x</mi>)}</mathtext> is used to denote this set, this is the <a href="https://en.wikipedia.org/wiki/Definition#Intensional_definitions_vs_extensional_definitions"><i>intensional definition</i></a> of the set. It is read "the set of x such that P(x)". The name of the variable (x) is arbitrary and can be chosen freely.</p>
+
+<p>NOTE that the domain of discourse of P must be a set!</p>
+
+<p><b>Example</b>: If the predicate P(x) is "x is an even number", and if the domain of discourse of E is the set <mathtext>&Nopf;<sup>+0</sup></mathtext>, then this is a definition for the set of even numbers:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo>{</mo><mi>x</mi><mo>|</mo><mi>E</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>}</mo><mo>=</mo><mo>{</mo><mn>0</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>6</mn><mo>,</mo><mo>&hellip;</mo><mo>}</mo>
+</math>
+
+<p>Sometimes it is useful to declare the domain of discourse explicitly:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo>{</mo><mi>x</mi><mo>&isin;</mo><msup><mi>&Nopf;</mi><mtext>+0</mtext></msup><mo>|</mo><mrow><mi>E</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>}</mo><mo>=</mo><mrow><mo>{</mo><mn>0</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>4</mn><mo>,</mo><mn>6</mn><mo>,</mo><mo>&hellip;</mo><mo>}</mo></mrow></math>
+
+<p>Or more generally:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo>{</mo><mi>x</mi><mo>&isin;</mo><mi>D</mi><mo>|</mo><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>}</mo>
+</math>
+
+<p>Here, <mathtext><mi>D</mi></mathtext> is a set and <mathtext><mi>P</mi></mathtext> is a predicate whose domain of discourse includes all elements in <mathtext><mi>D</mi></mathtext>. The definition can be read as "the set that contains all entities x that are members of the set D for which P(x) is true". </p>
+
+<p>An equivalent notation is</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo>{</mo><mi>x</mi><mo>|</mo><mi>x</mi><mo>&isin;</mo><mi>D</mi><mo>&wedge;</mo><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>}</mo>
+</math>
+
+<p>If the predicate <mathtext><mi>P</mi>(<mi>x</mi>)</mathtext> is a <em>conjuction</em> <mathtext><mi>P</mi><sub>1</sub>(<mi>x</mi>) &wedge; <mi>P</mi><sub>2</sub>(<mi>x</mi>)</mathtext>, the set definition is sometimes written as </p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo>{</mo><mi>x</mi><mo>&isin;</mo><mi>D</mi><mo>|</mo><mrow><msub><mi>P</mi><mn>1</mn></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>,</mo><msub><mi>P</mi><mn>2</mn></msub><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mo>}</mo>
+</math>
+
+
+<p><b>Example</b>: Rigorous definition of the prime numbers:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo>{</mo><mi>p</mi><mo>&isin;</mo><mi>&Nopf;</mi><mo>|</mo><mo>(</mo><mi>p</mi><mo>&gt;</mo><mn>1</mn><mo>)</mo><mo>&wedge;</mo><mo>&forall;</mo><mi>a</mi><mo>&forall;</mo><mi>b</mi><mo>(</mo><mo>(</mo><mi>a</mi><mo>&isin;</mo><mi>&Nopf;</mi><mo>&wedge;</mo><mi>b</mi><mo>&isin;</mo><mi>&Nopf;</mi><mo>&wedge;</mo><mi>p</mi><mo>=</mo><mi>a</mi><mi>b</mi><mo>)</mo><mo>&rArr;</mo><mo>(</mo><mi>a</mi><mo>=</mo><mi>p</mi><mo>&vee;</mo><mi>b</mi><mo>=</mo><mi>p</mi><mo>)</mo><mo>)</mo><mo>}</mo>
+</math>
+
+<p>This is read as "a set of all elements p in &Nopf; such that p &gt; 1, and for all elements a and b in &Nopf; and all products of a times b that are equal to p implies either a is p or b is p". So if we can find a product <mathtext><mi>a</mi><mi>b</mi></mathtext> where neither <mathtext><mi>a</mi></mathtext> nor <mathtext><mi>b</mi></mathtext> is equal to <mathtext><mi>p</mi></mathtext>, then <mathtext><mi>p</mi></mathtext> is not a prime number.</p>
+
+<!--h2--Introduction--></div>
+
+<h2 cbc>References</h2><div>
+
+<dl>
+<dt>LibreTexts - 3.1.2: Set-builder notation</dt><dd>
+	<p><a href="https://eng.libretexts.org/Bookshelves/Computer_Science/Programming_and_Computation_Fundamentals/Delftse_Foundations_of_Computation/03%3A_Sets_Functions_and_Relations/3.01%3A_Basic_Concepts/3.1.02%3A_Set-builder_notation">libretexts.org</a></p>
+	</dd>
+<dt>Wikipedia - Set-builder notation</dt><dd>
+	<p><a href="https://en.wikipedia.org/wiki/Set-builder_notation">Wikipedia.org</a></p>
+	</dd>
+</dl>
+
+<!--h2--References--></div>
+
+</body></html>

@@ -1,0 +1,38 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" 
+	viewBox="-150 -100 300 200" width="300" height="200" 
+	stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none" 
+	style="border:1px none silver">
+	
+<title>Major and minor axis</title>
+
+<defs>
+	<circle id="pointHollow" r="4" stroke-width="1.2" fill="white" />
+	<circle id="pointSolid" r="3" stroke="none" fill="black" />
+	</defs>
+
+<g id="main"></g>
+<g id="points"></g>
+<g id="text" font-size="14" stroke="white" stroke-width="3" fill="black" paint-order="stroke fill markers" text-anchor="middle" dominant-baseline="central"></g>
+
+<script type="text/javascript" href="/inc/webcat/svg/svg-1.js"></script>
+<script type="application/ecmascript"> // <![CDATA[
+//@ sourceUrl="fig-001.svg"
+	// Create ellipse
+const ellipse = createEllipse( 0, 0, 120, 60 ), { a, b, c, nex } = ellipse ;
+	// Center point
+addNamedPoint( "C" ); 
+	// Major axis
+addSvgElement( "line", { x1: -a, x2: +a } );
+addNamedPoint( "A1", { x: -a } ); 
+addNamedPoint( "A2", { x: +a, tox: 5 } ); 
+addSvgElement( "text", { x: -a / 2, "dominant-baseline": "middle" }, { textContent: "a" } ) ;
+addSvgElement( "text", { x: +a / 2, "dominant-baseline": "middle" }, { textContent: "a" } ) ;
+	// Minor Axis
+addSvgElement( "line", { y1: -b, y2: +b } );
+addNamedPoint( "B1", { y: -b, tox: 0 } ); 
+addNamedPoint( "B2", { y: +b, tox: 0, toy: 10 } ); 
+addSvgElement( "text", { y: -b / 2, tox: 0, toy: 0  }, { textContent: "b" } ) ;
+addSvgElement( "text", { y: +b / 2, tox: 0, toy: 0  }, { textContent: "b" } ) ;
+// ]]>
+</script>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="-150 -80 300 160" width="300" height="160" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="white" xstyle="border: 1px solid silver" >
+<style>
+	ellipse { stroke-width : 1px }
+	text { stroke : none ; fill : black ; text-anchor : middle ; alignment-baseline : central ; paint-order : stroke }
+	text.set-label { font-size : 20px ; font-style : italic }
+	path { fill : none }
+	</style>
+<title>Relation Composition</title>
+<g transform="translate( -100, 0 )">
+	<text class="set-label" x="-30" y="-65">A</text>
+	<ellipse cx="0" cy="0" rx="30" ry="60"></ellipse>
+	<text y="-40">1</text>
+	<text>2</text>
+	<text y="40">3</text>
+	</g>
+<g transform="translate( 0, 0 )">
+	<text class="set-label" x="-30" y="-65">B</text>
+	<ellipse cx="0" cy="0" rx="30" ry="60"></ellipse>
+	<text y="-40">a</text>
+	<text>b</text>
+	<text y="40">c</text>
+	</g>
+<g transform="translate( 100, 0 )">
+	<text class="set-label" x="-30" y="-65">C</text>
+	<ellipse cx="0" cy="0" rx="30" ry="60"></ellipse>
+	<text y="-40">A</text>
+	<text>B</text>
+	<text y="40">C</text>
+	</g>
+
+<g stroke="blue">
+	<path d="M -90 -45 s 40 -20 80 0" />
+	<path d="m -90 0 c 23 -0 30 11 40 20 8 8 18 20 40 20" />
+	<path d="m -90 40 c 27 0 53 -39 80 -39" />
+	</g>
+<g stroke="green">
+	<path d="M 9 0 C 48 -6 55 -42 90 -40" />
+	<path d="m 10 -38 c 33 -1 48 35 78 38" />
+	<path d="m 10 45 c 20 11 57 10 77 0" />
+	</g>
+</svg>

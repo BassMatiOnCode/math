@@ -20,86 +20,45 @@
 
 <title>Equivalence (Math > Algebra)</title>
 
-</head><body class="math"
+</head><body class="math">
 
-<h1>Equivalence</h1><p class="subtitle"></p>
+<h1>Equivalence</h1><p class="subtitle">Reflexive, Symmetric, Transitive</p>
 
 <p id="pageAbstract"></p>
 
-<h2 cbc>Relations</h2><div>
+<h2 cbc>Introduction</h2><div>
 
-<p>In this section, we will look at the relation between ordered pairs of members (a, b) of a set S.</p>
-
-<p>We create a set of ordered pairs R from a set S with the help of the cartesian product, S&times;S:</p>
+<p>As we have seen, relation R on a set S is a subset of a cartesian product S &Cross; S</p>
 
 <math xmlns="http://www.w3.org/1998/Math/MathML">
 <mtable><mtr><mtd>
-	<mi>R</mi><mo>=</mo><mi>S</mi><mo>&Cross;</mo><mi>S</mi><mo>=</mo><mo>{</mo><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo><mo>|</mo><mi>a</mi><mo>&isin;</mo><mi>S</mi><mo>&wedge;</mo><mi>b</mi><mo>&isin;</mo><mi>S</mi><mo>}</mo>
+	<mtext>R</mtext><mo>=</mo><mo>{</mo><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo><mo>&isin;</mo><mi>S</mi><mo>&Cross;</mo><mi>S</mi><mo>|</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>satisfy</mo><mtext>a condition</mtext><mo>}</mo>
 </mtd><mtd>
 	<mtext class="equation-number"></mtext>
 </mtd></mtr></mtable>
 </math>
 
-<p>The set R contains all ordered pairs (a, b) of members a, b from S:</p>
+<p>If we select a condition that selects pairs of <i>equivalent</i> elements, we get an <i>equivalence relation</i>.</p>
 
-<p>This per se is not very interesting, R contains all possible combinations of members from S, and there is no special relation between the elements of S. A useful relation needs a <em>filter condition</em> that creates a subset R of S:</p>
+<p>The simplest equivalence relation is the equality "=", but any attribute can be used to define equivalence. For example, if we deal with Lego bricks, equivalence could be defined as "the same number of studs", or "the same color".</p>
 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<mtable><mtr><mtd>
-	<mi>R</mi><mo>=</mo><mo>{</mo><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo><mo>&isin;</mo><mi>S</mi><mo>&Cross;</mo><mi>S</mi><mo>|</mo><mi>a</mi><mo>,</mo><mi>b</mi><mtext>&nbsp;satisfy a condition</mtext><mo>}</mo>
-</mtd><mtd>
-	<mtext class="equation-number"></mtext>
-</mtd></mtr></mtable>
-</math>
+<p>An equivalence relation has three properties: Reflexivity, symmetry, and transitivity. And if a relation has these properties, it is an equivalence relation.</p>
 
-<p>Which effectively makes R a subset of S:</p>
+<p>If a relation is reflexive, each element of the set is equivalent to itself.</p>
 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<mtable><mtr><mtd>
-	<mi>R</mi><mo>&SubsetEqual;</mo><mi>S</mi>
-</mtd><mtd>
-	<mtext class="equation-number"></mtext>
-</mtd></mtr></mtable>
-</math>
+<a data-load-fragment href="fragments/def-reflexivity.htm"></a>
 
-<p>For example, with a given set S, we could create a subset R which contains pairs of equal elements:</p>
+<p>If an element a is equivalent to an element b, the reverse is also true:</p>
 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<mtable><mtr><mtd>
-	<mi>S</mi><mo>=</mo><mo>{</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mn>3</mn><mo>}</mo>
-</mtd><mtd>
-	<mtext class="equation-number"></mtext>
-</mtd></mtr><mtr><mtd>
-	<mi>R</mi><mo>=</mo><mo>{</mo><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo><mo>&isin;</mo><mi>S</mi><mo>&Cross;</mo><mi>S</mi><mo>|</mo><mi>a</mi><mo>=</mo><mi>b</mi><mo>}</mo>
-</mtd><mtd>
-	<mtext class="equation-number"></mtext>
-</mtd></mtr></mtable>
-</math>
+<a data-load-fragment href="fragments/def-symmetry.htm"></a>
 
-<p>While S contains all possible combinations, </p>
+<p>If element a is equivalent to element b, and element b is equivalent to element c, then element a is also equivalent to element c.</p>
 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<mtable><mtr><mtd>
-	<mi>S</mi><mo>&Cross;</mo><mi>S</mi><mo>=</mo><mo>{</mo><mo>(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>)</mo><mo>,</mo><mo>(</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>)</mo><mo>,</mo><mo>&hellip;&nbsp;</mo><mo>,</mo><mo>(</mo><mn>3</mn><mo>,</mo><mn>2</mn><mo>)</mo><mo>,</mo><mo>(</mo><mn>3</mn><mo>,</mo><mn>3</mn><mo>)</mo><mo>}</mo>
-</mtd><mtd>
-	<mtext class="equation-number"></mtext>
-</mtd></mtr></mtable>
-</math>
+<a data-load-fragment href="fragments/def-transitivity.htm"></a>
 
-<p>R only contains pairs of elements that are equal:</p>
-
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-<mtable><mtr><mtd>
-	<mi>R</mi><mo>=</mo><mo>{</mo><mo>(</mo><mn>1</mn><mo>,</mo><mn>1</mn><mo>)</mo><mo>,</mo><mo>(</mo><mn>3</mn><mo>,</mo><mn>2</mn><mo>)</mo><mo>,</mo><mo>(</mo><mn>3</mn><mo>,</mo><mn>3</mn><mo>)</mo><mo>}</mo></mtd><mtd>
-	<mtext class="equation-number"></mtext>
-</mtd></mtr></mtable>
-</math>
-
-<!--h2--Relations--></div>
+<!--h2--Introduction--></div>
 
 <h2 cbc>Equivalence Relation</h2><div>
-
-<p>If we use a condition that selects pairs of equivalent elements, we get an <em>equivalence relation</em>.</p>
 
 <p>Equivalence can mean a lot of things. For example, with a set of Lego bricks, we could say that they are equivalent if they have the same number of studs. Or the same color. Applying the filter condition on every possible combination of elements from the set divides the original set S into non-overlapping subsets with equivalent objects. These subsets are called <em>partitions</em>. Depending on the equivalence relation, we get different partitions called <em>equivalence classes</em>.</p>
 
@@ -427,6 +386,8 @@
 	</mtd>
 </mtr></mtable></math>
 </figure>
+
+<a data-load-fragment href="fragments/def-partition.htm"
 
 <p>An example: Find the equivalence classes of a congruence modulo n relation. From the definition of <a href="#congruence-modulo-n">congruence modulo n</a> with n=4</p>
 
