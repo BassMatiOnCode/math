@@ -3,7 +3,7 @@
 	stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none" 
 	style="border:1px none silver">
 	
-<title>Major and minor axis</title>
+<title>Perfect ellipse</title>
 
 <defs>
 	<circle id="pointHollow" r="4" stroke-width="1.2" fill="white" />
@@ -17,14 +17,10 @@
 
 <script type="text/javascript" href="/inc/webcat/svg/svg-1.js"></script>
 <script type="text/javascript" href="/inc/webcat/svg/ellipse-1.js"></script>
-<script>
-//@ sourceUrl="fig-003.svg"
-// <![CDATA[
+<script> // <![CDATA[
 	// Create ellipse
-const ellipse = new Ellipse( 0, 0, 120, 90, { }, "construction" ), { a, b, c, nex } = ellipse ;
-debugger;
+const ellipse = new Ellipse( 0, 0, 120, 120 / Math.sqrt( 2 ), { }, "construction" ), { a, b, c, nex } = ellipse ;
 // const ellipse2 = createEllipse( 0, 0, 120, 90, { }, "construction" ), { a, b, c, nex } = ellipse2 ;
-debugger;
 	// Center point
 addNamedPoint( "" ); 
 	// Major axis
@@ -43,14 +39,16 @@ addNamedPoint( "F2", { x: +c, tox: 5 } );
 addSvgElement( "text", { x: -c / 2, "dominant-baseline": "middle" }, { textContent: "c" } ); 
 addSvgElement( "text", { x: +c / 2, "dominant-baseline": "middle" }, { textContent: "c" } ); 
 	// Lines to focal points
-addSvgElement( "line", { x1: -c, y2: -b } );
-addSvgElement( "line", { x1: +c, y2: -b } );
-addSvgElement( "line", { x1: -c, y2: +b } );
-addSvgElement( "line", { x1: +c, y2: +b } );
+addSvgElement( "line", { x1: -c, y2: -b }, { }, "construction" );
+addSvgElement( "line", { x1: +c, y2: -b }, { }, "construction" );
+addSvgElement( "line", { x1: -c, y2: +b }, { }, "construction" );
+addSvgElement( "line", { x1: +c, y2: +b }, { }, "construction" );
 addSvgElement( "text", { x: -c / 2, y: -b / 2, "dominant-baseline": "middle" }, { textContent: "a" } ); 
 addSvgElement( "text", { x: +c / 2, y: -b / 2, "dominant-baseline": "middle" }, { textContent: "a" } ); 
 addSvgElement( "text", { x: -c / 2, y: +b / 2, "dominant-baseline": "middle" }, { textContent: "a" } ); 
 addSvgElement( "text", { x: +c / 2, y: +b / 2, "dominant-baseline": "middle" }, { textContent: "a" } ); 
+	// Inscribed circle
+addSvgElement( "circle", { r: b } );
 // ]]>
 </script>
 </svg>

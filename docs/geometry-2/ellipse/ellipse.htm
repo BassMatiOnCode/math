@@ -6,15 +6,13 @@
 <meta name="author" content="USP" />
 <meta name="creation-date" content="2025-03-11" />
 <meta name="editor" content="USP" />
-<meta name="change-date" content="2025-03-11" />
+<meta name="change-date" content="2025-03-12" />
 <meta name="version" content="1" />
 <meta name="sectionTitle" content="title.svg" />
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
-<link rel="stylesheet" href="/inc/webcat/page-structure/tutorial-page-1.css" />
-<script type="module" src="/inc/webcat/page-structure/tutorial-page-1.js" ></script>
-<link rel="stylesheet" href="/inc/webcat/math/math.css" />
-<link rel="stylesheet" href="/inc/webcat/math/math-text.css" />
+<link rel="stylesheet" href="/inc/webcat/page-structure/tutorial-page.css" />
+<script type="module" src="/inc/webcat/page-structure/tutorial-page.js" ></script>
 
 <meta name="categories" content="Math > Geometry > Ellipse" />
 <meta name="tags" content="math, mathematics, tutorial, geometry, ellipse" />
@@ -36,25 +34,858 @@
 
 <p>An ellipse has a <i>center point</i> <math xmlns="http://www.w3.org/1998/Math/MathML"><mtext>C</mtext></math>, and two orthogonal axes, the <i>major axis</i> <math xmlns="http://www.w3.org/1998/Math/MathML"><mtext class="overline">AA</mtext></math> with a length of <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi></math>, and the <i>minor axis</i> <math xmlns="http://www.w3.org/1998/Math/MathML">mtext class="overline">BB</mtext></math> with the length <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>b</mi></math>.</p>
 
-<figure class="figure"><figcaption>Major and minor axis</figcaption>
+<figure class="figure"><figcaption>Major and minor axes (<a href="fig-001.svg" target="_blank">fig-001.svg</a>)</figcaption>
 <object type="image/svg+xml" data="fig-001.svg"></object>
 </figure>
 
-<p>Note that the major axis is always longer than the minor axis (hence the name):</p>
+<p>Note that in an ellipse, the major axis is always longer than the minor axis (hence the name):</p>
 
 <math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow class="numbered">
 <mi>a</mi><mo>&gt;</mo><mi>b</mi>
+<mtext>(1)</mtext>
+</mrow>
 </math>
+
+<p>If <mathtext><mi>a</mi><mo>=</mo><mi>b</mi></mathtext>, the ellipse is degraded to a circle.</p>
 
 <p>The end points <math xmlns="http://www.w3.org/1998/Math/MathML"><mtext>A1</mtext></math> and of the major axis are called <i>vertices</i>, the end points of the minor axis are called <i>co-vertices</i>.</p>
 
 <!--h2--Axes--></div>
 
+<h2 cbc>Focal Points</h2><div>
+
+<p>The position of the <i>focus</i> or <i>focal points</i> <mathtext>c</mathtext> is defined by
+length of the semi-axes <mathtext><mi>a</mi></mathtext> and <mathtext><mi>b</mi></mathtext>:</p>
+
+<figure class="figure"><figcaption>Focal points (<a href="fig-002.svg" target="_blank">fig-002.svg</a>)</figcaption>
+<object type="image/svg+xml" data="fig-002.svg"></object>
+</figure>
+
+<p>The focal points lie always on the major axis, never on the minor axis.</p>
+
+<!--h2--Focal Points--></div>
+
+<h2 cbc>Excentricity</h2><div>
+
+<p>The length <mathtext>c</mathtext> is called <i>linear excentricity</i> and is defined as:</p>
+
+<math id="(2)" xmlns="http://www.w3.org/1998/Math/MathML" >
+<mrow class="numbered">
+<mi>c</mi>
+<mo>=</mo>
+<msqrt>
+	<msup><mi>a</mi><mn>2</mn></msup>
+	<mo>&minus;</mo>
+	<msup><mi>b</mi><mn>2</mn></msup>
+	</msqrt>
+<mtext>(2)</mtext>
+</mrow>
+</math>
+
+<p>with</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>0</mn><mo>&le;</mo><mi>c</mi><mo>&lt;</mo><mi>a</mi>
+</math>
+
+<p>The ratio</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mrow class="numbered">
+<mi>&epsilon;</mi>
+<mo>=</mo>
+<mfrac><mi>c</mi><mi>a</mi></mfrac>
+<mo>=</mo>
+<mfrac>
+	<msqrt>
+		<msup><mi>a</mi><mn>2</mn></msup>
+		<mo>&minus;</mo>
+		<msup><mi>b</mi><mn>2</mn></msup>
+		</msqrt>
+	<mi>a</mi>
+	</mfrac>
+<mo>=</mo>
+<msqrt>
+	<mn>1</mn>
+	<mo>&minus;</mo>
+	<mfrac>
+		<msup><mi>b</mi><mn>2</mn></msup>
+		<msup><mi>a</mi><mn>2</mn></msup>		
+		</mfrac>
+	</msqrt>
+<mtext>(3)</mtext>
+</mrow>
+</math>
+
+<p>is called <i>numeric excentricity</i> or simply <i>excentricity</i>, with</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>0</mn><mo>&le;</mo><mi>ε</mi><mo>&lt;</mo><mn>1</mn>
+</math>
+
+<p>If <mathtext><mi>b</mi><mo>=</mo><mi>c</mi></mathtext>, we have a <i>perfect ellipse</i>:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msup><mi>a</mi><mn>2</mn></msup>
+<mo>=</mo>
+<msup><mi>b</mi><mn>2</mn></msup>
+<mo>+</mo>
+<msup><mi>c</mi><mn>2</mn></msup>
+<mo>=</mo>
+<msup><mi>b</mi><mn>2</mn></msup>
+<mo>+</mo>
+<msup><mi>b</mi><mn>2</mn></msup>
+<mo>=</mo>
+<mn>2</mn><msup><mi>b</mi><mn>2</mn></msup>
+</math>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mfrac><mn>1</mn><mn>2</mn></mfrac>
+<mo>=</mo>
+<mfrac>
+	<msub><mi>b</mi><mn>2</mn></msub>
+	<msub><mi>a</mi><mn>2</mn></msub>
+	</mfrac>
+</math>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mfrac>
+	<mn>1</mn>
+	<msqrt><mn>2</mn></msqrt>
+	</mfrac>
+<mo>=</mo>
+<mfrac>
+	<mi>b</mi>
+	<mi>a</mi>
+	</mfrac>
+</math>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mi>&epsilon;</mi>
+<mo>=</mo>
+<mfrac><mi>c</mi><mi>a</mi></mfrac>
+<mo>=</mo>
+<mfrac><mi>b</mi><mi>a</mi></mfrac>
+<mo>=</mo>
+<mfrac>
+	<mn>1</mn>
+	<msqrt><mn>2</mn></msqrt>
+	</mfrac>
+</math>
+
+<p>If we draw a circle with radius <mathtext><mi>b</mi></mathtext> around the center point, the focal points also lie on the circle:</p>
+
+<figure class="figure"><figcaption>The perfect ellipse (<a href="fig-003.svg" target="_blank">fig-003.svg</a>)</figcaption>
+<object type="image/svg+xml" data="fig-003.svg"></object>
+</figure>
+
+<p>Additionally, we can derive the following relations from equations <a href="#(2)">(2)</a> and <a href="#(3)">(3)</a>:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow class="numbered">
+<mi>b</mi>
+<mo>=</mo>
+<mi>a</mi>
+<msqrt>
+	<mn>1</mn>
+	<mo>&minus;</mo>
+	<msup><mi>&epsilon;</mi><mn>2</mn></msup>
+	</msqrt>
+<mtext>(4)</mtext>
+</mrow>
+</math>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow class="numbered">
+<mi>l</mi>
+<mo>=</mo>
+<mi>a</mi>
+<mo>(</mo>
+	<mn>1</mn>
+	<mo>&minus;</mo>
+	<msup><mi>&epsilon;</mi><mn>2</mn></msup>
+<mo>)</mo>
+<mo>=</mo>
+<mfrac>
+	<msup><mi>b</mi><mn>2</mn></msup>
+	<mi>a</mi>
+	</mfrac>
+<mtext>(5)</mtext>
+</mrow>
+</math>
+
+<p><mathtext><mi>l</mi></mathtext> is called <i>semi-latus rectum</i>, and is the half the length of a chord trough a focal point, perpendicular to the major axis (or parallel to the minor axis). The semi-latus rectum is also the radius of curvature at the vertices.</p>
+
+
+<p>Some examples of excentricity:</p>
+
+<figure class="figure"><figcaption>&epsilon; = 0 (<a href="fig-004a.svg" target="_blank">fig-004a.svg</a>)</figcaption>
+<object type="image/svg+xml" data="fig-004a.svg"></object>
+</figure>
+
+<figure class="figure"><figcaption>&epsilon; = 0 (<a href="fig-004b.svg" target="_blank">fig-004b.svg</a>)</figcaption>
+<object type="image/svg+xml" data="fig-004b.svg"></object>
+</figure>
+
+<figure class="figure"><figcaption>&epsilon; = 0 (<a href="fig-004c.svg" target="_blank">fig-004c.svg</a>)</figcaption>
+<object type="image/svg+xml" data="fig-004c.svg"></object>
+</figure>
+<figure class="figure"><figcaption>&epsilon; = 0 (<a href="fig-004d.svg" target="_blank">fig-004d.svg</a>)</figcaption>
+<object type="image/svg+xml" data="fig-004d.svg"></object>
+</figure>
+
+<!--h2--Excentricity--></div>
+
+<h2 cbc>Gärtner's Rule</h2><div>
+
+<p>For each point <mathtext><mtext>P</mtext><mo>=</mo><mo>(</mo><mi>x</mi><mo>,</mo> <mi>y</mi><mo>)</mo></mathtext> on the ellipse, the sum of distance to the focal points <mathtext><mtext class="overline">PF1</mtext><mo>+</mo><mtext class="overline">PF2</mtext></mathtext> is equal to the length of the major axis <mathtext><mtext class="overline">A1A2</mtext></mathtext>. This is the first definition of an ellipse:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mrow class="numbered">
+<mtext class="overline">PF1</mtext>
+<mo>+</mo>
+<mtext class="overline">PF2</mtext></mathtext>
+<mo>=</mo>
+<mn>2</mn><mi>a</mi>
+<mtext>(6)</mtext>
+</mrow>
+</math>
+
+<p>This is shown in figure 5a:</p>
+
+<figure class="figure"><figcaption>A point P on the ellipse</figcaption>
+<object type="image/svg+xml" data="fig-005-a.svg"></object>
+</figure>
+
+<p>For the following examinations, we assume that <mathtext><mi>a</mi><mo>&gt;</mo><mi>b</mi></mathtext> to avoid collapsing to a line, and <mathtext><mi>a</mi><mo>&gt;</mo><mn>0</mn></mathtext> to prevent collapsing to a point.</p>
+
+<p>The idea is to express <mathtext><mn>2</mn><mi>a</mi></mathtext> with a combination of <mathtext><mi>a</mi></mathtext> and <mathtext><mi>c</mi></mathtext>:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mtext class="overline">F1P</mtext>
+<mo>+</mo>
+<mtext class="overline">F2P</mtext>
+<mo>=</mo>
+<mtext class="overline">A2F1</mtext>
+<mo>+</mo>
+<mtext class="overline">A2F2</mtext>
+</math>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo>=</mo>
+<mo>(</mo><mi>a</mi><mo>+</mo><mi>c</mi><mo>)</mo>
+<mo>+</mo>
+<mo>(</mo><mi>a</mi><mo>&minus;</mo><mi>c</mi><mo>)</mo>
+<mo>=</mo>
+<mi>a</mi><mo>+</mo><mi>a</mi>
+</math>
+
+<p>This might be a little bit confusing at first, but if you consider the lines as vectors in 2D space, it makes perfect sense. Walk from F1 over P, F2, C, A2, C back to the starting point F1, and add the length values.</p>
+
+<p>Then we use the definition of the linear excentricity in equation <a href="#(2)">(2)</a>, which exploits the theorem of Pythagoras:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mi>c</mi>
+<mo>=</mo>
+<msqrt>
+	<msup><mi>a</mi><mn>2</mn></msup>
+	<mo>&minus;</mo>
+	<msup><mi>b</mi><mn>2</mn></msup>
+	</msqrt>
+</mrow>
+</math>
+
+<p>To simplify the math, the following text assumes that the ellipse is centered at the origin of a cartesian coordinate system. But the strategy works for every other location, too.</p>
+
+<p>If we have the coordinates of the points, we can calculate distances:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mtext class="overline">F1P</mtext>
+<mo>+</mo>
+<mtext class="overline">F2P</mtext>
+</math>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mo>=</mo>
+<msqrt>
+	<msup>
+		<mrow><mo>(</mo><mi>c</mi><mo>+</mo><mi>x</mi><mo>)</mo></mrow>	
+		<mn>2</mn>
+		</msup>
+	<mo>+</mo>
+	<msup><mi>y</mi><mn>2</mn></msup>
+	</msqrt>
+<mo>+</mo>
+<msqrt>
+	<msup>
+		<mrow><mo>(</mo><mi>c</mi><mo>&minus;</mo><mi>x</mi><mo>)</mo></mrow>	
+		<mn>2</mn>
+		</msup>
+	<mo>+</mo>
+	<msup><mi>y</mi><mn>2</mn></msup>
+	</msqrt>
+</math>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mo>=</mo>
+<mn>2</mn><mi>a</mi>
+</math>
+
+<p>The goal is to transform this equation into an expression with x, y, a and b.</p>
+
+<p>The first step is to separate the radicals, then square both sides:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+	<msup>
+		<mrow><mo>(</mo><mi>c</mi><mo>+</mo><mi>x</mi><mo>)</mo></mrow>	
+		<mn>2</mn>
+		</msup>
+	<mo>+</mo>
+	<msup><mi>y</mi><mn>2</mn></msup>
+<mo>=</mo>
+<mn>4</mn><msup><mi>a</mi><mn>2</mn></msup>
+<mo>&minus;</mo>
+<mn>4</mn><mi>a</mi>
+<msqrt>
+	<msup>
+		<mrow><mo>(</mo><mi>c</mi><mo>&minus;</mo><mi>x</mi><mo>)</mo></mrow>	
+		<mn>2</mn>
+		</msup>
+	<mo>+</mo>
+	<msup><mi>y</mi><mn>2</mn></msup>
+	</msqrt>
+<mo>+</mo>
+	<msup>
+		<mrow><mo>(</mo><mi>c</mi><mo>&minus;</mo><mi>x</mi><mo>)</mo></mrow>	
+		<mn>2</mn>
+		</msup>
+	<mo>+</mo>
+	<msup><mi>y</mi><mn>2</mn></msup>
+</math>
+
+<p>Then solve the square of sums:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+	<msup><mi>c</mi><mn>2</mn></msup>
+	<mo>+</mo>
+	<mn>2</mn><mi>c</mi><mi>x</mi>
+	<mo>+</mo>
+	<msup><mi>x</mi><mn>2</mn></msup>
+	<mo>+</mo>
+	<msup><mi>y</mi><mn>2</mn></msup>
+<mo>=</mo>
+<mn>4</mn><msup><mi>a</mi><mn>2</mn></msup>
+<mo>&minus;</mo>
+<mn>4</mn><mi>a</mi>
+<msqrt>
+	<msup>
+		<mrow><mo>(</mo><mi>c</mi><mo>&minus;</mo><mi>x</mi><mo>)</mo></mrow>	
+		<mn>2</mn>
+		</msup>
+	<mo>+</mo>
+	<msup><mi>y</mi><mn>2</mn></msup>
+	</msqrt>
+<mo>+</mo>
+	<msup><mi>c</mi><mn>2</mn></msup>
+	<mo>&minus;</mo>
+	<mn>2</mn><mi>c</mi><mi>x</mi>
+	<mo>+</mo>
+	<msup><mi>x</mi><mn>2</mn></msup>
+	<mo>+</mo>
+	<msup><mi>y</mi><mn>2</mn></msup>
+</math>
+
+<p>Subtract equal terms from both sides, divide my minus 4:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mn>4</mn><mi>c</mi><mi>x</mi>
+<mo>=</mo>
+<mn>4</mn><msup><mi>a</mi><mn>2</mn></msup>
+<mo>&minus;</mo>
+<mn>4</mn><mi>a</mi>
+<msqrt>
+	<msup>
+		<mrow><mo>(</mo><mi>c</mi><mo>&minus;</mo><mi>x</mi><mo>)</mo></mrow>	
+		<mn>2</mn>
+		</msup>
+	<mo>+</mo>
+	<msup><mi>y</mi><mn>2</mn></msup>
+	</msqrt>
+<mo>&minus;</mo>
+<mn>2</mn><mi>c</mi><mi>x</mi>
+</math>
+
+<p>The next step isolates the radical:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<msup><mi>a</mi><mn>2</mn></msup>
+<mo>&minus;</mo>
+<mi>c</mi><mi>x</mi>
+<mo>=</mo>
+<mi>a</mi>
+<msqrt>
+	<msup>
+		<mrow><mo>(</mo><mi>c</mi><mo>&minus;</mo><mi>x</mi><mo>)</mo></mrow>	
+		<mn>2</mn>
+		</msup>
+	<mo>+</mo>
+	<msup><mi>y</mi><mn>2</mn></msup>
+	</msqrt>
+</math>
+
+<p>Getting rid of the radical by squaring both sides:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<msup><mi>a</mi><mn>4</mn></msup>
+<mo>&minus;</mo>
+<mn>2</mn><msup><mi>a</mi><mn>2</mn></msup><mi>c</mi><mi>x</mi>
+<mo>+</mo>
+<msup><mi>c</mi><mn>2</mn></msup>
+<msup><mi>x</mi><mn>2</mn></msup>
+<mo>=</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<mo>(</mo>
+<msup>
+	<mrow><mo>(</mo><mi>c</mi><mo>&minus;</mo><mi>x</mi><mo>)</mo></mrow>	
+	<mn>2</mn>
+	</msup>
+<mo>+</mo>
+<msup><mi>y</mi><mn>2</mn></msup>
+<mo>)</mo>
+</math>
+
+<p>Solving the squared bracket:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<msup><mi>a</mi><mn>4</mn></msup>
+<mo>&minus;</mo>
+<mn>2</mn><msup><mi>a</mi><mn>2</mn></msup><mi>c</mi><mi>x</mi>
+<mo>+</mo>
+<msup><mi>c</mi><mn>2</mn></msup>
+<msup><mi>x</mi><mn>2</mn></msup>
+<mo>=</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<mo>(</mo>
+<msup><mi>c</mi><mn>2</mn></msup>
+<mo>&minus;</mo>
+<mn>2</mn><mi>c</mi><mi>x</mi>
+<mo>+</mo>
+<msup><mi>x</mi><mn>2</mn></msup>
+<mo>+</mo>
+<msup><mi>y</mi><mn>2</mn></msup>
+<mo>)</mo>
+</math>
+
+<p>Distrubute <mathtext><mi>a</mi><sup>2</sup></mathtext>:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<msup><mi>a</mi><mn>4</mn></msup>
+<mo>&minus;</mo>
+<mn>2</mn><msup><mi>a</mi><mn>2</mn></msup><mi>c</mi><mi>x</mi>
+<mo>+</mo>
+<msup><mi>c</mi><mn>2</mn></msup>
+<msup><mi>x</mi><mn>2</mn></msup>
+<mo>=</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<msup><mi>c</mi><mn>2</mn></msup>
+<mo>&minus;</mo>
+<mn>2</mn>
+<msup><mi>a</mi><mn>2</mn></msup>
+<mi>c</mi><mi>x</mi>
+<mo>+</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<msup><mi>x</mi><mn>2</mn></msup>
+<mo>+</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<msup><mi>y</mi><mn>2</mn></msup>
+</math>
+
+<p>Subtract identical terms:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<msup><mi>a</mi><mn>4</mn></msup>
+<mo>+</mo>
+<msup><mi>c</mi><mn>2</mn></msup>
+<msup><mi>x</mi><mn>2</mn></msup>
+<mo>=</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<msup><mi>c</mi><mn>2</mn></msup>
+<mo>+</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<msup><mi>x</mi><mn>2</mn></msup>
+<mo>+</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<msup><mi>y</mi><mn>2</mn></msup>
+</math>
+
+<p>Reorder the terms:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<msup><mi>c</mi><mn>2</mn></msup>
+<msup><mi>x</mi><mn>2</mn></msup>
+<mo>&minus;</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<msup><mi>x</mi><mn>2</mn></msup>
+<mo>&minus;</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<msup><mi>y</mi><mn>2</mn></msup>
+<mo>=</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<msup><mi>c</mi><mn>2</mn></msup>
+<mo>&minus;</mo>
+<msup><mi>a</mi><mn>4</mn></msup>
+</math>
+
+<p>Factoring out:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<msup><mi>x</mi><mn>2</mn></msup>
+<mo>(</mo>
+<msup><mi>c</mi><mn>2</mn></msup>
+<mo>&minus;</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<mo>)</mo>
+<mo>&minus;</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<msup><mi>y</mi><mn>2</mn></msup>
+<mo>=</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<mo>(</mo>
+<msup><mi>c</mi><mn>2</mn></msup>
+<mo>&minus;</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<mo>)</mo>
+</math>
+
+<p>Divide by the entire right side:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mfrac>
+	<mrow>
+		<msup><mi>x</mi><mn>2</mn></msup>
+		<mo>(</mo>
+		<msup><mi>c</mi><mn>2</mn></msup>
+		<mo>&minus;</mo>
+		<msup><mi>a</mi><mn>2</mn></msup>
+		<mo>)</mo>
+		</mrow>
+	<mrow>
+		<msup><mi>a</mi><mn>2</mn></msup>
+		<mo>(</mo>
+		<msup><mi>c</mi><mn>2</mn></msup>
+		<mo>&minus;</mo>
+		<msup><mi>a</mi><mn>2</mn></msup>
+		<mo>)</mo>
+		</mrow>
+	</mfrac>
+<mo>&minus;</mo>
+<mfrac>
+	<mrow>
+		<msup><mi>a</mi><mn>2</mn></msup>
+		<msup><mi>y</mi><mn>2</mn></msup>
+		</mrow>
+	<mrow>
+		<msup><mi>a</mi><mn>2</mn></msup>
+		<mo>(</mo>
+		<msup><mi>c</mi><mn>2</mn></msup>
+		<mo>&minus;</mo>
+		<msup><mi>a</mi><mn>2</mn></msup>
+		<mo>)</mo>
+		</mrow>
+	</mfrac>
+<mo>=</mo>
+<mn>1</mn>
+</math>
+
+<p>The previous step introduces two conditions:</p>
+
+<ol>
+<li><mathtext><mi>a</mi><sup>2</sup><mo>&ne;</mo><mn>0</mn></mathtext></li>
+<li><mathtext><mi>c</mi><sup>2</sup>
+<mo>&minus;</mo>
+<mi>a</mi><sup>2</sup>
+<mo>&ne;</mo><mn>0</mn></mathtext></li>
+</ol>
+
+<p>Remove the canceling factors:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mfrac>
+	<msup><mi>x</mi><mn>2</mn></msup>
+	<msup><mi>a</mi><mn>2</mn></msup>
+	</mfrac>
+<mo>&minus;</mo>
+<mfrac>
+	<msup><mi>y</mi><mn>2</mn></msup>
+	<mrow>
+		<msup><mi>c</mi><mn>2</mn></msup>
+		<mo>&minus;</mo>
+		<msup><mi>a</mi><mn>2</mn></msup>
+		</mrow>
+	</mfrac>
+<mo>=</mo>
+<mn>1</mn>
+</math>
+
+<p>This already looks pretty nice. We still need to get rid of the <mathtext><mi>c</mi></mathtext>. So we use the definition of the <a href="#(2)">linear excentricity</a></p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msup><mi>c</mi><mn>2</mn></msup>
+<mo>=</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<mo>&minus;</mo>
+<msup><mi>b</mi><mn>2</mn></msup>
+</math>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msup><mi>c</mi><mn>2</mn></msup>
+<mo>&minus;</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<mo>=</mo>
+<mo>&minus;</mo>
+<msup><mi>b</mi><mn>2</mn></msup>
+</math>
+
+<p>Replace that term, and we obtain the <i>general equation for the horizontally oriented ellipse, centered at the origin</i>:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mrow class="numbered">
+<mfrac>
+	<msup><mi>x</mi><mn>2</mn></msup>
+	<msup><mi>a</mi><mn>2</mn></msup>
+	</mfrac>
+<mo>+</mo>
+<mfrac>
+	<msup><mi>y</mi><mn>2</mn></msup>
+	<msup><mi>b</mi><mn>2</mn></msup>
+	</mfrac>
+<mo>=</mo>
+<mn>1</mn>
+<mtext>(7)</mtext>
+</mrow>
+</math>
+
+<p>If the ellipse is centered at a different position <mathtext><mo>(</mo><mi>x</mi><sub>0</sub> <mo>,</mo> <mi>y</mi><sub>0</sub ><mo>)</mo></mathtext>, the equation changes to</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mrow class="numbered">
+<mfrac>
+	<msup>
+		<mrow>
+			<mo stretchy="false">(</mo>
+			<mi>x</mi>
+			<mo>&minus;</mo>
+			<msub><mi>x</mi><mn>0</mn></msub>
+			<mo stretchy="false">)</mo>
+			</mrow>
+		<mn>2</mn>
+		</msup>
+	<msup><mi>a</mi><mn>2</mn></msup>
+	</mfrac>
+<mo>+</mo>
+<mfrac>
+	<msup>
+		<mrow>
+			<mo stretchy="false">(</mo>
+			<mi>y</mi>
+			<mo>&minus;</mo>
+			<msub><mi>y</mi><mn>0</mn></msub>
+			<mo stretchy="false">)</mo>
+			</mrow>
+		<mn>2</mn>
+		</msup>
+	<msup><mi>b</mi><mn>2</mn></msup>
+	</mfrac>
+<mo>=</mo>
+<mn>1</mn>
+<mtext>(8)</mtext>
+</mrow>
+</math>
+
+<p>For the <i>vertically oriented ellipse</i>, <mathtext><mi>a</mi></mathtext> and <mathtext><mi>b</mi></mathtext> simply exchange places, because <mathtext><mi>a</mi></mathtext> is now a <mathtext><mi>y</mi></mathtext> quantity, and <mathtext><mi>b</mi></mathtext> is now an <mathtext><mi>x</mi></mathtext> quantity:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mrow class="numbered">
+<mfrac>
+	<msup>
+		<mrow>
+			<mo stretchy="false">(</mo>
+			<mi>x</mi>
+			<mo>&minus;</mo>
+			<msub><mi>x</mi><mn>0</mn></msub>
+			<mo stretchy="false">)</mo>
+			</mrow>
+		<mn>2</mn>
+		</msup>
+	<msup><mi>b</mi><mn>2</mn></msup>
+	</mfrac>
+<mo>+</mo>
+<mfrac>
+	<msup>
+		<mrow>
+			<mo stretchy="false">(</mo>
+			<mi>y</mi>
+			<mo>&minus;</mo>
+			<msub><mi>y</mi><mn>0</mn></msub>
+			<mo stretchy="false">)</mo>
+			</mrow>
+		<mn>2</mn>
+		</msup>
+	<msup><mi>a</mi><mn>2</mn></msup>
+	</mfrac>
+<mo>=</mo>
+<mn>1</mn>
+<mtext>(9)</mtext>
+</mrow>
+</math>
+
+<!--h2--Gärtner's Rule--></div>
+
+<h2 cbc>Tangent</h2><div>
+
+<p>The tangent equations for the vertices of an ellipse in horizontal orientation, with focus points on the x axis, are</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mi>x</mi><mo>=</mo><mo>&plusmn;</mo><mi>a</mi>
+</math>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mi>y</mi><mo>=</mo><mo>&plusmn;</mo><mi>b</mi>
+</math>
+
+<p>For any other point on the ellipse, we can differentiate the general equation of the ellipse. The method is <a href="https://de.wikipedia.org/wiki/Implizite_Differentiation"><em>implicit differentiation:</em></a>, which gives us:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mi>y</mi>
+<mo>=</mo>
+<mfrac>
+	<mrow><mn>2</mn><mi>x</mi></mrow>
+	<msup><mi>a</mi><mn>2</mn></msup>
+	</mfrac>
+<mo>+</mo>
+<mfrac>
+	<mrow><mn>2</mn><mi>y</mi><msup><mi>y</mi><mn>&prime;</mn></msup></mrow>
+	</mfrac>
+<mo>=</mo>
+<mn>0</mn>
+<mo>&rarr;</mo>
+<msup><mi>y</mi><mn>&prime;</mn></msup>
+<mo>=</mo>
+<mo>&minus;</mo>
+<mfrac>
+	<mi>x</mi>
+	<mi>y</mi>
+	</mfrac>
+<mfrac>
+	<msup><mi>b</mi><mn>2</mn></msup>
+	<msup><mi>a</mi><mn>2</mn></msup>
+	</mfrac>
+</math>
+
+<p>Which gives us the point-slope form of a tangent line at <mathtext><mtext>P</mtext><mo>=</mo><mo>(</mo><mi>x</mi><sub>0</sub> <mo>,</mo> <mi>y</mi><sub>0</sub><mo>)</mo></mathtext>.</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mi>y</mi>
+<mo>=</mo>
+<mo>&minus;</mo>
+<mfrac>
+	<msub><mi>x</mi><mn>0</mn></msub>
+	<msub><mi>y</mi><mn>0</mn></msub>
+	</mfrac>
+<mfrac>
+	<msup><mi>b</mi><mn>2</mn></msup>
+	<msup><mi>a</mi><mn>2</mn></msup>
+	</mfrac>
+<mo stretchy="false" lspace="4px">(</mo>
+	<mi>x</mi>
+	<mo>&minus;</mo>
+	<msub><mi>x</mi><mn>0</mn></msub>
+	<mo stretchy="false">)</mo>
+<mo>+</mo>
+<msub><mi>y</mi><mn>0</mn></msub>
+</math>
+
+<p>Solved for x:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" >
+<mi>x</mi>
+<mo>=</mo>
+<mo>&minus;</mo>
+<mfrac>
+	<msub><mi>y</mi><mn>0</mn></msub>
+	<msub><mi>x</mi><mn>0</mn></msub>
+	</mfrac>
+<mfrac>
+	<msup><mi>a</mi><mn>2</mn></msup>
+	<msup><mi>b</mi><mn>2</mn></msup>
+	</mfrac>
+<mo stretchy="false" lspace="4px">(</mo>
+	<mi>y</mi>
+	<mo>&minus;</mo>
+	<msub><mi>y</mi><mn>0</mn></msub>
+	<mo stretchy="false">)</mo>
+<mo>+</mo>
+<msub><mi>x</mi><mn>0</mn></msub>
+</math>
+
+<p>With</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mfrac>
+	<msubsup><mi>x</mi><mn>0</mn><mn>2</mn></msubsup>
+	<msup><mi>a</mi><mn>2</mn></msup>
+	</mfrac>
+<mo>+</mo>
+<mfrac>
+	<msubsup><mi>y</mi><mn>0</mn><mn>2</mn></msubsup>
+	<msup><mi>b</mi><mn>2</mn></msup>
+	</mfrac>
+<mo>=</mo>
+<mn>1</mn>
+</math>
+
+<p>follows</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow class="numbered">
+<mfrac>
+	<msubsup><mi>x</mi><mn>0</mn><mn>2</mn></msubsup>
+	<msup><mi>a</mi><mn>2</mn></msup>
+	</mfrac>
+<mi>x</mi>
+<mo>+</mo>
+<mfrac>
+	<msubsup><mi>y</mi><mn>0</mn><mn>2</mn></msubsup>
+	<msup><mi>b</mi><mn>2</mn></msup>
+	</mfrac>
+<mi>y</mi>
+<mo>=</mo>
+<mn>1</mn>
+<mtext>(10)</mtext>
+</mrow>
+</math>
+
+<figure class="figure"><figcaption>Tangent at point P (<a href="fig-006.svg" target="_blank">fig-006.svg</a>)</figcaption>
+<object type="image/svg+xml" data="fig-006.svg"></object>
+</figure>
+
+
+<!--h2--Tangent--></div>
+
 <h2 cbc>References</h2><div>
 
 <dl>
-<dt></dt>
+<dt><a href="https://de.wikipedia.org/wiki/Ellipse">Ellipse</a>"</dt>
+	<dd>de.wikipedia.org</dd>
+<dt><a href="https://www.youtube.com/watch?v=ItxuInoUc-w">How to Derive the Equation of an Ellipse</a></dt>
+	<dd>The PI Man on Youtube, 19m 14s</dd>
+<dt><a href="https://mathworld.wolfram.com/Ellipse.html">Ellipse</a></dt>
+	<dd>mathworld.wolfram.com</dd>
+<dt><a href="https://www.youtube.com/watch?v=LVbvQroUABw">Tangent equation of ellipse</a></dt>
 	<dd></dd>
+<dt><a href=""></a></dt>
+	<dd>Lakshmi Anil Velpuri on Youtube</dd>
 </dl>
 
 <!--h2--References--></div>

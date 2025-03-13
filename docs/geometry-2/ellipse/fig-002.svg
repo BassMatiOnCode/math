@@ -16,11 +16,11 @@
 <g id="text" font-size="14" stroke="white" stroke-width="3" fill="black" paint-order="stroke fill markers" text-anchor="middle" dominant-baseline="central"></g>
 
 <script type="text/javascript" href="/inc/webcat/svg/svg-1.js"></script>
-<script href="fig-003.js">
-//@ sourceUrl="fig-003.svg"
-// <![CDATA[
+<script type="text/javascript" href="/inc/webcat/svg/ellipse-1.js"></script>
+<script> // <![CDATA[
 	// Create ellipse
-const ellipse = createEllipse( 0, 0, 120, 90, { }, "construction" ), { a, b, c, nex } = ellipse ;
+const ellipse = new Ellipse( 0, 0, 120, 90, { }, "construction" ), { a, b, c, nex } = ellipse ;
+// const ellipse2 = createEllipse( 0, 0, 120, 90, { }, "construction" ), { a, b, c, nex } = ellipse2 ;
 	// Center point
 addNamedPoint( "" ); 
 	// Major axis
