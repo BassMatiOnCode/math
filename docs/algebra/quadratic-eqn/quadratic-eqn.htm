@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2024-08-07" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2025-03-24" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2025-03-24" />
+<meta name="version" content="1" />
+<meta name="sectionTitle" content="../../title.svg" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/webcat/page-structure/tutorial-page.css" />
+<script type="module" src="/inc/webcat/page-structure/tutorial-page.js" ></script>
+
+<meta name="categories" content="Math > Algebra > Quadratic Equations" />
+<meta name="tags" content="math, mathematics, tutorial, algebra, quadratic, equation" />
+<meta name="description" content="Formulas to solve quadratic equations." />
+
+<title>Quadratic Equations (Math > Algebra)</title>
+
+</head><body class="math">
+
+<h1>Quadratic Equations</h1><p class="subtitle">Formulas to solve quadratic equations</p>
+
+<h2 cbc>Introduction</h2><div>
+
+<p>A quadratic equation is a second-order polynomial and has the general form</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>a</mi><msup><mi>x</mi><mn>2</mn></msup>
+<mo>+</mo>
+<mi>b</mi><mi>x</mi>
+<mo>+</mo>
+<mi>c</mi>
+<mo>=</mo>	
+<mn>0</mn>
+</math>
+
+<p>with <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mo>,</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo>,</mo><mo>&isin;</mo><mi>&Ropf;</mi></math>, <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mo>&ne;</mo><mn>0</mn></math>, and <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi></math> is unknown.</p>
+
+<p>If a was 0, the equation would degrade to a linear equation.</p>
+
+<p>A quadratic equation has always two solutions <math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo>&isin;</mo><mi>&Copf;</mi></math>, with <i>roots</i> or <i>zeroes</i> on the right-hand side. The solutions may be identical,  <math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><msub><mi>x</mi><mn>2</mn></msub></math>. This is called a <i>double root</i>.</p>
+
+<p>A quadratic equation can be <i>factored</i> into an equivalent form:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>a</mi><msup><mi>x</mi><mn>2</mn></msup>
+<mo>+</mo>
+<mi>b</mi><mi>x</mi>
+<mo>+</mo>
+<mi>c</mi>
+<mo>=</mo>
+<mi>a</mi><mo>(</mo><mi>x</mi><mo>&minus;</mo><mi>r</mi><mo>)</mo>
+<mo>(</mo><mi>x</mi><mo>&minus;</mo><mi>s</mi><mo>)</mo>
+<mo>=</mo>
+<mn>0</mn>
+</math>
+
+ <p>with <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>r</mi><mo>,</mo><mi>s</mi></math> as solutions or roots for x.</p>
+
+ <p>The quadratic formula</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub><mi>x</mi><mn>1,2</mn></msub>
+<mo>=</mo>
+<mfrac>
+<mrow>
+	<mo>&minus;</mo>
+	<mi>b</mi>
+	<mo>&plusmn;</mo>
+	<msqrt><mrow">
+		<msup><mi>b</mi><mn>2</mn></msup>
+		<mo>&minus;</mo>
+		<mn>4</mn>
+		<mi>a</mi>
+		<mi>c</mi>
+		</mrow></msqrt>
+	</mrow>
+<mrow>
+	<mn>2</mn><mi>a</mi>
+	</mrow>
+</mfrac>
+</math>
+
+ <p>provides the solutions fo the quadratic equation in terms of  <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mo>,</mo><mi>b</mi><mo>and</mo><mi>c</mi></math>.</p>
+
+ <p>The term under the square root is known as the <i>discriminant &Delta;</i>. If &Delta; > 0, the equation has two distinct real roots. If &Delta; = 0, the equation has a double real root. If &Delta; < 0, the equation has two complex conjugate solutions.</p>
+
+ <p>Geometrically, the solutions represent the points where the graph of the quadradic function <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>y</mi><mo>=</mo><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mni>x</mni><mo>+</mo><mi>c</mi></math> crosses the x-axis (the x-intercepts).</p>
+
+<!--h2--Introduction--></div>
+
+<h2 cbc>Completing the Square</h2><div>
+
+<p>To derive the quadratic formula, divide the quadratic equation by <mathtext><mi>a</mi></mathtext>. This is allowed because <mathtext><mi>a</mi><mo>&ne;</mo><mn>0</mn></mathtext>. Then we subtract the third term and get</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msup><mi>x</mi><mn>2</mn></msup>
+<mo>+</mo>
+<mfrac>
+<mrow><mi>b</mi><mi>x</mi></mrow>
+<mi>a</mi>
+</mfrac>
+<mo>=</mo>
+<mo>&minus;</mo>
+<mfrac>
+<mi>c</mi>
+<mi>a</mi>
+</mfrac>
+</math>
+
+ <p>This is allowed because <mathtext><mi>a</mi><mo>&ne;</mo><mn>0</mn></mathtext>. Then we subtract the third term.</p>
+
+ <p>Now we bring the left side into the form</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msup><mi>x</mi><mn>2</mn></msup>
+<mo>+</mo>
+<mn>2</mn><mi>k</mi><mi>x</mi>
+<mo>+</mo>
+<msup><mi>k</mi><mn>2</mn></msup>
+</math>
+
+<p>By comparison, we find that</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>2</mn><mi>k</mi>
+<mo>=</mo>
+<mfrac><mi>b</mi><mi>a</mi></mfrac>
+<mo lspace="10px" rspace="10px">&DoubleLeftRightArrow;</mo>
+<mi>k</mi>
+<mo>=</mo>
+<mfrac><mi>b</mi><mrow><mn>2</mn><mi>a</mi></mrow></mfrac>
+</math>
+
+<p>Two complete the trinomial square, we add the missing k squared on both sides:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msup><mi>x</mi><mn>2</mn></msup>
+<mo>+</mo>
+<mfrac>
+	<mrow><mi>b</mi><mi>x</mi></mrow>
+	<mi>a</mi>
+	</mfrac>
+<mo>+</mo>
+<mfrac>
+	<msup><mi>b</mi><mn>2</mn></msup>
+	<mrow>
+		<mn>4</mn>
+		<msup><mi>a</mi><mn>2</mn></msup>
+		</mrow>
+	</mfrac>
+<mo>=</mo>
+<mfrac>
+	<msup><mi>b</mi><mn>2</mn></msup>
+	<mrow>
+		<mn>4</mn>
+		<msup><mi>a</mi><mn>2</mn></msup>
+		</mrow>
+	</mfrac>
+<mo>&minus;</mo>
+<mfrac><mi>c</mi><mi>a</mi></mfrac>
+</math>
+
+<p>Now we can transform the left side into a <i>binomial square</i>:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msup>
+	<mrow><mo>(</mo>
+		<mi>x</mi>
+		<mo>+</mo>
+		<mfrac>
+			<mi>b</mi>
+			<mrow>
+				<mn>2</mn>
+				<mi>a</mi>
+				</mrow>
+			</mfrac>
+		<mo>)</mo></mrow>
+	<mn>2</mn>
+	</msup>
+<mo>=</mo>
+<mfrac>
+	<msup><mi>b</mi><mn>2</mn></msup>
+	<mrow>
+		<mn>4</mn>
+		<msup><mi>a</mi><mn>2</mn></msup>
+		</mrow>
+	</mfrac>
+<mo>&minus;</mo>
+<mfrac><mi>c</mi><mi>a</mi></mfrac>
+</math>
+
+<p>Then we introduce a common denominator on the right side:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msup>
+	<mrow><mo>(</mo>
+		<mi>x</mi>
+		<mo>+</mo>
+		<mfrac>
+			<mi>b</mi>
+			<mrow>
+				<mn>2</mn>
+				<mi>a</mi>
+				</mrow>
+			</mfrac>
+		<mo>)</mo></mrow>
+	<mn>2</mn>
+	</msup>
+<mo>=</mo>
+<mfrac>
+	<mrow>
+		<msup><mi>b</mi><mn>2</mn></msup>
+		<mo>&minus;</mo>
+		<mn>4</mn><mi>a</mi><mi>c</mi>
+		</mrow>
+	<mrow>
+		<mn>4</mn>
+		<msup><mi>a</mi><mn>2</mn></msup>
+		</mrow>
+	</mfrac>
+</math>
+
+<p>Now we take thw square root:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>+</mo>
+<mfrac>
+	<mi>b</mi>
+	<mrow>
+		<mn>2</mn>
+		<mi>a</mi>
+		</mrow>
+	</mfrac>
+<mo>=</mo>
+<mfrac>
+	<mrow><mo>&plusmn;</mo><msqrt>
+		<msup style="padding-top: 2px"><mi>b</mi><mn>2</mn></msup>
+		<mo>&minus;</mo>
+		<mn>4</mn><mi>a</mi><mi>c</mi>
+		</msqrt></mrow>
+	<mrow>
+		<mn>2</mn>
+		<mi>a</mi>
+		</mrow>
+	</mfrac>
+</math>
+
+<p>The &plusmn; operator is there because the square root has two possible solutions, a positive and a negative value:</p>
+
+<p>The next step isolates x on left:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>=</mo>
+<mo>&minus;</mo>
+<mfrac>
+	<mi>b</mi>
+	<mrow>
+		<mn>2</mn>
+		<mi>a</mi>
+		</mrow>
+	</mfrac>
+<mo>+</mo>
+<mfrac>
+	<mrow><mo>&plusmn;</mo><msqrt>
+		<msup style="padding-top: 2px"><mi>b</mi><mn>2</mn></msup>
+		<mo>&minus;</mo>
+		<mn>4</mn><mi>a</mi><mi>c</mi>
+		</msqrt></mrow>
+	<mrow>
+		<mn>2</mn>
+		<mi>a</mi>
+		</mrow>
+	</mfrac>
+</math>
+
+<p>And we obtain the final result, the quadratic formula:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>=</mo>
+<mfrac>
+	<mrow>
+		<mo>&minus;</mo>
+		<mi>b</mi>
+		<mo>&plusmn;</mo>
+		<msqrt>
+		<msup style="padding-top: 2px"><mi>b</mi><mn>2</mn></msup>
+		<mo>&minus;</mo>
+		<mn>4</mn><mi>a</mi><mi>c</mi>
+		</msqrt></mrow>
+	<mrow>
+		<mn>2</mn>
+		<mi>a</mi>
+		</mrow>
+	</mfrac>
+</math>
+
+<!--h2--Completing the Square--></div>
+
+<h2 cbc>Alternative Forms of the Quadratic Formula</h2><div>
+
+<h3 cbc>Eliminated Denominator</h3><div>
+
+<p>We bring the denominator under the root:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>=</mo>
+<mo>&minus;</mo>
+<mfrac>
+	<mi>b</mi>
+	<mrow><mn>2</mn><mi>a</mi></mrow>
+	</mfrac>
+<mrow>
+	<mo>&plusmn;</mo>
+	<msqrt>
+		<msup style="padding-top:2px">
+			<mrow><mo>(</mo><mfrac>
+				<mi>b</mi>
+				<mrow><mn>2</mn><mi>a</mi></mrow>
+				</mfrac><mo>)</mo></mrow>
+			<mn>2</mn>
+			</msup>
+		<mo>&minus;</mo>
+		<mfrac>
+			<mi>c</mi>
+			<mi>a</mi
+			</mfrac>
+		</msqrt></mrow>
+<mrow>
+	</mrow>
+</math>
+
+<p>This form has the advantage that we can reuse the term <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>b</mi><mo rspace="0">/</mo><mo lspace="0">(</mo><mn>2</mn><mi>a</mi><mo>)</mo></mfrac></math>, which simplifies arithmetic somewhat.</p>
+
+<!--h3--Eliminated Denominator--></div>
+
+<h3 cbc>Giulio Fagnano's Form</h3><div>
+
+<p>If the roots of a quadratic equation are orders of magnitude apart, the term <mathtext><mi>a</mi><mi>c</mi></mathtext> becomes very small, and the standard quadratic formula becomes unstable in numeric computations (where real numbers are approximted with floating point numbers). Then Fagnano's form should be used instead.</p>
+
+<p>His form has the square root in the denominator:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>=</mo>
+<mfrac>
+<mrow><mn>2</mn><mi>c</mi></mrow>
+<mrow>
+	<mo>&minus;</mo>
+	<mi>b</mi>
+	<mo>&plusmn;</mo>
+	<msqrt>
+		<msup style="padding-top:2px"><mi>b</mi><mn>2</mn></msup>
+		<mo>&minus;</mo>
+		<mn>4</mn>
+		<mi>a</mi>
+		<mi>c</mi>
+		</msqrt>
+	</mrow>
+</mfrac>
+</math>
+
+<p>with <mathtext><mi>c</mi><mo>&ne;</mo><mn>0</mn></mathtext>.</p>
+
+ <p>To derive this solution, we start with the standard quatratic formula and eliminate the denominator:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mn>2</mn>
+<mi>a</mi>
+<mi>x</mi>
+<mo>=</mo>
+<mo>&minus;</mo>
+<mi>b</mi>
+<mo>&plusmn;</mo>
+<msqrt>
+	<msup style="padding-top: 2px"><mi>b</mi><mn>2</mn></msup>
+	<mo>&minus;</mo>
+	<mn>4</mn><mi>a</mi><mi>c</mi>
+	</msqrt>
+</math>
+
+<p>The standard quadratic equation solved for <mathtext><mi>a</mi></mathtext>:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>a</mi><msup><mi>x</mi><mn>2</mn></msup>
+<mo>=</mo>
+<mo>&minus;</mo>
+<mi>b</mi><mi>x</mi>
+<mo>&minus;</mo>
+<mi>c</mi>
+</math>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>a</mi>
+<mo>=</mo>
+<mo>&minus;</mo>
+<mfrac>
+<mrow>
+	<mi>b</mi><mi>x</mi>
+	<mo>+</mo>
+	<mi>c</mi>
+</mrow>	
+<msup><mi>x</mi><mn>2</mn></msup>
+</mfrac>
+</math>
+
+<p>Substitute this expression for a into the equation:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo>&minus;</mo><mn>2</mn><mi>x</mi>
+<mfrac style="padding-left: 3px">
+	<mrow>
+		<mi>b</mi><mi>x</mi>
+		<mo>+</mo>
+		<mi>c</mi>
+	</mrow><mrow>
+		<msup><mi>x</mi><mn>2</mn></msup>
+	</mrow>
+</mfrac>
+<mo>=</mo>
+<mo>&minus;</mo><mn>2</mn><mi>b</mi>
+<mo>&minus;</mo>
+<mfrac>
+	<mrow><mn>2</mn><mi>c</mi></mrow>
+	<mi>x</mi>
+</mfrac>
+<mo>=</mo>
+<mo>&minus;</mo>
+<mi>b</mi>
+<mo>&plusmn;</mo>
+<msqrt>
+	<msup style="padding-top: 2px"><mi>b</mi><mn>2</mn></msup>
+	<mo>&minus;</mo>
+	<mn>4</mn><mi>a</mi><mi>c</mi>
+	</msqrt>
+</math>
+
+<p>Isolate x, and you get Giulio Fagnano's equation:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mi>x</mi>
+<mo>=</mo>
+<mfrac>
+	<mrow><mn>2</mn><mi>c</mi></mrow>
+	<mrow>
+		<mo>&minus;</mo>
+		<mi>b</mi>
+		<mo>&plusmn;</mo>
+		<msqrt>
+			<msup style="padding-top: 2px"><mi>b</mi><mn>2</mn></msup>
+			<mo>&minus;</mo>
+			<mn>4</mn><mi>a</mi><mi>c</mi>
+			</msqrt>
+	</mrow>
+</mfrac>
+</math>
+
+<p>Note that multiplication with <mathtext><mo>&minus;</mo><mn>1</mn></mathtext> doesn't change the effect of the  &plusmn; operator.</p>
+
+<!--h3--Giulio Fagnano's Form--></div>
+
+<!--h2--Alternative Forms--></div>
+
+<h2 cbc>Vieta's Formulas</h2><div>
+
+<p>Vieta's formulas for the quadratic equation state that</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub><mi>x</mi><mn>1</mn></msub>
+<mo>+</mo>
+<msub><mi>x</mi><mn>1</mn></msub>
+<mo>=</mo>
+<mo>&minus;</mo>
+<mfrac><mi>b</mi><mi>a</mi></mfrac>
+</math>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub><mi>x</mi><mn>1</mn></msub>
+<msub><mi>x</mi><mn>1</mn></msub>
+<mo>=</mo>
+<mfrac><mi>c</mi><mi>a</mi></mfrac>
+</math>
+
+<!--h2--Vieta's Formulas--></div>
+
+<h2 cbc>References</h2><div>
+
+<dl>
+<dt><a href="https://de.wikipedia.org/wiki/Quadratische_Gleichung">Quadratische Gleichung</a></dt>
+	<dd>de.wikipedia.org</dd>
+<dt><a href="https://en.wikipedia.org/wiki/Quadratic_equation">Quadratic Equation</a></dt>
+	<dd>en.wikipedia.org</dd>
+</dl>
+
+<!--h2--References--></div>
+
+</body></html>
