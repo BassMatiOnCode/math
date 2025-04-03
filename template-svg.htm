@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="template-info" file-name="empty.htm" version="2025-04-03" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2025-04-03" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2025-04-03" />
+<meta name="version" content="1" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+ 
+<meta name="tags" content="knowledge, math, geometry" />
+<meta name="description" content="" />
+
+<title></title>
+
+</head><body>
+
+<svg id="svgRoot" xmlns="http://www.w3.org/2000/svg" 
+	viewBox="-150 -90 300 180" width="300" height="180" 
+	stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none" text-anchor="middle" dominant-baseline="central" font-size="14"
+	style="border:1px none silver">
+
+<style type="text/css">
+	tspan.sub { baseline-shift: sub ; font-size : 80% }
+	tspan.sup { baseline-shift: super ; font-size : 80% }
+	</style>
+
+<marker id="axisArrow" markerWidth="10" markerHeight="6" refX="9" refY="3" orient="auto-start-reverse">
+	<path d="M 1 1 L 9 3 1 5 Z" stroke="context-stroke" fill="context-fill" />
+	</marker> 
+
+<marker id="arcArrow" markerWidth="5" markerHeight="5" refX="5" refY="3" orient="auto-start-reverse">
+	<path d="M 1 2 L 5 3 1 4 Z" stroke="context-stroke" fill="context-fill" />
+	</marker> 
+
+<defs>
+	<circle id="hollowPoint" r="3" />
+	</defs>
+
+<g id="construction" stroke="lightgrey"></g>
+<g id="main"></g>
+<g id="points" fill="white"></g>
+<g id="annotations" stroke-width="4" stroke="white" fill="black" paint-order="stroke fill"></g>
+
+</svg><script type="module">
+	// Imports
+import { setDefaultInjectionTarget, setHrefTargetMap, setTagnameTargetMap } from "/inc/svg-toolbox/core/core.js" ;
+import { namedPoint } from "/inc/svg-toolbox/named-point/named-point.js" ;
+import { Path } from "/inc/svg-toolbox/path/path.js" ;
+import { Polygon } from "/inc/svg-toolbox/polygon/polygon-1.js" ;
+import { defaultAttributes as defaultTextAttributes, Text } from "/inc/svg-toolbox/text/text.js" ;
+import { Use } from "/inc/svg-toolbox/use/use.js" ;
+
+	// Configuration
+setDefaultInjectionTarget( "main" );
+setHrefTargetMap( { "#hollowPoint" : "points" } );
+setTagnameTargetMap( { text: "annotations" } );
+
+</script></body></html>
