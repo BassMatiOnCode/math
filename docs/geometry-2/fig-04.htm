@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="template-info" file-name="empty.htm" version="2025-03-14" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2025-03-28" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2025-03-28" />
+<meta name="version" content="1" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+ 
+<meta name="tags" content="knowledge, math, trigonometry" />
+<meta name="description" content="The sum of angles in a triangle" />
+
+<title>Points, lines and angles</title>
+
+</head><body>
+
+<svg id="svgRoot" xmlns="http://www.w3.org/2000/svg" 
+	viewBox="-110 -100 220 120" width="220" height="120" 
+	stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none" text-anchor="middle" dominant-baseline="central" font-size="14"
+	style="border:1px none silver">
+
+<style type="text/css">
+	tspan.sub { baseline-shift: sub ; font-size : 80% }
+	tspan.sup { baseline-shift: super ; font-size : 80% }
+	</style>
+
+<defs>
+	<circle id="hollowPoint" r="3" />
+	</defs>
+
+<g id="main"></g>
+<g id="points" fill="white"></g>
+<g id="annotations" stroke-width="4" stroke="white" fill="black" paint-order="stroke fill"></g>
+
+</svg><script type="module">
+import { setDefaultInjectionTarget, setHrefTargetMap, setTagnameTargetMap } from "/inc/svg-toolbox/core/core.js" ;
+import { namedPoint } from "/inc/svg-toolbox/named-point/named-point.js" ;
+import { Path } from "/inc/svg-toolbox/path/path.js" ;
+import { Polygon } from "/inc/svg-toolbox/polygon/polygon-1.js" ;
+import { defaultAttributes as defaultTextAttributes, Text } from "/inc/svg-toolbox/text/text.js" ;
+import { Use } from "/inc/svg-toolbox/use/use.js" ;
+
+	// Configuration
+setDefaultInjectionTarget( "main" );
+setHrefTargetMap( { "#hollowPoint" : "points" } );
+setTagnameTargetMap( { text: "annotations" } );
+
+	// Points
+const { point: A } = new namedPoint( "A", { x: -80 }, { dx: -10, dy: 0 } );
+const { point: B } = new namedPoint( "B", { x: +80 }, { dx: +10, dy: 0 } );
+const { point: C } = new namedPoint( "C", { x: +10, y: -70 }, { dx: 0, dy: -12 } );
+
+	// Triangle
+const triangle = new Polygon( [ A, B, C ] ) ;
+
+	// Angles
+new Text( "α", { x: A.x + 22, y: A.y - 9 } );
+new Text( "β", { x: B.x - 22, y: B.y - 11 } );
+new Text( "γ", { x: C.x, y: C.y + 10 } );
+
+	// Arcs
+const alpha = Math.atan(( C.y - A.y ) / ( C.x - A.x ));
+new Path( `M ${ A.x + 35 } ${ A.y } A 35 35 0 0 0 ${ 35 * Math.cos( alpha ) + A.x } ${ 35 * Math.sin( alpha ) + A.y }` ); 
+const beta = Math.atan(( C.y - B.y ) / ( C.x - B.x ));
+new Path( `M ${ B.x - 35 } ${ B.y } A 35 35 0 0 1 ${ B.x - 35 * Math.cos( beta )} ${ B.y - 35 * Math.sin( beta ) }` ); 
+const gammaA = Math.atan(( C.x - A.x ) / ( A.y - C.y ));
+const gammaB = Math.atan(( B.x - C.x ) / ( B.y - C.y ));
+new Path( `M ${ C.x - 25 * Math.sin( gammaA ) } ${ C.y + 25 * Math.cos( gammaA ) } A 25 25 0 0 0 ${ C.x + 25 * Math.sin( gammaB ) }  ${ C.y + 25 * Math.cos( gammaB ) }` ); 
+
+	// Side names
+
+defaultTextAttributes["dominant-baseline"] = "middle" ;
+new Text( "a", { x: ( B.x + C.x ) / 2, y: ( B.y + C.y ) / 2 } ) ;
+new Text( "b", { x: ( A.x + C.x ) / 2, y: ( A.y + C.y ) / 2 } ) ;
+new Text( "c", { x: ( A.x + B.x ) / 2 } ) ;
+
+
+</script></body></html>

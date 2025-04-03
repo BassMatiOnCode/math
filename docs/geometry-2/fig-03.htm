@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="template-info" file-name="empty.htm" version="2025-03-14" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2025-03-29" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2025-03-29" />
+<meta name="version" content="1" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+ 
+<meta name="tags" content="knowledge, math, geometry, line" />
+<meta name="description" content="A line with start and end points." />
+
+<title>Line with end points</title>
+
+</head><body>
+
+<svg id="svgRoot" xmlns="http://www.w3.org/2000/svg" 
+	viewBox="-100 -70 200 140" width="200" height="140" 
+	stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none" text-anchor="middle" dominant-baseline="central" font-size="14"
+	style="border:1px nones silver">
+
+<style type="text/css">
+	tspan.sub { baseline-shift: sub ; font-size : 80% }
+	tspan.sup { baseline-shift: super ; font-size : 80% }
+	</style>
+
+<marker id="hollowPointMarker" markerWidth="8" markerHeight="8" refX="4" refY="4" markerUnits="strokeWidth">
+	<circle cx="4" cy="4" r="3" stroke="context-stroke" fill="context-fill" />
+	</marker>
+
+<defs>
+	<circle id="hollowPoint" r="3" />
+	</defs>
+
+<g id="main"></g>
+<g id="points" fill="white"></g>
+<g id="annotations" stroke-width="4" stroke="white" fill="black" paint-order="stroke fill"></g>
+
+</svg><script type="module">
+import { setDefaultInjectionTarget, setHrefTargetMap, setTagnameTargetMap } from "/inc/svg-toolbox/core/core.js" ;
+import { Line } from "/inc/svg-toolbox/line/line.js" ;
+import { namedPoint } from "/inc/svg-toolbox/named-point/named-point.js" ;
+import { Path } from "/inc/svg-toolbox/path/path.js" ;
+import { Polygon } from "/inc/svg-toolbox/polygon/polygon-1.js" ;
+import { defaultAttributes as defaultTextAttributes, Text } from "/inc/svg-toolbox/text/text.js" ;
+import { Use } from "/inc/svg-toolbox/use/use.js" ;
+
+	// Configuration
+setDefaultInjectionTarget( "main" );
+setHrefTargetMap( { "#hollowPoint" : "points" } );
+setTagnameTargetMap( { text: "annotations" } );
+
+	// Unbounded line
+const { point: pointA1 } = new namedPoint( "A", { x: -50, y: -40 }, { dx: 0, dy: -15 } );
+const { point: pointB1 } = new namedPoint( "B", { x: +50, y: -40 }, { dx: 0, dy: -15 } );
+const lineA = new Line( { x1: pointA1.x - 30, x2: pointB1.x + 30, y1: pointA1.y, y2: pointB1.y } );
+
+	// Ray
+const { point: pointA2 } = new namedPoint( "A", { x: -50, y: 0 }, { dx: 0, dy: -15 } );
+const { point: pointB2 } = new namedPoint( "B", { x: +50, y: 0 }, { dx: 0, dy: -15 } );
+const lineB = new Line( { x1: pointA2.x, x2: pointB2.x + 30, y1: pointA2.y, y2: pointB2.y } );
+
+	// Line segment
+const { point: pointA3 } = new namedPoint( "A", { x: -50, y: 40 }, { dx: 0, dy: -15 } );
+const { point: pointB3 } = new namedPoint( "B", { x: +50, y: 40 }, { dx: 0, dy: -15 } );
+const lineC = new Line( { x1: pointA3.x, x2: pointB3.x, y1: pointA3.y, y2: pointB3.y } );
+new Text( "d", { x: ( pointA3.x1 + pointB3.x2 ) / 2, y: pointA3.y }, { "dominant-baseline" : "middle" } );
+
+</script></body></html>

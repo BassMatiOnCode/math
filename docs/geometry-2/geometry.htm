@@ -4,37 +4,70 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="template-info" file-name="empty.htm" version="2024-08-07" editor="USP" />
 <meta name="author" content="USP" />
-<meta name="creation-date" content="2025-03-11" />
+<meta name="creation-date" content="2025-03-29" />
 <meta name="editor" content="USP" />
-<meta name="change-date" content="2025-03-11" />
+<meta name="change-date" content="2025-03-29" />
 <meta name="version" content="1" />
-<meta name="sectionTitle" content="title.svg" />
+<meta name="sectionTitle" content="../title.svg" />
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
 <link rel="stylesheet" href="/inc/webcat/page-structure/tutorial-page.css" />
 <script type="module" src="/inc/webcat/page-structure/tutorial-page.js" ></script>
 
-<meta name="categories" content="Math > Discrete Math" />
-<meta name="tags" content="math, mathematics, tutorial, geometry" />
-<meta name="description" content="" />
+<style>
+math mi.bold { font-weight : bold } 
+</style>
 
-<title> (Math > Geometry)</title>
+<meta name="categories" content="Math > Geometry" />
+<meta name="tags" content="math, mathematics, tutorial, geometry" />
+<meta name="description" content="This page provides an overview over this branch of mathematics and an initial vocabulary." />
+
+<title>Geometry (Math > Geometry)</title>
 
 </head><body class="math">
 
-<h1></h1><p class="subtitle"></p>
+<h1>Geometry</h1><p class="subtitle">Overview and vocabulary</p>
 
-<h2 cbc>Introduction</h2><div>
+<p>Geometry is about points, lines, planes and figures. We will concentrate on <i>Euclidian Geometry</i>, where parallel lines don't intersect, diverge or converge, where lines are straight and planes are "flat", and the sum of angles in every triangle is 180&deg;.</p>
 
-<!--h2--Introduction--></div>
+<p>To talk about geometry, we need a graphical language and some definition of terms:</p>
 
-<h2 cbc>References</h2><div>
+<p><i>Points</i> are designated by uppercase letters <math xmlns=""><mtext>A</mtext><mo>,</mo><mtext>B</mtext><mo>,</mo><mtext>etc</mtext></math>. Sometimes points are <i>numbered</i>, such as <math xmlns=""><mtext>P1</mtext><mo>,</mo><mtext>P2</mtext><mo>,</mo><mtext>P3</mtext></math>.</p>
 
-<dl>
-<dt></dt>
-	<dd></dd>
-</dl>
+<figure class="figure"><figcaption>Points (<a href="fig-01.htm" target="_blank">fig-01.htm</a>)</figcaption>
+<object class="content-height-observed no-border" type="text/html" data="fig-01.htm"></object>
+</figure>
 
-<!--h2--References--></div>
+
+<p>The <i>coordinates</i> of a point are usually designated by an index letter, such as <math xmlns=""><msub><mi>A</mi><mn>x</mn></msub><mo>,</mo><msub><mi>A</mi><mn>y</mn></msub><mo>,</mo><msub><mi>A</mi><mn>z</mn></msub></math> or <math xmlns=""><msub><mtext>P1</mtext><mn>x</mn></msub><mo>,</mo><msub><mtext>P1</mtext><mn>y</mn></msub><mo>,</mo><msub><mtext>P1</mtext><mn>z</mn></msub></math>, with index letters for the related axis.</p>
+
+<p>A <i>vector</i> from the <i>origin</i> of a <i>coordinate system</i> to a point A is designated by a lowercase letter a with an arrow above or a bold lowercase letter, such as <math xmlns=""><mover><mi>a</mi><mo>&rarr;</mo></mover></math>. In the literature, vectors are often written with bold letters, such as <math xmlns=""><mi class="bold">a</mi></math>.</p>
+
+<p><i>Vector components</i> are designated with indexed lowercase letters, such as <math xmlns=""><msub><mi>a</mi><mn>x</mn></msub><mo>,</mo><msub><mi>a</mi><mn>y</mn></msub><mo>,</mo><msub><mi>a</mi><mn>y</mn></msub></math>,  or with numbers in a multidimensional model, such as <math xmlns=""><msub><mi>a</mi><mn>1</mn></msub><mo>,</mo><msub><mi>a</mi><mn>2</mn></msub><mo>,</mo><msub><mi>a</mi><mn>3</mn></msub></math>.</p>
+
+<p>Two points define a <i>straight line</i> going through or connecting them. The line may be unbounded (<math xmlns=""><mtext>AB</mtext></math>), or constrained on one end like a ray (<math xmlns=""><mover><mtext>AB</mtext><mo>&#x21A6;</mo></mover></math>), or constrained on both ends to the distance  between them (<math xmlns=""><mtext class="overline">AB</mtext></math>):</p>
+
+<figure class="figure"><figcaption>Points and lines (<a href="fig-03.htm" target="_blank">fig-03.htm</a>)</figcaption>
+<object class="content-height-observed no-border" type="text/html" data="fig-03.htm"></object>
+</figure>
+
+
+<p>The <i>length of a line</i> in the text or equation is indicated by vertical bars as in <math xmlns=""><mo>❘</mo><mtext>AB</mtext><mo>❘</mo></math> or <math xmlns=""><mo>|</mo><mtext class="">P1P2</mtext><mo>|</mo></math>.</p>
+
+<p>Lines in drawings can also be designated with lowercase letters <math xmlns=""><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi></math>, etc.</p>
+
+<figure class="figure"><figcaption>Points, lines, angles (<a href="fig-04.htm" target="_blank">fig-04.htm</a>)</figcaption>
+<object class="content-height-observed no-border" type="text/html" data="fig-04.htm"></object>
+</figure>
+
+<p>The <i>Angle</i> at the vertex between two rays (arms, legs, sides) are designated with greek letters, such as <math xmlns=""><mi>&alpha;</mi><mo>,</mo><mi>&beta;</mi><mo>,</mo><mi>&gamma;</mi></math>. </p>
+
+<figure class="figure"><figcaption>Vertex, arms, angle (<a href="fig-05.htm" target="_blank">fig-05.htm</a>)</figcaption>
+<object class="content-height-observed no-border" type="text/html" data="fig-05.htm"></object>
+</figure>
+
+<p>The orientation of the angle is usually anti-clockwise. In an SVG context, where the y-axis is pointing down, angles are counted clockwise instead, as shown above.</p>
+
+<p>Angles can be designated by points, such as in <math xmlns=""><mo>&measuredangle;</mo><mtext>BAC</mtext></math>, the the point in the middle represents the vertex.</p>
 
 </body></html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="template-info" file-name="empty.htm" version="2025-03-14" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2025-03-30" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2025-03-30" />
+<meta name="version" content="1" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+ 
+<meta name="tags" content="knowledge, math, trigonometry" />
+<meta name="description" content="The sum of angles in a triangle" />
+
+<title>Coordinates</title>
+
+</head><body>
+
+<svg id="svgRoot" xmlns="http://www.w3.org/2000/svg" 
+	viewBox="-110 -100 220 120" width="220" height="120" 
+	stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none" text-anchor="middle" dominant-baseline="central" font-size="14"
+	style="border:1px none silver">
+
+<style type="text/css">
+	tspan.sub { baseline-shift: sub ; font-size : 80% }
+	tspan.sup { baseline-shift: super ; font-size : 80% }
+	</style>
+
+<defs>
+	<circle id="hollowPoint" r="3" />
+	</defs>
+
+<g id="grid"></g>
+<g id="construction"></g>
+<g id="main"></g>
+<g id="points" fill="white"></g>
+<g id="annotations" stroke-width="4" stroke="white" fill="black" paint-order="stroke fill"></g>
+
+</svg><script type="module">
+import { setDefaultInjectionTarget, setHrefTargetMap, setTagnameTargetMap } from "/inc/svg-toolbox/core/core.js" ;
+import { Grid } from "/inc/svg-toolbox/grid/grid-1.js" ;
+import { namedPoint } from "/inc/svg-toolbox/named-point/named-point.js" ;
+
+	// Configuration
+setDefaultInjectionTarget( "main" );
+setTagnameTargetMap( { text: "annotations" } );
+
+	// Grid
+new Grid( {mx:5} );
+
+	// Points
+const { point: A } = new namedPoint( "A", { x: -80 }, { dx: -10, dy: 0 } );
+const { point: B } = new namedPoint( "B", { x: +80 }, { dx: +10, dy: 0 } );
+const { point: C } = new namedPoint( "C", { x: +10, y: -70 }, { dx: 0, dy: -12 } );
+const { point: P1 } = new namedPoint( "P1", { x: -40, y: -20 }, { dx: 0, dy: -12 } );
+const { point: P2 } = new namedPoint( "P2", { x: 40, y: -30 }, { dx: 0, dy: -12 } );
+
+
+</script></body></html>

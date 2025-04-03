@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="template-info" file-name="empty.htm" version="2025-03-14" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2025-03-28" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2025-03-28" />
+<meta name="version" content="1" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+ 
+<meta name="tags" content="knowledge, math, trigonometry" />
+<meta name="description" content="The sum of angles in a triangle" />
+
+<title>Points, lines and angles</title>
+
+</head><body>
+
+<svg id="svgRoot" xmlns="http://www.w3.org/2000/svg" 
+	viewBox="-110 -100 220 120" width="220" height="120" 
+	stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none" text-anchor="middle" dominant-baseline="central" font-size="14"
+	style="border:1px none silver">
+
+<style type="text/css">
+	tspan.sub { baseline-shift: sub ; font-size : 80% }
+	tspan.sup { baseline-shift: super ; font-size : 80% }
+	</style>
+
+<marker id="arcArrow" markerWidth="5" markerHeight="5" refX="5" refY="3" orient="auto-start-reverse">
+	<path d="M 1 2 L 5 3 1 4 Z" stroke="context-stroke" fill="context-fill" />
+	</marker> 
+
+<defs>
+	<circle id="hollowPoint" r="3" />
+	</defs>
+
+<g id="main"></g>
+<g id="points" fill="white"></g>
+<g id="annotations" stroke-width="4" stroke="white" fill="black" paint-order="stroke fill"></g>
+
+</svg><script type="module">
+import { setDefaultInjectionTarget, setHrefTargetMap, setTagnameTargetMap } from "/inc/svg-toolbox/core/core.js" ;
+import { namedPoint } from "/inc/svg-toolbox/named-point/named-point.js" ;
+import { Path } from "/inc/svg-toolbox/path/path.js" ;
+import { Polyline } from "/inc/svg-toolbox/polyline/polyline.js" ;
+import { defaultAttributes as defaultTextAttributes, Text } from "/inc/svg-toolbox/text/text.js" ;
+import { Use } from "/inc/svg-toolbox/use/use.js" ;
+
+	// Configuration
+setDefaultInjectionTarget( "main" );
+setHrefTargetMap( { "#hollowPoint" : "points" } );
+setTagnameTargetMap( { text: "annotations" } );
+
+	// Legs
+const legs = new Polyline( "60 -80 -80 -20 80 20" );
+
+	// Vertex
+const { point: A } = new namedPoint( "A", { p: legs.point( 1 ) }, { dx: -10, dy: 0 } );
+
+	// Angle
+new Text( "&alpha;" , { x: A.x + 20, y: A.y - 3 } );
+const r = 30 ;
+const phi1 = Math.atan(( legs.point( 0 ).y - legs.point( 1 ).y ) / ( legs.point( 0 ).x - legs.point( 1 ).x ));
+const phi2 = Math.atan(( legs.point( 2 ).y - legs.point( 1 ).y ) / ( legs.point( 2 ).x - legs.point( 1 ).x ));
+new Path( `M ${ A.x + r * Math.cos( phi2 )} ${ A.y + r * Math.sin( phi2 )} A ${ r } ${ r } 0 0 0 ${ A.x + r * Math.cos( phi1 )} ${ A.y + r * Math.sin( phi1 )}`, { attributes: { "marker-start": "url(#arcArrow)" } } );
+
+	// Points
+new namedPoint( "B", { x: A.x + 100, y: 100 * Math.tan( phi1 ) + A.y } );
+new namedPoint( "C", { x: A.x+ 100, y: 100 * Math.tan( phi2 ) + A.y }, { dy: +5 } );
+
+</script></body></html>
