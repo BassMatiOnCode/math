@@ -19,7 +19,7 @@
 <g id="points"></g>
 <g id="text" font-size="14" stroke="white" stroke-width="3" fill="black" paint-order="stroke fill markers" text-anchor="middle" dominant-baseline="central"></g>
 
-<script type="text/javascript" href="/inc/webcat/svg/svg-1.js"></script>
-<script type="text/javascript" href="/inc/webcat/svg/ellipse-1.js"></script>
+<script type="text/javascript" href="/inc/svg-toolbox/svg-core-0.js"></script>
+<script type="text/javascript" href="/inc/svg-toolbox/ellipse-0.js"></script>
 <script type="text/javascript" href="fig-005-a.js"></script>
 </svg>

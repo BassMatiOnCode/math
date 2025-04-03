@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="template-info" file-name="empty.htm" version="2025-03-14" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2025-03-23" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2025-03-23" />
+<meta name="version" content="1" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+ 
+<meta name="tags" content="knowledge, math, geometry" />
+<meta name="description" content="" />
+
+<title>Ellipse intersected by a line</title>
+
+</head><body>
+
+<svg id="svgRoot" xmlns="http://www.w3.org/2000/svg" 
+	viewBox="-140 -150 300 240" width="300" height="240" 
+	stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none" text-anchor="middle" dominant-baseline="central" font-size="14"
+	style="border:1px none silver">
+
+<style type="text/css">
+	tspan.sub { baseline-shift: sub ; font-size : 80% }
+	tspan.sup { baseline-shift: super ; font-size : 80% }
+	</style>
+
+<defs>
+	<circle id="hollowPoint" r="3" />
+	</defs>
+
+<g id="construction" stroke="darkgrey"></g>
+<g id="main"></g>
+<g id="points" fill="white"></g>
+<g id="annotations" stroke-width="4" stroke="white" fill="black" paint-order="stroke fill"></g>
+
+</svg><script type="module">
+import { setDefaultInjectionTarget, setHrefTargetMap, setTagnameTargetMap } from "/inc/svg-toolbox/core/core.js" ;
+import { Circle } from "/inc/svg-toolbox/circle/circle.js" ;
+import { Ellipse } from "/inc/svg-toolbox/ellipse/ellipse.js" ;
+import { Line } from "/inc/svg-toolbox/line/line.js" ;
+import { Text } from "/inc/svg-toolbox/text/text.js" ;
+import { Use } from "/inc/svg-toolbox/use/use.js" ;
+
+	// Setup injection maps
+setTagnameTargetMap( { text : "annotations" } ) ;
+setHrefTargetMap( { "#hollowPoint" : "points" } ) ;
+setDefaultInjectionTarget( "main" );
+
+	// The drawing
+const ellipse = new Ellipse( { rx: 120, ry: 60 } );
+const p0 = new Use( "hollowPoint" );
+new Text( "P<tspan class='sub'>0</tspan>", { x: p0.x - 10, y: p0.y - 15 } ) ;
+const p1 = new Use( "hollowPoint", { x: 30, y: 10 } );
+new Text( "P<tspan class='sub'>1</tspan>", { x: p1.x, y: p1.y + 15 } ) ;
+const p2 = new Use( "hollowPoint", { x: 140, y: -120 } );
+new Text( "P<tspan class='sub'>2</tspan>", { x: p2.x -15, y: p2.y - 5 } ) ;
+const line = new Line( { p1, p2 } );
+const p3 = new Use( "hollowPoint", { x: 77, y: -45 } );
+new Text( "P<tspan class='sub'>3</tspan>", { x: p3.x -10, y: p3.y - 18 } ) ;
+const p4 = new Use( "hollowPoint", { x: p2.x, y: p1.y } );
+
+	// Construction lines
+setDefaultInjectionTarget( "construction" );
+new Line( { p1, p2: p4 } );
+new Text( "&Delta;x", { x: ( p1.x + p2.x ) / 2, y: p1.y } ); 
+new Line( { p1: p2, p2: p4 } );
+new Text( "&Delta;y", { x: p2.x, y: ( p1.y + p2.y ) / 2 } ); 
+
+</script></body></html>

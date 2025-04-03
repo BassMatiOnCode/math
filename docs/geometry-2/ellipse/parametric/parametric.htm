@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2024-08-07" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2025-03-27" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2025-03-27" />
+<meta name="version" content="1" />
+<meta name="sectionTitle" content="../../../title.svg" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/webcat/page-structure/tutorial-page.css" />
+<script type="module" src="/inc/webcat/page-structure/tutorial-page.js" ></script>
+<style>
+math mfrac + mi { padding-left: 5px }
+</style>
+
+<meta name="categories" content="Math > Geometry > Ellipse" />
+<meta name="tags" content="math, mathematics, tutorial, geometry, ellipse, parametric, representation, excentric, angle" />
+<meta name="description" content="Describes the parametric equation of an ellipse based on the eccentric angle Θ" />
+
+<title>Parametric Representation (Math > Geometry > Ellipse)</title>
+
+</head><body class="math">
+
+<h1>Parametric Representation</h1>
+
+<h2 cbc>Introduction</h2><div>
+
+<p>The construction method of <a href="https://de.wikipedia.org/wiki/Philippe_de_La_Hire">Phillipe de la Hire</a> uses the two vertex circles of the ellipse, with <math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>r</mi><mn>1</mn></msub><mo>=</mo><mi>a</mi><mo>=</mo><mrow><mo>|</mo><mi>CQ</mi><mo>|</mo></mrow></math> and <math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>r</mi><mn>2</mn></msub><mo>=</mo><mi>b</mi><mo>=</mo><mrow><mo>|</mo><mi>CR</mi><mo>|</mo></mrow></math> to construct the point <mathtext>P</mathtext> on the ellipse:</p>
+
+<figure class="figure"><figcaption>Phillipe de la Hire's method (<a href="fig-001.htm" target="_blank">fig-001.htm</a>)</figcaption>
+<object class="content-height-observed no-border" type="text/html" data="fig-001.htm"></object>
+</figure>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mrow class="hspace"><mi>a</mi><mi>x</mi><mi>sec</mi><mi>Θ</mi></mrow>
+<mo>&minus;</mo>
+<mrow class="hspace"><mi>b</mi><mi>y</mi><mi>csc</mi><mi>Θ</mi></mrow>
+<mo>=</mo>
+<msup><mi>a</mi><mn>2</mn></msup>
+<mo>&minus;</mo>
+<msup><mi>b</mi><mn>2</mn></msup>
+</math>
+
+<p>The point <mathtext>Q</mathtext> determines the x-coordinate of the point <mathtext>P</mathtext> and has the coordinates <math xmlns="http://www.w3.org/1998/Math/MathML"><mo>(</mo><mi>a</mi><mo>cos</mo><mi>&tau;</mi><mo>,</mo><mi>a</mi><mo>sin</mo><mi>&tau;</mi><mo>)</mo></math>.</p>
+
+
+<p>The point <mathtext>R</mathtext> determines the y-coordinate of the point <mathtext>P</mathtext> and has the coordinates <math xmlns="http://www.w3.org/1998/Math/MathML"><mo>(</mo><mi>b</mi><mo>cos</mo><mi>&tau;</mi><mo>,</mo><mi>b</mi><mo>sin</mo><mi>&tau;</mi><mo>)</mo></math>.</p>
+
+<p>So the point <mathtext>P</mathtext> has the coordinates <math xmlns="http://www.w3.org/1998/Math/MathML"><mo>(</mo><mi>a</mi><mo>cos</mo><mi>&tau;</mi><mo>,</mo><mi>b</mi><mo>sin</mo><mi>&tau;</mi><mo>)</mo></math>.</p>
+
+<p>NOTE that τ and φ are NOT identical. The relation between τ and φ in a not rotated ellipse with a > b is</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mo>tan</mo><mi>φ</mi>
+<mo>=</mo>
+<mfrac><mi>b</mi><mi>a</mi></mfrac>
+<mo>tan</mo><mi>τ</mi>
+<mo>=</mo>
+<msqrt>
+	<mn>1</mn>
+	<mo>&minus;</mo>
+	<msup><mi>ε</mi><mn>2</mn></msup>
+</msqrt>
+<mo>tan</mo><mi>τ</mi>
+</math>
+
+<p>Interpretation: If we multiply the y-coordinate of <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>P</mi></math> by <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mo>/</mo><mi>b</mi></math>, we get to the point <math xmlns="http://www.w3.org/1998/Math/MathML"><mtext>Q</mtext></math>.</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msub><mi>y</mi><mn>q</mn></msub>
+<mo>=</mo>
+<mfrac><mi>a</mi><mi>b</mi></mfrac>
+<mi>y</mi>
+<mo>=</mo>
+<mfrac><mi>a</mi><mi>b</mi></mfrac>
+<mi>x</mi><mo>tan</mo><mi>φ</mi>
+<mo>=</mo>
+<mi>x</mi><mo>tan</mo><mi>τ</mi>
+<mo>=</mo>
+<mi>a</mi><mo>sin</mo><mi>τ</mi>
+</math>
+
+
+<p>We can (???)  inject these expressions into the ellipse equation:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<mfrac>
+	<msup><mi>x</mi><mn>2</mn></msup>
+	<msup><mi>a</mi><mi>2</mi></msup>
+</mfrac>
+<mo>+</mo>
+<mfrac>
+	<msup><mi>y</mi><mn>2</mn></msup>
+	<msup><mi>b</mi><mi>2</mi></msup>
+</mfrac>
+<mo>=</mo>
+<mn>1</mn>
+<mo>=</mo>
+<mfrac>
+	<mrow>
+		<msup><mi>a</mi><mn>2</mn></msup>
+		<msup><mo>cos</mo><mn>2</mn></msup><mi>&tau;</mi>
+	</mrow>
+	<msup><mi>a</mi><mi>2</mi></msup>
+</mfrac>
+<mo>+</mo>
+<mfrac>
+	<mrow>
+		<msup><mi>b</mi><mn>2</mn></msup>
+		<msup><mo>sin</mo><mn>2</mn></msup><mi>&tau;</mi>
+	</mrow>
+	<msup><mi>b</mi><mi>2</mi></msup>
+</mfrac>
+</math>
+
+<p>to obtain the parameterized ellipse equation:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+<msup><mo>cos</mo><mn>2</mn></msup><mi>&tau;</mi>
+<mo>+</mo>
+<msup><mo>sin</mo><mn>2</mn></msup><mi>&tau;</mi>
+<mo>=</mo>
+<mn>1</mn>
+
+</math>
+
+
+
+<!--h2--Introduction--></div>
+
+<h2 cbc>References</h2><div>
+
+<dl>
+<dt></dt>
+	<dd></dd>
+</dl>
+
+<!--h2--References--></div>
+
+</body></html>

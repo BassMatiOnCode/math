@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="template-info" file-name="empty.htm" version="2025-03-14" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2025-03-22" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2025-03-22" />
+<meta name="version" content="1" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+ 
+<meta name="tags" content="math, geometry, ellipse, demo" />
+<meta name="description" content="Illustrates how to create an ellipse from a circle by stretching." />
+
+<title>Ellipse as Stretched Circle</title>
+
+</head><body>
+
+<svg id="svgRoot" xmlns="http://www.w3.org/2000/svg" 
+	viewBox="-150 -90 300 180" width="300" height="180" 
+	stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none" text-anchor="middle" dominant-baseline="central" font-size="14"
+	style="border:1px none silver">
+
+<style type="text/css">
+	tspan.sub { baseline-shift: sub ; font-size : 80% }
+	tspan.sup { baseline-shift: super ; font-size : 80% }
+	</style>
+
+<defs>
+	<circle id="hollowPoint" r="3" />
+	</defs>
+
+<g id="main"></g>
+<g id="points" fill="white"></g>
+<g id="annotations" stroke-width="4" stroke="white" fill="black" paint-order="stroke fill"></g>
+
+</svg><script type="module">
+
+import { setDefaultInjectionTarget, setHrefTargetMap, setTagnameTargetMap } from "/inc/svg-toolbox/core/core.js" ;
+import { Circle } from "/inc/svg-toolbox/circle/circle.js" ;
+import { Ellipse } from "/inc/svg-toolbox/ellipse/ellipse.js" ;
+import { Line } from "/inc/svg-toolbox/line/line.js" ;
+import { Text } from "/inc/svg-toolbox/text/text.js" ;
+import { Use } from "/inc/svg-toolbox/use/use.js" ;
+
+	// Setup injection maps
+setTagnameTargetMap( { text : "annotations" } ) ;
+setHrefTargetMap( { "#hollowPoint" : "points" } ) ;
+setDefaultInjectionTarget( "main" );
+	
+	// The geometry
+const circle = new Circle( { r: 60 } );
+const ellipse = new Ellipse( { rx: 120, ry: circle.r } );
+const majorAxis = new Line( { x1: -ellipse.a, x2: +ellipse.a } );
+new Use( "hollowPoint", { p: majorAxis.p1 } ) ;
+new Text( "A<tspan class='sub'>1</tspan>", { x: majorAxis.x1-15, y: -12 } ) ;
+new Use( "hollowPoint", { p: majorAxis.p2 } ) ;
+new Text( "A<tspan class='sub'>2</tspan>", { x: majorAxis.x2+15, y: -12 } ) ;
+new Use( "hollowPoint", { y: -circle.r } ) ;
+new Text( "B<tspan class='sub'>1</tspan>", { y: circle.r+15 } ) ;
+new Use( "hollowPoint", { y: +circle.r } ) ;
+new Text( "B<tspan class='sub'>2</tspan>", { y: -circle.r-17 } ) ;
+// new Use( "hollowPoint", { x: -circle.r } ) ;
+new Use( "hollowPoint", { x: +circle.r } ) ;
+new Text( "D", { x: +circle.r+12, y: -12 } ) ;
+new Use( "hollowPoint" ) ;
+new Text( "C", { x: -10, y: -12 } ) ;
+
+	// Triangle 
+const angle = 50 / 180 * Math.PI;
+const pointE = new Use( "hollowPoint", { x: circle.r * Math.cos( angle ), y: -circle.r * Math.sin( angle ) } );
+new Text( "E", { x: pointE.x, y: pointE.y - 13 } ) ;
+const pointF = new Use( "hollowPoint", { x: circle.r * Math.cos( angle ) } );
+new Text( "F", { x: pointF.x, y: 15 } ) ;
+new Line( { p2: pointE.p } ) ;
+new Line( { p1: pointE.p, p2: pointF.p } );
+const pointG = new Use( "hollowPoint", { p: ellipse.pointAt( { y: pointE.y } ) } );
+new Line( { p1: pointE.p, p2: pointG.p } );
+new Text( "G", { x: pointG.x, y: pointG.y - 13 } ) ;
+
+</script></body></html>
