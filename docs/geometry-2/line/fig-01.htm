@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="template-info" file-name="empty.htm" version="2025-03-14" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2025-03-29" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2025-03-29" />
+<meta name="version" content="1" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+ 
+<meta name="tags" content="knowledge, math, trigonometry" />
+<meta name="description" content="The sum of angles in a triangle" />
+
+<title>Intersection of lines</title>
+
+</head><body>
+
+<svg id="svgRoot" xmlns="http://www.w3.org/2000/svg" 
+	viewBox="-60 -40 140 100" width="140" height="100" 
+	stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none" text-anchor="middle" dominant-baseline="central" font-size="14"
+	style="border:1px none silver">
+
+<style type="text/css">
+	tspan.sub { baseline-shift: sub ; font-size : 80% }
+	tspan.sup { baseline-shift: super ; font-size : 80% }
+	</style>
+
+<marker id="hollowPointMarker" markerWidth="8" markerHeight="8" refX="4" refY="4" markerUnits="strokeWidth">
+	<circle cx="4" cy="4" r="3" stroke="context-stroke" fill="context-fill" />
+	</marker>
+
+<defs>
+	<circle id="hollowPoint" r="3" />
+	</defs>
+
+<g id="construction"></g>
+<g id="main"></g>
+<g id="points" fill="white"></g>
+<g id="annotations" stroke-width="4" stroke="white" fill="black" paint-order="stroke fill"></g>
+
+</svg><script type="module">
+	// Imports
+import { setDefaultInjectionTarget, setHrefTargetMap, setTagnameTargetMap } from "/inc/svg-toolbox/core/core.js" ;
+import { Line } from "/inc/svg-toolbox/line/line.js" ;
+import { namedPoint } from "/inc/svg-toolbox/named-point/named-point.js" ;
+import { Path } from "/inc/svg-toolbox/path/path.js" ;
+import { Polygon } from "/inc/svg-toolbox/polygon/polygon-1.js" ;
+import { defaultAttributes as defaultTextAttributes, Text } from "/inc/svg-toolbox/text/text.js" ;
+import { Use } from "/inc/svg-toolbox/use/use.js" ;
+
+	// Configuration
+setDefaultInjectionTarget( "main" );
+setHrefTargetMap( { "#hollowPoint" : "points" } );
+setTagnameTargetMap( { text: "annotations" } );
+
+	// Points
+const { point: P } = new namedPoint( "P", { x: 10, y: 10 }, { dx: 0, dy: -12 } );
+
+	// Lines through the point
+const slopeA = 0.6 ;
+const y1 = -50 * slopeA;
+new Line( { x1: -50 + P.x, y1: -50 * slopeA + P.y, x2: 50 + P.x, y2: 50 * slopeA + P.y } );
+new Text( "a", { x: -30, y: -30 * slopeA } );
+const slopeB = -0.3 ;
+new Line( { x1: -50 + P.x, y1: -50 * slopeB + P.y, x2: 50 + P.x, y2: 50 * slopeB + P.y } );
+new Text( "b", { x: -20, y: -20 * slopeB + P.y } );
+</script></body></html>

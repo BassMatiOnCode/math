@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en-US"><head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="template-info" file-name="empty.htm" version="2025-03-30" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2025-04-03" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2025-04-03" />
+<meta name="version" content="1" />
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+ 
+<meta name="tags" content="knowledge, math, geometry, line" />
+<meta name="description" content="Slope-Intercept Form of a Line Equation" />
+
+<title>Slope-Intercept Form of a Line Equation</title>
+
+</head><body>
+
+<svg id="svgRoot" xmlns="http://www.w3.org/2000/svg" 
+	viewBox="-50 -180 240 230" width="240" height="230" 
+	stroke="black" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" fill="none" text-anchor="middle" dominant-baseline="central" font-size="14"
+	style="border:1px none silver">
+
+<style type="text/css">
+	tspan.sub { baseline-shift: sub ; font-size : 80% }
+	tspan.sup { baseline-shift: super ; font-size : 80% }
+	</style>
+
+<marker id="axisArrow" markerWidth="10" markerHeight="6" refX="9" refY="3" orient="auto-start-reverse">
+	<path d="M 1 1 L 9 3 1 5 Z" stroke="context-stroke" fill="context-fill" />
+	</marker> 
+
+<marker id="arcArrow" markerWidth="5" markerHeight="5" refX="5" refY="3" orient="auto-start-reverse">
+	<path d="M 1 2 L 5 3 1 4 Z" stroke="context-stroke" fill="context-fill" />
+	</marker> 
+
+<defs>
+	<circle id="hollowPoint" r="3" />
+	</defs>
+
+<g id="coordinateSystem">
+	<g id="grid" stroke="grey"></g>
+	<g id="axes" marker-end="url(#axisArrow)" fill="black"></g>
+	</g>
+<g id="construction" stroke="lightgrey"></g>
+<g id="main"></g>
+<g id="points" fill="white"></g>
+<g id="annotations" stroke-width="4" stroke="white" fill="black" paint-order="stroke fill"></g>
+
+</svg><script type="module">
+	// Imports
+import { setDefaultInjectionTarget, setHrefTargetMap, setTagnameTargetMap } from "/inc/svg-toolbox/core/core.js" ;
+import { Line } from "/inc/svg-toolbox/line/line.js" ;
+import { namedPoint } from "/inc/svg-toolbox/named-point/named-point.js" ;
+import { Path } from "/inc/svg-toolbox/path/path.js" ;
+import { Polygon } from "/inc/svg-toolbox/polygon/polygon-1.js" ;
+import { defaultAttributes as defaultTextAttributes, defaultOptions as defaultTextOptions, Text } from "/inc/svg-toolbox/text/text.js" ;
+import { Use } from "/inc/svg-toolbox/use/use.js" ;
+
+	// Configuration
+setHrefTargetMap( { "#hollowPoint" : "points" } );
+setTagnameTargetMap( { text: "annotations" } );
+	
+	// Coordinate system
+setDefaultInjectionTarget( "axes" );
+const xAxis = new Line( { x1: -30, x2: 170 } );
+const yAxis = new Line( { y1: 30, y2: -170 } );
+new Text( "x", { x: xAxis.x2 - 5, y: xAxis.y2 + 10 } );
+new Text( "y", { x: yAxis.x2 - 9, y: yAxis.y2 + 3 } );
+new Text( "O", { }, { "stroke-width" : 6 } );
+
+	// Line
+setDefaultInjectionTarget( "main" );
+const lineA = new Line( { x1: yAxis.x1 - 20, y1: yAxis.y2 + 30, x2: xAxis.x2 - 50, y2: xAxis.y2 +20 } );
+new namedPoint( "y<tspan class='sub'n>0</tspan>", lineA.pointAt( { x: yAxis.x1 } ), { dx: 10 });
+new namedPoint( "x<tspan class='sub'n>0</tspan>", lineA.pointAt( { y: xAxis.y1 } ), { dx: 0, dy: - 20 });
+</script></body></html>
