@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<script>if ( ! window.frameElement && document.location.search.search("\\host=no\\b") < 0) navigation.navigate( `/index-spa.htm?goto=${ document.location.href }` );</script>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2025-10-20" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2025-11-04" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2025-11-05" />
+<meta name="version" content="1" />
+<meta name="sectionTitle" content="../title.svg" />
+<base target="_top" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/webcat/math-fragment/math-fragment-embedded.css" />
+<script type="module" src="/inc/webcat/math-fragment/math-fragment-numerator.js?strip-zeroes=no"></script>
+<link rel="stylesheet" href="/inc/webcat/math/math.css" />
+<link rel="stylesheet" href="/spa-iframe-content.css" />
+<script type="module" src="/spa-iframe-content.js"></script>
+<meta name="categories" content="The Binomial Theorem" />
+<meta name="tags" content="math, mathematics, university, binomial, theorem, Blaise Pascal, triangle" />
+<title>Binomial Theorem (University Math)</title>
+<meta name="description" content="Proof for the binomial theorem." />
+
+</head><body>
+
+<h1>The Binomial Theorem</h1>
+
+<p>The binomial coefficients give us the number of different ways to choose <math xmlns=""><mi>n</mi></math> elements from a set of <math xmlns=""><mi>k</mi></math> elements. They also appear as coefficients in the general binomial formula.</p>
+
+<h2 cbc>Definition of the Binomial Coefficient</h2><div>
+
+<p>The binomial coefficient, read as "n over k" or "n choose k" is defined as follows:</p>
+
+<a href="html-fragments/d-005.htm" data-load-fragment data-select=".math-fragment-content"></a>
+
+<p>NOTE that <math xmlns=""><mn>0</mn><mo>!</mo><mo>=</mo><mn>1</mn></math>.</p>
+
+<p>These coefficients appear in Pascal's triangle:</p>
+
+<style>
+table#t-001 td { 
+	padding : 0 ;
+	}
+table#t-001 td:first-child {
+	min-width : 60px ;
+	}
+table#t-001 td:nth-child( 2 ) {
+	text-align : center ;
+	font-family : monospace ;
+	white-space-collapse : preserve ;
+	}
+#div-001 {
+	display : flex ;
+	align-items : center ;
+	justify-content : center ;
+	}
+</style>
+
+<div id="div-001"><table id="t-001"><tbody><tr>
+	<td>n=0</td>
+	<td>1</td>
+</tr><tr>
+	<td>n=1</td>
+	<td>1  1</td>
+</tr><tr>
+	<td>n=2</td>
+	<td>1  2  1</td>
+</tr><tr>
+	<td>n=3</td>
+	<td>1  3  3  1</td>
+</tr><tr>
+	<td>n=4</td>
+	<td>1  4  6  4  1</td>
+</tr></tbody></table></div>
+
+<p>Observe that each entry is the sum of the two entries above:</p>
+
+<a href="html-fragments/l-001.htm" data-load-fragment data-select=".math-fragment-content"></a>
+
+<p>Proof: We plug the definition of the binomial coefficient into the hypothesis L1. The left-hand side then becomes</p>
+
+<math xmlns="" display="block">
+<mtext>LHS</mtext><mo>=</mo><mfrac>
+<mrow><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo>!</mo></mrow>
+<mrow style="padding: 0px 5px"><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>&minus;</mo><mi>k</mi><mo>)</mo><mo rspace="4px">!</mo><mi>k</mi><mo>!</mo></mrow></mfrac>
+</math>
+
+<p>The same with the right-hand side:</p>
+
+<math xmlns="" display="block">
+<mtext>RHS</mtext><mo>=</mo>
+<mfrac><mrow><mi>n</mi><mo>!</mo></mrow><mrow style="padding: 0px 5px"><mo stretchy="false">(</mo><mi>n</mi><mo>&minus;</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo rspace="4px">!</mo><mo stretchy="false">(</mo><mi>k</mi><mo>&minus;</mo><mn>1</mn><mo stretchy="true">)</mo><mo>!</mo></mrow></mfrac>
+<mo>+</mo>
+<mfrac><mrow><mi>n</mi><mo>!</mo></mrow><mrow style="padding: 0px 5px"><mo stretchy="false">(</mo><mi>n</mi><mo>&minus;</mo><mi>k</mi><mo stretchy="false">)</mo><mo rspace="4px">!</mo><mi>k</mi><mo>!</mo></mrow></mfrac>
+</math>
+
+<p>We will combine these terms over a common denominator. We need to multiply the first term by <math xmlns=""><mi>k</mi></math>, and the second term by <math xmlns=""><mi>n</mi><mo>&minus;</mo><mi>k</mi><mo>+</mo><mn>1</mn></math>, and then the <math xmlns=""><mi>k</mi></math> terms cancel out:</p>
+
+<math xmlns="" display="block">
+<mo>=</mo><mfrac>
+<mrow>
+	<mi>n</mi><mo>!</mo><mi>k</mi>
+	<mo>+</mo>
+	<mi>n</mi><mo>!</mo><mo>(</mo><mi>n</mi><mo>&minus;</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo>)</mo>
+	</mrow>
+<mrow style="padding: 0px 5px"><mo>(</mo><mi>n</mi><mo>&minus;</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo rspace="4px">!</mo><mi>k</mi><mo>!</mo></mrow></mfrac>
+<mo>=</mo><mfrac>
+<mrow>
+	<mi>n</mi><mo>!</mo><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo>
+	</mrow>
+<mrow style="padding: 0px 5px"><mo>(</mo><mi>n</mi><mo>&minus;</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo rspace="4px">!</mo><mi>k</mi><mo>!</mo></mrow></mfrac>
+</math>
+
+<p>Then we rearrange the terms in the denominator, and thereby obtain the LHS of our hypothesis:</p>
+
+<math xmlns="" display="block">
+<mtext>RHS</mtext><mo>=</mo><mfrac>
+<mrow><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo>!</mo></mrow>
+<mrow style="padding: 0px 5px"><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>&minus;</mo><mi>k</mi><mo>)</mo><mo rspace="4px">!</mo><mi>k</mi><mo>!</mo></mrow></mfrac>
+<mo>=</mo><mtext>LHS</mtext>
+</math>
+
+<p>q. e. d.</p>
+
+<p>This lemma can now be used in the proof of the binomial theorem:</p>
+
+<a href="html-fragments/t-003.htm" data-load-fragment data-select=".math-fragment-content"></a>
+
+<p>NOTE that we can use row n in Pascal's triangle to quickly find out the coefficients of the terms in the binomial formula.</p>
+
+<p>PROOF: We will use inducion on <math xmlns=""><mi>n</mi></math>.</p>
+
+<p>1. For <math xmlns=""><mi>n</mi><mo>=</mo><mn>0</mn></math>, the hypothesis' <math xmlns=""><mtext>LHS</mtext><mo>=</mo><mn>1</mn></math>, and the</p>
+<math xmlns="" display="block">
+<mtext>RHS</mtext><mo>=</mo>
+<mo>(</mo><mfrac linethickness="0"><mn>0</mn><mn>0</mn></mfrac><mo>)</mo><mspace width="4px"></mspace><msup><mi>x</mi><mn>0</mn></msup><mspace width="4px"></mspace><msup><mi>y</mi><mn>0</mn></msup>
+<mo>=</mo><mn>1</mn>
+<mo>=</mo><mtext>LHS</mtext>
+</math>
+
+<p>So the hypothesis is true for <math xmlns=""><mi>n</mi><mo>=</mo><mn>0</mn></math>.</p>
+
+<p>2. Inductive hypothesis: We suppose the hypothesis is true for some arbitrary <math xmlns=""><mi>n</mi></math>, then we suppose the hypothesis is true for <math xmlns=""><mi>n</mi><mo>+</mo><mn>1</mn></math>:</p>
+
+<math xmlns="" display="block">
+<mtext>LHS</mtext><mo>=</mo>
+<msup><mrow><mo>(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>)</mo></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup>
+<mo>=</mo><mrow><mo>(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>)</mo></mrow><msup><mrow><mo>(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>)</mo></mrow><mi>n</mi></msup>
+<mo>=</mo><mrow><mo>(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>)</mo></mrow>
+<munderover>
+	<mo>&sum;</mo>
+	<mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+	<mi>n</mi>
+	</munderover>
+<mrow><mo>(</mo><mfrac linethickness="0px"><mi>n</mi><mi>k</mi></mfrac><mo rspace="4px">)</mo></mrow>
+<msup><mi>x</mi><mi>k</mi></msup>
+<msup><mi>y</mi><mrow><mi>n</mi><mo>&minus;</mo><mi>k</mi></mrow></msup></math>
+
+<p>Distribute the sum expression into the parentheses:</p>
+
+<math xmlns="" display="block">
+<mo>=</mo>
+<mi>x</mi>
+<munderover>
+	<mo>&sum;</mo>
+	<mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+	<mi>n</mi>
+	</munderover>
+<mrow><mo>(</mo><mfrac linethickness="0px"><mi>n</mi><mi>k</mi></mfrac><mo rspace="4px">)</mo></mrow>
+<msup><mi>x</mi><mrow><mi>k</mi></mrow></msup>
+<msup><mi>y</mi><mrow><mi>n</mi><mo>&minus;</mo><mi>k</mi></mrow></msup>
+<mo>+</mo>
+<mi>y</mi>
+<munderover>
+	<mo>&sum;</mo>
+	<mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+	<mi>n</mi>
+	</munderover>
+<mrow><mo>(</mo><mfrac linethickness="0px"><mi>n</mi><mi>k</mi></mfrac><mo rspace="4px">)</mo></mrow>
+<msup><mi>x</mi><mrow><mi>k</mi></mrow></msup>
+<msup><mi>y</mi><mrow><mi>n</mi><mo>&minus;</mo><mi>k</mi></mrow></msup>
+
+</math>
+
+
+<math xmlns="" display="block">
+<mo>=</mo>
+<munderover>
+	<mo>&sum;</mo>
+	<mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+	<mi>n</mi>
+	</munderover>
+<mrow><mo>(</mo><mfrac linethickness="0px"><mi>n</mi><mi>k</mi></mfrac><mo rspace="4px">)</mo></mrow>
+<msup><mi>x</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msup>
+<msup><mi>y</mi><mrow><mi>n</mi><mo>&minus;</mo><mi>k</mi></mrow></msup>
+<mo>+</mo>
+<munderover>
+	<mo>&sum;</mo>
+	<mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+	<mi>n</mi>
+	</munderover>
+<mrow><mo>(</mo><mfrac linethickness="0px"><mi>n</mi><mi>k</mi></mfrac><mo rspace="4px">)</mo></mrow>
+<msup><mi>x</mi><mrow><mi>k</mi></mrow></msup>
+<msup><mi>y</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn><mo>&minus;</mo><mi>k</mi></mrow></msup>
+</math>
+
+<p>Then we will take out the final term from the first sum, and the first term of the second sum:</p>
+
+<math xmlns="" display="block">
+<mo>=</mo>
+<msup><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup>
+<mo>+</mo>
+<munderover>
+	<mo>&sum;</mo>
+	<mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow>
+	<mrow><mi>n</mi><mo>&minus;</mo><mn>1</mn></mrow>
+	</munderover>
+<mrow><mo>(</mo><mfrac linethickness="0px"><mi>n</mi><mi>k</mi></mfrac><mo rspace="4px">)</mo></mrow>
+<msup><mi>x</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msup>
+<msup><mi>y</mi><mrow><mi>n</mi><mo>&minus;</mo><mi>k</mi></mrow></msup>
+<mo>+</mo>
+<msup><mi>y</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup>
+<mo>+</mo>
+<munderover>
+	<mo>&sum;</mo>
+	<mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow>
+	<mi>n</mi>
+	</munderover>
+<mrow><mo>(</mo><mfrac linethickness="0px"><mi>n</mi><mi>k</mi></mfrac><mo rspace="4px">)</mo></mrow>
+<msup><mi>x</mi><mrow><mi>k</mi></mrow></msup>
+<msup><mi>y</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn><mo>&minus;</mo><mi>k</mi></mrow></msup>
+</math>
+
+<p>Note that the index in the sum expressions has a scope that is limited to the sum expression, so we can rephrase the index in one sum without affecting the other. Of course, rephrasing must not change the value of the sum in any way. The goal is to have an idential index range in both sum expressions so that we can combine the sums:</p>
+
+<math xmlns="" display="block">
+<mo>=</mo>
+<msup><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup>
+<mo>+</mo>
+<munderover>
+	<mo>&sum;</mo>
+	<mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow>
+	<mrow><mi>n</mi></mrow>
+	</munderover>
+<mrow><mo>(</mo><mfrac linethickness="0px">
+	<mi>n</mi>
+	<mrow><mi>k</mi><mo>&minus;</mo><mn>1</mn></mrow>
+	</mfrac><mo rspace="4px">)</mo>
+	</mrow>
+	<msup><mi>x</mi><mrow><mi>k</mi></mrow></msup>
+	<msup><mi>y</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn><mo>&minus;</mo><mi>k</mi></mrow></msup>
+<mo>+</mo>
+<msup><mi>y</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup>
+<mo>+</mo>
+<munderover>
+	<mo>&sum;</mo>
+	<mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow>
+	<mi>n</mi>
+	</munderover>
+<mrow><mo>(</mo><mfrac linethickness="0px"><mi>n</mi><mi>k</mi></mfrac><mo rspace="4px">)</mo></mrow>
+<msup><mi>x</mi><mrow><mi>k</mi></mrow></msup>
+<msup><mi>y</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn><mo>&minus;</mo><mi>k</mi></mrow></msup>
+</math>
+
+<math xmlns="" display="block">
+<mo>=</mo><msup><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup>
+<mo>+</mo><msup><mi>y</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup>
+<mo>+</mo><munderover><mo>&sum;</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover>
+<mrow><mo>[</mo>
+<mrow><mo>(</mo><mfrac linethickness="0px"><mi>n</mi><mrow><mi>k</mi><mo lspace="0" rspace="0">&minus;</mo><mn>1</mn></mrow></mfrac><mo>)</mo></mrow>
+<msup><mi>x</mi><mi>k</mi></msup>
+<msup><mi>y</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn><mo>&minus;</mo><mi>k</mi></mrow></msup>
+<mo>+</mo><mrow><mo>(</mo><mfrac linethickness="0"><mi>n</mi><mi>k</mi></mfrac><mo>)</mo></mrow>
+<msup><mi>x</mi><mi>k</mi></msup>
+<msup><mi>y</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn><mo>&minus;</mo><mi>k</mi></mrow></msup>
+<mo>]</mo></mrow>
+</math>
+
+<p>Now we can use lemma <a class="math-fragment-anchor" href="html-fragments/l-001.htm">L1</a> to simply the binomial factor expressions, which then paves the road for further simplifications. The two binomial coefficients in Pascal's triangle can be replaced by the one below them:</p>
+
+<math xmlns="" display="block">
+<mo>=</mo><msup><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup>
+<mo>+</mo><msup><mi>y</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup>
+<mo>+</mo><munderover><mo>&sum;</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover>
+<mrow><mo>(</mo><mfrac linethickness="0px"><mrow><mi>n</mi><mo lspace="0" rspace="0">+</mo><mn>1</mn></mrow><mi>k</mi></mfrac><mo>)</mo></mrow>
+<msup><mi>x</mi><mi>k</mi></msup>
+<msup><mi>y</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn><mo>&minus;</mo><mi>k</mi></mrow></msup>
+</math>
+
+<p>Now we can integrate the powers of x and y into the sum, they fit into the sequence if we adjust the range for the indexer. For  <math xmlns=""><mi>k</mi><mo>=</mo><mn>0</mn><mtext>,</mtext></math> the sum expression is <math xmlns="" class="vspace"><mrow><mo>(</mo><mfrac linethickness="0"><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mn>0</mn></mfrac><mo>)</mo></mrow><msup><mi>x</mi><mn>0</mn></msup><msup><mi>y</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></math> = <math xmlns=""><mn>1</mn><mo>&sdot;</mo><mn>1</mn><mo>&sdot;</mo><msup><mi>y</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mtext>,</mtext></math> and for <math xmlns=""><mi>k</mi><mo>=</mo><mi>n</mi><mo>+</mo><mn>1</mn><mtext>,</mtext></math> the sum expression is <math xmlns="" class="vspace"><mrow><mo>(</mo><mfrac linethickness="0"><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>+1</mo></mrow></mfrac><mo>)</mo></mrow><msup><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><msup><mi>y</mi><mrow><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo>&minus;</mo><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow></msup></math> = <math xmlns=""><mn>1</mn><mo>&sdot;</mo><msup><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>&sdot;</mo><mn>1</mn><mtext>.</mtext></math></p>
+
+<math xmlns="" display="block">
+<mo>=</mo><munderover><mo>&sum;</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></munderover>
+<mrow><mo>(</mo><mfrac linethickness="0"><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mi>k</mi></mfrac><mo>)</mo></mrow>
+<msup><mi>x</mi><mi>k</mi></msup>
+<msup><mi>y</mi><mrow><mn>n</mn><mo>+</mo><mn>1</mn><mo>&minus;</mo><mi>k</mi></mrow></msup>
+<mo>=</mo><mtext>RHS</mtext>
+</math>
+
+<p>Which is identical to the right-hand side, which we wanted to show. </p>
+
+<p>3. By induction, the result holds for all <math xmlns=""><mi>n</mi><mo>&isin;</mo><mi>&Nopf;</mi></math>.</p>
+<p>q. e. d.</p>
+
+<!--The Binomial Theorem and an Introduction to Sets--></div>
+
+</body></html>

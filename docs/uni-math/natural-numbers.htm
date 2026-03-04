@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en-US"><head>
+<script>if ( ! window.frameElement && document.location.search.search("\\host=no\\b") < 0) navigation.navigate( `/index-spa.htm?goto=${ document.location.href }` );</script>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="template-info" file-name="empty.htm" version="2025-10-20" editor="USP" />
+<meta name="author" content="USP" />
+<meta name="creation-date" content="2025-11-04" />
+<meta name="editor" content="USP" />
+<meta name="change-date" content="2025-11-05" />
+<meta name="version" content="1" />
+<meta name="sectionTitle" content="../title.svg" />
+<base target="_top" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" sizes="all" />
+<link rel="stylesheet" href="/inc/webcat/math-fragment/math-fragment-embedded.css" />
+<script type="module" src="/inc/webcat/math-fragment/math-fragment-numerator.js?strip-zeroes=no"></script>
+<link rel="stylesheet" href="/inc/webcat/math/math.css" />
+<link rel="stylesheet" href="/spa-iframe-content.css" />
+<script type="module" src="/spa-iframe-content.js"></script>
+<meta name="categories" content="Projects > Web > Content Authoring Toolbox" />
+<meta name="tags" content="web, authoring, toolbox, HTML, JavaScript, CSS" />
+<title>Introduction to University Mathematics</title>
+<meta name="description" content="" />
+
+</head><body>
+
+<h1>Introduction to University Mathematics</h1>
+
+<p class="subtitle">A Refresher</p>
+
+<p class="abstract"></p>
+
+<h2 cbc>The Natural Numbers</h2><div>
+
+<p>We will start with the definition of natural numbers:</p>
+
+<a href="./html-fragments/d-001.htm" data-load-fragment data-select=".math-fragment-content"></a>
+
+<p>NOTE: Some authors include zero in the natural numbers, others don't. That should be obvious in the specific content. To exclude zero from the natural numbers, write <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>&Nopf;</mi><mo>\</mo><mn>0</mn></math>, which is read as "n without zero".</p>
+
+<h3 cbc>Properties of Natural Numbers</h3><div>
+
+<p>1. There exist operations "addition" and "multiplication" which also produce natural numbers: If <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi></math>, <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>n</mi><mo>&isin;</mo><mi>&Nopf;</mi></math>, then <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi><mo>+</mo><mi>n</mi><mo>&isin;</mo><mi>&Nopf;</mi></math>, and <math xmlns="http://www.w3.org/1998/Math/MathML"><mi>m</mi><mo>&sdot;</mo><mi>n</mi><mo>&isin;</mo><mi>&Nopf;</mi></math>.</p>
+
+<p>Or in symbolic notation:</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<mi>m</mi><mo>,</mo><mi>n</mi><mo>&isin;</mo><mi>&Nopf;</mi>
+<mo>&rarr;</mo>
+<mi>m</mi><mo>+</mo><mi>n</mi><mo>&isin;</mo><mi>&Nopf;</mi><mo>&and;</mo><mi>m</mi><mo>&sdot;</mo><mi>n</mi><mo>&isin;</mo><mi>&Nopf;</mi>
+</math>
+
+<p>Sometimes, the multiplication operator "&sdot;" is written as "&times;". Very often the operator is simply omitted &ndash; we wouldn't say "three times an apple", instead, we say "three apples". Therefore</p>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+<mi>m</mi><mo>&sdot;</mo><mi>n</mi><mo>=</mo><mi>m</mi><mo>&times;</mo><mi>n</mi><mo>=</mo><mi>m</mi><mi>n</mi>
+</math>
+
+<p>Addition and multiplication are <em>binary operators</em>, which means that they have two <em>operands</em>.</p>
+
+<p>Addition and multiplication will be defined later. For now, the common knowledge should be sufficient.</p>
+
+<p>2. There are certain numbers that don't change the value of a sum or a product:</p>
+
+<a href="./html-fragments/d-002.htm" data-load-fragment data-select=".math-fragment-content"></a>
+
+<p>3. Order: The elements in the set of natural numbers are <em>ordered</em>, which is a consequence of how the sequence was created in <a href="#DEF-001">definition 1</a>.</p>
+
+<a href="./html-fragments/d-003.htm" data-load-fragment data-select=".math-fragment-content"></a>
+
+<p>That reads "if m is less or equal to n then there exists a k in the natural numbers such that m plus k equal n.</p>
+
+<!--h3--Properties of Natural Numbers--></div>
+
+<h3 cbc>The Theorem of Weak Induction</h3><div>
+
+<p>These induction theorems are a cornerstone of mathematical proofs. The key idea is to verify a hypothesis for the first (e. g. smallest) element in the set, usually zero or one. Then we suppose that the hypothesis is true for any arbitrary (unspecified) natural number n and show that the hypothesis holds for its immediate successor, n + 1. So if the hypothesis is true for n = 0, it must be true for n + 1 = 1. Then if the hypothesis is true for n = 1, it must be true for n + 1 = 2. And so on, infinitely. Thus we have proven that the hypothesis holds for <em>all</em> elements in the set.</p>
+
+<p>We begin with the simpler weak induction theorem:</p>
+
+<a href="./html-fragments/t-001.htm" data-load-fragment data-select=".math-fragment-content"></a>
+
+<p>An example:</p>
+
+<a href="./html-fragments/p-001.htm" data-load-fragment data-select=".math-fragment-content"></a>
+
+<p>Proof:</p>
+
+<p>1. Suppose <math xmlns=""><mi>P</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo><mo>is</mo><mn>true</mn></math>:</p>
+
+<p>We set <math xmlns=""><mi>n</mi><mo>=</mo><mn>0</mn></math> and calculate the left hand side of the hypothesis:</p>
+
+<math xmlns="" display="block">
+<mtext>LHS</mtext><mo>=</mo><munderover><mo>&sum;</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mn>0</mn></munderover><mi>k</mi><mo>=</mo><mn>0</mn>
+</math>
+
+<p>Then the same with the right-hand side of the hypothesis:</p>
+
+<math xmlns="" display="block">
+<mtext>RHS</mtext><mo>=</mo>
+<mrow>
+	<mfrac><mn>1</mn><mn>2</mn></mfrac>
+	<mo>&sdot;</mo><mn>0</mn><mo>&sdot;</mo>
+	<mo>(</mo><mn>0</mn><mo>+</mo><mn>1</mn><mo>)</mo>
+	</mrow>
+<mo>=</mo><mn>0</mn>
+</math>
+
+<p>LHS equals RHS, so the hypothesis holds for <math xmlns=""><mi>n</mi><mo>=</mo><mn>0</mn></math>.</p>
+
+<p>2. Suppose that if the hypothesis is true for <math xmlns=""><mi>n</mi></math>, it is also true for <math xmlns=""><mi>n</mi><mo>+</mo><mn>1</mn></math>:</p>
+
+<math xmlns="" display="block">
+<mtext>LHS</mtext><mo>=</mo><munderover><mo>&sum;</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></munderover><mi>k</mi>
+<mo>=</mo>
+<mrow><mo>(</mo>
+<mn>0</mn><mo>+</mo><mn>1</mn><mo>+</mo><mn>2</mn><mo>+</mo><mo>&hellip;</mo><mo>+</mo><mi>n</mi><mo>)</mo></mrow><mo>+</mo><mrow><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow>
+</math>
+
+<p>This is exactly the sum of the first n term plus an additional term <math xmlns=""><mi>n</mi><mo>+</mo><mn>1</mn></math>:</p>
+
+<math xmlns="" display="block">
+<mo>=</mo>
+<munderover><mo>&sum;</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>n</mi></mrow></munderover><mi>k</mi>
+<mo>+</mo><mrow><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow>
+</math>
+
+<p>which is, according to our hypothesis, equivalent to</p>
+
+<math xmlns="" display="block">
+<mo>=</mo>
+<mfrac><mn>1</mn><mn>2</mn></mfrac>
+<mo>&sdot;</mo>
+<mn>n</mn>
+<mo>&sdot;</mo>
+<mrow>
+<mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo>
+<mo>+</mo>
+<mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo>
+</mrow>
+</math>
+
+<p>Now we will check the right-hand side of the hypothesis by replacing <math xmlns=""><mi>n</mi></math> with <math xmlns=""><mi>n</mi><mo>+</mo><mn>1</mn></math>:</p>
+
+<math xmlns="" display="block">
+<mtext>RHS</mtext><mo>=</mo>
+<mrow>
+	<mfrac><mn>1</mn><mn>2</mn></mfrac>
+	<mo>&sdot;</mo><mrow><mo>(</mo><mn>n</mn><mo>+</mo><mn>1</mn><mo>)</mo></mrow>
+	<mo>&sdot;</mo>
+	<mrow><mo>(</mo><mo>(</mo><mn>n</mn><mo>+</mo><mn>1</mn><mo>)</mo><mo>+</mo><mn>1</mn><mo>)</mo></mrow>
+	</mrow>
+<mo>=</mo><mrow>
+<mfrac><mn>1</mn><mn>2</mn></mfrac>
+<mo>&sdot;</mo>
+<mrow>
+	<mo>(</mo><mn>n</mn><mo>+</mo><mn>1</mn><mo>)</mo>
+	</mrow>
+<mo>&sdot;</mo>
+<mrow>
+	<mo>(</mo><mn>n</mn><mo>+</mo><mn>2</mn><mo>)</mo>
+	</mrow>
+</mrow>
+</math>
+
+<p>Now we show that LHS = RHS:</p>
+
+<math xmlns="" display="block">
+<mfrac><mn>1</mn><mn>2</mn></mfrac><mo>&sdot;</mo><mn>n</mn><mo>&sdot;</mo><mrow>
+	<mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo>+</mo><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow>
+<mo>=</mo>
+<mfrac><mn>1</mn><mn>2</mn></mfrac>
+<mrow><mo>&sdot;</mo>
+<mo>(</mo><mn>n</mn><mo>+</mo><mn>1</mn><mo>)</mo>
+<mo>&sdot;</mo>
+<mo>(</mo><mn>n</mn><mo>+</mo><mn>2</mn><mo>)</mo></mrow>
+</math>
+
+<p>Dividing by <math xmlns=""><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo></math>:</p>
+
+<math xmlns="" display="block">
+<mfrac><mn>1</mn><mn>2</mn></mfrac><mo>&sdot;</mo><mn>n</mn><mo>+</mo><mn>1</mn>
+<mo>=</mo>
+<mfrac><mn>1</mn><mn>2</mn></mfrac>
+<mo>&sdot;</mo>
+<mrow><mo>(</mo><mn>n</mn><mo>+</mo><mn>2</mn><mo>)</mo></mrow>
+<mo>=</mo>
+<mfrac><mn>1</mn><mn>2</mn></mfrac>
+<mo>&sdot;</mo>
+<mn>n</mn><mo>+</mo><mn>1</mn>
+</math>
+
+<p>Both sides are identical, therefore the hypothesis is true for <math xmlns=""><mi>n</mi><mo>+</mo><mn>1</mn></math>.</p>
+
+<p>3. Therefore the hypothesis is true for all <math xmlns=""><mi>n</mi><mo>&isin;</mo><mi>&Nopf;</mi></math>.</p>
+<p>q. e. d.</p>
+
+<!--h3--Theorem of Weak Induction--></div>
+
+<h3 cbc>The Theorem of Strong Induction</h3><div>
+
+<p>The weak induction theorem chooses an arbitrary element n and verifies the hypothesis for the immediate successor, n + 1. There are situation where this is not sufficient. Instead, there are situations where the hypothesis must be proven for n and all its predecessors up to the least element in the set. This type of proof is called the <em>strong induction theorem</em>:</p>
+
+<a href="./html-fragments/t-002.htm" data-load-fragment data-select=".math-fragment-content"></a>
+
+<p>Proof:</p>
+
+<p>We will transform this theorem into the form of the weak induction theorem, which already has been proven. So define <math xmlns=""><mi>Q</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math> to be the statement "<math xmlns=""><mi>P</mi><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></math> is true for <math xmlns=""><mi>k</mi><mo>=</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mo>&hellip;</mo><mo>,</mo><mi>n</mi></math>". Then we</p>
+
+<p>1. We know that <math xmlns=""><mi>Q</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></math> is true because <math xmlns=""><mi>P</mi><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></math> is true.</p>
+
+<p>2. For any <math xmlns=""><mi>n</mi><mo>&isin;</mo><mi>&Nopf;</mi></math>, if <math xmlns=""><mi>Q</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math> is true, then <math xmlns=""><mi>Q</mi><mo stretchy="false">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></math> is true.</p>
+
+<p>Now we have the exact same form as in <a href="THM-001">theorem 1</a>.</p>
+
+<p>3. So, by induction, <math xmlns=""><mi>Q</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math> is true for all <math xmlns=""><mi>n</mi><mo>&isin;</mo><mi>&Nopf;</mi></math>.</p>
+
+<p>Hence, <math xmlns=""><mi>P </mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math> is true for all <math xmlns=""><mi>n</mi><mo>&isin;</mo><mi>&Nopf;</mi></math>.</p>
+
+<p>q. e. d.</p>
+
+<p>An application example:</p>
+
+<a href="./html-fragments/p-002.htm" data-load-fragment data-select=".math-fragment-content"></a>
+
+<p>Proof: Let <math xmlns=""><mi>P</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math> be the statement that <math xmlns=""><mi>n</mi></math> can be expressed as a product of primes.</p>
+
+<p>1. <math xmlns=""><mi>P</mi><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></math> is true, because 2 is prime.</p>
+
+<p>2. Let <math xmlns=""><mi>n</mi><mo>&gt;</mo><mn>2</mn></math>, and suppose that <math xmlns=""><mi>P</mi><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">)</mo></math> holds for all <math xmlns=""><mi>m</mi><mo>&lt;</mo><mi>n</mi></math>:</p>
+
+<p>If <math xmlns=""><mi>n</mi></math> is prime, then  <math xmlns=""><mi>P</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math> is true. If <math xmlns=""><mi>n</mi></math> is not prime, then <math xmlns=""><mi>n</mi><mo>=</mo><mi>r</mi><mo>&sdot;</mo><mi>s</mi></math> for some <math xmlns=""><mi>r</mi><mo>,</mo><mi>s</mi><mo>&isin;</mo><mi>&Nopf;</mi><mo>,</mo><mn>1</mn><mo>&lt;</mo><mi>r</mi><mo>&lt;</mo><mi>n</mi><mo>,</mo><mn>1</mn><mo>&lt;</mo><mi>s</mi><mo>&lt;</mo><mi>n</mi></math>.</p>
+
+<p>By the inductive hypothesis, <math xmlns=""><mi>r</mi></math> and <math xmlns=""><mi>s</mi></math> can be expressed as product of primes, and hence can <math xmlns=""><mi>n</mi><mo>=</mo><mi>r</mi><mo>&sdot;</mo><mi>s</mi></math>. So <math xmlns=""><mi>P</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math> holds.</p>
+
+<p>3. By strong induction,  <math xmlns=""><mi>P</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math> holds for all <math xmlns=""><mi>n</mi><mo>&isin;</mo><mi>&Nopf;</mi></math>. </p>
+
+<p>q. e. d.</p>
+
+<p>The next example is an application of the induction principle on the definition of addition on natural numbers:</p>
+
+<a href="./html-fragments/d-004.htm" data-load-fragment data-select=".math-fragment-content"></a>
+
+<p>The first rule applies the definition of additive identity.</p>
+
+<p>For example, if we want to know what m+3 means, then we go back to what m+(2+1) means, then m+((1+1)+1), until we get to m+(((0+1)+1)+1). The recursive nature of the problem becomes obvious, we can reduce the problem to the definition of natural number as a sequence and the addition of 1 to get the successor of a number in that sequence.</p>
+
+<p>Now we will use strong induction to proove the associativity of addition.</p>
+
+<a href="html-fragments/p-003.htm" data-load-fragment data-select=".math-fragment-content"></a>
+
+<p>Proof: We will prove the statement by induction, and we are going to induct on <math xmlns=""><mi>z</mi></math>, while <math xmlns=""><mi>x</mi></math> and <math xmlns=""><mi>y</mi></math> will be arbitrary natural numbers.</p>
+
+<p>Step 1: Prove the hypothesis for <math xmlns=""><mi>z</mi><mo>=</mo><mn>0</mn></math>:</p>
+
+<math xmlns="" display="block">
+<mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false">)</mo><mo>+</mo><mn>0</mn>
+<mo>=</mo>
+<mi>x</mi><mo>+</mo><mo stretchy="false">(</mo><mi>y</mi><mo>+</mo><mn>0</mn><mo stretchy="false">)</mo>
+</math>
+
+<p>Applying <a href="DFN-004">D4.1</a> to the RHS gives</p>
+
+<math xmlns="" display="block">
+<mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false">)</mo><mo>+</mo><mn>0</mn>
+<mo>=</mo>
+<mi>x</mi><mo>+</mo><mi>y</mi>
+</math>
+
+<p>And  once again:</p>
+
+<math xmlns="" display="block">
+<mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false">)</mo><mo>+</mo><mn>0</mn>
+<mo>=</mo>
+<mo>(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>)</mo><mo>+</mo><mn>0</mn>
+</math>
+
+<p>So the statement holds for <math xmlns=""><mi>o</mi><mo>=</mo><mn>0</mn></math>.</p>
+
+<p>Step 2: Suppose the hypothesis holds for <math xmlns=""><mi>z</mi><mo>=</mo><mi>n</mi></math>. Then we show that the hypothesis holds for <math xmlns=""><mi>z</mi><mo>=</mo><mi>n</mi><mo>+</mo><mn>1</mn></math>:</p>
+
+<math xmlns="" display="block">
+<mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false">)</mo><mo>+</mo><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo>
+<mo>=</mo>
+<mi>x</mi><mo>+</mo><mo>(</mo><mi>y</mi><mo>+</mo><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo>)</mo>
+</math>
+
+<p>By applying <a href="DEF-004">D4.2</a> to the RHS:</p>
+
+<math xmlns="" display="block">
+<mo>=</mo>
+<mi>x</mi><mo>+</mo><mo>(</mo><mo>(</mo><mi>y</mi><mo>+</mo><mi>n</mi><mo>)</mo><mo>+</mo><mn>1</mn><mo>)</mo>
+</math>
+
+<p>Again by <a href="DEF-004">D4.2</a>:</p>
+
+<math xmlns="" display="block">
+<mo>=</mo>
+<mo>(</mo><mi>x</mi><mo>+</mo><mo>(</mo><mi>y</mi><mo>+</mo><mi>n</mi><mo>)</mo><mo>)</mo><mo>+</mo><mn>1</mn>
+</math>
+
+<p>Now we are in a position to perform the inductive step, because the term <math xmlns=""><mi>x</mi><mo>+</mo><mo>(</mo><mi>y</mi><mo>+</mo><mi>n</mi><mo>)</mo></math> is in exactly the same form as the right-hand side of our hypothesis, <math xmlns=""><mi>x</mi><mo>+</mo><mo>(</mo><mi>y</mi><mo>+</mo><mi>z</mi><mo>)</mo></math>. So we can induce the left-hand side of the hyothesis here:</p>
+
+<math xmlns="" display="block">
+<mo>=</mo>
+<mo>(</mo><mo>(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>)</mo><mo>+</mo><mi>n</mi><mo>)</mo><mo>+</mo><mn>1</mn>
+</math>
+
+<p>By <a href="DEF-004">D4.2</a> on the RHS:</p>
+
+<math xmlns="" display="block">
+<mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo stretchy="false">)</mo><mo>+</mo><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo>
+<mo>=</mo>
+<mo>(</mo><mi>x</mi><mo>+</mo><mi>y</mi><mo>)</mo><mo>+</mo><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo>
+</math>
+
+<p>we can show that the RHS is now equal to the LHS. So the hypothesis holds for <math xmlns=""><mi>z</mi><mo>=</mo><mi>n</mi><mo>+</mo><mn>1</mn></math>.</p>
+
+<p>Then by induction, the hypothesis holds for all <math xmlns=""><mi>z</mi><mo>&isin;</mo><mi>&Nopf;</mi></math>.</p>
+
+<p>q. e. d.</p>
+
+<p>Another proposition:</p>
+
+<a href="html-fragments/p-004.htm" data-load-fragment data-select=".math-fragment-content"></a>
+
+<p>We will combine induction with contradiction.</p>
+
+<p>Proof: Assume, for a contradiction, that <math xmlns=""><mi>S</mi></math> is a non-empty subset of the natural numbers that does <em>not</em> have a least element. Consider a set <math xmlns=""><mi>R</mi></math> as a complement of <math xmlns=""><mi>S</mi></math> that contains all elements that are not in <math xmlns=""><mi>S</mi></math>: <math xmlns=""><mi>R</mi><mo>=</mo><mo>{</mo><mi>n</mi><mo>&isin;</mo><mi>&Nopf;</mi><mo lspace="4px">:</mo><mi>n</mi><mo>&notin;</mo><mi>S</mi><mo>}</mo></math>.</p>
+
+<p>Now we consider 0, which is the least element of the natural numbers, according to the definition of the natural numbers in <a class="math-fragment-reference" href="DEF-001">D1</a>. According to our assumption, 0 must be in <math xmlns=""><mi>R</mi></math> because <math xmlns=""><mi>S</mi></math> doesn't have a least number.</p>
+
+<p>If  <math xmlns=""><mn>0</mn><mo>,</mo><mn>1</mn><mo>,</mo><mo>&hellip;</mo><mo>,</mo><mi>n</mi><mo>&isin;</mo><mi>R</mi></math>, then <math xmlns=""><mi>n</mi><mo>+</mo><mn>1</mn><mo>&isin;</mo><mi>R</mi></math>, because otherwise it would be the least element of <math xmlns=""><mi>S</mi></math>.</p>
+
+<p>By strong induction, <em>every</em> natural number <math xmlns=""><mi>n</mi><mo>&isin;</mo><mi>R</mi></math>. Therefore <math xmlns=""><mi>S</mi><mo>=</mo><mi>&empty;</mi></math>, which contradicts our assumption. Thus the hypothesis is true.</p>
+
+<p>q. e. d.</p>
+
+<p>In this proof we haven't spelled out explicitly what the family of statements <math xmlns=""><mi>P</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></math> is, but that should be clear from the context (<math xmlns=""><mi>n</mi><mo>&isin;</mo><mi>R</mi></math>).</p>
+
+<p>The well-ordering property of the natural numbers is quite important, in fact it almost defines the natural numbers.</p>
+
+<p>Here we used induction to prove the property, but we could have gone the other way round and use the well-ordering property to prove the principle of induction.</p>
+
+<!--h3--Theorem of Strong Induction--></div>
+
+<!--h2--The Natural Numbers--></div>
+
+<h2 cbc>The Binomial Theorem and an Introduction to Sets</h2><div>
+
+<p>The binomial coefficient gives us the number of choices to choose <math xmlns=""><mi>n</mi></math> element out of a set of <math xmlns=""><mi>k</mi></math> elements.</p>
+
+<a href="html-fragments/d-005.htm" data-load-fragment data-select=".math-fragment-content"></a>
+
+<p>NOTE that <math xmlns=""><mn>0</mn><mo>!</mo><mo>=</mo><mn>1</mn></math>.</p>
+
+<p>These coefficients appear in Pascal's triangle:</p>
+
+<style>
+table#t-001 td { 
+	padding : 0 ;
+	}
+table#t-001 td:first-child {
+	min-width : 60px ;
+	}
+table#t-001 td:nth-child( 2 ) {
+	text-align : center ;
+	font-family : monospace ;
+	white-space-collapse : preserve ;
+	}
+#d-001 {
+	display : flex ;
+	align-items : center ;
+	justify-content : center ;
+	}
+</style>
+
+<div id="d-001"><table id="t-001"><tbody><tr>
+	<td>n=0</td>
+	<td>1</td>
+</tr><tr>
+	<td>n=1</td>
+	<td>1  1</td>
+</tr><tr>
+	<td>n=2</td>
+	<td>1  2  1</td>
+</tr><tr>
+	<td>n=3</td>
+	<td>1  3  3  1</td>
+</tr><tr>
+	<td>n=4</td>
+	<td>1  4  6  4  1</td>
+</tr></tbody></table></div>
+
+<p>Observe that each entry is the sum of the two entries above. This is the content of the following lemma:</p>
+
+<a href="html-fragments/l-001.htm" data-load-fragment data-select=".math-fragment-content"></a>
+
+<p>Proof: It is just a matter of plugging in the definition:</p>
+
+<math xmlns="" display="block">
+<mtext>RHS</mtext><mo>=</mo>
+<mfrac><mrow><mi>n</mi><mo>!</mo></mrow><mrow style="padding: 0px 5px"><mo stretchy="false">(</mo><mi>n</mi><mo>&minus;</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo><mo rspace="4px">!</mo><mo stretchy="false">(</mo><mi>k</mi><mo>&minus;</mo><mn>1</mn><mo stretchy="true">)</mo><mo>!</mo></mrow></mfrac>
+<mo>+</mo>
+<mfrac><mrow><mi>n</mi><mo>!</mo></mrow><mrow style="padding: 0px 5px"><mo stretchy="false">(</mo><mi>n</mi><mo>&minus;</mo><mi>k</mi><mo stretchy="false">)</mo><mo rspace="4px">!</mo><mi>k</mi><mo>!</mo></mrow></mfrac>
+</math>
+
+<p>We will combine these terms over a common denominator. We need to multiply the first term by <math xmlns=""><mi>k</mi></math>, and the second term by <math xmlns=""><mi>n</mi><mo>&minus;</mo><mi>k</mi><mo>+</mo><mn>1</mn></math>, and then the <math xmlns=""><mi>k</mi></math> terms cancel out:</p>
+
+<math xmlns="" display="block">
+<mo>=</mo><mfrac>
+<mrow>
+	<mi>n</mi><mo>!</mo><mi>k</mi>
+	<mo>+</mo>
+	<mi>n</mi><mo>!</mo><mo>(</mo><mi>n</mi><mo>&minus;</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo>)</mo>
+	</mrow>
+<mrow style="padding: 0px 5px"><mo>(</mo><mi>n</mi><mo>&minus;</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo rspace="4px">!</mo><mi>k</mi><mo>!</mo></mrow></mfrac>
+<mo>=</mo><mfrac>
+<mrow>
+	<mi>n</mi><mo>!</mo><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo>
+	</mrow>
+<mrow style="padding: 0px 5px"><mo>(</mo><mi>n</mi><mo>&minus;</mo><mi>k</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo rspace="4px">!</mo><mi>k</mi><mo>!</mo></mrow></mfrac>
+<mo>=</mo><mfrac>
+<mrow><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo>!</mo></mrow>
+<mrow style="padding: 0px 5px"><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>&minus;</mo><mi>k</mi><mo>)</mo><mo rspace="4px">!</mo><mi>k</mi><mo>!</mo></mrow></mfrac>
+</math>
+
+<p>Then we must plug in the definition into the LHS of the hypothesis:</p>
+
+<math xmlns="" display="block">
+<mtext>LHS</mtext><mo>=</mo><mfrac>
+<mrow><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo>!</mo></mrow>
+<mrow style="padding: 0px 5px"><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>&minus;</mo><mi>k</mi><mo>)</mo><mo rspace="4px">!</mo><mi>k</mi><mo>!</mo></mrow></mfrac>
+<mo>=</mo><mtext>RHS</mtext>
+</math>
+
+<p>Which is obviously identical to the right-hand side.</p>
+<p>q. e. d.</p>
+
+<!--The Binomial Theorem and an Introduction to Sets--></div>
+
+</body></html>
